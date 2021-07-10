@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+// TOTEST
+Route::get('/votes', 'Api\VoteController@index');
+Route::get('/users', 'Api\UserController@index');
+Route::get('/cat/{slug}', 'Api\CategoryUserController@show');
+// END TOTEST
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
