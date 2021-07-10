@@ -27,19 +27,42 @@
                     <textarea class="form-control" name="content" id="content" cols="30" rows="10">  </textarea>
                 </div>
 
-                <div class="form-group">
-                    <label for="category_id">Categoria</label>
-                    <select class="form-control" name="category_id" id="category_id">
+                <div class="form-check mt-5">
+                    <h4>Gestisci le categorie</h4>
 
-                        <option value="">Nessuna</option>
-                        
-                        <option value="chitarrista" >chitarrista</option>
+                    {{--Singolo input--}}
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                    <label class="form-check-label" for="defaultCheck1">
+                        Chitarrista
+                    </label>
+                    <br>
 
-                        <option value="bassista" >bassista</option>
+                    {{--Singolo input--}}
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+                    <label class="form-check-label" for="defaultCheck2">
+                        Bassista
+                    </label>
+                    <br>
 
-                        <option value="chitarrista" >chitarrista</option>
-                        
-                    </select>
+                    {{--Singolo input--}}
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+                    <label class="form-check-label" for="defaultCheck3">
+                        Cantante
+                    </label>
+                    <br>
+
+                    {{--Singolo input--}}
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+                    <label class="form-check-label" for="defaultCheck4">
+                        Batterista
+                    </label>
+                    <br>
+
+                    {{--Singolo input--}}
+                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+                    <label class="form-check-label mb-5" for="defaultCheck5">
+                        Tastierista
+                    </label>
                 </div>
 
                 <input type="submit" class="btn btn-success" value="Salva le modifiche">
