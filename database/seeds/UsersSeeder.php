@@ -19,7 +19,7 @@ class UsersSeeder extends Seeder
             $new_user->name = $faker->firstName();
             $new_user->lastname = $faker->lastName();
             $new_user->address = $faker->address();
-            $new_user->email = $faker->email();;
+            $new_user->email = $faker->email();
             $new_user->password = str_replace(" ", "", $faker->words(3, true));
             $new_user->save();
         }
