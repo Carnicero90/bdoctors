@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\SponsorPlan;
+use App\Sponsorplan;
 
-class SponsorPlansSeeder extends Seeder
+class SponsorplansSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,16 +12,16 @@ class SponsorPlansSeeder extends Seeder
      */
     public function run()
     {
-       foreach (config('sponsor_plans') as $plan) {
-           
-        $new_plan = new SponsorPlan();
+        foreach (config('sponsor_plans') as $plan) {
 
-        $new_plan->name = $plan['name'];
-        $new_plan->duration_in_hours = $plan['duration_in_hours'];
-        $new_plan->description = $plan['description'];
-        $new_plan->pricing = $plan['pricing'];
-        $new_plan->slug = $plan['slug'];
-        $new_plan->save();
-       }
+            $new_plan = new Sponsorplan();
+    
+            $new_plan->name = $plan['name'];
+            $new_plan->duration_in_hours = $plan['duration_in_hours'];
+            $new_plan->description = $plan['description'];
+            $new_plan->pricing = $plan['pricing'];
+            $new_plan->slug = $plan['slug'];
+            $new_plan->save();
+           }
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSponsorPlansTable extends Migration
+class CreateSponsorplansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSponsorPlansTable extends Migration
      */
     public function up()
     {
-        Schema::create('sponsor_plans', function (Blueprint $table) {
+        Schema::create('sponsorplans', function (Blueprint $table) {
             $table->id();
             $table->char('name')->unique();
             $table->char('slug')->unique();
@@ -31,6 +31,6 @@ class CreateSponsorPlansTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sponsor_plans');
+        Schema::dropIfExists('sponsorplans');
     }
 }

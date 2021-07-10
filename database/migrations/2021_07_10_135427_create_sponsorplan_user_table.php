@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSponsorPlanUserTable extends Migration
+class CreateSponsorplanUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,17 @@ class CreateSponsorPlanUserTable extends Migration
      */
     public function up()
     {
-        Schema::create('sponsor_plan_user', function (Blueprint $table) {
+        Schema::create('sponsorplan_users', function (Blueprint $table) {
             $table->id();
             // TODO: aggiungi ondelete
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')
             ->on('users');
-            $table->unsignedBigInteger('sponsor_plan_id');
-            $table->foreign('sponsor_plan_id')
+            $table->unsignedBigInteger('sponsorplan_id');
+            $table->foreign('sponsorplan_id')
             ->references('id')
-            ->on('sponsor_plans');
+            ->on('sponsorplans');
             $table->date('order_date');
             $table->date('end_date');
             $table->char('invoice');
@@ -39,6 +39,6 @@ class CreateSponsorPlanUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sponsor_plan_user');
+        Schema::dropIfExists('sponsorplan_users');
     }
 }
