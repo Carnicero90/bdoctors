@@ -6,9 +6,15 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
+                <p>Voti</p>
+                @foreach (config('votes') as $item)
+                    @dump($item)
+                @endforeach
+                <p>Rece</p>
                 @dump(
-                    Auth::user()->categories
+                    Auth::user()->reviews[0]
                 )
+                
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -16,7 +22,8 @@
                         </div>
                     @endif
 
-                    <h1>Titolo test</h1>
+                    {{-- TOREMOVE --}}
+                    <h1>BOOLBARDS</h1>
 
                     {{ __('You are logged in!') }}
                 </div>
