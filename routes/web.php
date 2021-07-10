@@ -18,7 +18,7 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return view('admin.index');
+    return view('admin.bards.index');
 });
 
 Auth::routes();
