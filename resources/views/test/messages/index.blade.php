@@ -1,7 +1,8 @@
 @extends('layouts/app')
 @section('content')
     <section class="messages">
-        @if (isset(Auth::user()->messages))
+        <h1>Lista messaggi</h1>
+        @if (Auth::user()->messages->isNotEmpty())
         <ul>
             @foreach (Auth::user()->messages as $message)
 
