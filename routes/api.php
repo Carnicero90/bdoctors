@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 // TOTEST
 Route::get('/test-api', 'Api\UserController@index');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
