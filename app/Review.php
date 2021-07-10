@@ -10,7 +10,7 @@ class Review extends Model
     {
         return $this->belongsTo('App\User');
     }
-    public function votes()
+    public function vote()
     {
         return $this->belongsTo('App\Vote');
     }
