@@ -17,9 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//INIZIO ROUTES SENZA MIDDLEWARE MOMENTANEE PER TEST
 Route::get('/dashboard', function () {
     return view('admin.bards.index');
 });
+
+Route::get('/edit', function () {
+    return view('admin.bards.edit');
+});
+//FINE ROUTES MOMENTANEE PER TEST
 
 Auth::routes();
 
