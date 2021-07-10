@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
                 @dump(
-                    Auth::user()->messages[0]->author_name
+                    Auth::user()->categories
                 )
                 <div class="card-body">
                     @if (session('status'))
