@@ -29,7 +29,7 @@ Route::prefix('admin')
     ->middleware('auth')
 
     ->group(function () {
-
-        Route::get('messages', 'MessageController@index');
+        // TOTEST
+        Route::get('messages', 'MessageController@index')->name('messaggi');
 
     });
