@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 // TOTEST
 Route::get('/votes', 'Api\VoteController@index');
 Route::get('/users', 'Api\UserController@index');
+Route::get('/messages', 'Api\MessageController@index');
+
 Route::get('/cat/{slug}', 'Api\CategoryUserController@show');
 // END TOTEST
 
