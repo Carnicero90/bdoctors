@@ -19,8 +19,12 @@ Route::get('/', function () {
 
 //INIZIO ROUTES SENZA MIDDLEWARE MOMENTANEE PER TEST
 Route::get('/dashboard', function () {
-    return view('admin.bards.index');
+    return view('admin.dash.index');
 });
+Route::get('/destroy/{user_id}/{message_id}', 'MessageController@destroy')->name('destroy');
+// Route::get('/dashboard', function () {
+//     return view('admin.bards.index');
+// });
 
 Route::get('/edit', function () {
     return view('admin.bards.edit');
