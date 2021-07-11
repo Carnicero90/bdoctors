@@ -22,6 +22,11 @@ Route::get('/send', 'MessageController@store');
 Route::get('/show', 'MessageController@store');
 // END TOTEST
 
+// TEST REVIEWS
+Route::get('/sendreview', 'ReviewController@show')->name("send-review");
+Route::post('/storereview', 'ReviewController@store')->name("store-review");
+// END TEST REVIEWS
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
