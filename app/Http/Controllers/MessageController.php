@@ -27,6 +27,8 @@ class MessageController extends Controller
         $message->user_id = 1;
         // END TEST
         $message->save();
+
+        return back();
     }
 
     public function show() {
