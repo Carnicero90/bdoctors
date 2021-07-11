@@ -13,7 +13,8 @@ class MessageController extends Controller
         $request->validate([
             'author_name' => 'required | string',
             'author_email' => 'required | email',
-            'user_id' => 'required | exists:users,id',
+            // TOREMEMBER SCOMMENTARE
+            // 'user_id' => 'required | exists:users,id',
             // TOTEST
             // 'service_number' => 'required_without: text',
             // 'text' => 'required without: service_number | string'
@@ -22,6 +23,13 @@ class MessageController extends Controller
         $message = new Message();
         $message->fill($form_data);
         $message->message_date = new Carbon();
+        // TEST
+        $message->user_id = 1;
+        // END TEST
         $message->save();
+    }
+
+    public function show() {
+        return view ('guest.bards.message');
     }
 }

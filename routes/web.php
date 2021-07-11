@@ -17,9 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 // TOTEST
-Route::get('/send', 'MessageController@store');
+Route::get('/sendmessage', 'MessageController@show')->name('send-message');
 // Route pagina dettaglio utenti
-Route::get('/show', 'MessageController@store');
+Route::post('/storemessage', 'MessageController@store')->name('store-message');
 // END TOTEST
 
 // TEST REVIEWS
