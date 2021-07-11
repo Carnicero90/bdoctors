@@ -5,6 +5,7 @@
 <div class="container">
 
     {{-- TEST --}}
+    {{-- Qui adnrà un foreach --}}
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="..." alt="Card image cap">
         <div class="card-body">
@@ -31,6 +32,7 @@
         <a href="#" class="btn btn-primary">Vai al piano singolo</a>
         </div>
     </div>
+    {{-- END TEST --}}
 
 </div>
 
