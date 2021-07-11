@@ -16,6 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// TOTEST
+Route::get('/send', 'MessageController@store');
+// END TOTEST
 
 Auth::routes();
 
