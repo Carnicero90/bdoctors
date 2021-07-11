@@ -18,6 +18,8 @@ Route::get('/', function () {
 });
 // TOTEST
 Route::get('/send', 'MessageController@store');
+// Route pagina dettaglio utenti
+Route::get('/show', 'MessageController@store');
 // END TOTEST
 
 Auth::routes();
