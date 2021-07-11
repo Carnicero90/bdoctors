@@ -5,15 +5,7 @@
         <h1>Lascia una recensione per @{{Nome}} @{{Cognome}}</h1>
         <h2>@{{categoria}}</h2>
 
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-                </ul>
-            </div>
-        @endif
+        @include("partials.validation-errors")
 
         {{-- form lascia una recensione --}}
         <form action="{{route("store-review")}}" method="post" enctype="multipart/form-data">
@@ -41,8 +33,8 @@
 
             {{-- voto recensione --}}
             <div class="form-group mt-4 mb-4">
-                <label for="vote" class="mr-4">Come definiresti la prestazione dell'artista?</label>
-                <select class="custom-select col-md-3" name="vote" id="vote">
+                <label for="vote_id" class="mr-4">Come definiresti la prestazione dell'artista?</label>
+                <select class="custom-select col-md-3" name="vote_id" id="vote_id">
                     <option selected>Seleziona una valutazione</option>
                     @foreach ($votes as $vote)
                         <option value="{{$vote->value}}">
