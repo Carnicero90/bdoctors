@@ -28,7 +28,7 @@ class SponsorplanUserController extends Controller
 
         if (SponsorplanUser::userHasActiveSponsorPlan($user_id)) 
         {
-            return redirect()->route('admin.dashboard')->withErrors('Grazie per il tentativo di donazione, ma hai già un abbonamento attivo!');
+            return redirect()->route('admin.dashboard')->with("errors", "Non puoi acquistare il piano, hai già un abbonamento attivo!");
         }
 
         $new_subscription = new SponsorplanUser();
