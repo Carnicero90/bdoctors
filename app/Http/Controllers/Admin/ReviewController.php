@@ -17,6 +17,6 @@ class ReviewController extends Controller
             "user" => $user
         ];
 
-        return view('admin.reviews', $data);
+        return view('admin.reviews.index', $data);
     }
 }
