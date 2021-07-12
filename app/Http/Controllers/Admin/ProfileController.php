@@ -27,7 +27,7 @@ class ProfileController extends Controller
      * @param Request $request 
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function createOrUpdate(Request $request)
     {
         // TODO aggiungi caricamento pic
         $request->validate(

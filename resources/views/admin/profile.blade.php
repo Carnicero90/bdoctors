@@ -38,8 +38,6 @@
                 <input type="file" class="form-control-file" id="pic" name="pic">
             </div>
             {{-- END input#pic --}}
-
-
             
             <button type="submit" class="btn btn-primary mt-4">
                 @if (Auth::user()->profile)

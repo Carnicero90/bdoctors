@@ -71,9 +71,7 @@ Route::prefix('admin')
 
         // PROFILO
         Route::get('/profile', 'ProfileController@index')->name('profile-index');
-        Route::post('/profile/store', 'ProfileController@store')->name('profile-store');
-        Route::post('/profile/update', 'ProfileController@update')->name('profile-update');
-
+        Route::post('/profile/store', 'ProfileController@createOrUpdate')->name('profile-store');
 
         // MESSAGGI
         Route::get('/messages', 'MessageController@index')->name('messages');
