@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -36,7 +38,14 @@ class UserController extends Controller
      */
     public function sponsoredIndex()
     {
-        $sponsored_users = User::select('users.*')
-        ->rightJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id');
+        // TODO Funzione momentaneamente qua, poi andra nelle api, una volta che avremo un index con vue.
+        $sponsored_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'))
+        ->rightJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
+        ->where('sponsorplan_users.end_date', '>', Carbon::now())
+        ->groupBy('users.id')
+        ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
+        ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
+        ->orderByDesc('avg_vote')
+        ->get();
     }
 }
