@@ -58,6 +58,10 @@
                                     
                                     <a class="dropdown-item" href="{{route('admin.messages')}}">Leggi messaggi</a>
 
+                                    <a class="dropdown-item" href="{{route('admin.reviews')}}">Leggi le recensioni</a>
+
+                                    <a class="dropdown-item" href="{{route('sponsor-index')}}">Acquista un piano Premium</a>
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
