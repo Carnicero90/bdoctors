@@ -15,7 +15,7 @@ class SponsorplanUser extends Model
     // TODO: commenta
     public static function userHasActiveSponsorPlan($user_id)
     {
-        $now = new Carbon();
+        $now = Carbon::now();
         $user_active_plans = SponsorplanUser::where(
             [
                 ['user_id', '=', $user_id],

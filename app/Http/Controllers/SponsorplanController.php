@@ -15,12 +15,14 @@ class SponsorplanController extends Controller
 
     public function show($slug)
     {
-        $sponsor_plan = Sponsorplan::where('slug', '=', $slug)->get();
-
-        if (!$sponsor_plan) {
+        $sponsorPlan = Sponsorplan::where('slug', '=', $slug)->first();
+        if (!$sponsorPlan) {
             abort('404');
         }
-        return view('admin.sponsors.show', compact($sponsor_plan));
+        $data = [
+            'sponsorPlan' => $sponsorPlan
+        ];
+        return view('admin.sponsors.show', $data);
     }
     
 

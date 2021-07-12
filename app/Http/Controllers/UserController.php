@@ -14,7 +14,6 @@ class UserController extends Controller
      */
     public function index()
     {
-       
     }
 
     /**
@@ -26,5 +25,18 @@ class UserController extends Controller
     public function show($id)
     {
         //
+    }
+
+    /**
+     * Mostra gli utenti premium del nostro sito, ordinati per media recensioni
+     * TODO: magari valutiamo anche in base al n.ro di recensioni?
+     * TODO: spostala poi in api, quando avremo un index pubblico
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function sponsoredIndex()
+    {
+        $sponsored_users = User::select('users.*')
+        ->rightJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id');
     }
 }
