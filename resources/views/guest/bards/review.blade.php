@@ -2,10 +2,11 @@
 @section('content')
     <div class="container">
 
+        @include("partials.success-error-messages")
+        @include("partials.validation-errors")
+
         <h1>Lascia una recensione per @{{Nome}} @{{Cognome}}</h1>
         <h2>@{{categoria}}</h2>
-
-        @include("partials.validation-errors")
 
         {{-- form lascia una recensione --}}
         <form action="{{route("store-review")}}" method="post" enctype="multipart/form-data">
@@ -42,6 +43,12 @@
                         </option>
                     @endforeach
                 </select>
+            </div>
+
+            {{-- termini e condizioni --}}
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" name="terms-conditions" id="terms-conditions" required>
+                <label class="form-check-label" for="terms-conditions">Accetta Termini e Condizioni</label>
             </div>
 
             {{-- tasto per inviare recensione --}}

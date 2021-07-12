@@ -9,16 +9,10 @@ use Illuminate\Support\Carbon;
 class MessageController extends Controller
 {
     public function store(Request $request) {
+        
         // TOTEST
-        $request->validate([
-            'author_name' => 'required | string',
-            'author_email' => 'required | email',
-            // TOREMEMBER SCOMMENTARE
-            // 'user_id' => 'required | exists:users,id',
-            // TOTEST
-            // 'service_number' => 'required_without: text',
-            // 'text' => 'required without: service_number | string'
-        ]);
+        $request->validate($this->getValidationRules());
+        
         $form_data = $request->all();
         $message = new Message();
         $message->fill($form_data);
@@ -28,10 +22,26 @@ class MessageController extends Controller
         // END TEST
         $message->save();
 
-        return back();
+        // con back facciamo il redirect sulla stessa pagina
+        // return back()->with("success", "Recensione salvata correttamente");
+        return redirect()->route("send-message")->with("success", "Messaggio inviato correttamente");
     }
 
     public function show() {
         return view ('guest.bards.message');
+    }
+
+    private function getValidationRules() {
+        return [
+            'author_name' => 'required|string',
+            'author_email' => 'required|email',
+            'terms-conditions' => 'required',
+
+            // TOREMEMBER SCOMMENTARE
+            // 'user_id' => 'required | exists:users,id',
+            // TOTEST
+            // 'service_number' => 'required_without: text',
+            // 'text' => 'required without: service_number | string'
+        ];
     }
 }

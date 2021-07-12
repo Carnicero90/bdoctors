@@ -2,9 +2,10 @@
 @section('content')
     <div class="container">
 
-        <h1>Invia un messaggio a @{{Nome}} @{{Cognome}}</h1>
-
+        @include("partials.success-error-messages")
         @include("partials.validation-errors")
+
+        <h1>Invia un messaggio a @{{Nome}} @{{Cognome}}</h1>
 
         {{-- form lascia una recensione --}}
         <form action="{{route("store-message")}}" method="post" enctype="multipart/form-data">
@@ -29,6 +30,12 @@
             <div class="form-group mt-4 mb-4">
                 <label for="text">Testo messaggio</label>
                 <textarea class="form-control" name="text" id="text" rows="10" placeholder="Scrivi la recensione">{{old("text")}}</textarea>
+            </div>
+
+            {{-- termini e condizioni --}}
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" name="terms-conditions" id="terms-conditions" required>
+                <label class="form-check-label" for="terms-conditions">Accetta Termini e Condizioni</label>
             </div>
 
             {{-- tasto per inviare recensione --}}

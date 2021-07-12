@@ -30,10 +30,9 @@ class ReviewController extends Controller
         $review->user_id = 1;
         $review->save();
 
-        return redirect()->route("send-review")->with("success", "Recensione salvata correttamente");
-
         // con back facciamo il redirect sulla stessa pagina
         // return back()->with("success", "Recensione salvata correttamente");
+        return redirect()->route("send-review")->with("success", "Recensione salvata correttamente");
     }
 
     private function getValidationRules() {
@@ -42,6 +41,7 @@ class ReviewController extends Controller
             "author_email" => "required|email|max:255",
             "content" => "nullable|required|string|max:5000",
             "vote_id" => "required|exists:votes,id",
+            "terms-conditions" => "required",
         ];
     }
 }
