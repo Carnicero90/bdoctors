@@ -7,12 +7,13 @@
         <p>Indirizzo: {{ $user->address }}</p>
         <div class="row">
             <div class="col-12">
-                
-            </div>
-            @if ($user->userDetails)
-                {{ $user->userDetails->self_description }}
+                @if ($user->profile)
+                <p> Vi parlo di me: {{ $user->profile->self_description }}</p>
+               
                 
             @endif
+            </div>
+
         </div>
 
         <h2>Recensioni</h2>

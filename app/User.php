@@ -38,9 +38,9 @@ class User extends Authenticatable
     ];
 
     // TODO: commentala
-    public function userDetails()
+    public function profile()
     {
-        return $this->hasOne('App\UserDetail');
+        return $this->hasOne('App\Profile');
     }
     // TODO: commentala
     public function categories()

@@ -13,7 +13,7 @@ class CreateProfilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_details', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->timestamps();
             // TODO: aggiungi eventualmente cv, come pdf caricabile
             $table->text('self_description')->nullable();
