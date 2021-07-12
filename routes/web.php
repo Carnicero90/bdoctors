@@ -68,7 +68,7 @@ Route::prefix('admin')
         Route::get('/dashboard', 'HomeController@index')->name('dashboard');
 
         // PROFILO
-        Route::get('/details', 'HomeController@details')->name('details');
+        Route::get('/profile', 'ProfileController@index')->name('profile-index');
 
         // MESSAGGI
         Route::get('/messages', 'MessageController@index')->name('messages');

@@ -30,7 +30,7 @@
                     <a class="btn btn-primary ml-2" href="{{route('sponsor-index')}}">
                         <i class="fas fa-edit"></i> Acquista un piano premium
                     </a>
-                    <a class="btn btn-success ml-2" href="{{route('admin.details')}}">
+                    <a class="btn btn-success ml-2" href="{{route('admin.profile-index')}}">
                         <i class="fas fa-plus"></i> Profilo
                     </a>
                     <a class="btn btn-success ml-2" href="{{route('admin.messages')}}">
