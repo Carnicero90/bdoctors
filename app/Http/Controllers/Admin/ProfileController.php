@@ -3,20 +3,30 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Support\Facades\Auth;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\UserDetail;
 
 class ProfileController extends Controller
 {
+
+    /**
+     * Mostra il profilo dell'utente registrato
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
         $profile = Auth::user()->userDetails;
 
         return view('admin.profile', compact('profile'));
     }
-
+    /**
+     * Crea il profilo dell'utente, se già esistente ne aggiorna le informazioni
+     *
+     * @param Request $request 
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         // TODO aggiungi caricamento pic
