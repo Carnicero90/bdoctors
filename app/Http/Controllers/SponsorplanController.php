@@ -10,7 +10,7 @@ class SponsorplanController extends Controller
     public function index()
     {
         $all_plans = Sponsorplan::all();
-        return view('admin.sponsors.index', compact('all_plans'));
+        return view('guest.sponsors.index', compact('all_plans'));
     }
 
     public function show($slug)
@@ -22,7 +22,7 @@ class SponsorplanController extends Controller
         $data = [
             'sponsorPlan' => $sponsorPlan
         ];
-        return view('admin.sponsors.show', $data);
+        return view('guest.sponsors.show', $data);
     }
     
 
