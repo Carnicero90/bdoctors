@@ -4,7 +4,7 @@ return [
     [
         'name' => 'premium_24',
         'duration_in_hours' => 24,
-        'description' => 'lorem',
+        'description' => 'Mostra a tutti chi sei!',
         'pricing' => 2.99,
         'slug' => 'premium24'
     ],

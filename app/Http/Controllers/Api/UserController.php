@@ -36,6 +36,18 @@ class UserController extends Controller
     public function test()
     {
 
+        $cat_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote',))
+        ->leftJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
+        ->leftJoin('category_user', 'users.id', '=', 'category_user.user_id')
+        ->where('category_id', '=', 2)
+        ->groupBy('users.id')
+        ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
+        ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
+        ->orderByDesc(DB::raw('max(sponsorplan_users.end_date)'))
+        ->orderByDesc('avg_vote')
+        ->get();
+
+        return response()->json($cat_users);
         // TODO Funzione momentaneamente qua, poi andra nelle api, una volta che avremo un index con vue.
         $sponsored_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'))
             ->leftJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')

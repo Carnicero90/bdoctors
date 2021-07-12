@@ -2,7 +2,6 @@
 
 @section('content')
     <div class="container">
-        @dump($sponsorPlan)
         <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="..." alt="Card image cap">
             <div class="card-body">

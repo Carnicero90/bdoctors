@@ -19,4 +19,9 @@ class HomeController extends Controller
 
         return view('admin.dashboard', $data);
     }
+
+    public function details() 
+    {
+        return Auth::user()->userDetails;
+    }
 }
