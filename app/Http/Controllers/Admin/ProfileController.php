@@ -24,16 +24,11 @@ class ProfileController extends Controller
 
         $profile = UserDetail::updateOrCreate(
             ['user_id' => Auth::user()->id],
-            [$data]
+            ['self_description' => $data['self_description'],
+            'work_address' => $data['work_address'],
+            'phone_number' => $data['phone_number'],]
         );
-    }
-
-    public function update(Request $request)
-    {
-        $data = $request->all();
-        $profile = UserDetail::where('user_id', '=', Auth::user()->id)->first();
-        $profile->update($data);
-        dd($profile);
         $profile->save();
+        return redirect()->route("admin.profile-index")->with("success", "Profilo modificato correttamente");
     }
 }

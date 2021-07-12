@@ -25,8 +25,15 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+
     {
-        //
+        $user = User::findOrFail($id);
+        
+        $data = [
+            'user' => $user
+        ];
+
+        return view('guest.bards.show', $data);
     }
 
     /**

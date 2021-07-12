@@ -10,8 +10,9 @@
                     <div class="card-body">
                         <div class="mt-2 mb-2"><span>da: {{$review->author_name}}</span></div>
                         <div class="mt-2 mb-2"><span>email: {{$review->author_email}}</span></div>
+                        <div class="mt-2 mb-2"><span>voto: {{$review->vote_id}}</span></div>
                         <div class="mt-2 mb-2">
-                            <span>Testo</span>
+                            <span>Testo recensione:</span>
                             <p class="card-text text-secondary">{{$review->content}}</p>
                         </div>
 

@@ -38,10 +38,10 @@ class User extends Authenticatable
     ];
 
     // TODO: commentala
-    // public function userDetails()
-    // {
-    //     return $this->hasOne('App\UserDetail');
-    // }
+    public function userDetails()
+    {
+        return $this->hasOne('App\UserDetail');
+    }
     // TODO: commentala
     public function categories()
     {

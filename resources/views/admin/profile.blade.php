@@ -1,9 +1,11 @@
 @extends('layouts.app')
 @section('content')
+
+@include("partials.success-error-messages")
+@include("partials.validation-errors")
     <div class="container">
         {{-- form profile --}}
         <form action="{{ route('admin.profile-store') }}" method="post" enctype="multipart/form-data">
-
             @csrf
             @method("POST")
 
@@ -26,15 +28,14 @@
             <div class="form-group mt-4 mb-4">
                 <label for="self_description">Descriviti</label>
                 <textarea class="form-control" name="self_description" id="self_description" rows="10"
-                    placeholder="Scrivi la recensione">{{ Auth::user()->userDetails ? Auth::user()->userDetails->self_description : old('self_description') }}</textarea>
+                    placeholder="Scrivi una descrizione per il tuo profilo">{{ Auth::user()->userDetails ? Auth::user()->userDetails->self_description : old('self_description') }}</textarea>
             </div>
             {{-- END input#self_description --}}
 
             {{-- input#pic --}}
             <div class="form-group mt-4 mb-4">
                 <label for="pic">Carica un'immagine profilo</label>
-                <input type="file" class="form-control" id="pic" name="pic"
-                    placeholder="Inserisci il tuo numero di telefono" >
+                <input type="file" class="form-control-file" id="pic" name="pic">
             </div>
             {{-- END input#pic --}}
 
