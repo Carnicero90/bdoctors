@@ -14,4 +14,6 @@ class UserDetail extends Model
     protected $fillable = [
         'self_description', 'phone_number', 'work_address', 'user_id'
     ];
+
+    protected $primaryKey = 'user_id';
 }
