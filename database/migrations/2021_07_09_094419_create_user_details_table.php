@@ -18,9 +18,9 @@ class CreateUserDetailsTable extends Migration
             // TODO: aggiungi eventualmente cv
             // $table->string('cv');
             $table->text('self_description')->nullable();
-            $table->string('pic')->nullable();
-            $table->string('phone_number')->nullable();
-            $table->string('work_address')->nullable();
+            $table->string('pic', 100)->nullable();
+            $table->string('phone_number', 50)->nullable();
+            $table->string('work_address', 100)->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')

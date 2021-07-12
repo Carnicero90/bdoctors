@@ -6,6 +6,10 @@
 
     {{-- TEST --}}
     {{-- Qui adnrà un foreach --}}
+    @foreach ($all_plans as $plan)
+        @dump($plan)
+    @endforeach
+
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" src="..." alt="Card image cap">
         <div class="card-body">

@@ -29,6 +29,20 @@ Route::post('/storereview', 'ReviewController@store')->name("store-review");
 
 Auth::routes();
 
+/* ================
+    Sponsorplan routes
+=================== */
+
+Route::prefix('premium') // TODO: prefisso arbitrario, poi vediamo quale scegliere
+
+    ->group(function () {
+        // View index dei piani di sponsorizzazione
+        Route::get('index', 'SponsorplanController@index')->name('sponsor-index');
+
+        // View di dettaglio dei singoli piani di sponsorizzazione
+        Route::get('{slug}', 'SponsorplanController@show')->name('sponsor-show');
+    });
+
 Route::get('/home', 'HomeController@index')->name('home');
 Route::prefix('admin')
 
