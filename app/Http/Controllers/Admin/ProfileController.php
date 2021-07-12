@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Profile;
+use Illuminate\Support\Facades\Storage;
 
 class ProfileController extends Controller
 {
@@ -29,7 +30,7 @@ class ProfileController extends Controller
      */
     public function createOrUpdate(Request $request)
     {
-        // TODO aggiungi caricamento pic
+        // TODO aggiungi validazione immagine
         $request->validate(
             [
                 'self_description' => 'string | max:500',
@@ -45,6 +46,10 @@ class ProfileController extends Controller
             'work_address' => $data['work_address'],
             'phone_number' => $data['phone_number'],]
         );
+        if ($data['pic']) {
+            $img_path = Storage::put('uploads/user_pics', $data['pic']);
+            $profile->pic = $img_path;
+        }
         $profile->save();
         return redirect()->route("admin.profile-index")->with("success", "Profilo modificato correttamente");
     }

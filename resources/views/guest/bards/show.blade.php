@@ -8,6 +8,9 @@
             @endforeach
         </div>
         <h1>{{ $user->name }} {{ $user->lastname }}</h1>
+        {{-- TEST --}}
+        <img src="{{ $user->profile ? asset('storage/' . $user->profile->pic) : 'defaultimagedainserire' }}" alt="" style="width: 200px">
+        {{-- END TEST --}}
         <p>E-mail: {{ $user->email }}</p>
         <p>Indirizzo: {{ $user->address }}</p>
         <div class="row">
