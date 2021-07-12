@@ -8,10 +8,9 @@
         <h1>Invia un messaggio a @{{Nome}} @{{Cognome}}</h1>
 
         {{-- form lascia una recensione --}}
-        <form action="{{route("store-message")}}" method="post" enctype="multipart/form-data">
-        {{-- form_method == GET se  @method == GET, in ogni altro caso: form_method == PUT --}}
+        <form action="{{route("store-message")}}" method="post">
 
-            @csrf {{-- TOREMOVE: OBBLIGATORIO --}}
+            @csrf
             @method("POST")
 
             {{-- nome autore --}}

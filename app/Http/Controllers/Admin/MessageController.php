@@ -9,18 +9,29 @@ use App\Message;
 
 class MessageController extends Controller
 {
+    /**
+     * Ritorna view con elenco messaggi ricevuti dall'utente loggato
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {
 
         $user = Auth::user();
-        
+        //TODO: questo non serve, direi, tanto effettivamente Auth:user lo richiami direttamente dalla pagina, no?
+
         $data = [
             "user" => $user
         ];
 
         return view('admin.messages.index', $data);
     }
-
+    /**
+     * Mostra singolo messaggio, cercati per id
+     * 
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
         $message = Message::findOrFail($id);

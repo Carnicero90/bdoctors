@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Commento a caso di test
 
 Route::get('/', function () {
     return view('welcome');
@@ -35,7 +34,7 @@ Route::get('/bards/{id}', 'UserController@show')->name('profile');
 Auth::routes();
 
 /* ================
-    Sponsorplan routes
+    SPONSORPLAN
 =================== */
 
 Route::prefix('premium') // TODO: prefisso arbitrario, poi vediamo quale scegliere
@@ -55,7 +54,9 @@ Route::prefix('premium') // TODO: prefisso arbitrario, poi vediamo quale sceglie
             ->name('sponsor-store');
     });
 
-// ADMIN
+/* ================
+    ADMIN
+=================== */
 Route::prefix('admin')
 
     ->namespace('Admin')
