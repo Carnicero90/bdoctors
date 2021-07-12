@@ -24,8 +24,10 @@ class ProfileController extends Controller
 
         $profile = UserDetail::updateOrCreate(
             ['user_id' => Auth::user()->id],
-            [$data]
+            ['self_description' => $data['self_description'],]
         );
+        dd($data);
+        $profile->save();
     }
 
     public function update(Request $request)
