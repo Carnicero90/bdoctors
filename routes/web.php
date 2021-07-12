@@ -51,8 +51,6 @@ Route::prefix('premium') // TODO: prefisso arbitrario, poi vediamo quale sceglie
             ->name('sponsor-store');
     });
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 // ADMIN
 Route::prefix('admin')
 
