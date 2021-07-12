@@ -17,7 +17,7 @@ class MessageSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
 
             $new_message = new Message();
-            $new_message->author_name = $faker->firstName() . $faker->lastName();
+            $new_message->author_name = $faker->firstName() . ' ' . $faker->lastName();
             $new_message->author_email = $faker->email();
             $new_message->text = $faker->paragraph();
             $new_message->message_date = $faker->date();

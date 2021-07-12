@@ -5,6 +5,15 @@
         <h1>{{ $user->name }} {{ $user->lastname }}</h1>
         <p>E-mail: {{ $user->email }}</p>
         <p>Indirizzo: {{ $user->address }}</p>
+        <div class="row">
+            <div class="col-12">
+                
+            </div>
+            @if ($user->userDetails)
+                {{ $user->userDetails->self_description }}
+                
+            @endif
+        </div>
 
         <h2>Recensioni</h2>
 
