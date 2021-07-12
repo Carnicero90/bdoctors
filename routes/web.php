@@ -28,6 +28,10 @@ Route::get('/sendreview', 'ReviewController@show')->name("send-review");
 Route::post('/storereview', 'ReviewController@store')->name("store-review");
 // END TEST REVIEWS
 
+// TEST PROFILO PUBBLICO
+Route::get('/bards/{id}', 'UserController@show')->name('profile');
+// END TEST PROFILO PUBBLICO
+
 Auth::routes();
 
 /* ================
