@@ -19,7 +19,14 @@ class ProfileController extends Controller
 
     public function store(Request $request)
     {
-        // TODO aggiungi validazione
+        // TODO aggiungi caricamento pic
+        $request->validate(
+            [
+                'self_description' => 'string | max:500',
+                'work_address' => 'string | max:100',
+                'phone_number' => 'digits_between:5,15'
+            ]
+            );
         $data = $request->all();
 
         $profile = UserDetail::updateOrCreate(
