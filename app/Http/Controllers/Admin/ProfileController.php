@@ -28,16 +28,7 @@ class ProfileController extends Controller
             'work_address' => $data['work_address'],
             'phone_number' => $data['phone_number'],]
         );
-        dd($data);
         $profile->save();
-    }
-
-    public function update(Request $request)
-    {
-        $data = $request->all();
-        $profile = UserDetail::where('user_id', '=', Auth::user()->id)->first();
-        $profile->update($data);
-        dd($profile);
-        $profile->save();
+        return redirect()->route("admin.profile-index")->with("success", "Profilo modificato correttamente");
     }
 }
