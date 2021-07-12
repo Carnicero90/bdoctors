@@ -17,6 +17,6 @@ class HomeController extends Controller
             "user" => $user
         ];
 
-        return view('admin.index', $data);
+        return view('admin.dashboard', $data);
     }
 }
