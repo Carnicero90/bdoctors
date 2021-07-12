@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         {{-- form profile --}}
-        <form action="" method="post" enctype="multipart/form-data">
+        <form action="{{ route('admin.profile-store') }}" method="post" enctype="multipart/form-data">
 
             @csrf
             @method("POST")
@@ -19,8 +19,7 @@
             <div class="form-group mt-4 mb-4">
                 <label for="phone_number">Numero di telefono</label>
                 <input type="tel" class="form-control" id="phone_number" name="phone_number"
-                    placeholder="Inserisci il tuo numero di telefono" value="{{ Auth::user()->userDetails ? Auth::user()->userDetails->phone_number : old('phone_number') }}"
-                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                    placeholder="Inserisci il tuo numero di telefono" value="{{ Auth::user()->userDetails ? Auth::user()->userDetails->phone_number : old('phone_number') }}">
             </div>
 
             {{-- input#self_description --}}
@@ -40,9 +39,13 @@
             {{-- END input#pic --}}
 
 
-            {{-- tasto per inviare recensione --}}
+            
             <button type="submit" class="btn btn-primary mt-4">
-                Invia
+                @if (Auth::user()->userDetails)
+                    Salva modifiche
+                @else
+                    Crea profilo
+                @endif
             </button>
 
         </form>

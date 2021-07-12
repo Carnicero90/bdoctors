@@ -10,4 +10,8 @@ class UserDetail extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    protected $fillable = [
+        'self_description', 'phone_number', 'work_address', 'user_id'
+    ];
 }

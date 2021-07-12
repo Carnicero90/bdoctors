@@ -27,7 +27,7 @@ class ReviewController extends Controller
 
         $review = new Review();
         $review->fill($form_data);
-        $review->user_id = 103;
+        $review->user_id = 1;
         $review->save();
 
         return redirect()->route("send-review")->with("success", "Recensione salvata correttamente");

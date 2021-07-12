@@ -21,7 +21,7 @@ class CreateUserDetailsTable extends Migration
             $table->string('pic', 100)->nullable();
             $table->string('phone_number', 50)->nullable();
             $table->string('work_address', 100)->nullable();
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_id')->unique();
             $table->foreign('user_id')
             ->references('id')
             ->on('users');

@@ -13,14 +13,11 @@ class UsersSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-        for ($i = 0; $i < 10; $i++) {
+        foreach (config('users') as $user) {
 
             $new_user = new User();
-            $new_user->name = $faker->firstName();
-            $new_user->lastname = $faker->lastName();
-            $new_user->address = $faker->address();
-            $new_user->email = strtolower($new_user->name . $new_user->lastname) . "@" . $faker->freeEmailDomain();
-            $new_user->password = Hash::make(strtolower($new_user->name . $new_user->lastname));
+            $new_user->fill($user);
+            $new_user->password = Hash::make('cavecanem');
             $new_user->save();
         }
     }
