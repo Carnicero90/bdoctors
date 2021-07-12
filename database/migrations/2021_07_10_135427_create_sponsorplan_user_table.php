@@ -19,11 +19,13 @@ class CreateSponsorplanUserTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')
-            ->on('users');
+            ->on('users')
+            ->onDelete('set null');
             $table->unsignedBigInteger('sponsorplan_id');
             $table->foreign('sponsorplan_id')
             ->references('id')
-            ->on('sponsorplans');
+            ->on('sponsorplans')
+            ->onDelete('set null');
             $table->date('order_date'); 
             $table->date('end_date');
             $table->char('invoice');

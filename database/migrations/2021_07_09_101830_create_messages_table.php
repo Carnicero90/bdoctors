@@ -18,7 +18,8 @@ class CreateMessagesTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')
-            ->on('users');
+            ->on('users')
+            ->onDelete('cascade');
             $table->integer('service_number')->nullable();
             $table->date('message_date');
             $table->string('author_name');

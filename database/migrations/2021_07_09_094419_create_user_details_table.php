@@ -15,8 +15,7 @@ class CreateUserDetailsTable extends Migration
     {
         Schema::create('user_details', function (Blueprint $table) {
             $table->timestamps();
-            // TODO: aggiungi eventualmente cv
-            // $table->string('cv');
+            // TODO: aggiungi eventualmente cv, come pdf caricabile
             $table->text('self_description')->nullable();
             $table->string('pic', 100)->nullable();
             $table->string('phone_number', 50)->nullable();
