@@ -50,7 +50,7 @@ class ProfileController extends Controller
                 'phone_number' => $data['phone_number'],
             ]
         );
-        if ($data['image-file']) {
+        if (isset($data['image-file'])) {
             $img_path = Storage::put('uploads/user_pics', $data['image-file']);
             if (is_string($img_path))
             {
@@ -58,7 +58,7 @@ class ProfileController extends Controller
             }
         }
         $profile->save();
-        return redirect()->route("admin.profile-index")->with("success", "Profilo modificato correttamente");
+        return redirect()->route("profile", ['id' => Auth::user()->id])->with("success", "Profilo modificato correttamente");
     }
 
 }

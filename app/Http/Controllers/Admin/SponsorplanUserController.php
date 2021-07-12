@@ -14,12 +14,8 @@ class SponsorplanUserController extends Controller
     // TOASK: francamente non so manco se metterlo in admin, ma mi pareva piu corretto
     public function store($id)
     {   
-        $plan = Sponsorplan::find($id);
+        $plan = Sponsorplan::findOrFail($id);
 
-        if ( !$plan ) 
-        {
-            // fai qualcosa
-        }
         // TOSAY: qua saltiamo la verifica in braintree, che verra aggiunta successivamente:
         // si "finge" che il pagamento sia andato a buon fine
         if (!Auth::user()) 
@@ -32,8 +28,7 @@ class SponsorplanUserController extends Controller
 
         if (SponsorplanUser::userHasActiveSponsorPlan($user_id)) 
         {
-            // TODO: aggiungi messaggio
-            // Reindirizza direi a pagina precedente?
+            return redirect()->route('admin.dashboard')->withErrors('Grazie per il tentativo di donazione, ma hai già un abbonamento attivo!');
         }
 
         $new_subscription = new SponsorplanUser();
