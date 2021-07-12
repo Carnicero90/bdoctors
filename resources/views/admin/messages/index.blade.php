@@ -2,8 +2,11 @@
 @section('content')
 
     <div class="container">
+
         <h1>Ciao {{$user->name . " " . $user->lastname}}</h1>
-        <h2>Ecco i messaggi che gli utenti ti hanno inviato:</h2>
+        <h2 class="mb-4">Ecco i messaggi che gli utenti ti hanno inviato:</h2>
+
+        @include("partials.success-error-messages")
 
         @if ($user->messages->isNotEmpty())
 
@@ -17,11 +20,9 @@
                                 <p class="card-text text-secondary">{{substr($message->text, 0, 120)}}...</p>
                                 <div class="mb-3"><span>{{$message->message_date}}</span></div>
 
-                                {{-- href="{{route("admin.posts.show", ["post" => $post->id])}}" --}}
-                                <a href="#" class="btn btn-primary"><i class="far fa-file-alt"></i> Leggi il messaggio</a>
+                                <a href="{{route("admin.message-page", ["id" => $message->id])}}" class="btn btn-primary"><i class="far fa-file-alt"></i> Leggi il messaggio</a>
 
-                                {{-- action="{{route("admin.posts.destroy", ["post" => $post->id])}}"> --}}
-                                <form class="form-group d-inline-block" action="#" method="post">
+                                <form class="form-group d-inline-block" action="{{route("admin.message-delete", ["id" => $message->id])}}" method="post">
                                     @csrf
                                     @method("DELETE")
                                     <input class="btn btn-danger" type="submit" value="Elimina il messaggio">

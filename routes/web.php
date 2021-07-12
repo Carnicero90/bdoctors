@@ -60,7 +60,9 @@ Route::prefix('admin')
     ->middleware('auth')
 
     ->group(function () {
+
         // TOTEST
         Route::get('/messages', 'MessageController@index')->name('messages');
-        Route::get('/reviews', 'ReviewController@index')->name('reviews');
+        Route::get('/messages/{id}', 'MessageController@show')->name('message-page');
+        Route::delete('/messages/{id}', 'MessageController@destroy')->name("message-delete");
     });
