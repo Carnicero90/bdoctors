@@ -51,6 +51,8 @@ Route::prefix('premium') // TODO: prefisso arbitrario, poi vediamo quale sceglie
     });
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// ADMIN
 Route::prefix('admin')
 
     ->namespace('Admin')
@@ -61,10 +63,14 @@ Route::prefix('admin')
 
     ->group(function () {
 
-        // TOTEST
+        // DASHBOARD
+        Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+
+        // MESSAGGI
         Route::get('/messages', 'MessageController@index')->name('messages');
         Route::get('/messages/{id}', 'MessageController@show')->name('message-page');
         Route::delete('/messages/{id}', 'MessageController@destroy')->name("message-delete");
-        //
+
+        // RECENSIONI
         Route::get('/reviews', 'ReviewController@index')->name('reviews');
     });

@@ -21,10 +21,13 @@
                     @endif
 
                     <a class="btn btn-primary ml-2" href="#">
-                        <i class="fas fa-plus"></i> Aggiungi nuovo post
+                        <i class="fas fa-plus"></i> Leggi i messaggi
                     </a>
-                    <a class="btn btn-success ml-2" href="#">
-                        <i class="fas fa-edit"></i> Gestisci i post
+                    <a class="btn btn-primary ml-2" href="#">
+                        <i class="fas fa-edit"></i> Leggi le recensioni
+                    </a>
+                    <a class="btn btn-primary ml-2" href="#">
+                        <i class="fas fa-edit"></i> Acquista un piano premium
                     </a>
                     <a class="btn btn-danger ml-2" href="#"
                         onclick="event.preventDefault();
