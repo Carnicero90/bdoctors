@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUserDetailsTable extends Migration
+class CreateProfilesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -23,7 +23,8 @@ class CreateUserDetailsTable extends Migration
             $table->unsignedBigInteger('user_id')->unique();
             $table->foreign('user_id')
             ->references('id')
-            ->on('users');
+            ->on('users')
+            ->onDelete('cascade');
         });
     }
 
