@@ -27,7 +27,7 @@
                     <a class="btn btn-primary ml-2" href="{{route('admin.reviews')}}">
                         <i class="fas fa-edit"></i> Leggi le recensioni
                     </a>
-                    <a class="btn btn-primary ml-2" href="{{route('sponsor-index')}}">
+                    <a class="btn btn-warning ml-2" href="{{route('sponsor-index')}}">
                         <i class="fas fa-edit"></i> Acquista un piano premium
                     </a>
                     <a class="btn btn-success ml-2" href="{{route('admin.profile-index')}}">

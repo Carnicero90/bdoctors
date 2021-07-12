@@ -16,7 +16,6 @@
                         </div>
                         <div class="mb-3"><span>Data ricezione: {{$message->message_date}}</span></div>
 
-                        {{-- action="{{route("admin.posts.destroy", ["post" => $post->id])}}"> --}}
                         <form class="form-group d-inline-block" action="#" method="post">
                             @csrf
                             @method("DELETE")

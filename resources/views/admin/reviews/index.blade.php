@@ -7,21 +7,26 @@
 
         @if ($user->reviews->isNotEmpty())
         
-        @foreach ($user->reviews as $review)
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h4 class="card-title">{{ $review->vote_id }}</h4>
-                    <p class="card-text">{{ $review->content }}</p>
-                    <h5 class="card-title">{{ $review->author_name }}</h5>
-                    <a href="{{ route('admin.reviews-dettails', ["id" => $review->id]) }}" class="btn btn-primary">Vai alla recensione</a>
-                </div>
+            <div class="row">
+                @foreach ($user->reviews as $review)
+                    <div class="col-6">
+                        <div class="card mt-4">
+                            <div class="card-body">
+                                <h4>Da {{$review->author_name}}</h4>
+                                <h5>{{$review->author_email}}</h5>
+                                <p class="card-text text-secondary">{{substr($review->content, 0, 120)}}...</p>
+                                <div class="mb-3"><span>Voto {{$review->vote_id}} su 5</span></div>
+                                <div><a href="{{route("admin.reviews-dettails", ["id" => $review->id])}}" class="btn btn-primary"><i class="far fa-file-alt"></i> Leggi la recensione</a></div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
-        @endforeach
 
         @else
-        <div class="col-12">
-            <span>Nessuna recensione ricevuta</span>
-        </div>
+            <div class="col-12">
+                <span>Nessuna recensione presente</span>
+            </div>
         @endif
     </div>
 @endsection
