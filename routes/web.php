@@ -37,10 +37,17 @@ Route::prefix('premium') // TODO: prefisso arbitrario, poi vediamo quale sceglie
 
     ->group(function () {
         // View index dei piani di sponsorizzazione
-        Route::get('index', 'SponsorplanController@index')->name('sponsor-index');
+        Route::get('index', 'SponsorplanController@index')
+            ->name('sponsor-index');
 
         // View di dettaglio dei singoli piani di sponsorizzazione
-        Route::get('{slug}', 'SponsorplanController@show')->name('sponsor-show');
+        Route::get('{slug}', 'SponsorplanController@show')
+            ->name('sponsor-show');
+
+        //Pagina di sottoscrizione sponsorizzazione, da valutare se spostarla in 'admin'
+        Route::get('buy/{id}', 'Admin\SponsorplanUserController@store')
+            ->middleware('auth')
+            ->name('sponsor-store');
     });
 
 Route::get('/home', 'HomeController@index')->name('home');

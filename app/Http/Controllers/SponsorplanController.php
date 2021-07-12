@@ -22,4 +22,6 @@ class SponsorplanController extends Controller
         }
         return view('admin.sponsors.show', compact($sponsor_plan));
     }
+    
+
 }
