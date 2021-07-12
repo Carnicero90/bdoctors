@@ -1,15 +1,15 @@
 @extends('layouts.app')
-
 @section('content')
+
     <div class="container">
-        <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card mt-4">
             <div class="card-body">
-            <h5 class="card-title">Piano sponsor</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="{{ route('sponsor-store', [ 'id' => $sponsorPlan->id ]) }}" class="btn btn-danger">Acquista</a>
+                <h4 class="card-title">Piano {{ucfirst(str_replace("_", " ", $sponsorPlan->name))}}</h4>
+                <div class="mb-2"><p class="card-text text-secondary">{{$sponsorPlan->description}}</p></div>
+                <div class="mb-4"><span class="card-text">Sponsorizzazione da {{$sponsorPlan->duration_in_hours}} ore</div>
+                <div><a href="{{route('sponsor-store', ['id' => $sponsorPlan->id ])}}" class="btn btn-success">Acquista a soli € {{$sponsorPlan->pricing}}</a></div>
             </div>
         </div>
     </div>
-    
+
 @endsection
