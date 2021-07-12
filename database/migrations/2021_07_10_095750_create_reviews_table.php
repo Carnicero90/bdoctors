@@ -23,8 +23,8 @@ class CreateReviewsTable extends Migration
             $table->unsignedBigInteger('vote_id');
             $table->foreign('vote_id')
             ->references('id')
-            ->on('votes')
-            ->onDelete('set null');
+            ->on('votes');
+            // ->onDelete('set null');
             $table->string('author_name');
             $table->string('author_email');
             $table->text('content');
