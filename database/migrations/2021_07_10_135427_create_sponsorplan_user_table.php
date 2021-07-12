@@ -24,7 +24,7 @@ class CreateSponsorplanUserTable extends Migration
             $table->foreign('sponsorplan_id')
             ->references('id')
             ->on('sponsorplans');
-            $table->date('order_date');
+            $table->date('order_date'); 
             $table->date('end_date');
             $table->char('invoice');
             $table->boolean('success');
