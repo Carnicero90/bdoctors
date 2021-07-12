@@ -12,27 +12,41 @@ use App\Category;
 class UserController extends Controller
 {
     // TOTEST
-    public function index() {
-       $users =  DB::table('users')
-       ->leftJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
-       ->groupBy('users.id')
-       ->select('users.*', DB::raw('max(sponsorplan_users.end_date) AS current_plan'))
-       ->orderByDesc('current_plan')
-       ->get();
+    public function index()
+    {
+        $users =  DB::table('users')
+            ->leftJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
+            ->groupBy('users.id')
+            ->select('users.*', DB::raw('max(sponsorplan_users.end_date) AS current_plan'))
+            ->orderByDesc('current_plan')
+            ->get();
 
 
-       
+
         return $users;
     }
 
-    public function sponsored( $cat = false ) {
-  
+    public function sponsored($cat = false)
+    {
+
         // $sponsored_users = User::select('');
 
     }
     // Funzione in cui testo roba, tanto per avere un post in cui stampare a schermo
-    public function test() 
+    public function test()
     {
+
+        // TODO Funzione momentaneamente qua, poi andra nelle api, una volta che avremo un index con vue.
+        $sponsored_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'))
+            ->leftJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
+            ->groupBy('users.id')
+            ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
+            ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
+            ->orderByDesc(DB::raw('max(sponsorplan_users.end_date)'))
+            ->orderByDesc('avg_vote')
+            ->get();
+
+            return response()->json($sponsored_users);
         // return User::select('id')->pluck('id')->toArray();
         // $sponsored_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'))
         // ->rightJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
@@ -43,11 +57,11 @@ class UserController extends Controller
         // ->orderByDesc('avg_vote')
         // ->get();
         // return $sponsored_users;
-        $users = User::all();
-        $categories = Category::select('id')->pluck('id')->toArray();
-        dd($categories);
-        foreach ($users as $user) {
-            $user->categories()->attach($categories[array_rand($categories)]);
-        };
+        // $users = User::all();
+        // $categories = Category::select('id')->pluck('id')->toArray();
+        // dd($categories);
+        // foreach ($users as $user) {
+        //     $user->categories()->attach($categories[array_rand($categories)]);
+        // };
     }
 }
