@@ -61,6 +61,6 @@ Route::prefix('admin')
 
     ->group(function () {
         // TOTEST
-        Route::get('messages', 'MessageController@index')->name('messaggi');
-
+        Route::get('/messages', 'MessageController@index')->name('messages');
+        Route::get('/reviews', 'ReviewController@index')->name('reviews');
     });
