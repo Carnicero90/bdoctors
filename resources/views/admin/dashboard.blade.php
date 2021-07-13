@@ -3,8 +3,10 @@
 
 <div class="container">
 
-    @include("partials.success-messages")
-    @include("partials.error-messages")
+    <div class="text-center">
+        @include("partials.success-messages")
+        @include("partials.error-messages")
+    </div>
 
     <div class="row justify-content-center">
         <div class="col-md-12 text-center">
@@ -43,7 +45,7 @@
                     <a class="btn btn-danger ml-2" href="#"
                         onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
-                        <i class="fas fa-sign-out-alt"></i> Esegui logout
+                        <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
 
                 </div>
