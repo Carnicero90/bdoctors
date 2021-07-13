@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 // TOTEST
-Route::get('test', 'Api\UserController@test');
+Route::get('test', 'Api\UserController@users');
 Route::get('/index', 'Api\UserController@index');
 Route::get('sponsored', 'Api\UserController@sponsoredUsers');
 

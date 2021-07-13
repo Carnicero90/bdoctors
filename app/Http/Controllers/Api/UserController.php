@@ -17,8 +17,10 @@ class UserController extends Controller
      *
      * @return \Illuminate\Contracts\Support\JsonResponse
      */
-    public function index()
+    public function index(Request $request)
     {
+        // TODO: test, da rimouvere
+        $user = $request->name;
         // TOASK: probabilmente risulta un poco ripetitivo, no? Potrei fare un'unica funzia con un parametro opzionale, ma mi sembrava meno ordinato
         // TODO: rimuovi da tutti la data di scadenza dell'abbonamento (ora ci serve per test)
         // comunque sto sbagliando qualcosa.
@@ -31,12 +33,16 @@ class UserController extends Controller
             DB::raw('max(sponsorplan_users.end_date) AS current_plan'),
             DB::raw('avg(votes.value) as avg_vote')
         ])
+             ->where('users.name', 'LIKE', '%' . $user . '%')
+             ->orWhere('users.lastname', 'LIKE', '%' . $user . '%')
+
             ->leftJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
             ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
             ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
-            
             ->groupBy('users.id')
             ->orderByDesc('current_plan')
+            // TODO: test
+            // TODO: endtest
             ->get();
 
         $data = [
@@ -61,12 +67,15 @@ class UserController extends Controller
         return response()->json($sponsored_users);
     }
     // Funzione in cui testo roba, tanto per avere un post in cui stampare a schermo
-    public function users($category = 2)
+    public function users(Request $request)
     {
+        // TODO: test
+        $category = $request['category'];
         // TODO: rimuovi enddate
         $cat_users = User::select('users.id', 'users.name', 'users.lastname', 'users.email', DB::raw('MAX(sponsorplan_users.end_date)'), DB::raw('AVG(votes.value) as avg_vote',))
             ->leftJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
             ->leftJoin('category_user', 'users.id', '=', 'category_user.user_id')
+            // TODO: bozza, da rifare
             ->where('category_id', '=', $category)
             ->groupBy('users.id')
             ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')

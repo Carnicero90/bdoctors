@@ -7,12 +7,14 @@ var app = new Vue({
         searchString: ''
     },
     methods: {
-        /*
-        * stampa name in console, seguito da un punto esclamativo
-        *
-        * @param str name
-        * return void
-        */
+      searchUser() {
+        console.log(this.searchString);
+        Axios.get(`api/index?name=${this.searchString}`)
+        .then(result => {
+            this.users = result.data.users;
+            console.log(this.users);
+        })
+      }
     },
     mounted() {
         Axios.get('api/sponsored')

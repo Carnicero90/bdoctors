@@ -2111,19 +2111,22 @@ var app = new Vue({
     searchString: ''
   },
   methods: {
-    /*
-    * stampa name in console, seguito da un punto esclamativo
-    *
-    * @param str name
-    * return void
-    */
+    searchUser: function searchUser() {
+      var _this = this;
+
+      console.log(this.searchString);
+      Axios.get("api/index?name=".concat(this.searchString)).then(function (result) {
+        _this.users = result.data.users;
+        console.log(_this.users);
+      });
+    }
   },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
 
     Axios.get('api/sponsored').then(function (result) {
-      _this.users = result.data;
-      console.log(_this.users);
+      _this2.users = result.data;
+      console.log(_this2.users);
     });
   }
 });
