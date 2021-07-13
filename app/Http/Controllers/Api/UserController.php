@@ -29,15 +29,15 @@ class UserController extends Controller
     public function sponsoredUsers($cat = false)
     {
         $sponsored_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'))
-        ->rightJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
-        ->where('sponsorplan_users.end_date', '>', Carbon::now())
-        ->groupBy('users.id')
-        ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
-        ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
-        ->orderByDesc('avg_vote')
-        ->get();
+            ->rightJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
+            ->groupBy('users.id')
+            ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
+            ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
+            ->orderByDesc(DB::raw('max(sponsorplan_users.end_date)'))
+            ->orderByDesc('avg_vote')
+            ->get();
 
-        return response()->json($sponsored_users);
+            return response()->json($sponsored_users);
 
     }
     // Funzione in cui testo roba, tanto per avere un post in cui stampare a schermo

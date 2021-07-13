@@ -2123,7 +2123,7 @@ var app = new Vue({
   mounted: function mounted() {
     var _this = this;
 
-    Axios.get('api/test-api').then(function (result) {
+    Axios.get('api/sponsored').then(function (result) {
       _this.users = result.data;
       console.log(_this.users);
     });

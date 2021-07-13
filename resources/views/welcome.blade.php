@@ -36,7 +36,7 @@
         </div>
         <ul>
             <li v-for="user in users">
-                ciao
+                @{{ user.name + ' ' + user.lastname }}
             </li>
         </ul>
 

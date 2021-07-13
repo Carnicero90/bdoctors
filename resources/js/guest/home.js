@@ -17,7 +17,7 @@ var app = new Vue({
        }
     },
     mounted() {
-        Axios.get('api/test-api')
+        Axios.get('api/sponsored')
         .then(result => {
             this.users = result.data;
             console.log(this.users)
