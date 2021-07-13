@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('header-scripts')
+    
+@endsection
 @section('content')
 
     <div class="container text-center">
