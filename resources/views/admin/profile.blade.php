@@ -1,9 +1,11 @@
 @extends('layouts.app')
 @section('content')
 
-    @include("partials.success-error-messages")
-    @include("partials.validation-errors")
     <div class="container">
+
+        @include("partials.success-messages")
+        @include("partials.validation-errors")
+
         {{-- form profile --}}
         <form action="{{ route('admin.profile-store') }}" method="post" enctype="multipart/form-data">
             @csrf

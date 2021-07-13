@@ -1,8 +1,9 @@
 @extends('layouts.app')
 @section('content')
+
     <div class="container">
 
-        @include("partials.success-error-messages")
+        @include("partials.success-messages")
         @include("partials.validation-errors")
 
         <h1>Lascia una recensione per {{ $user->name . ' ' . $user->lastname }}</h1>
