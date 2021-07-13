@@ -1,5 +1,6 @@
 <?php
 
+use App\Sponsorplan;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->call(MessageSeeder::class);
         $this->call(CategoryUserSeeder::class);
         $this->call(ReviewSeeder::class);
+        $this->call(SponsorplanUserSeeder::class);
+
     }
 }

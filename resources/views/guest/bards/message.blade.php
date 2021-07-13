@@ -5,10 +5,10 @@
         @include("partials.success-error-messages")
         @include("partials.validation-errors")
 
-        <h1>Invia un messaggio a @{{Nome}} @{{Cognome}}</h1>
+        <h1>Invia un messaggio a {{ $user->name . ' ' . $user->lastname }}</h1>
 
         {{-- form lascia una recensione --}}
-        <form action="{{route("store-message")}}" method="post">
+        <form action="{{route("store-message", ['id' => $user->id]) }}" method="post">
 
             @csrf
             @method("POST")
@@ -46,7 +46,7 @@
 
         {{-- tasto per refreshare la pagina --}}
         <div class="text-right">
-            <a class="btn btn-outline-dark" href="{{route("send-message")}}" style="transform: translateY(-38px)">Svuota i campi</a>
+            {{-- <a class="btn btn-outline-dark" href="{{ route("send-message") }}" style="transform: translateY(-38px)">Svuota i campi</a> --}}
         </div>
         
     </div>
