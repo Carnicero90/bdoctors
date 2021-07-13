@@ -7,7 +7,7 @@
             <h1>Ciao {{ $user->name . ' ' . $user->lastname }}</h1>
             <h2 class="mb-4">Ecco i messaggi che gli utenti ti hanno inviato:</h2>
             {{-- success and error messages --}}
-            @include("partials.success-error-messages")
+            @include("partials.success-messages")
             {{-- div.row --}}
             <div class="row">
                 @if ($user->messages->isNotEmpty())

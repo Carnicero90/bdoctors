@@ -5,7 +5,7 @@
 
     <div class="row justify-content-center">
         <div class="col-md-12 text-center">
-            @include("partials.success-error-messages")
+            @include("partials.success-messages")
             <div class="card">
                 <div class="card-header">
                     <h5>
