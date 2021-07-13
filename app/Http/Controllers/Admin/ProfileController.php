@@ -31,12 +31,13 @@ class ProfileController extends Controller
     public function createOrUpdate(Request $request)
     {
 
-        // TODO aggiungi validazione immagine
+        // TODO aggiungi size a validazione immagine
         $request->validate(
             [
-                'self_description' => 'string | max:500',
-                'work_address' => 'string | max:100',
-                // 'phone_number' => 'digits_between:5,15'
+                'self_description' => 'string | max:500 | nullable',
+                'work_address' => 'string | max:100 | nullable',
+                'phone_number' => 'digits_between:5,15 | nullable',
+                'image-file' => 'image | nullable'
             ]
         );
         $data = $request->only('self_description', 'work_address', 'phone_number');

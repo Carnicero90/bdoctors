@@ -20,6 +20,8 @@ class DatabaseSeeder extends Seeder
         $this->call(CategoryUserSeeder::class);
         $this->call(ReviewSeeder::class);
         $this->call(SponsorplanUserSeeder::class);
+        $this->call(ServicesSeeder::class);
+
 
     }
 }
