@@ -19,7 +19,7 @@ class CreateMessagesTable extends Migration
             $table->foreign('user_id')
             ->references('id')
             ->on('users')
-            ->onDelete('cascade');
+            ->onDelete('cascade'); // magari cambia gestione ondelete (anche per stats!)
             $table->integer('service_number')->nullable();
             $table->date('message_date');
             $table->string('author_name');
