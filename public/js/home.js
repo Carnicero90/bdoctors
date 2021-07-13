@@ -2107,7 +2107,8 @@ var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 var app = new Vue({
   el: '#root',
   data: {
-    users: []
+    users: [],
+    searchString: ''
   },
   methods: {
     /*
@@ -2116,9 +2117,6 @@ var app = new Vue({
     * @param str name
     * return void
     */
-    sample_func: function sample_func(name) {
-      console.log(name + '!');
-    }
   },
   mounted: function mounted() {
     var _this = this;

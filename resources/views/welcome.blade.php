@@ -23,7 +23,7 @@
             <!-- input ricerca da usare con VueJs -->
             <div>
                 <label for="">
-                    <input type="text" placeholder="cerca un bard">
+                    <input type="text" v-model="searchString" @keyup.enter="console.log(searchString)" placeholder="cerca un bard">
                 </label>
             </div>
 
