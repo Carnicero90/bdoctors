@@ -43,6 +43,22 @@
                 </div>
                 {{-- END input#phone_number --}}
 
+                {{-- TODO --}}
+                {{-- check-box#categories --}}
+                <div class="form-group">
+                    <label for="categories">Categorie</label>
+                    @foreach(Auth::user()->categories as $category)
+                        <div class="form-check">
+                            <input class="form-check-input" name="categories" type="checkbox">
+                            <label class="form-check-label" for="categories-{{ $category->id }}">
+                                {{ $category->name }}
+                            </label>
+                        </div>
+                    @endforeach
+                </div>
+                {{-- END check-box#categories --}}
+                {{-- END TODO --}}
+
 
                 {{-- input#self_description --}}
                 <div class="form-group mt-4 mb-4">
