@@ -34,11 +34,17 @@
                     <div class="card-body">
                         @foreach ($user->reviews as $review)
                             <div class="mt-2 mb-2"><span>da: {{ $review->author_name }}</span></div>
-                            <div class="mt-2 mb-2"><span>email: {{ $review->author_email }}</span></div>
-                            <div class="mt-2 mb-2"><span>voto: {{ $review->vote_id }}</span></div>
+                            {{-- <div class="mt-2 mb-2"><span>email: {{ $review->author_email }}</span></div> --}}
                             <div class="mt-2 mb-2">
-                                <span>Testo recensione:</span>
-                                <p class="card-text text-secondary">{{ $review->content }}</p>
+                                @for ($i = 0; $i < $review->vote_id; $i++)
+                                   <i class="fas fa-star"></i>
+                                @endfor
+                            </div>
+                            {{-- TODO: non usare direttamente l'id, potrebbe non corrispondere al value del voto! --}}
+                            {{-- <div class="mt-2 mb-2"><span>voto: {{ $review->vote_id }}</span></div> --}}
+                            <div class="mt-2 mb-2">
+                                {{-- <span>Testo recensione:</span> --}}
+                                <p class="card-text text-secondary">{{ strlen($review->content) > 100 ? substr($review->content, 0,100) . '...' : $review->content }}</p>
                             </div>
                         @endforeach
                     </div>
