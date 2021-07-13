@@ -11,9 +11,15 @@ use App\Category;
 
 class UserController extends Controller
 {
-    // TOTEST
+    /**
+     * Ritorna l'elenco di tutti gli utenti del sito, ordinati in base alla media voti,
+     * mostrando per primi gli utenti premium.
+     *
+     * @return \Illuminate\Contracts\Support\JsonResponse
+     */
     public function index()
     {
+        // TODO: rifalla completamente
         $users =  DB::table('users')
             ->leftJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
             ->groupBy('users.id')
@@ -26,7 +32,7 @@ class UserController extends Controller
         return response()->json($users);
     }
 
-    public function sponsoredUsers($cat = false)
+    public function sponsoredUsers()
     {
         $sponsored_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'))
             ->rightJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
@@ -37,23 +43,22 @@ class UserController extends Controller
             ->orderByDesc('avg_vote')
             ->get();
 
-            return response()->json($sponsored_users);
-
+        return response()->json($sponsored_users);
     }
     // Funzione in cui testo roba, tanto per avere un post in cui stampare a schermo
     public function test($category = 2)
     {
         // TODO: rimuovi enddate
         $cat_users = User::select('users.id', 'users.name', 'users.lastname', 'users.email', DB::raw('MAX(sponsorplan_users.end_date)'), DB::raw('AVG(votes.value) as avg_vote',))
-        ->leftJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
-        ->leftJoin('category_user', 'users.id', '=', 'category_user.user_id')
-        ->where('category_id', '=', $category)
-        ->groupBy('users.id')
-        ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
-        ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
-        ->orderByDesc(DB::raw('MAX(sponsorplan_users.end_date)'))
-        ->orderByDesc('avg_vote')
-        ->get();
+            ->leftJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
+            ->leftJoin('category_user', 'users.id', '=', 'category_user.user_id')
+            ->where('category_id', '=', $category)
+            ->groupBy('users.id')
+            ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
+            ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
+            ->orderByDesc(DB::raw('MAX(sponsorplan_users.end_date)'))
+            ->orderByDesc('avg_vote')
+            ->get();
 
         return response()->json($cat_users);
         // TODO Funzione momentaneamente qua, poi andra nelle api, una volta che avremo un index con vue.
@@ -66,7 +71,7 @@ class UserController extends Controller
             ->orderByDesc('avg_vote')
             ->get();
 
-            return response()->json($sponsored_users);
+        return response()->json($sponsored_users);
         // return User::select('id')->pluck('id')->toArray();
         // $sponsored_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'))
         // ->rightJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')

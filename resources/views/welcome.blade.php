@@ -36,7 +36,13 @@
         </div>
         <ul>
             <li v-for="user in users">
-                @{{ user.name + ' ' + user.lastname }}
+                <p> @{{ user.name + ' ' + user.lastname }}</p>
+                {{-- TODO: boh, magari la media voti la mostriamo solo se supera un tot? Pagano, non e' bellino per loro vedersi un
+                pallino solo come media recensioni (d'altra parte affari loro, bohbohboh) --}}
+                @{{ user.avg_vote }}
+                <div v-if="user.avg_vote > 0">
+                    <i v-for="n in parseInt(user.avg_vote)" class="fas fa-star"></i>
+                </div>
             </li>
         </ul>
 
