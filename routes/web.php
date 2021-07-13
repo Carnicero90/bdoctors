@@ -24,8 +24,8 @@ Route::post('/storemessage/{id}', 'MessageController@store')->name('store-messag
 // END TOTEST
 
 // TEST REVIEWS
-Route::get('/sendreview', 'ReviewController@show')->name("send-review");
-Route::post('/storereview', 'ReviewController@store')->name("store-review");
+Route::get('/sendreview/{id}', 'ReviewController@create')->name("send-review");
+Route::post('/storereview/{id}', 'ReviewController@store')->name("store-review");
 // END TEST REVIEWS
 
 // TEST PROFILO PUBBLICO

@@ -5,11 +5,11 @@
         @include("partials.success-error-messages")
         @include("partials.validation-errors")
 
-        <h1>Lascia una recensione per @{{Nome}} @{{Cognome}}</h1>
+        <h1>Lascia una recensione per {{ $user->name . ' ' . $user->lastname }}</h1>
         <h2>@{{categoria}}</h2>
 
         {{-- form lascia una recensione --}}
-        <form action="{{route("store-review")}}" method="post" enctype="multipart/form-data">
+        <form action="{{route("store-review", ['id' => $user->id])}}" method="post">
 
             @csrf
             @method("POST")
@@ -60,7 +60,7 @@
 
         {{-- tasto per refreshare la pagina --}}
         <div class="text-right">
-            <a class="btn btn-outline-dark" href="{{route("send-review")}}" style="transform: translateY(-38px)">Svuota i campi</a>
+            {{-- <a class="btn btn-outline-dark" href="{{route("send-review")}}" style="transform: translateY(-38px)">Svuota i campi</a> --}}
         </div>
         
     </div>

@@ -5,21 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Review;
 use App\Vote;
+use App\User;
 
 class ReviewController extends Controller
 {
-    public function show()
+    public function create($id)
     {
+        $user = User::findOrFail($id);
         $votes = Vote::all();
 
         $data = [
-            "votes" => $votes
+            "votes" => $votes,
+            'user' => $user
         ];
 
         return view("guest.bards.review", $data);
     }
 
-    public function store(Request $request) {
+    public function store(Request $request, $id) {
 
         $request->validate($this->getValidationRules());
 
@@ -27,12 +30,12 @@ class ReviewController extends Controller
 
         $review = new Review();
         $review->fill($form_data);
-        $review->user_id = 1;
+        $review->user_id = $id;
         $review->save();
 
         // con back facciamo il redirect sulla stessa pagina
         // return back()->with("success", "Recensione salvata correttamente");
-        return redirect()->route("send-review")->with("success", "Recensione salvata correttamente");
+        return redirect()->route("profile", ['id' => $id])->with("success", "Recensione salvata correttamente");
     }
 
     private function getValidationRules() {

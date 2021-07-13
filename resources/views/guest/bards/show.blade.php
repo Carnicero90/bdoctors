@@ -11,7 +11,7 @@
         {{-- TEST --}}
         <img src="{{ $user->profile ? asset('storage/' . $user->profile->pic) : 'defaultimagedainserire' }}" alt="" style="width: 200px">
         <a href="{{ route("send-review", ['id' => $user->id]) }}" class="btn btn-primary ml-3 mr-3">Scrivi recensione</a>
-        <a href="{{route("send-message", ['id' => $user->id]) }}" class="btn btn-primary ml-3 mr-3">Scrivi messaggio</a>
+        <a href="{{ route("send-message", ['id' => $user->id]) }}" class="btn btn-primary ml-3 mr-3">Scrivi messaggio</a>
         {{-- END TEST --}}
         <p>E-mail: {{ $user->email }}</p>
         <p>Indirizzo: {{ $user->address }}</p>
