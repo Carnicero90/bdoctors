@@ -16,6 +16,7 @@ class CategoryUserSeeder extends Seeder
         // Assegnamo una categoria random a tutti gli user presenti nel db
         $users = User::all();
         $categories = Category::select('id')->pluck('id')->toArray();
+        
         foreach ($users as $user) {
             $user->categories()->attach($categories[array_rand($categories)]);
         };

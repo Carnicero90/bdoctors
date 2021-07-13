@@ -7,12 +7,6 @@
             <h1>BOOLBARDS</h1>
         </div>
 
-        <!-- input ricerca da usare con VueJs -->
-        <div>
-            <label for="">
-                <input type="text" placeholder="cerca un bard">
-            </label>
-        </div>
 
         <div>
             <a href="{{route("profile", ['id' => 1])}}" class="btn btn-success ml-2 mr-2">Pagina pubblica profilo di esempio</a>
