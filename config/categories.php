@@ -7,10 +7,12 @@ return [
     [
         'name' => 'dj',
         'slug' => 'dj'
-    ], [
+    ],
+    [
         'name' => 'cantanti',
         'slug' => 'cantanti'
-    ], [
+    ],
+    [
         'name' => 'batteristi',
         'slug' => 'batteristi'
     ],
