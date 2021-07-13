@@ -12,7 +12,7 @@ class Profile extends Model
     }
 
     protected $fillable = [
-        'self_description', 'phone_number', 'work_address', 'user_id'
+        'self_description', 'phone_number', 'work_address', 'user_id', 'pic'
     ];
 
     protected $primaryKey = 'user_id';
