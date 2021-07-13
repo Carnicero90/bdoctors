@@ -37,6 +37,20 @@
             <a href="{{ route("send-message", ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi messaggio</a>
         </div>
 
+        {{-- PERFORMANCES --}}
+        <form>
+            <h2>Performances</h2>
+            @foreach ($user->services as $service)
+                <div class="card mt-4">
+                    <div class="card-header">
+                        <h4>{{ $service->title }}</h4>
+                        <span>{{ $service->hourly_rate }}€ all'ora</span>
+                        <p>{{ $service->description }}</p>
+                    </div>
+                </div>
+            @endforeach
+        </form>
+
         <div class="row mt-4">
             <div class="col-12">
                 <h2>Recensioni</h2>
