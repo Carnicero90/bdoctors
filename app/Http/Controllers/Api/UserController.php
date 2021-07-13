@@ -19,28 +19,38 @@ class UserController extends Controller
      */
     public function index()
     {
+        // TOASK: probabilmente risulta un poco ripetitivo, no? Potrei fare un'unica funzia con un parametro opzionale, ma mi sembrava meno ordinato
+        // TODO: rimuovi da tutti la data di scadenza dell'abbonamento (ora ci serve per test)
+        // comunque sto sbagliando qualcosa.
         // TODO: rifalla parzialmente
         $users =  User::select([
             'users.id', //lascio che magari poi serve come riferimento per un eventuale metodo di ricerca dettagliata del singolo user
             'users.name',
             'users.lastname',
             'users.email',
-            DB::raw('max(sponsorplan_users.end_date) AS current_plan')
+            DB::raw('max(sponsorplan_users.end_date) AS current_plan'),
+            DB::raw('avg(votes.value) as avg_vote')
         ])
             ->leftJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
+            ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
+            ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
+            
             ->groupBy('users.id')
             ->orderByDesc('current_plan')
             ->get();
 
+        $data = [
+            'users' => $users,
+            'success' => true
+        ];
 
-
-        return response()->json($users);
+        return response()->json($data);
     }
 
     public function sponsoredUsers()
     {
         $sponsored_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'))
-            ->leftJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
+            ->rightJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
             ->groupBy('users.id')
             ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
             ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
@@ -51,7 +61,7 @@ class UserController extends Controller
         return response()->json($sponsored_users);
     }
     // Funzione in cui testo roba, tanto per avere un post in cui stampare a schermo
-    public function test($category = 2)
+    public function users($category = 2)
     {
         // TODO: rimuovi enddate
         $cat_users = User::select('users.id', 'users.name', 'users.lastname', 'users.email', DB::raw('MAX(sponsorplan_users.end_date)'), DB::raw('AVG(votes.value) as avg_vote',))
