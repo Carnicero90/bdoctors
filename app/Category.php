@@ -10,13 +10,4 @@ class Category extends Model
     {
         return $this->belongsToMany('App\User');
     }
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'created_at', 'updated_at',
-    ];
 }

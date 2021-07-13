@@ -4,19 +4,6 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
-use Illuminate\Support\Facades\DB;
-use App\User;
-
-class UserController extends Controller
-{
-    // TODO: migliora il commento alla funzia
-    /**
-     * Ritorna la lista degli user.
-     *
-     * @return \Illuminate\Http\JsonResponse
-     */
-=======
 use App\User;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -24,7 +11,6 @@ use App\Category;
 
 class UserController extends Controller
 {
->>>>>>> crud-start
     // TOTEST
     public function index()
     {
@@ -34,21 +20,6 @@ class UserController extends Controller
             ->select('users.*', DB::raw('max(sponsorplan_users.end_date) AS current_plan'))
             ->orderByDesc('current_plan')
             ->get();
-<<<<<<< HEAD
-        // TOTEST
-        return User::select('users.id', 'users.name', 'users.lastname', DB::raw('max(sponsorplan_users.end_date) AS current_plan'))
-            ->leftJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
-            ->groupBy('users.id')
-            ->orderByDesc('current_plan')
-            ->get();
-        $data = [
-            'users' => $users,
-            // TOASK: la voglio sta roba nella risposta?
-            'succes' => true
-        ];
-
-        return response()->json($data);
-=======
 
 
 
@@ -104,6 +75,5 @@ class UserController extends Controller
         // foreach ($users as $user) {
         //     $user->categories()->attach($categories[array_rand($categories)]);
         // };
->>>>>>> crud-start
     }
 }

@@ -23,10 +23,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-<<<<<<< HEAD
-        return view('admin.home');
-=======
         return view('admin.dashboard');
->>>>>>> crud-start
     }
 }
