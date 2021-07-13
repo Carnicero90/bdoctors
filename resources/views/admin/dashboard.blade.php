@@ -1,11 +1,14 @@
 @extends('layouts.app')
-
 @section('content')
+
 <div class="container">
+
+    @include("partials.success-messages")
+    @include("partials.error-messages")
 
     <div class="row justify-content-center">
         <div class="col-md-12 text-center">
-            @include("partials.success-messages")
+
             <div class="card">
                 <div class="card-header">
                     <h5>
