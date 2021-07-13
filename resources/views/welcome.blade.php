@@ -1,14 +1,19 @@
 @extends('layouts.app')
 @section('content')
+
     <div class="container">
 
-        <div class="text-center mt-5">
+        <div class="mt-4 mb-5">
             <h1 class="text-center">BOOLBARDS</h1>
-            <a href="" class="btn-btn-warning">pwd: cavecanem</a>
-            <a href="{{ route("profile", ['id' => 1]) }}" class="btn btn-success ml-3 mr-3">Pagina pubblica profilo di esempio</a>
+        </div>
+
+        <div class="text-center">
+            <span class="btn btn-warning ml-2 mr-2">Password: cavecanem</span>
+            <a href="{{route("profile", ['id' => 1])}}" class="btn btn-success ml-2 mr-2">Pagina pubblica profilo di esempio</a>
             {{-- <a href="{{route("send-message")}}" class="btn btn-primary ml-3 mr-3">Scrivi messaggio</a> --}}
-            <a href="{{ route("sponsor-index") }}" class="btn btn-primary ml-3 mr-3">Piani abbonamento</a>
+            <a href="{{route("sponsor-index")}}" class="btn btn-primary ml-2 mr-2">Piani abbonamento</a>
         </div>
         
     </div>
+
 @endsection

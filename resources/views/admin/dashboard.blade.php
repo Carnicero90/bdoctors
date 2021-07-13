@@ -22,19 +22,19 @@
                     @endif
 
                     <a class="btn btn-primary ml-2" href="{{route('admin.messages')}}">
-                        <i class="fas fa-plus"></i> Leggi i messaggi
+                        <i class="far fa-envelope mr-1"></i> Leggi i messaggi
                     </a>
                     <a class="btn btn-primary ml-2" href="{{route('admin.reviews')}}">
-                        <i class="fas fa-edit"></i> Leggi le recensioni
+                        <i class="far fa-list-alt mr-1"></i> Leggi le recensioni
                     </a>
                     <a class="btn btn-warning ml-2" href="{{route('sponsor-index')}}">
-                        <i class="fas fa-edit"></i> Acquista un piano premium
+                        <i class="fas fa-star mr-1"></i> Acquista un piano premium
                     </a>
                     <a class="btn btn-success ml-2" href="{{route('admin.profile-index')}}">
-                        <i class="fas fa-plus"></i> Profilo
+                        <i class="fas fa-user-alt mr-1"></i> Profilo
                     </a>
                     <a class="btn btn-success ml-2" href="{{route('admin.messages')}}">
-                        <i class="fas fa-plus"></i> Impostazioni
+                        <i class="fas fa-user-cog mr-1"></i> Impostazioni
                     </a>
 
                     <a class="btn btn-danger ml-2" href="#"

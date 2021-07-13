@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 {{-- form container --}}
                 <div class="card">
-                    <div class="card-header">{{ __('Login') }}</div>
+                    <div class="card-header">{{ __('Login') . " - pwd = cavecanem"}}</div>
 
                     <div class="card-body">
                         {{-- form login --}}
