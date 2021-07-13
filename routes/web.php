@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,3 +85,11 @@ Route::prefix('admin')
         Route::get('/reviews', 'ReviewController@index')->name('reviews');
         Route::get('/reviews/{id}', 'ReviewController@show')->name('reviews-dettails');
     });
+
+/* ================
+   TEST
+=================== */
+// route per provare dd e dump a caso
+Route::get('/prova', function() {
+    return dd(User::count());
+});

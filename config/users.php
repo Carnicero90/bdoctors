@@ -121,6 +121,12 @@
             'address' => 'Via San Martino, 102',
             'email' => 'ivaldoaldo@email.it',
         ],
+        [
+            'name' => 'Vlad',
+            'lastname' => 'Il vampiro',
+            'address' => 'Via San Martino, 102',
+            'email' => 'vlady@email.it',
+        ],
     ]
 
  ?>

@@ -31,6 +31,7 @@ class MessageController extends Controller
         return view ('guest.bards.message', compact('user'));
     }
 
+    // TOSAY: non necessario sia funzione, va bene normale proprieta'
     private function getValidationRules() {
         return [
             'author_name' => 'required|string',
