@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
+@section('content')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <div class="container text-center">
 
+<<<<<<< HEAD
     <title>Laravel</title>
 
     <!-- Fonts -->
@@ -89,19 +88,17 @@
             <div class="title m-b-md">
                 Laravel
             </div>
-
-            <div class="links">
-                <a href="https://laravel.com/docs">Docs</a>
-                <a href="https://laracasts.com">Laracasts</a>
-                <a href="https://laravel-news.com">News</a>
-                <a href="https://blog.laravel.com">Blog</a>
-                <a href="https://nova.laravel.com">Nova</a>
-                <a href="https://forge.laravel.com">Forge</a>
-                <a href="https://vapor.laravel.com">Vapor</a>
-                <a href="https://github.com/laravel/laravel">GitHub</a>
-            </div>
+=======
+        <div class="mt-4 mb-5">
+            <h1>BOOLBARDS</h1>
         </div>
-    </div>
-</body>
+>>>>>>> crud-start
 
-</html>
+        <div>
+            <a href="{{route("profile", ['id' => 1])}}" class="btn btn-success ml-2 mr-2">Pagina pubblica profilo di esempio</a>
+            <a href="{{route("sponsor-index")}}" class="btn btn-primary ml-2 mr-2">Vedi i piani di abbonamento</a>
+        </div>
+        
+    </div>
+
+@endsection

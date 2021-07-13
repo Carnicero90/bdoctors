@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Faker\Generator as Faker;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UsersSeeder extends Seeder
 {
@@ -11,16 +11,13 @@ class UsersSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
+    public function run()
     {
-        for ($i = 0; $i < 10; $i++) {
+        foreach (config('users') as $user) {
 
             $new_user = new User();
-            $new_user->name = $faker->firstName();
-            $new_user->lastname = $faker->lastName();
-            $new_user->address = $faker->address();
-            $new_user->email = $faker->email();
-            $new_user->password = str_replace(" ", "", $faker->words(3, true));
+            $new_user->fill($user);
+            $new_user->password = Hash::make('cavecanem');
             $new_user->save();
         }
     }

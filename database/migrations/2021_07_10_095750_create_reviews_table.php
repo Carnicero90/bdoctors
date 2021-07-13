@@ -18,11 +18,13 @@ class CreateReviewsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')
             ->references('id')
-            ->on('users');
+            ->on('users')
+            ->onDelete('cascade');
             $table->unsignedBigInteger('vote_id');
             $table->foreign('vote_id')
             ->references('id')
             ->on('votes');
+            // ->onDelete('set null');
             $table->string('author_name');
             $table->string('author_email');
             $table->text('content');

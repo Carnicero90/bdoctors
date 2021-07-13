@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -13,28 +16,6 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
     }
 
     /**
@@ -44,41 +25,34 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+
     {
-        //
+        $user = User::findOrFail($id);
+        
+        $data = [
+            'user' => $user
+        ];
+
+        return view('guest.bards.show', $data);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Mostra gli utenti premium del nostro sito, ordinati per media recensioni
+     * TODO: magari valutiamo anche in base al n.ro di recensioni?
+     * TODO: spostala poi in api, quando avremo un index pubblico
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function sponsoredIndex()
     {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        // TODO Funzione momentaneamente qua, poi andra nelle api, una volta che avremo un index con vue.
+        $sponsored_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'))
+        ->rightJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
+        ->where('sponsorplan_users.end_date', '>', Carbon::now())
+        ->groupBy('users.id')
+        ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
+        ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
+        ->orderByDesc('avg_vote')
+        ->get();
     }
 }

@@ -38,9 +38,9 @@ class User extends Authenticatable
     ];
 
     // TODO: commentala
-    public function userDetails()
+    public function profile()
     {
-        return $this->hasOne('App\UserDetail');
+        return $this->hasOne('App\Profile');
     }
     // TODO: commentala
     public function categories()
@@ -56,4 +56,8 @@ class User extends Authenticatable
     public function reviews() {
         return $this->hasMany('App\Review');
     }
+    public function sponsorplanUsers() {
+        return $this->hasMany('App\SponsorplanUser');
+    }
+
 }
