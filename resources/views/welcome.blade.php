@@ -9,7 +9,7 @@
 @endsection
 
 @section('footer-scripts')
-    <script src="{{ asset('js/index.js') }}"></script>
+    <script src="{{ asset('js/home.js') }}"></script>
 @endsection
 @section('content')
 

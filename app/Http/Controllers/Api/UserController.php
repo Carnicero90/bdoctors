@@ -23,7 +23,7 @@ class UserController extends Controller
 
 
 
-        return $users;
+        return response()->json($users);
     }
 
     public function sponsored($cat = false)
@@ -33,7 +33,7 @@ class UserController extends Controller
 
     }
     // Funzione in cui testo roba, tanto per avere un post in cui stampare a schermo
-    public function test($category = 4)
+    public function test($category = 2)
     {
         // TODO: rimuovi enddate
         $cat_users = User::select('users.id', 'users.name', 'users.lastname', 'users.email', DB::raw('MAX(sponsorplan_users.end_date)'), DB::raw('AVG(votes.value) as avg_vote',))
