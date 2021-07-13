@@ -33,13 +33,13 @@ class UserController extends Controller
 
     }
     // Funzione in cui testo roba, tanto per avere un post in cui stampare a schermo
-    public function test($category = 5)
+    public function test($category = 4)
     {
         // TODO: rimuovi enddate
         $cat_users = User::select('users.id', 'users.name', 'users.lastname', 'users.email', DB::raw('MAX(sponsorplan_users.end_date)'), DB::raw('AVG(votes.value) as avg_vote',))
         ->leftJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
         ->leftJoin('category_user', 'users.id', '=', 'category_user.user_id')
-        ->where(['category_id', 'LIKE', $category])
+        ->where('category_id', '=', $category)
         ->groupBy('users.id')
         ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
         ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
