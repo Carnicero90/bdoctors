@@ -3,7 +3,8 @@ const { default: Axios } = require("axios")
 var app = new Vue({
     el: '#root',
     data: {
-        users: []
+        users: [],
+        searchString: ''
     },
     methods: {
         /*
@@ -12,9 +13,6 @@ var app = new Vue({
         * @param str name
         * return void
         */
-       sample_func(name) {
-        console.log(name + '!')
-       }
     },
     mounted() {
         Axios.get('api/sponsored')

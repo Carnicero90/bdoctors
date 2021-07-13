@@ -64,6 +64,8 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
+                                    <a class="dropdown-item" href="{{route('admin.profile-index')}}">Profilo privato</a>
+
                                     <a class="dropdown-item" href="{{route("profile", ['id' => 1])}}">Profilo pubblico</a>
 
                                     <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard</a>
@@ -71,8 +73,6 @@
                                     <a class="dropdown-item" href="{{ route('admin.messages') }}">Leggi messaggi</a>
 
                                     <a class="dropdown-item" href="{{ route('admin.reviews') }}">Leggi le recensioni</a>
-
-                                    <a class="dropdown-item" href="{{ route('admin.reviews') }}">Impostazioni</a>
 
                                     <a class="dropdown-item" href="{{ route('sponsor-index') }}">Acquista un piano Premium</a>
 

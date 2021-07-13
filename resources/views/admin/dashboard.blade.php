@@ -36,10 +36,10 @@
                         <i class="fas fa-star mr-1"></i> Acquista un piano premium
                     </a>
                     <a class="btn btn-success ml-2" href="{{route('admin.profile-index')}}">
-                        <i class="fas fa-user-alt mr-1"></i> Profilo
+                        <i class="fas fa-user-alt mr-1"></i> Profilo privato
                     </a>
-                    <a class="btn btn-success ml-2" href="{{route('admin.messages')}}">
-                        <i class="fas fa-user-cog mr-1"></i> Impostazioni
+                    <a class="btn btn-success ml-2" href="{{route("profile", ['id' => 1])}}">
+                        <i class="fas fa-user-alt mr-1"></i> Profilo pubblico
                     </a>
 
                     <a class="btn btn-danger ml-2" href="#"

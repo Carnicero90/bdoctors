@@ -7,12 +7,12 @@
         <h1>{{ $user->name }} {{ $user->lastname }}</h1>
         <img src="{{ $user->profile ? asset('storage/' . $user->profile->pic) : 'defaultimagedainserire' }}" alt="" style="width: 200px">
 
-        <div>
-            <h3>Categorie:</h3>
-            @foreach ($user->categories as $cat)
-                @dump($cat->name)
-            @endforeach
-        </div>
+        @foreach ($user->categories as $category)
+                <div class="form-group">
+                    <label for="category">Categorie:</label>
+                    <input type="text" class="form-control" id="category" name="category" placeholder="{{$category->name}}" disabled>
+                </div>
+        @endforeach
         {{-- END TEST --}}
 
         <form>
@@ -50,7 +50,8 @@
                 </div>
             @endforeach
         </form>
-
+        {{-- END PERFORMANCES --}}
+        
         <div class="row mt-4">
             <div class="col-12">
                 <h2>Recensioni</h2>

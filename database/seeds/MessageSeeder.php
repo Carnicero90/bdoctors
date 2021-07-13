@@ -22,6 +22,8 @@ class MessageSeeder extends Seeder
             $new_message->text = $faker->paragraph();
             $new_message->message_date = $faker->date();
             $new_message->user_id = 1;
+            $new_message->to_show = 1;
+            $new_message->to_read = 1;
             $new_message->save();
         }
     }
