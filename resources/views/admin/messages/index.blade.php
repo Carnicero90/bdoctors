@@ -26,10 +26,10 @@
                                         class="btn btn-primary"><i class="far fa-file-alt"></i> Leggi il messaggio</a>
                                     {{-- form delete --}}
                                     <form class="form-group d-inline-block"
-                                        action="{{ route('admin.message-delete', ['id' => $message->id]) }}"
+                                        action="{{ route('admin.message-hide', ['id' => $message->id]) }}"
                                         method="post">
                                         @csrf
-                                        @method("DELETE")
+                                        @method("POST")
                                         <input class="btn btn-danger" type="submit" value="Elimina il messaggio">
                                     </form>
                                     {{-- END form delete --}}

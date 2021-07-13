@@ -16,9 +16,10 @@
                         </div>
                         <div class="mb-3"><span>Data ricezione: {{$message->message_date}}</span></div>
 
-                        <form class="form-group d-inline-block" action="#" method="post">
+
+                        <form class="form-group d-inline-block" action="{{ route('admin.message-hide', ['id' => $message->id]) }}" method="post">
                             @csrf
-                            @method("DELETE")
+                            @method("POST")
                             <input class="btn btn-danger" type="submit" value="Elimina il messaggio">
                         </form>
 

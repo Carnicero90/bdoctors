@@ -45,10 +45,19 @@ class MessageController extends Controller
         return view("admin.messages.show", $data);
     }
 
-    public function destroy($id)
+    public function hide($id)
     {
-        $message = Message::find($id);
-        $message->delete();
+        $message = Message::findOrFail($id);
+        
+        if ($message->user_id == Auth::user()->id) {
+            $data = [
+                'to_show' => 0
+            ];
+            $message->update(
+                $data
+            );
+            $message->save();
+        }
 
         return redirect()->route("admin.messages")->with("success", "Messaggio cancellato!");
     }
