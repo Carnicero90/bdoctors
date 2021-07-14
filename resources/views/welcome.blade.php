@@ -40,21 +40,6 @@
 
                     <input type="text" v-model="searchString" @keyup="searchUser()" placeholder="cerca un bard">
 
-            <div class="mt-5 mb-5">
-                <select name="" id="">Cerca blabla</select>
-                <label for=""></label>
-                <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="cerca un bard">
-            </div>
-            <div v-if="searching" style="width: 200px; background: whitesmoke; margin: auto;">
-                <ul>
-                    {{-- TODO: test --}}
-                    <li v-for="user in users">
-                       <a :href="'bards/' + user.id">
-                        @{{ user.name + ' ' + user.lastname }}
-                           </a> 
-                    </li>
-                </ul>
-                <a href="" class="btn">Ricerca Avanzata</a>
             </div>
 
 
