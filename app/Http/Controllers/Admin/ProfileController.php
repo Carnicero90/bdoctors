@@ -40,13 +40,23 @@ class ProfileController extends Controller
                 'self_description' => 'string | max:500 | nullable',
                 'work_address' => 'string | max:100 | nullable',
                 'phone_number' => 'digits_between:5,15 | nullable',
-                'image-file' => 'image | nullable'
+                'image-file' => 'image | nullable',
+                'category' => 'exists:category_id'
             ]
         );
-        $data = $request->only('self_description', 'work_address', 'phone_number');
+        $data = $request->only('self_description', 'work_address', 'phone_number', 'category_id');
         if (isset($request['image-file'])) {
             $img_path = Storage::put('uploads/user_pics', $request['image-file']);
             $data['pic'] = $img_path;
+        }
+
+
+        // CATEGORIES
+        if (isset($request['categories']) && is_array($request['categories'])) {
+            Auth::user()->categories()->sync($request['categories']);
+        }
+        else {
+            Auth::user()->categories()->sync([]);
         }
  
         $profile = Profile::updateOrCreate(
@@ -76,6 +86,8 @@ class ProfileController extends Controller
             }
 
         }
+
+
 
         $profile->save();
         // return redirect()->route("profile", ['id' => Auth::user()->id])->with("success", "Profilo modificato correttamente");

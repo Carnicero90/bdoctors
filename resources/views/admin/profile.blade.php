@@ -46,13 +46,11 @@
                 {{-- TODO --}}
                 {{-- check-box#categories --}}
                 <div class="form-group">
-                    <label for="categories">Categorie</label>
-                    @foreach (Auth::user()->categories as $category)
-                        <div class="form-check">
-                            <input class="form-check-input" name="categories" type="checkbox">
-                            <label class="form-check-label" for="categories-{{ $category->id }}">
-                                {{ $category->name }}
-                            </label>
+                    <label for="categories" class="d-block">Scegli le tue categorie</label>
+                    @foreach ($categories as $category)
+                        <div class="form-check d-inline-block mr-5 mb-2">
+                            <input value="{{$category->id}}" class="form-check-input" name="categories[]" type="checkbox" {{ Auth::user()->categories->contains($category) ? 'checked' : '' }}>
+                            <label class="form-check-label" for="categories-{{$category->id}}">{{$category->name}}</label>
                         </div>
                     @endforeach
                 </div>
