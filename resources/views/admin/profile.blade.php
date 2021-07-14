@@ -58,7 +58,7 @@
                 {{-- input#self_description --}}
                 <div class="form-group mt-4 mb-4">
                     <label for="self_description">Descriviti</label>
-                    <textarea class="form-control" name="self_description" id="self_description" rows="10"
+                    <textarea class="form-control" name="self_description" id="self_description" rows="6"
                         placeholder="Scrivi una descrizione per il tuo profilo">{{ Auth::user()->profile ? Auth::user()->profile->self_description : old('self_description') }}</textarea>
                 </div>
                 {{-- END input#self_description --}}
@@ -74,12 +74,12 @@
                 <div class="mt-5">
                     <h3>Prestazioni</h3>
                     <div class="card mb-4" v-for="number in numbers">
-                        <div class="card-body">
+                        <div class="card-body pb-2">
                             <h4>Aggiungi prestazione</h4>
                             {{-- input#title --}}
                             <div class="form-group mt-3 mb-4">
                                 <label for="title">Nome servizio</label>
-                                <input type="text" class="form-control" id="title" :name="'service' + number + '[title]'" placeholder="Inserisci il nome della prestazione">
+                                <input type="text" class="form-control" id="title" :name="'service' + number + '[title]'" placeholder="Inserisci il nome del servizio">
                             </div>
                             {{-- END input#name --}}
         
