@@ -86,8 +86,6 @@ class ProfileController extends Controller
 
         }
 
-
-
         $profile->save();
         return redirect()->route("profile", ['id' => Auth::user()->id])->with("success", "Profilo modificato correttamente");
     }

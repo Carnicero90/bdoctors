@@ -72,11 +72,9 @@
                     <input type="file" class="form-control-file" id="image-file" name="image-file">
                 </div>
                 {{-- END input#image-file --}}
-<h3>Tue prestazioni</h3>
+<h3>Servizi offerti</h3>
 @foreach (Auth::user()->services as $service)
 <div class="card">
-    @dump($service->id)
-    <h3>Prestazione</h3>
     {{-- input#user_id --}}
     <input type="hidden" name="{{'old_s' . $service->id . '[id]'}}" value="{{ $service->id }}">
     {{-- END input#user_id --}}
@@ -108,7 +106,9 @@
                 {{-- singola prestazione --}}
                 <div class="mt-5">
                     <h3>Prestazioni</h3>
-                    <div class="card mb-4" v-for="number in numbers">
+                    <div class="card mb-4" v-for="number in numbers" style="position: relative">
+                        {{-- TODO rimuovi stile inline, lavora sulla funzia (non vogliamo venga cancellato l'ultimo, ma quello su cui lo user clicca) --}}
+                        <a class="remove" style="position: absolute; top: 0; right: 0; padding: 5px; background: red; color: white; font-weight: bolder;" v-on:click="numbers = numbers - 1">X</a>
                         <div class="card-body pb-2">
                             <h4>Aggiungi prestazione</h4>
                             {{-- input#title --}}
