@@ -34,17 +34,25 @@
             </div>
 
         </div>
-        <ul>
-            <li v-for="user in users">
-                <p> @{{ user.name + ' ' + user.lastname }}</p>
-                {{-- TODO: boh, magari la media voti la mostriamo solo se supera un tot? Pagano, non e' bellino per loro vedersi un
-                pallino solo come media recensioni (d'altra parte affari loro, bohbohboh) --}}
-                @{{ user.avg_vote }}
-                <div v-if="user.avg_vote > 0">
-                    <i v-for="n in parseInt(user.avg_vote)" class="fas fa-star"></i>
+
+        {{-- section sponsored --}}
+            <section class="mt-4">
+                <div class="container">
+                    <h2 class="text-center">I nostri artisti del momento</h2>
+                    <ul>
+                        <li v-for="user in users">
+                            <p> @{{ user.name + ' ' + user.lastname }}</p>
+                            {{-- TODO: boh, magari la media voti la mostriamo solo se supera un tot? Pagano, non e' bellino per loro vedersi un
+                            pallino solo come media recensioni (d'altra parte affari loro, bohbohboh) --}}
+                            <div v-if="user.avg_vote > 0">
+                                <i v-for="n in parseInt(user.avg_vote)" class="fas fa-star"></i>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
-            </li>
-        </ul>
+            </section>
+        {{-- END section sponsored --}}
+
 
     </div>
     {{-- END vue container --}}

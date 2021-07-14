@@ -19,7 +19,6 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        // TODO: test, da rimouvere
         $user = $request->name;
         // TOASK: probabilmente risulta un poco ripetitivo, no? Potrei fare un'unica funzia con un parametro opzionale, ma mi sembrava meno ordinato
         // TODO: rimuovi da tutti la data di scadenza dell'abbonamento (ora ci serve per test)
@@ -29,21 +28,33 @@ class UserController extends Controller
             'users.id', //lascio che magari poi serve come riferimento per un eventuale metodo di ricerca dettagliata del singolo user
             'users.name',
             'users.lastname',
-            'users.email',
-            DB::raw('max(sponsorplan_users.end_date) AS current_plan'),
-            DB::raw('avg(votes.value) as avg_vote')
+            'success',
+            'end_date',
         ])
+        //     'users.name',
+        //     'users.lastname',
+        //     'users.email',
+        //     DB::raw('max(sponsorplan_users.end_date) AS current_plan'),
+        //     DB::raw('avg(votes.value) as avg_vote')
+        // ])
              ->where('users.name', 'LIKE', '%' . $user . '%')
              ->orWhere('users.lastname', 'LIKE', '%' . $user . '%')
 
-            ->leftJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
-            ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
-            ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
-            ->groupBy('users.id')
-            ->orderByDesc('current_plan')
-            // TODO: test
-            // TODO: endtest
+            ->leftJoin('sponsorplan_users', function ($join) {
+                $join->on('sponsorplan_users.id', '=', 'users.id')
+                ->where('sponsorplan_users.success', '=', '1')
+                ->where('sponsorplan_users.end_date', '>', Carbon::now())
+                ;
+            })
+            ->orderByDesc('end_date')
             ->get();
+
+
+
+        //     ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
+        //     ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
+        //     ->groupBy('users.id')
+
 
         $data = [
             'users' => $users,
