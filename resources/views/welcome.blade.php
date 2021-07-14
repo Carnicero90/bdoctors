@@ -32,7 +32,7 @@
                                </a> 
                         </li>
                     </ul>
-                    <a href="" class="btn btn-primary">Ricerca Avanzata</a>
+                    <a href="{{ route('advanced-search') }}" class="btn btn-primary">Ricerca Avanzata</a>
     
                 </div>
 
