@@ -19,6 +19,7 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
+
         $user = $request->name;
         // TOASK: probabilmente risulta un poco ripetitivo, no? Potrei fare un'unica funzia con un parametro opzionale, ma mi sembrava meno ordinato
         // TODO: rimuovi da tutti la data di scadenza dell'abbonamento (ora ci serve per test)
@@ -30,11 +31,14 @@ class UserController extends Controller
             DB::raw('avg(success) as success'),
             DB::raw('avg(votes.value) as avg_vote')
         ])
+            ->rightJoin('category_user', 'users.id', '=', 'category_user.user_id')
+            ->where('category_user.category_id', '=', 2)
             ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
-        // TOTEST per ricerca
+
+            // TOTEST per ricerca
             ->where('users.name', 'LIKE', '%' . $user . '%')
             ->orWhere('users.lastname', 'LIKE', '%' . $user . '%')
-        // END TOTEST
+            // END TOTEST
             ->leftJoin('sponsorplan_users', function ($join) {
                 $join->on('sponsorplan_users.user_id', '=', 'users.id')
                     ->where('sponsorplan_users.success', '=', '1')
@@ -42,7 +46,7 @@ class UserController extends Controller
             })
 
             ->orderByDesc('success')
-            
+
             ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
             ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
             ->groupBy('users.id')
@@ -61,7 +65,7 @@ class UserController extends Controller
     {
         $sponsored_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'))
             // ->rightJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
-            ->rightJoin('sponsorplan_users', 'sponsorplan_users.user_id', '=', 'users.id') 
+            ->rightJoin('sponsorplan_users', 'sponsorplan_users.user_id', '=', 'users.id')
             ->where('sponsorplan_users.success', '=', '1')
             ->where('sponsorplan_users.end_date', '>', Carbon::now())
             ->groupBy('users.id')
@@ -75,7 +79,53 @@ class UserController extends Controller
     }
     // Funzione in cui testo roba, tanto per avere un post in cui stampare a schermo
     public function users(Request $request)
-    {
+    {   $user = $request['name'];
+        $category = $request['cat'];
+        $users =  User::select([
+            'users.id',
+            'users.name',
+            'users.lastname',
+            DB::raw('avg(category_user.category_id) as cat'),
+            'profiles.pic',
+            DB::raw('avg(success) as success'),
+            DB::raw('avg(votes.value) as avg_vote')
+        ])
+            ->rightJoin('category_user', 'users.id', '=', 'category_user.user_id')
+            ->where('category_user.category_id', '=', $category)
+            // ->where(function($query))
+                        // TOTEST per ricerca
+                        ->where('users.name', 'LIKE', '%' . $user . '%')
+                        // ->orWhere('users.lastname', 'LIKE', '%' . $user . '%')
+                        // END TOTEST
+            ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
+            ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
+            ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
+            ->groupBy('users.id')
+            ->leftJoin('sponsorplan_users', function ($join) {
+                $join->on('sponsorplan_users.user_id', '=', 'users.id')
+                    ->where('sponsorplan_users.success', '=', '1')
+                    ->where('sponsorplan_users.end_date', '>', Carbon::now());
+            })
+            ->orderByDesc('success')
+            ->orderByDesc('avg_vote')
+            ->get();
+
+
+
+
+            // ->leftJoin('sponsorplan_users', function ($join) {
+            //     $join->on('sponsorplan_users.user_id', '=', 'users.id')
+            //         ->where('sponsorplan_users.success', '=', '1')
+            //         ->where('sponsorplan_users.end_date', '>', Carbon::now());
+            // })
+            // ->groupBy('users.id')
+
+            $data = [
+                'users' => $users,
+                'success' => true
+            ];
+            return response()->json($data);
+
         // TODO: test
         $category = $request['category'];
         // TODO: rimuovi enddate

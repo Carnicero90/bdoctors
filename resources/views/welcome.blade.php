@@ -22,10 +22,10 @@
 
             <!-- input ricerca da usare con VueJs -->
             <div class="mb-4" style="position: relative">
-                <select name="" id="">
-                    <option value=""selected disabled>Seleziona una categoria</option>
+                <select name="" id="" v-model="selectedCategory" v-on:change="searchUser()">
+                    <option value="" selected disabled>Seleziona una categoria</option>
                     @foreach ($categories as $category)
-                        <option value="{{ $category->name }}">{{ $category->name }}</option>
+                        <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
                 <div v-if="searching" style="width: 200px; background: whitesmoke; margin: auto; position: absolute; left: 50%; top: 100%; transform: translateX(-50%)">

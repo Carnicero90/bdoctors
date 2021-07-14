@@ -2110,18 +2110,27 @@ var app = new Vue({
     users: [],
     sponsoredUsers: [],
     searchString: '',
-    searching: false
+    searching: false,
+    selectedCategory: ''
   },
   methods: {
     searchUser: function searchUser() {
       var _this = this;
 
       if (this.searchString.length > 0) {
-        this.searching = true;
-        Axios.get("api/index?name=".concat(this.searchString)).then(function (result) {
-          _this.users = result.data.users;
-          console.log(_this.users);
-        });
+        if (this.selectedCategory) {
+          this.searching = true;
+          console.log(this.selectedCategory);
+          Axios.get("api/test?name=".concat(this.searchString, "&cat=").concat(this.selectedCategory)).then(function (result) {
+            _this.users = result.data.users;
+          });
+        } else {
+          this.searching = true;
+          Axios.get("api/index?name=".concat(this.searchString)).then(function (result) {
+            _this.users = result.data.users;
+            console.log(_this.users);
+          });
+        }
       } else {
         this.users = [];
         this.searching = false;
