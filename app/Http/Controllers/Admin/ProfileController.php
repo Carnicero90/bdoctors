@@ -54,13 +54,16 @@ class ProfileController extends Controller
             $data
         );
 
-       if ($request['service'])
-       {
-           dd($request->service);
-           $service = new Service();
-           $service->user_id = Auth::user()->id;
-           $service->save();
-       }
+        foreach(array_keys($request->input()) as $field) {
+            if (substr($field, 0, 7) == 'service') 
+            {
+                $service = new Service();
+                $service->user_id = Auth::user()->id;
+                $service->fill($request[$field]);
+                $service->save();
+            }
+
+        }
 
         $profile->save();
         return redirect()->route("profile", ['id' => Auth::user()->id])->with("success", "Profilo modificato correttamente");

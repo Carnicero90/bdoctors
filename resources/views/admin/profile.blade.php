@@ -79,8 +79,8 @@
                     <h3>Prestazione</h3>
                     {{-- input#name --}}
                     <div class="form-group mt-4 mb-4">
-                        <label for="name">Nome servizio</label>
-                        <input type="text" class="form-control-file" id="name" :name="'service' + number + '[name]'">
+                        <label for="title">Nome servizio</label>
+                        <input type="text" class="form-control-file" id="title" :name="'service' + number + '[title]'">
                     </div>
                     {{-- END input#name --}}
 
