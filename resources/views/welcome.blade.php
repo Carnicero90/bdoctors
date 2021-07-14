@@ -16,16 +16,34 @@
     <div id="root">
         <div class="container text-center">
 
-            <div class="mt-4 mb-5">
+            <div class="mt-4">
                 <h1>BOOLBARDS</h1>
             </div>
 
             <!-- input ricerca da usare con VueJs -->
-            <div><select name="" id="">Cerca blabla</select>
+            <div style="position: relative"><select name="" id="">Cerca blabla</select>
+                <div v-if="searching" style="width: 200px; background: whitesmoke; margin: auto; position: absolute; left: 50%; top: 100%; transform: translateX(-50%)">
+                    <ul class="list-group">
+                        {{-- TODO: test --}}
+                        <li class="list-group-item" v-for="user in users">
+                            <img :src="'/storage/' + user.pic" alt="" style="height: 2em;">
+                           <a :href="'bards/' + user.id">
+                            @{{ user.name + ' ' + user.lastname }}
+                               </a> 
+                        </li>
+                    </ul>
+                    <a href="" class="btn btn-primary">Ricerca Avanzata</a>
+    
+                </div>
 
                 <label for=""> </label>
 
                     <input type="text" v-model="searchString" @keyup="searchUser()" placeholder="cerca un bard">
+
+            <div class="mt-5 mb-5">
+                <select name="" id="">Cerca blabla</select>
+                <label for=""></label>
+                <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="cerca un bard">
             </div>
             <div v-if="searching" style="width: 200px; background: whitesmoke; margin: auto;">
                 <ul>
@@ -36,14 +54,14 @@
                            </a> 
                     </li>
                 </ul>
-                <a href="" class="btn btn-primary">Ricerca Avanzata</a>
-
+                <a href="" class="btn">Ricerca Avanzata</a>
             </div>
 
+
             <div>
-                <a href="{{ route('profile', ['id' => 1]) }}" class="btn btn-success ml-2 mr-2">Pagina pubblica profilo di
-                    esempio</a>
+                <a href="{{ route('profile', ['id' => 1]) }}" class="btn btn-success ml-2 mr-2">Pagina pubblica profilo diesempio</a>
                 <a href="{{ route('sponsor-index') }}" class="btn btn-primary ml-2 mr-2">Vedi i piani di abbonamento</a>
+                <a href="{{route("categories")}}" class="btn btn-primary ml-2 mr-2">Visualizza le categorie degli artisti</a>
             </div>
 
         </div>
@@ -53,7 +71,7 @@
                 <div class="container">
                     <h2 class="text-center">I nostri artisti del momento</h2>
                     <ul>
-                        <li v-for="user in users">
+                        <li v-for="user in sponsoredUsers">
                             <p> @{{ user.name + ' ' + user.lastname }}</p>
                             {{-- TODO: boh, magari la media voti la mostriamo solo se supera un tot? Pagano, non e' bellino per loro vedersi un
                             pallino solo come media recensioni (d'altra parte affari loro, bohbohboh) --}}
@@ -66,9 +84,7 @@
             </section>
         {{-- END section sponsored --}}
 
-
     </div>
     {{-- END vue container --}}
-
 
 @endsection
