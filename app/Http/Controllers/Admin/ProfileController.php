@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Profile;
+use App\Category;
 use Illuminate\Support\Facades\Storage;
 use App\Service;
 
@@ -20,8 +21,9 @@ class ProfileController extends Controller
     public function index()
     {
         $profile = Auth::user()->profile;
+        $categories = Category::all();
 
-        return view('admin.profile', compact('profile'));
+        return view('admin.profile', compact('profile', 'categories'));
     }
     /**
      * Crea il profilo dell'utente, se già esistente ne aggiorna le informazioni

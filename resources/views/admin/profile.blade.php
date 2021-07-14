@@ -44,21 +44,16 @@
                 {{-- END input#phone_number --}}
 
                 {{-- TODO --}}
-                {{-- check-box#categories --}}
                 <div class="form-group">
-                    <label for="categories">Categorie</label>
-                    @foreach (Auth::user()->categories as $category)
-                        <div class="form-check">
+                    <label for="categories" class="d-block">Scegli le tue categorie</label>
+                    @foreach ($categories as $category)
+                        <div class="form-check d-inline-block mr-5 mb-2">
                             <input class="form-check-input" name="categories" type="checkbox">
-                            <label class="form-check-label" for="categories-{{ $category->id }}">
-                                {{ $category->name }}
-                            </label>
+                            <label class="form-check-label" for="categories-{{$category->id}}">{{$category->name}}</label>
                         </div>
                     @endforeach
                 </div>
-                {{-- END check-box#categories --}}
                 {{-- END TODO --}}
-
 
                 {{-- input#self_description --}}
                 <div class="form-group mt-4 mb-4">
