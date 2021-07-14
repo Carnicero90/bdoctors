@@ -44,16 +44,21 @@
                 {{-- END input#phone_number --}}
 
                 {{-- TODO --}}
+                {{-- check-box#categories --}}
                 <div class="form-group">
-                    <label for="categories" class="d-block">Scegli le tue categorie</label>
-                    @foreach ($categories as $category)
-                        <div class="form-check d-inline-block mr-5 mb-2">
+                    <label for="categories">Categorie</label>
+                    @foreach (Auth::user()->categories as $category)
+                        <div class="form-check">
                             <input class="form-check-input" name="categories" type="checkbox">
-                            <label class="form-check-label" for="categories-{{$category->id}}">{{$category->name}}</label>
+                            <label class="form-check-label" for="categories-{{ $category->id }}">
+                                {{ $category->name }}
+                            </label>
                         </div>
                     @endforeach
                 </div>
+                {{-- END check-box#categories --}}
                 {{-- END TODO --}}
+
 
                 {{-- input#self_description --}}
                 <div class="form-group mt-4 mb-4">
@@ -69,7 +74,37 @@
                     <input type="file" class="form-control-file" id="image-file" name="image-file">
                 </div>
                 {{-- END input#image-file --}}
+<h3>Tue prestazioni</h3>
+@foreach (Auth::user()->services as $service)
+<div class="card" v-for="number in numbers">
+    <h3>Prestazione</h3>
+    {{-- input#name --}}
+    <div class="form-group mt-4 mb-4">
+        <label for="title">Nome servizio</label>
+        <input type="text" class="form-control-file" id="title" :name="'service' + number + '[title]'" value="{{ $service->title }}">
+    </div>
+    {{-- END input#name --}}
 
+    {{-- input#description --}}
+    <div class="form-group mt-4 mb-4">
+        <label for="description">Descrivila</label>
+        <textarea class="form-control" :name="'service' + number + '[description]'" id="description" rows="3"
+            placeholder="Descrivi il servizio">{{ $service->description }}</textarea>
+    </div>
+    {{-- END input#description --}}
+
+    {{-- input#hourly_rate --}}
+    <div class="form-group mt-4 mb-4">
+        <label for="hourly_rate">Tariffa oraria</label>
+        <input type="number" step="0.10" class="form-control" id="hourly_rate" :name="'service' + number + '[hourly_rate]'" value="{{ $service->hourly_rate }}">
+    </div>
+    {{-- END input#hourly_rate --}}
+</div>
+@endforeach
+
+<a class="btn btn-primary" @click="numbers ++">
+    aggiungi altra prestazione <i class="fas fa-plus"></i>
+</a>
                 <div class="card" v-for="number in numbers">
                     <h3>Prestazione</h3>
                     {{-- input#name --}}
@@ -94,9 +129,6 @@
                     </div>
                     {{-- END input#hourly_rate --}}
                 </div>
-                <a class="btn btn-primary" @click="numbers ++">
-                    aggiungi altra prestazione <i class="fas fa-plus"></i>
-                </a>
 
                 <button type="submit" class="btn btn-primary mt-4">
                     @if (Auth::user()->profile)
