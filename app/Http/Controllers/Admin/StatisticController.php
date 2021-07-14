@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Message;
 use App\Review;
+use Illuminate\Support\Facades\Auth;
 
 class StatisticController extends Controller
 {
@@ -18,6 +19,7 @@ class StatisticController extends Controller
     public function index()
     {
         $messages = Message::all();
+        
         $reviews = Review::all();
 
         $data = [

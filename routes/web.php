@@ -14,10 +14,9 @@ use App\User;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// TOTEST
+Route::get('/', 'HomeController@home');
 
-Route::get('/', function () {
-    return view('welcome');
-});
 // TOTEST
 Route::get('/sendmessage/{id}', 'MessageController@create')->name('send-message');
 // Route pagina dettaglio utenti

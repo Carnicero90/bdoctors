@@ -21,7 +21,13 @@
             </div>
 
             <!-- input ricerca da usare con VueJs -->
-            <div class="mb-4" style="position: relative"><select name="" id="">Cerca blabla</select>
+            <div class="mb-4" style="position: relative">
+                <select name="" id="">
+                    <option value=""selected disabled>Seleziona una categoria</option>
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->name }}">{{ $category->name }}</option>
+                    @endforeach
+                </select>
                 <div v-if="searching" style="width: 200px; background: whitesmoke; margin: auto; position: absolute; left: 50%; top: 100%; transform: translateX(-50%)">
                     <ul class="list-group">
                         {{-- TODO: test --}}
@@ -47,6 +53,8 @@
                 <a href="{{ route('profile', ['id' => 1]) }}" class="btn btn-success ml-2 mr-2">Pagina pubblica profilo diesempio</a>
                 <a href="{{ route('sponsor-index') }}" class="btn btn-primary ml-2 mr-2">Vedi i piani di abbonamento</a>
                 <a href="{{route("categories")}}" class="btn btn-primary ml-2 mr-2">Visualizza le categorie degli artisti</a>
+                <a href="{{route("advanced-search")}}" class="btn btn-warning ml-2 mr-2">Pagina di ricerca avanzata</a>
+
             </div>
 
         </div>
