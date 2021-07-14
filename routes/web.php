@@ -84,6 +84,9 @@ Route::prefix('admin')
         // RECENSIONI
         Route::get('/reviews', 'ReviewController@index')->name('reviews');
         Route::get('/reviews/{id}', 'ReviewController@show')->name('reviews-dettails');
+
+        // STATISTICHE
+        Route::get('/statistics', 'StatisticController@index')->name('statistics');
     });
 
 /* ================
