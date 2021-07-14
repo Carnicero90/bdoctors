@@ -4,11 +4,12 @@ var app = new Vue({
     el: '#root',
     data: {
         users: [],
-        searchString: ''
+        searchString: '',
+        searching: false
     },
     methods: {
       searchUser() {
-        console.log(this.searchString);
+          this.searching = true;
         Axios.get(`api/index?name=${this.searchString}`)
         .then(result => {
             this.users = result.data.users;

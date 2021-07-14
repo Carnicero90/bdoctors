@@ -47,7 +47,7 @@
                 {{-- check-box#categories --}}
                 <div class="form-group">
                     <label for="categories">Categorie</label>
-                    @foreach(Auth::user()->categories as $category)
+                    @foreach (Auth::user()->categories as $category)
                         <div class="form-check">
                             <input class="form-check-input" name="categories" type="checkbox">
                             <label class="form-check-label" for="categories-{{ $category->id }}">
@@ -75,6 +75,34 @@
                 </div>
                 {{-- END input#image-file --}}
 
+                <div class="card" v-for="number in numbers">
+                    <h3>Prestazione</h3>
+                    {{-- input#name --}}
+                    <div class="form-group mt-4 mb-4">
+                        <label for="name">Nome servizio</label>
+                        <input type="text" class="form-control-file" id="name" name="service[]">
+                    </div>
+                    {{-- END input#name --}}
+
+                    {{-- input#description --}}
+                    <div class="form-group mt-4 mb-4">
+                        <label for="description">Descrivila</label>
+                        <textarea class="form-control" name="service[]" id="description" rows="3"
+                            placeholder="Descrivi il servizio"></textarea>
+                    </div>
+                    {{-- END input#description --}}
+
+                    <button class="btn btn-primary" @click="numbers ++">
+                        aggiungi altra prestazione <i class="fas fa-plus"></i>
+                    </button>
+                    {{-- input#hourly_rate --}}
+                    <div class="form-group mt-4 mb-4" name="qualcosa[]">
+                        <label for="hourly_rate">Tariffa oraria</label>
+                        <input type="number" step="0.10" class="form-control" id="hourly_rate" name="service[]">
+                    </div>
+                    {{-- END input#hourly_rate --}}
+                </div>
+
                 <button type="submit" class="btn btn-primary mt-4">
                     @if (Auth::user()->profile)
                         Salva modifiche
@@ -84,6 +112,7 @@
                 </button>
 
             </form>
+
             {{-- END form profile --}}
 
 

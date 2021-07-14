@@ -21,11 +21,13 @@
             </div>
 
             <!-- input ricerca da usare con VueJs -->
-            <div>
-                <label for="">
+            <div><select name="" id="">Cerca blabla</select>
+
+                <label for=""> </label>
+
                     <input type="text" v-model="searchString" @keyup="searchUser()" placeholder="cerca un bard">
-                </label>
             </div>
+            <div v-if="searching">Sto cercando</div>
 
             <div>
                 <a href="{{ route('profile', ['id' => 1]) }}" class="btn btn-success ml-2 mr-2">Pagina pubblica profilo di

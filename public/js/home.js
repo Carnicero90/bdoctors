@@ -2108,13 +2108,14 @@ var app = new Vue({
   el: '#root',
   data: {
     users: [],
-    searchString: ''
+    searchString: '',
+    searching: false
   },
   methods: {
     searchUser: function searchUser() {
       var _this = this;
 
-      console.log(this.searchString);
+      this.searching = true;
       Axios.get("api/index?name=".concat(this.searchString)).then(function (result) {
         _this.users = result.data.users;
         console.log(_this.users);
