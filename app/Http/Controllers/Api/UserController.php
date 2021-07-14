@@ -22,21 +22,17 @@ class UserController extends Controller
         $user = $request->name;
         // TOASK: probabilmente risulta un poco ripetitivo, no? Potrei fare un'unica funzia con un parametro opzionale, ma mi sembrava meno ordinato
         // TODO: rimuovi da tutti la data di scadenza dell'abbonamento (ora ci serve per test)
-        // comunque sto sbagliando qualcosa.
-        // TODO: rifalla parzialmente
         $users =  User::select([
-            'users.id', //lascio che magari poi serve come riferimento per un eventuale metodo di ricerca dettagliata del singolo user
+            'users.id',
             'users.name',
             'users.lastname',
-            // 'success',
-            // 'end_date',
             DB::raw('avg(success) as success'),
-
             DB::raw('avg(votes.value) as avg_vote')
         ])
+        // TOTEST per ricerca
             ->where('users.name', 'LIKE', '%' . $user . '%')
             ->orWhere('users.lastname', 'LIKE', '%' . $user . '%')
-
+        // END TOTEST
             ->leftJoin('sponsorplan_users', function ($join) {
                 $join->on('sponsorplan_users.user_id', '=', 'users.id')
                     ->where('sponsorplan_users.success', '=', '1')
@@ -50,11 +46,6 @@ class UserController extends Controller
             ->groupBy('users.id')
             ->orderByDesc('avg_vote')
             ->get();
-
-
-
-
-
 
         $data = [
             'users' => $users,
