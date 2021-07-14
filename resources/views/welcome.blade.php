@@ -21,7 +21,7 @@
             </div>
 
             <!-- input ricerca da usare con VueJs -->
-            <div style="position: relative"><select name="" id="">Cerca blabla</select>
+            <div class="mb-4" style="position: relative"><select name="" id="">Cerca blabla</select>
                 <div v-if="searching" style="width: 200px; background: whitesmoke; margin: auto; position: absolute; left: 50%; top: 100%; transform: translateX(-50%)">
                     <ul class="list-group">
                         {{-- TODO: test --}}
