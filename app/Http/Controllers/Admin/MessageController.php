@@ -53,6 +53,7 @@ class MessageController extends Controller
             $data = [
                 'to_show' => false
             ];
+            
             $message->update(
                 $data
             );

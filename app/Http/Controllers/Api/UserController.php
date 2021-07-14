@@ -26,9 +26,11 @@ class UserController extends Controller
             'users.id',
             'users.name',
             'users.lastname',
+            'profiles.pic',
             DB::raw('avg(success) as success'),
             DB::raw('avg(votes.value) as avg_vote')
         ])
+            ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
         // TOTEST per ricerca
             ->where('users.name', 'LIKE', '%' . $user . '%')
             ->orWhere('users.lastname', 'LIKE', '%' . $user . '%')
@@ -58,7 +60,10 @@ class UserController extends Controller
     public function sponsoredUsers()
     {
         $sponsored_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'))
-            ->rightJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
+            // ->rightJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
+            ->rightJoin('sponsorplan_users', 'sponsorplan_users.user_id', '=', 'users.id') 
+            ->where('sponsorplan_users.success', '=', '1')
+            ->where('sponsorplan_users.end_date', '>', Carbon::now())
             ->groupBy('users.id')
             ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
             ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')

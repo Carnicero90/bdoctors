@@ -2108,6 +2108,7 @@ var app = new Vue({
   el: '#root',
   data: {
     users: [],
+    sponsoredUsers: [],
     searchString: '',
     searching: false
   },
@@ -2126,8 +2127,7 @@ var app = new Vue({
     var _this2 = this;
 
     Axios.get('api/sponsored').then(function (result) {
-      _this2.users = result.data;
-      console.log(_this2.users);
+      _this2.sponsoredUsers = result.data;
     });
   }
 });

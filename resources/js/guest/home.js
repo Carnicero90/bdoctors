@@ -4,6 +4,7 @@ var app = new Vue({
     el: '#root',
     data: {
         users: [],
+        sponsoredUsers: [],
         searchString: '',
         searching: false
     },
@@ -20,8 +21,7 @@ var app = new Vue({
     mounted() {
         Axios.get('api/sponsored')
         .then(result => {
-            this.users = result.data;
-            console.log(this.users)
+            this.sponsoredUsers = result.data;
         })
     }
 })
