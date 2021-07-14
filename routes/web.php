@@ -33,6 +33,10 @@ Route::post('/storereview/{id}', 'ReviewController@store')->name("store-review")
 Route::get('/bards/{id}', 'UserController@show')->name('profile');
 // END TEST PROFILO PUBBLICO
 
+// CATEGORIE
+Route::get("/categories", "CategoryController@index");
+Route::get("/categories/{slug}", "CategoryController@show")->name("category-page");
+
 Auth::routes();
 
 /* ================
