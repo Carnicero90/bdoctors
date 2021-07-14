@@ -12,7 +12,7 @@
         <div class="mb-4">
             <h6>Categorie:</h6>
             @foreach ($user->categories as $category)
-                <a class="btn btn-outline-dark" href="route{{}}">{{$category->name}}</a>
+                <a class="btn btn-outline-dark" href="">{{$category->name}}</a>
                 {{-- <a class="align-middle text-dark" href="{{route("category-page", ["slug" => $post_category->slug])}}">{{$category->name}}</a> --}}
             @endforeach
         </div>

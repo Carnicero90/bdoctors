@@ -72,7 +72,6 @@ class ProfileController extends Controller
                 $data = $request[$field];
                 $service = Service::findOrFail($data['id']);
                 $service->update($request[$field]);
-                dump($service);
                 $service->save();
             }
         }
@@ -90,7 +89,7 @@ class ProfileController extends Controller
 
 
         $profile->save();
-        // return redirect()->route("profile", ['id' => Auth::user()->id])->with("success", "Profilo modificato correttamente");
+        return redirect()->route("profile", ['id' => Auth::user()->id])->with("success", "Profilo modificato correttamente");
     }
 
 }
