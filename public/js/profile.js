@@ -2106,7 +2106,9 @@ var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 
 var app = new Vue({
   el: '#root',
-  data: {},
+  data: {
+    numbers: 0
+  },
   methods: {
     /*
     * stampa name in console, seguito da un punto esclamativo

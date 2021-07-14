@@ -2,7 +2,9 @@ const { default: Axios } = require("axios")
 
 var app = new Vue({
     el: '#root',
-    data: {},
+    data: {
+        numbers: 0
+    },
     methods: {
         /*
         * stampa name in console, seguito da un punto esclamativo

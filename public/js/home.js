@@ -2108,25 +2108,31 @@ var app = new Vue({
   el: '#root',
   data: {
     users: [],
-    searchString: ''
+    sponsoredUsers: [],
+    searchString: '',
+    searching: false
   },
   methods: {
     searchUser: function searchUser() {
       var _this = this;
 
-      console.log(this.searchString);
-      Axios.get("api/index?name=".concat(this.searchString)).then(function (result) {
-        _this.users = result.data.users;
-        console.log(_this.users);
-      });
+      if (this.searchString.length > 0) {
+        this.searching = true;
+        Axios.get("api/index?name=".concat(this.searchString)).then(function (result) {
+          _this.users = result.data.users;
+          console.log(_this.users);
+        });
+      } else {
+        this.users = [];
+        this.searching = false;
+      }
     }
   },
   mounted: function mounted() {
     var _this2 = this;
 
     Axios.get('api/sponsored').then(function (result) {
-      _this2.users = result.data;
-      console.log(_this2.users);
+      _this2.sponsoredUsers = result.data;
     });
   }
 });

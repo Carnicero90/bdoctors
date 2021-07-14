@@ -4,48 +4,52 @@
     <div class="container">
 
         {{-- TEST --}}
-        <h1>{{ $user->name }} {{ $user->lastname }}</h1>
-        <img src="{{ $user->profile ? asset('storage/' . $user->profile->pic) : 'defaultimagedainserire' }}" alt="" style="width: 200px">
+        <div class="mb-4">
+            <img class="d-inline-block mr-2" src="{{ $user->profile ? asset('storage/' . $user->profile->pic) : 'defaultimagedainserire' }}" alt="" style="width: 100px">
+            <h1 class="d-inline-block">{{ $user->name }} {{ $user->lastname }}</h1>
+        </div>
 
-        @foreach ($user->categories as $category)
-                <div class="form-group">
-                    <label for="category">Categorie:</label>
-                    <input type="text" class="form-control" id="category" name="category" placeholder="{{$category->name}}" disabled>
-                </div>
-        @endforeach
+        <div class="mb-4">
+            <h6>Categorie:</h6>
+            @foreach ($user->categories as $category)
+                <a class="btn btn-outline-dark" href="{{route("category-page", ["slug" => $category->slug])}}">{{$category->name}}</a>
+            @endforeach
+        </div>
+
+        <div class="mb-4">
+            <h6>Email:</h6>
+            <span class="text-secondary">{{$user->email}}</span>
+        </div>
+
+        <div class="mb-4">
+            <h6>Indirizzo:</h6>
+            <span class="text-secondary">{{$user->address}}</span>
+        </div>
+
+        <div class="mb-4">
+            <h6>Vi parlo di me:</h6>
+            @if ($user->profile)
+                <p class="text-secondary">{{$user->profile->self_description}}</p>
+            @endif
+        </div>
         {{-- END TEST --}}
 
-        <form>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="{{$user->email}}" disabled>
-            </div>
-            <div class="form-group">
-                <label for="address">Indirizzo</label>
-                <input type="text" class="form-control" id="address" name="address" placeholder="{{$user->address}}" disabled>
-            </div>
-            @if ($user->profile)
-                <div class="form-group">
-                    <label for="self_description">Vi parlo di me</label>
-                    <textarea class="form-control" id="self_description" name="self_description" rows="3" placeholder="{{$user->profile->self_description}}" disabled></textarea>
-                </div>
-            @endif
-        </form>
-
-        <div class="mt-5 mb-5">
+        <div class="mt-4 mb-5">
             <a href="{{ route("send-review", ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi recensione</a>
             <a href="{{ route("send-message", ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi messaggio</a>
         </div>
 
         {{-- PERFORMANCES --}}
         <form>
-            <h2>Performances</h2>
+            <h2 class="mb-4">Servizi</h2>
             @foreach ($user->services as $service)
-                <div class="card mt-4">
+                <div class="card">
                     <div class="card-header">
                         <h4>{{ $service->title }}</h4>
-                        <span>{{ $service->hourly_rate }}€ all'ora</span>
-                        <p>{{ $service->description }}</p>
+                    </div>
+                    <div class="card-body">
+                        <span>{{$service->hourly_rate}} € all'ora</span>
+                        <p>{{$service->description}}</p>
                     </div>
                 </div>
             @endforeach

@@ -30,7 +30,6 @@ class MessageController extends Controller
         $user = User::findOrFail($id);
         return view ('guest.bards.message', compact('user'));
     }
-
     // TOSAY: non necessario sia funzione, va bene normale proprieta'
     private function getValidationRules() {
         return [
