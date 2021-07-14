@@ -16,12 +16,12 @@
     <div id="root">
         <div class="container text-center">
 
-            <div class="mt-4">
+            <div class="mt-5 mb-5">
                 <h1>BOOLBARDS</h1>
             </div>
 
             <!-- input ricerca da usare con VueJs -->
-            <div class="mb-4" style="position: relative">
+            <div class="mb-5" style="position: relative">
                 <select name="" id="" v-model="selectedCategory" v-on:change="searchUser()">
                     <option value="" selected disabled>Seleziona una categoria</option>
                     @foreach ($categories as $category)
@@ -39,42 +39,37 @@
                         </li>
                     </ul>
                     <a href="{{ route('advanced-search') }}" class="btn btn-primary">Ricerca Avanzata</a>
-    
                 </div>
-
-                <label for=""> </label>
-
-                    <input type="text" v-model="searchString" @keyup="searchUser()" placeholder="cerca un bard">
-
+                <label for=""></label>
+                <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="cerca un bard">
             </div>
 
-
-            <div>
+            <div class="mb-5">
                 <a href="{{ route('profile', ['id' => 1]) }}" class="btn btn-success ml-2 mr-2">Pagina pubblica profilo diesempio</a>
                 <a href="{{ route('sponsor-index') }}" class="btn btn-primary ml-2 mr-2">Vedi i piani di abbonamento</a>
                 <a href="{{route("categories")}}" class="btn btn-primary ml-2 mr-2">Visualizza le categorie degli artisti</a>
                 <a href="{{route("advanced-search")}}" class="btn btn-warning ml-2 mr-2">Pagina di ricerca avanzata</a>
-
             </div>
-
         </div>
 
         {{-- section sponsored --}}
-            <section class="mt-4">
-                <div class="container">
-                    <h2 class="text-center">I nostri artisti del momento</h2>
-                    <ul>
-                        <li v-for="user in sponsoredUsers">
-                            <p> @{{ user.name + ' ' + user.lastname }}</p>
+        <div class="container pt-2">
+            <h2>I nostri artisti del momento</h2>
+            <div class="row mt-4">
+                <div v-for="user in sponsoredUsers" class="col-3">
+                    <div class="card">
+                        <div class="card-header">
+                            <span> @{{ user.name + ' ' + user.lastname }}</span>
                             {{-- TODO: boh, magari la media voti la mostriamo solo se supera un tot? Pagano, non e' bellino per loro vedersi un
                             pallino solo come media recensioni (d'altra parte affari loro, bohbohboh) --}}
-                            <div v-if="user.avg_vote > 0">
-                                <i v-for="n in parseInt(user.avg_vote)" class="fas fa-star"></i>
-                            </div>
-                        </li>
-                    </ul>
+                        </div>
+                        <div class="card-body">
+                            <span v-if="user.avg_vote > 0"><i v-for="n in parseInt(user.avg_vote)" class="fas fa-star"></i></span>
+                        </div>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </div>
         {{-- END section sponsored --}}
 
     </div>
