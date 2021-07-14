@@ -16,7 +16,7 @@ class SponsorplanUserSeeder extends Seeder
     {
         $sponsor_plan_users = [
             [
-                'user_id' => rand(1, 15),
+                'user_id' => 1,
                 'sponsorplan_id' => rand(1, 3),
                 'order_date' => Carbon::now(),
                 'end_date' => Carbon::now('+233:30'),
@@ -24,7 +24,7 @@ class SponsorplanUserSeeder extends Seeder
                 'success' => 1
             ],
             [
-                'user_id' => rand(1, 15),
+                'user_id' => 2,
                 'sponsorplan_id' => rand(1, 3),
                 'order_date' => Carbon::now(),
                 'end_date' => Carbon::now('+233:30'),
@@ -32,7 +32,7 @@ class SponsorplanUserSeeder extends Seeder
                 'success' => 1
             ],
             [
-                'user_id' => rand(1, 15),
+                'user_id' => 3,
                 'sponsorplan_id' => rand(1, 3),
                 'order_date' => Carbon::now(),
                 'end_date' => Carbon::now('+33:30'),
