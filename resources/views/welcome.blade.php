@@ -27,7 +27,18 @@
 
                     <input type="text" v-model="searchString" @keyup="searchUser()" placeholder="cerca un bard">
             </div>
-            <div v-if="searching">Sto cercando</div>
+            <div v-if="searching" style="width: 200px; background: whitesmoke; margin: auto;">
+                <ul>
+                    {{-- TODO: test --}}
+                    <li v-for="user in users">
+                       <a :href="'bards/' + user.id">
+                        @{{ user.name + ' ' + user.lastname }}
+                           </a> 
+                    </li>
+                </ul>
+                <a href="" class="btn btn-primary">Ricerca Avanzata</a>
+
+            </div>
 
             <div>
                 <a href="{{ route('profile', ['id' => 1]) }}" class="btn btn-success ml-2 mr-2">Pagina pubblica profilo di
