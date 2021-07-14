@@ -57,6 +57,16 @@ class ProfileController extends Controller
         );
 
         foreach(array_keys($request->input()) as $field) {
+            if (substr($field, 0, 5) == 'old_s') 
+            {
+                $data = $request[$field];
+                $service = Service::findOrFail($data['id']);
+                $service->update($request[$field]);
+                dump($service);
+                $service->save();
+            }
+        }
+        foreach(array_keys($request->input()) as $field) {
             if (substr($field, 0, 7) == 'service') 
             {
                 $service = new Service();
@@ -68,7 +78,7 @@ class ProfileController extends Controller
         }
 
         $profile->save();
-        return redirect()->route("profile", ['id' => Auth::user()->id])->with("success", "Profilo modificato correttamente");
+        // return redirect()->route("profile", ['id' => Auth::user()->id])->with("success", "Profilo modificato correttamente");
     }
 
 }

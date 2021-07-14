@@ -76,19 +76,24 @@
                 {{-- END input#image-file --}}
 <h3>Tue prestazioni</h3>
 @foreach (Auth::user()->services as $service)
-<div class="card" v-for="number in numbers">
+<div class="card">
+    @dump($service->id)
     <h3>Prestazione</h3>
+    {{-- input#user_id --}}
+    <input type="hidden" name="{{'old_s' . $service->id . '[id]'}}" value="{{ $service->id }}">
+    {{-- END input#user_id --}}
+
     {{-- input#name --}}
     <div class="form-group mt-4 mb-4">
         <label for="title">Nome servizio</label>
-        <input type="text" class="form-control-file" id="title" :name="'old_s' + number + '[title]'" value="{{ $service->title }}">
+        <input type="text" class="form-control-file" id="title" name="{{'old_s' . $service->id . '[title]' }}" value="{{ $service->title }}">
     </div>
     {{-- END input#name --}}
 
     {{-- input#description --}}
     <div class="form-group mt-4 mb-4">
         <label for="description">Descrivila</label>
-        <textarea class="form-control" :name="'old_s' + number + '[description]'" id="description" rows="3"
+        <textarea class="form-control" name="{{'old_s' . $service->id . '[description]'}}" id="description" rows="3"
             placeholder="Descrivi il servizio">{{ $service->description }}</textarea>
     </div>
     {{-- END input#description --}}
@@ -96,7 +101,7 @@
     {{-- input#hourly_rate --}}
     <div class="form-group mt-4 mb-4">
         <label for="hourly_rate">Tariffa oraria</label>
-        <input type="number" step="0.10" class="form-control" id="hourly_rate" :name="'old_s' + number + '[hourly_rate]'" value="{{ $service->hourly_rate }}">
+        <input type="number" step="0.10" class="form-control" id="hourly_rate" name="'old_s' + number + '[hourly_rate]'" value="{{ $service->hourly_rate }}">
     </div>
     {{-- END input#hourly_rate --}}
 </div>

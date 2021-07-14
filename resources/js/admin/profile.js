@@ -3,7 +3,7 @@ const { default: Axios } = require("axios")
 var app = new Vue({
     el: '#root',
     data: {
-        numbers: 1
+        numbers: 0
     },
     methods: {
         /*
