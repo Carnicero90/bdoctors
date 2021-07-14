@@ -39,6 +39,9 @@ Route::get("/categories/{slug}", "CategoryController@show")->name("category-page
 
 Auth::routes();
 
+// RICERCA AVANZATA
+Route::get('/advancedsearch', 'AdvancedSearchController@index')->name('advanced-search');
+
 /* ================
     SPONSORPLAN
 =================== */
