@@ -2116,11 +2116,16 @@ var app = new Vue({
     searchUser: function searchUser() {
       var _this = this;
 
-      this.searching = true;
-      Axios.get("api/index?name=".concat(this.searchString)).then(function (result) {
-        _this.users = result.data.users;
-        console.log(_this.users);
-      });
+      if (this.searchString.length > 0) {
+        this.searching = true;
+        Axios.get("api/index?name=".concat(this.searchString)).then(function (result) {
+          _this.users = result.data.users;
+          console.log(_this.users);
+        });
+      } else {
+        this.users = [];
+        this.searching = false;
+      }
     }
   },
   mounted: function mounted() {
