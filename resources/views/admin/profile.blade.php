@@ -27,7 +27,7 @@
 
                 {{-- input#work_address --}}
                 <div class="form-group mt-4 mb-4">
-                    <label for="work_address">Indirizzo/Luogo di Lavoro</label>
+                    <label for="work_address">Indirizzo / Luogo di Lavoro</label>
                     <input type="text" class="form-control" id="work_address" name="work_address"
                         placeholder="Inserisci il tuo indirizzo"
                         value="{{ Auth::user()->profile ? Auth::user()->profile->work_address : old('work_address') }}">
@@ -64,52 +64,66 @@
                 {{-- END input#self_description --}}
 
                 {{-- input#image-file --}}
-                <div class="form-group mt-4 mb-4">
+                <div class="form-group mt-4">
                     <label for="image-file">Carica un'immagine profilo</label>
                     <input type="file" class="form-control-file" id="image-file" name="image-file">
                 </div>
                 {{-- END input#image-file --}}
 
-                <div class="card" v-for="number in numbers">
-                    <h3>Prestazione</h3>
-                    {{-- input#name --}}
-                    <div class="form-group mt-4 mb-4">
-                        <label for="title">Nome servizio</label>
-                        <input type="text" class="form-control-file" id="title" :name="'service' + number + '[title]'">
+                {{-- singola prestazione --}}
+                <div class="mt-5">
+                    <h3>Prestazioni</h3>
+                    <div class="card mb-4" v-for="number in numbers">
+                        <div class="card-body">
+                            <h4>Aggiungi prestazione</h4>
+                            {{-- input#title --}}
+                            <div class="form-group mt-3 mb-4">
+                                <label for="title">Nome servizio</label>
+                                <input type="text" class="form-control" id="title" :name="'service' + number + '[title]'" placeholder="Inserisci il nome della prestazione">
+                            </div>
+                            {{-- END input#name --}}
+        
+                            {{-- input#description --}}
+                            <div class="form-group mt-4 mb-4">
+                                <label for="description">Descrizione servizio</label>
+                                <textarea class="form-control" :name="'service' + number + '[description]'" id="description" rows="3"
+                                    placeholder="Descrivi il servizio offerto"></textarea>
+                            </div>
+                            {{-- END input#description --}}
+        
+                            {{-- input#hourly_rate --}}
+                            <div class="form-group mt-4">
+                                <label for="hourly_rate" class="d-inline-block mr-1">Tariffa oraria</label>
+                                <input type="number" step="0.50" class="form-control d-inline-block" style="width: 100px;" id="hourly_rate" :name="'service' + number + '[hourly_rate]'" placeholder="00,00">
+                                <label class="d-inline-block ml-1">€</label>
+                            </div>
+                            {{-- END input#hourly_rate --}}
+                        </div>
                     </div>
-                    {{-- END input#name --}}
-
-                    {{-- input#description --}}
-                    <div class="form-group mt-4 mb-4">
-                        <label for="description">Descrivila</label>
-                        <textarea class="form-control" :name="'service' + number + '[description]'" id="description" rows="3"
-                            placeholder="Descrivi il servizio"></textarea>
-                    </div>
-                    {{-- END input#description --}}
-
-                    {{-- input#hourly_rate --}}
-                    <div class="form-group mt-4 mb-4">
-                        <label for="hourly_rate">Tariffa oraria</label>
-                        <input type="number" step="0.10" class="form-control" id="hourly_rate" :name="'service' + number + '[hourly_rate]'">
-                    </div>
-                    {{-- END input#hourly_rate --}}
                 </div>
-                <a class="btn btn-primary" @click="numbers ++">
-                    aggiungi altra prestazione <i class="fas fa-plus"></i>
-                </a>
+                {{-- END singola prestazione --}}
 
-                <button type="submit" class="btn btn-primary mt-4">
+                {{-- tasto per aggiungere altra prestazione --}}
+                <div>
+                    <a class="btn btn-primary" v-on:click="numbers++">
+                        <i class="fas fa-plus"></i>
+                        Aggiungi altra prestazione
+                    </a>
+                </div>
+                {{-- END tasto per aggiungere altra prestazione --}}
+                
+                {{-- bottone per invio form --}}
+                <button type="submit" class="btn btn-success mt-5">
                     @if (Auth::user()->profile)
                         Salva modifiche
                     @else
                         Crea profilo
                     @endif
                 </button>
+                {{-- END bottone per invio form --}}
 
             </form>
-
             {{-- END form profile --}}
-
 
         </div>
 
