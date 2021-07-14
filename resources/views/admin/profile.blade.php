@@ -80,28 +80,28 @@
                     {{-- input#name --}}
                     <div class="form-group mt-4 mb-4">
                         <label for="name">Nome servizio</label>
-                        <input type="text" class="form-control-file" id="name" name="service[]">
+                        <input type="text" class="form-control-file" id="name" :name="'service' + number + '[name]'">
                     </div>
                     {{-- END input#name --}}
 
                     {{-- input#description --}}
                     <div class="form-group mt-4 mb-4">
                         <label for="description">Descrivila</label>
-                        <textarea class="form-control" name="service[]" id="description" rows="3"
+                        <textarea class="form-control" :name="'service' + number + '[description]'" id="description" rows="3"
                             placeholder="Descrivi il servizio"></textarea>
                     </div>
                     {{-- END input#description --}}
 
-                    <button class="btn btn-primary" @click="numbers ++">
-                        aggiungi altra prestazione <i class="fas fa-plus"></i>
-                    </button>
                     {{-- input#hourly_rate --}}
-                    <div class="form-group mt-4 mb-4" name="qualcosa[]">
+                    <div class="form-group mt-4 mb-4">
                         <label for="hourly_rate">Tariffa oraria</label>
-                        <input type="number" step="0.10" class="form-control" id="hourly_rate" name="service[]">
+                        <input type="number" step="0.10" class="form-control" id="hourly_rate" :name="'service' + number + '[hourly_rate]'">
                     </div>
                     {{-- END input#hourly_rate --}}
                 </div>
+                <a class="btn btn-primary" @click="numbers ++">
+                    aggiungi altra prestazione <i class="fas fa-plus"></i>
+                </a>
 
                 <button type="submit" class="btn btn-primary mt-4">
                     @if (Auth::user()->profile)

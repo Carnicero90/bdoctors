@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Profile;
 use Illuminate\Support\Facades\Storage;
+use App\Service;
 
 class ProfileController extends Controller
 {
@@ -52,6 +53,14 @@ class ProfileController extends Controller
             ],
             $data
         );
+
+       if ($request['service'])
+       {
+           dd($request->service);
+           $service = new Service();
+           $service->user_id = Auth::user()->id;
+           $service->save();
+       }
 
         $profile->save();
         return redirect()->route("profile", ['id' => Auth::user()->id])->with("success", "Profilo modificato correttamente");
