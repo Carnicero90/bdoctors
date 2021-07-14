@@ -51,7 +51,7 @@ class MessageController extends Controller
         
         if ($message->user_id == Auth::user()->id) {
             $data = [
-                'to_show' => 0
+                'to_show' => false
             ];
             $message->update(
                 $data
