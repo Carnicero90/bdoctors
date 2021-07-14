@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Category;
 use App\User;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {
@@ -27,30 +29,26 @@ class CategoryController extends Controller
             abort("404");
         }
 
+        $category_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'), DB::raw('avg(success) as sponsored'))
+        ->leftJoin('category_user', 'users.id', '=', 'category_user.user_id')
+        ->where('category_user.category_id', '=', $category->id)
+        ->leftJoin('sponsorplan_users', function ($join) {
+            $join->on('sponsorplan_users.user_id', '=', 'users.id')
+                ->where('sponsorplan_users.success', '=', '1')
+                ->where('sponsorplan_users.end_date', '>', Carbon::now());
+        })
+        ->orderByDesc('sponsored')
+        ->groupBy('users.id')
+        ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
+        ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
+        ->orderByDesc('avg_vote')
+        ->get();
+
         $data = [
             "category" => $category,
+            "category_users" => $category_users
         ];
 
         return view("guest.categories.show", $data);
     }
-
-
-    // ESEMPIO BOOLPRESS
-    //
-    // public function show($slug) {
-
-    //     $post = Post::where("slug", "=", $slug)->first();
-
-    //     if (!$post) {
-    //         abort("404");
-    //     }
-
-    //     $data = [
-    //         "post" => $post,
-    //         "post_category" => $post->category,
-    //         "post_tags" => $post->tags
-    //     ];
-
-    //     return view("guest.posts.show", $data);
-    // }
 }

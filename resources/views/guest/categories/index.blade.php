@@ -2,17 +2,23 @@
 @section('content')
 
 <div class="container">
-    <h5>Categorie</h5>
-    <ul>
+    <div class="mt-2 mb-4">
+        <h1>Categorie</h1>
+    </div>
+    <div class="row">
         @foreach ($categories as $category)
-        <li>
-            <div class="mb-4">
-                {{$category->name}}
-                <a href="{{route("category-page", ["slug" => $category->slug])}}" class="btn btn-primary">Visualizza gli artisti della categoria</a>
+            <div class="col-4">
+                <div class="card mb-3">
+                    <div class="card-header">
+                        {{ucfirst($category->name)}}
+                    </div>
+                    <div class="card-body">
+                        <a href="{{route("category-page", ["slug" => $category->slug])}}" class="btn btn-primary">Visualizza tutti i {{$category->name}}</a>
+                    </div>
+                </div>
             </div>
-        </li>  
-    @endforeach
-    </ul>
+        @endforeach
+    </div>
 </div>
 
 @endsection
