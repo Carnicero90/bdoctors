@@ -53,15 +53,6 @@
             </div>
         </div>
 
-<<<<<<< HEAD
-        <div class="mb-5 mt-5 text-center">
-            <a href="{{ route('profile', ['id' => 1]) }}" class="btn btn-success ml-2 mr-2">Pagina pubblica profilo
-                diesempio</a>
-            <a href="{{ route('sponsor-index') }}" class="btn btn-primary ml-2 mr-2">Vedi i piani di abbonamento</a>
-            <a href="{{ route('categories') }}" class="btn btn-primary ml-2 mr-2">Visualizza le categorie degli
-                artisti</a>
-            <a href="{{ route('advanced-search') }}" class="btn btn-warning ml-2 mr-2">Pagina di ricerca avanzata</a>
-=======
         {{-- section categories --}}
         <div class="container mt-5 mb-5">
             <h2 class="text-center">Categorie</h2>
@@ -78,7 +69,6 @@
                     </div>
                 @endforeach
             </div>
->>>>>>> bb170d7941f814843ff15fdbb99909092c3439a9
         </div>
         {{-- END section categories --}}
 
