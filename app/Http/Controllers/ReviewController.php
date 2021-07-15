@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Review;
 use App\Vote;
 use App\User;
+use Illuminate\Support\Carbon;
 
 class ReviewController extends Controller
 {
@@ -33,7 +34,7 @@ class ReviewController extends Controller
         $review->user_id = $id;
         $review->save();
 
-        // con back facciamo il redirect sulla stessa pagina
+        // con back() facciamo il redirect sulla stessa pagina, esempio:
         // return back()->with("success", "Recensione salvata correttamente");
         return redirect()->route("profile", ['id' => $id])->with("success", "Recensione salvata correttamente");
     }
