@@ -66,7 +66,7 @@
 
                                     <a class="dropdown-item" href="{{route('admin.profile-index')}}">Crea / Modifica profilo privato</a>
 
-                                    <a class="dropdown-item" href="{{route("profile", ['id' => 1])}}">Visualizza profilo pubblico</a>
+                                    <a class="dropdown-item" href="{{route("profile", ['id' => Auth::user()->id])}}">Visualizza profilo pubblico</a>
 
                                     <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Vai alla Dashboard</a>
 
