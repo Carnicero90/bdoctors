@@ -24,7 +24,7 @@ class MessageController extends Controller
 
         // con back facciamo il redirect sulla stessa pagina
         // return back()->with("success", "Recensione salvata correttamente");
-        return redirect()->route("send-message", ['id' => $message->id])->with("success", "Messaggio inviato correttamente");
+        return redirect()->route("profile", ['id' => $id])->with("success", "Messaggio inviato correttamente, appena possibile riceverai una risposta");
     }
 
     public function create($id) {
