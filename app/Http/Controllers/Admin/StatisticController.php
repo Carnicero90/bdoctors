@@ -18,14 +18,18 @@ class StatisticController extends Controller
      */
     public function index()
     {
-        $messages = Message::all();
+        $id = Auth::user()->id;
+        // TODO: dobbiamo vedere come riordinare i dati di sta query, ma dipende da come funzia chartjs
+        $messages = Message::where('user_id', '=', $id)->get();
         
-        $reviews = Review::all();
+        $reviews = Review::where('user_id', '=', $id)->get();
 
         $data = [
             'messages' => $messages,
             'reviews' => $reviews
         ];
+        dump($messages);
+
 
         return view('admin.statistics.index', $data); 
 
