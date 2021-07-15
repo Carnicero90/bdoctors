@@ -37,8 +37,8 @@
 
         <div class="mb-4">
             <h6>Indirizzo:</h6>
-            @if (Auth::user()->profile)
-                <span class="text-secondary">{{ Auth::user()->profile->work_address }}</span>
+            @if ($user->profile)
+                <span class="text-secondary">{{ $user->profile->work_address }}</span>
             @endif
         </div>
 
