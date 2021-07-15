@@ -33,7 +33,10 @@ class UserController extends Controller
             // DB::raw("CONCAT(users.name, ' ', 'users.lastname') as user_fullname")
 
         ])
-            ->where('users.name', 'LIKE', '%' . $user . '%')
+            ->where(function ($q) use ($user) {
+                $q->where('users.name', 'LIKE', '%'.$user.'%')
+                ->orWhere('users.lastname', 'LIKE', '%'.$user.'%');
+            })
 
             ->rightJoin('category_user', 'users.id', '=', 'category_user.user_id')
             // ->where('category_user.category_id', '=', 2)
