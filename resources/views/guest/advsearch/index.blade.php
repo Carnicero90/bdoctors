@@ -13,9 +13,12 @@
 @endsection
 
 @section('content')
+
+    {{-- TODO --}}
     {{-- vue container --}}
     <div id="root">
         <div class="container text-center">
+            {{-- Searchbar --}}
             <form class="form-inline">
                 <input 
                     class="form-control mr-sm-2" 
@@ -35,7 +38,14 @@
                 </ul>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
             </form>
+            {{-- End Searchbar --}}
+
+            <div class="mt-4 mb-5">
+                <a href="{{ route("send-review", ['id' => Auth::user()->id]) }}" class="btn btn-primary mr-3">Scrivi recensione</a>
+                <a href="{{ route("send-message", ['id' => Auth::user()->id]) }}" class="btn btn-primary mr-3">Scrivi messaggio</a>
+            </div>
         </div>
     </div>
     {{-- END vue container --}}
+    {{-- END TODO --}}
 @endsection
