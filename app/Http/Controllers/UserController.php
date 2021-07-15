@@ -29,7 +29,9 @@ class UserController extends Controller
 
     {
         $user = User::findOrFail($id);
-        $reviews = Review::where('user_id', '=', $user->id)->get();
+        $reviews = Review::where('user_id', '=', $user->id)
+        ->orderByDesc('created_at')
+        ->get();
 
         
         $data = [

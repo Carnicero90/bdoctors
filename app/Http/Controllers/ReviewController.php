@@ -15,15 +15,17 @@ class ReviewController extends Controller
         $user = User::findOrFail($id);
         $votes = Vote::all();
 
+
         $data = [
-            "votes" => $votes,
-            'user' => $user
+            'votes' => $votes,
+            'user' => $user,
         ];
 
         return view("guest.bards.review", $data);
     }
 
-    public function store(Request $request, $id) {
+    public function store(Request $request, $id)
+    {
 
         $request->validate($this->getValidationRules());
 
@@ -39,7 +41,8 @@ class ReviewController extends Controller
         return redirect()->route("profile", ['id' => $id])->with("success", "Recensione salvata correttamente");
     }
 
-    private function getValidationRules() {
+    private function getValidationRules()
+    {
         return [
             "author_name" => "required|string|max:255",
             "author_email" => "required|email|max:255",

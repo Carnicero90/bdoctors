@@ -77,7 +77,7 @@
             <div class="col-12">
                 <h2>Recensioni</h2>
             </div>
-            @foreach ($user->reviews as $review)
+            @foreach ($reviews as $review)
                 <div class="col-6">
                     <div class="card mt-4">
                         <div class="card-header d-flex">
