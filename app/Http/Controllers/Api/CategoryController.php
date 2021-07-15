@@ -8,7 +8,13 @@ use App\Category;
 
 class CategoryController extends Controller
 {
-    public function index() {
+    /**
+     * Ritorna l'elenco di tutte le categorie
+     *
+     * @return \Illuminate\Contracts\Support\JsonResponse
+     */
+    public function index()
+    {
         $categories = Category::select('id', 'name', 'slug');
 
         $result = [
