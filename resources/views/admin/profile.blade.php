@@ -129,7 +129,7 @@
                             {{-- input#hourly_rate --}}
                             <div class="form-group mt-4">
                                 <label for="hourly_rate" class="d-inline-block mr-1">Tariffa oraria</label>
-                                <input type="number" step="0.50" class="form-control d-inline-block" style="width: 100px;" id="hourly_rate" :name="'service' + number + '[hourly_rate]'" placeholder="00,00">
+                                <input type="number" step="0.50" class="form-control d-inline-block" style="width: 100px;" id="hourly_rate" :name="'service' + number + '[hourly_rate]'" placeholder="00.00" min='0.00'>
                                 <label class="d-inline-block ml-1">€</label>
                             </div>
                             {{-- END input#hourly_rate --}}
