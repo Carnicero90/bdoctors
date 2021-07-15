@@ -42,7 +42,6 @@ class UserController extends Controller
 
     /**
      * Mostra gli utenti premium del nostro sito, ordinati per media recensioni
-     * TODO: magari valutiamo anche in base al n.ro di recensioni?
      * TODO: spostala poi in api, quando avremo un index pubblico
      *
      * @return \Illuminate\Http\Response

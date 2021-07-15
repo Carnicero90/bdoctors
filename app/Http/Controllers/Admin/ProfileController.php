@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Service;
 
 class ProfileController extends Controller
-{
+{   
 
     /**
      * Mostra il profilo dell'utente registrato
@@ -69,12 +69,7 @@ class ProfileController extends Controller
         foreach(array_keys($request->input()) as $field) {
             if (substr($field, 0, 5) == 'old_s') 
             { 
-                $request->validate([
-                    $field.'.title' => 'string | max: 100 | required',
-                    $field.'.description' => 'string | nullable',
-                    // TODO Cambiare eventualmente il decimal
-                    $field.'.hourly_rate' => 'numeric | required'
-                ]);
+                $request->validate($this->serviceParams($field));
                 $data = $request[$field];
                 $service = Service::findOrFail($data['id']);
                 $service->update($request[$field]);
@@ -84,12 +79,7 @@ class ProfileController extends Controller
         foreach(array_keys($request->input()) as $field) {
             if (substr($field, 0, 7) == 'service') 
             {
-                $request->validate([
-                    $field.'.title' => 'string | max: 100 | required',
-                    $field.'.description' => 'string | nullable',
-                    // TODO Cambiare eventualmente il decimal
-                    $field.'.hourly_rate' => 'numeric | required'
-                ]);
+                $request->validate($this->serviceParams($field));
                 $service = new Service();
                 $service->user_id = Auth::user()->id;
                 $service->fill($request[$field]);
@@ -101,5 +91,14 @@ class ProfileController extends Controller
         $profile->save();
         return redirect()->route("profile", ['id' => Auth::user()->id])->with("success", "Profilo modificato correttamente");
     }
+
+    protected function serviceParams($field) {
+        return [
+        $field.'.title' => 'string | max: 100 | required',
+        $field.'.description' => 'string | nullable',
+        // TODO Cambiare eventualmente il decimal
+        $field.'.hourly_rate' => 'numeric | required'
+        ];
+        }
 
 }
