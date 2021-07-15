@@ -71,6 +71,30 @@ class SponsorplanUserSeeder extends Seeder
                 'invoice' => 'Fattura n° ' . rand(1000, 1999),
                 'success' => 1
             ],
+            [
+                'user_id' => 8,
+                'sponsorplan_id' => 2,
+                'order_date' => Carbon::create(1971, 1, 1),
+                'end_date' => Carbon::create(1971,3,5),
+                'invoice' => 'Fattura n° ' . rand(1000, 1999),
+                'success' => 1
+            ],
+            [
+                'user_id' => 9,
+                'sponsorplan_id' => 2,
+                'order_date' => Carbon::now(),
+                'end_date' => Carbon::now()->addHours(72),
+                'invoice' => 'Fattura n° ' . rand(1000, 1999),
+                'success' => 1
+            ],
+            [
+                'user_id' => 10,
+                'sponsorplan_id' => 2,
+                'order_date' => Carbon::now(),
+                'end_date' => Carbon::now()->addHours(72),
+                'invoice' => 'Fattura n° ' . rand(1000, 1999),
+                'success' => 1
+            ],
         ];
 
         foreach($sponsor_plan_users as $plan_user) {

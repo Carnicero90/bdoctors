@@ -33,6 +33,7 @@ class UserController extends Controller
             // DB::raw("CONCAT(users.name, ' ', 'users.lastname') as user_fullname")
 
         ])
+
             ->where(function ($q) use ($user) {
                 $q->where('users.name', 'LIKE', '%'.$user.'%')
                 ->orWhere('users.lastname', 'LIKE', '%'.$user.'%');
@@ -54,7 +55,10 @@ class UserController extends Controller
 
             ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
             ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
+
             ->groupBy('users.id')
+            ->having('id', '>', 0)
+
             ->orderByDesc('avg_vote')
             ->get();
 
