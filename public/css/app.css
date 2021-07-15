@@ -10954,3 +10954,7 @@ a.text-dark:focus {
   text-shadow: 2px 2px 2px #000;
 }
 
+.select-category {
+  -webkit-appearance: none;
+}
+
