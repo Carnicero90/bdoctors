@@ -69,14 +69,22 @@
         <div class="row mt-4">
             <div class="col-12">
                 <h2>Recensioni</h2>
-                @foreach ($user->reviews as $review)
+            </div>
+            @foreach ($user->reviews as $review)
+                <div class="col-6">
                     <div class="card mt-4">
-                        <div class="card-header">
-                            <span><i class="fas fa-user-circle mr-1"></i></span>
-                            <span>{{ $review->author_name }}</span>
+                        <div class="card-header d-flex">
+                            <div class="mr-5">
+                                <span><i class="fas fa-user-circle mr-1"></i></span>
+                                <span>{{$review->author_name}}</span>
+                            </div>
+                            <div>
+                                <span><i class="fas fa-envelope mr-1"></i></span>
+                                <span>{{$review->author_email}}</span>
+                            </div>
                         </div>
                         <div class="card-body">
-                            {{-- <div class="mt-2 mb-2"><span>email: {{ $review->author_email }}</span></div> --}}
+                            <span class="text-secondary">{{$review->created_at}}</span>
                             <div>
                                 @for ($i = 0; $i < $review->vote_id; $i++)
                                 <i class="fas fa-star"></i>
@@ -85,15 +93,14 @@
                             {{-- TODO: non usare direttamente l'id, potrebbe non corrispondere al value del voto! --}}
                             {{-- <div class="mt-2 mb-2"><span>voto: {{ $review->vote_id }}</span></div> --}}
                             <div class="mt-2 mb-2">
-                                {{-- <span>Testo recensione:</span> --}}
                                 <p class="card-text text-secondary">{{ strlen($review->content) > 120 ? substr($review->content, 0,120) . '...' : $review->content }}</p>
                             </div>
                         </div>
                     </div>
-                @endforeach
-
-            </div>
+                </div>
+            @endforeach
         </div>
-        
+
     </div>
+
 @endsection
