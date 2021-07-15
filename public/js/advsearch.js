@@ -2106,10 +2106,19 @@ var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 
 var app = new Vue({
   el: '#root',
-  data: {},
+  data: {
+    users: []
+  },
   methods: {},
   mounted: function mounted() {
-    console.log(location.search);
+    var _this = this;
+
+    this.params = location.search; // per ora funzia solo se ci sono i params, domani finisco
+
+    Axios.get("api/test".concat(this.params)).then(function (result) {
+      _this.users = result.data.users;
+      console.log(_this.users);
+    });
   }
 });
 
