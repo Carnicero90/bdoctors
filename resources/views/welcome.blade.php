@@ -14,10 +14,10 @@
 @section('content')
     {{-- vue container --}}
     <div id="root">
-        <div class="container text-center">
+        <div class="jumbotrontest text-center">
 
             <div class="mt-5 mb-5">
-                <h1>BOOLBARDS</h1>
+                <h1 class="main-title">BOOLBARDS</h1>
             </div>
 
             <!-- input ricerca da usare con VueJs -->
@@ -45,15 +45,15 @@
                 <label for=""></label>
                 <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="cerca un bard">
             </div>
+        </div>
 
-            <div class="mb-5">
-                <a href="{{ route('profile', ['id' => 1]) }}" class="btn btn-success ml-2 mr-2">Pagina pubblica profilo
-                    diesempio</a>
-                <a href="{{ route('sponsor-index') }}" class="btn btn-primary ml-2 mr-2">Vedi i piani di abbonamento</a>
-                <a href="{{ route('categories') }}" class="btn btn-primary ml-2 mr-2">Visualizza le categorie degli
-                    artisti</a>
-                <a href="{{ route('advanced-search') }}" class="btn btn-warning ml-2 mr-2">Pagina di ricerca avanzata</a>
-            </div>
+        <div class="mb-5 mt-5 text-center">
+            <a href="{{ route('profile', ['id' => 1]) }}" class="btn btn-success ml-2 mr-2">Pagina pubblica profilo
+                diesempio</a>
+            <a href="{{ route('sponsor-index') }}" class="btn btn-primary ml-2 mr-2">Vedi i piani di abbonamento</a>
+            <a href="{{ route('categories') }}" class="btn btn-primary ml-2 mr-2">Visualizza le categorie degli
+                artisti</a>
+            <a href="{{ route('advanced-search') }}" class="btn btn-warning ml-2 mr-2">Pagina di ricerca avanzata</a>
         </div>
 
         {{-- section sponsored --}}

@@ -16,4 +16,8 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/guest/home.js', 'public/js')
     // file relativo a profile privato degli user
     .js('resources/js/admin/profile.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css')
+    // per le immaagini di background
+    .options({
+        processCssUrls: false
+    });

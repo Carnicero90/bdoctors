@@ -10942,3 +10942,15 @@ a.text-dark:focus {
   }
 }
 
+.jumbotrontest {
+  padding: 150px 0;
+  background-image: url("/img/jumbotron.jpg");
+  background-size: cover;
+  filter: grayscale(10%);
+}
+
+.main-title {
+  color: white;
+  text-shadow: 2px 2px 2px #000;
+}
+
