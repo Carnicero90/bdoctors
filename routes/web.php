@@ -28,9 +28,8 @@ Route::get('/sendreview/{id}', 'ReviewController@create')->name("send-review");
 Route::post('/storereview/{id}', 'ReviewController@store')->name("store-review");
 // END TEST REVIEWS
 
-// TEST PROFILO PUBBLICO
+// PROFILO PUBBLICO USER
 Route::get('/bards/{id}', 'UserController@show')->name('profile');
-// END TEST PROFILO PUBBLICO
 
 // CATEGORIE
 Route::get("/categories", "CategoryController@index")->name("categories");
