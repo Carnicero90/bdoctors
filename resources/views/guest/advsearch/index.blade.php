@@ -19,7 +19,7 @@
     <div id="root">
         <div class="container text-center">
             {{-- Searchbar --}}
-            <form class="form-inline">
+            <form class="form-inline mb-3">
                 <input 
                     class="form-control mr-sm-2" 
                     type="search" 
@@ -39,6 +39,28 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
             </form>
             {{-- End Searchbar --}}
+
+            {{-- TODO Select --}}
+            <div class="input-group mb-3 mt-3">
+                <div class="input-group-prepend">
+                  <label class="input-group-text" for="inputGroupSelect01">Recensioni</label>
+                </div>
+                <select class="custom-select" id="inputGroupSelect01">
+                  <option selected>Recensioni ricevute</option>
+                  @foreach (Auth::user()->reviews as $review)
+                    <option value="{{$review->vote_id}}">{{$review->author_name}}</option>
+                  @endforeach
+                </select>
+                <select class="custom-select" id="inputGroupSelect01">
+                    <option selected>Media Recensioni</option>
+                    @foreach ($votes as $vote)
+                        <option value="{{$vote->value}}">
+                            {{$vote->value . " - " . ucfirst($vote->label)}}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+            {{-- END TODO Select --}}
 
             <div class="mt-4 mb-5">
                 <a href="{{ route("send-review", ['id' => Auth::user()->id]) }}" class="btn btn-primary mr-3">Scrivi recensione</a>
