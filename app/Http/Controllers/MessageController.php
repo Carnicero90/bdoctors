@@ -24,7 +24,7 @@ class MessageController extends Controller
 
         // con back facciamo il redirect sulla stessa pagina
         // return back()->with("success", "Recensione salvata correttamente");
-        return redirect()->route("send-message", ['id' => $message->id])->with("success", "Messaggio inviato correttamente");
+        return redirect()->route("profile", ['id' => $id])->with("success", "Messaggio inviato correttamente, appena possibile riceverai una risposta");
     }
 
     public function create($id) {
@@ -37,9 +37,9 @@ class MessageController extends Controller
             'author_name' => 'required|string',
             'author_email' => 'required|email',
             'terms-conditions' => 'required',
+            'user_id' => 'required | exists:users,id',
 
             // TOREMEMBER SCOMMENTARE
-            // 'user_id' => 'required | exists:users,id',
             // TOTEST
             // 'service_number' => 'required_without: text',
             // 'text' => 'required without: service_number | string'

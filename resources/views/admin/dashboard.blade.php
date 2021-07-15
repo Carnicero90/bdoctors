@@ -35,6 +35,9 @@
                     <a class="btn btn-success ml-2" href="{{route("profile", ['id' => 1])}}">
                         <i class="fas fa-user-alt mr-1"></i> Visualizza il tuo profilo pubblico
                     </a>
+                    <a class="btn btn-warning ml-2" href="{{route("admin.statistics", ['id' => Auth::user()->id])}}">
+                        <i class="fas fa-user-alt mr-1"></i> Stats
+                    </a>
                     <a class="btn btn-danger ml-2" href="#"
                         onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
@@ -65,17 +68,20 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <span class="text-secondary">{{$review->created_at}}</span>
-                        <div>
-                            @for ($i = 0; $i < $review->vote_id; $i++)
-                            <i class="fas fa-star"></i>
-                            @endfor
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                @for ($i = 0; $i < $review->vote_id; $i++)
+                                    <i class="fas fa-star"></i>
+                                @endfor
+                            </div>
+                            <span class="text-secondary">{{$review->created_at}}</span>
                         </div>
                         {{-- TODO: non usare direttamente l'id, potrebbe non corrispondere al value del voto! --}}
                         {{-- <div class="mt-2 mb-2"><span>voto: {{ $review->vote_id }}</span></div> --}}
                         <div class="mt-2 mb-2">
-                            <p class="card-text text-secondary">{{ strlen($review->content) > 120 ? substr($review->content, 0,120) . '...' : $review->content }}</p>
+                            <p class="card-text text-secondary">{{strlen($review->content) > 69 ? substr($review->content, 0, 70) . '...' : $review->content}}</p>
                         </div>
+                        <a href="{{route("admin.reviews-dettails", ["id" => $review->id])}}" class="btn btn-primary mt-2"><i class="far fa-file-alt"></i> Leggi la recensione</a>
                     </div>
                 </div>
             @endforeach
@@ -99,10 +105,13 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <span class="text-secondary">{{$message->created_at}}</span>
-                        <div class="mt-2 mb-2">
-                            <p class="card-text text-secondary">{{ strlen($message->text) > 120 ? substr($message->text, 0,120) . '...' : $message->text }}</p>
+                        <div class="d-flex align-items-center">
+                            <span class="text-secondary">{{$message->created_at}}</span>
                         </div>
+                        <div class="mt-2 mb-2">
+                            <p class="card-text text-secondary">{{strlen($message->text) > 69 ? substr($message->text, 0, 70) . '...' : $message->text}}</p>
+                        </div>
+                        <a href="{{route('admin.message-page', ['id' => $message->id])}}" class="btn btn-primary mt-2"><i class="far fa-file-alt"></i> Leggi il messaggio</a>
                     </div>
                 </div>
             @endforeach

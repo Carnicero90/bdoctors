@@ -22,31 +22,38 @@
 
             <!-- input ricerca da usare con VueJs -->
             <div class="mb-5" style="position: relative">
-                <select name="" id="" v-model="selectedCategory" v-on:change="searchUser()">
+                <select name="" id="" v-model="selectedCategory" v-on:change="searchUser()" style="width: 200px; height: 37px; transform:translateY(+2px);">
                     <option value="" selected disabled>Seleziona una categoria</option>
                     <option value="">All</option>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
-                <div v-if="searching"
-                    style="width: 200px; background: whitesmoke; margin: auto; position: absolute; left: 50%; top: 100%; transform: translateX(-50%)">
+
+                <div v-if="searching" style="width: 200px; background: whitesmoke; margin: auto; position: absolute; left: 49%; top: 100%; transform: translateX(-50%); z-index: 999;">
                     <ul class="list-group">
                         {{-- TODO: test --}}
-                        <li class="list-group-item" v-for="user in users">
-                            <img :src="'/storage/' + user.pic" alt="" style="height: 2em;">
-                            <a :href="'bards/' + user.id">
-                                @{{ user . name + ' ' + user . lastname }}
+                        <li class="list-group-item" v-for="user in users" style="width: 220px">
+                            <a :href="'bards/' + user.id" class="d-flex align-items-center">
+                                <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="height: 2em;">
+                                <img class="mr-2" v-else src="http://127.0.0.1:8000/img/user-img.png" alt="" style="height: 2em;">
+                                <span>@{{ user . name + ' ' + user . lastname }}</span>
                             </a>
                         </li>
+                        <li class="list-group-item list-group-item-action active" style="width: 220px">
+                            <a class="list-group-item-action active" style="color: white" :href=`/advancedsearch?cat=${selectedCategory}&name=${searchString}`>Mostra più risultati</a>
+                        </li>
                     </ul>
-                    <a :href=`/advancedsearch?cat=${selectedCategory}&name=${searchString}` class="btn btn-primary">Ricerca Avanzata</a>
                 </div>
+
                 <label for=""></label>
-                <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="cerca un bard">
+                <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="Cerca un bard" style="height: 37px; transform:translateY(+2px);">
+
+                <a href="{{ route('advanced-search') }}" class="btn btn-secondary ml-2 mr-2">Pagina di ricerca avanzata</a>
             </div>
         </div>
 
+<<<<<<< HEAD
         <div class="mb-5 mt-5 text-center">
             <a href="{{ route('profile', ['id' => 1]) }}" class="btn btn-success ml-2 mr-2">Pagina pubblica profilo
                 diesempio</a>
@@ -54,26 +61,46 @@
             <a href="{{ route('categories') }}" class="btn btn-primary ml-2 mr-2">Visualizza le categorie degli
                 artisti</a>
             <a href="{{ route('advanced-search') }}" class="btn btn-warning ml-2 mr-2">Pagina di ricerca avanzata</a>
+=======
+        {{-- section categories --}}
+        <div class="container mt-5 mb-5">
+            <h2 class="text-center">Categorie</h2>
+            <div class="row mt-4">
+                @foreach ($categories as $category)
+                    <div class="col-3">
+                        <a href="{{route("category-page", ["slug" => $category->slug])}}" style="text-decoration: none">
+                            <div class="card mb-3">
+                                <div class="card-body text-center text-uppercase">
+                                    <span>{{$category->name}}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+>>>>>>> ec47a49fe36ec16e9a3452ba683dcf4113ba6223
         </div>
+        {{-- END section categories --}}
 
         {{-- section sponsored --}}
-        <div class="container pt-2">
-            <h2>I nostri artisti del momento</h2>
+        <div class="container">
+            <h2 class="text-center">I nostri artisti del momento</h2>
             <div class="row mt-4">
                 <div v-for="user in sponsoredUsers" class="col-3">
-                    <div class="card">
-                        <div class="card-header">
-                            <a :href="'bards/' + user.id">
-                                @{{ user . name + ' ' + user . lastname }}
-                            </a>
-                            {{-- TODO: boh, magari la media voti la mostriamo solo se supera un tot? Pagano, non e' bellino per loro vedersi un
-                            pallino solo come media recensioni (d'altra parte affari loro, bohbohboh) --}}
+                    <a href="#">
+                        <div class="card mb-3">
+                            <div class="card-header">
+                                <a :href="'bards/' + user.id">@{{ user . name + ' ' + user . lastname }}</a>
+                                {{-- TODO: boh, magari la media voti la mostriamo solo se supera un tot? Pagano, non e' bellino per loro vedersi un
+                                pallino solo come media recensioni (d'altra parte affari loro, bohbohboh) --}}
+                            </div>
+                            <div class="card-body">
+                                <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="height: 5em;">
+                                <img class="mr-2" v-else src="http://127.0.0.1:8000/img/user-img.png" alt="" style="height: 5em;">
+                                <span v-if="user.avg_vote > 0"><i v-for="n in parseInt(user.avg_vote)" class="fas fa-star"></i></span>
+                            </div>
                         </div>
-                        <div class="card-body">
-                            <span v-if="user.avg_vote > 0"><i v-for="n in parseInt(user.avg_vote)"
-                                    class="fas fa-star"></i></span>
-                        </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
