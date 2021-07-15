@@ -64,21 +64,21 @@
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                    <a class="dropdown-item" href="{{route('admin.profile-index')}}">Profilo privato</a>
+                                    <a class="dropdown-item" href="{{route('admin.profile-index')}}">Crea / Modifica profilo privato</a>
 
-                                    <a class="dropdown-item" href="{{route("profile", ['id' => 1])}}">Profilo pubblico</a>
+                                    <a class="dropdown-item" href="{{route("profile", ['id' => 1])}}">Visualizza profilo pubblico</a>
 
-                                    <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                                    <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Vai alla Dashboard</a>
 
-                                    <a class="dropdown-item" href="{{ route('admin.messages') }}">Leggi messaggi</a>
+                                    <a class="dropdown-item" href="{{ route('admin.messages') }}">Leggi i tuoi messaggi</a>
 
-                                    <a class="dropdown-item" href="{{ route('admin.reviews') }}">Leggi le recensioni</a>
+                                    <a class="dropdown-item" href="{{ route('admin.reviews') }}">Leggi recensioni lasciate per te</a>
 
                                     <a class="dropdown-item" href="{{ route('sponsor-index') }}">Acquista un piano Premium</a>
 
                                     <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                          document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ "Esegui " . __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

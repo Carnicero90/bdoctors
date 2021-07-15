@@ -4,7 +4,7 @@
 <div class="container">
 
     <div class="mb-4">
-        <a class="btn btn-outline-dark" href="{{route("categories")}}">Torna alla pagina delle categorie</a>
+        <a class="btn btn-secondary" href="{{route("categories")}}"><i class="fas fa-arrow-left mr-3"></i>Torna alla pagina delle categorie</a>
     </div>
 
     <div>
