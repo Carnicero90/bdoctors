@@ -29,15 +29,17 @@ class UserController extends Controller
             'users.lastname',
             'profiles.pic',
             DB::raw('avg(success) as success'),
-            DB::raw('avg(votes.value) as avg_vote')
+            DB::raw('avg(votes.value) as avg_vote'),
+            DB::raw("CONCAT(users.name, ' ', 'users.lastname') as user_fullname")
+
         ])
+            ->where('user_fullname', 'LIKE', '%' . $user . '%')
+
             ->rightJoin('category_user', 'users.id', '=', 'category_user.user_id')
             ->where('category_user.category_id', '=', 2)
             ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
 
             // TOTEST per ricerca
-            ->where('users.name', 'LIKE', '%' . $user . '%')
-            ->orWhere('users.lastname', 'LIKE', '%' . $user . '%')
             // END TOTEST
             ->leftJoin('sponsorplan_users', function ($join) {
                 $join->on('sponsorplan_users.user_id', '=', 'users.id')
@@ -79,7 +81,8 @@ class UserController extends Controller
     }
     // Funzione in cui testo roba, tanto per avere un post in cui stampare a schermo
     public function users(Request $request)
-    {   $user = $request['name'];
+    {
+        $user = $request['name'];
         $category = $request['cat'];
         $users =  User::select([
             'users.id',
@@ -88,15 +91,21 @@ class UserController extends Controller
             DB::raw('avg(category_user.category_id) as cat'),
             'profiles.pic',
             DB::raw('avg(success) as success'),
-            DB::raw('avg(votes.value) as avg_vote')
+            DB::raw('avg(votes.value) as avg_vote'),
+            DB::raw("CONCAT(users.name, ' ', 'users.lastname') as user_fullname")
         ])
+
             ->rightJoin('category_user', 'users.id', '=', 'category_user.user_id')
-            ->where('category_user.category_id', '=', $category)
+            ->where([['category_user.category_id', '=', $category]])
+            ->where('users.name', 'LIKE', '%' . $user . '%')
             // ->where(function($query))
-                        // TOTEST per ricerca
-                        ->where('users.name', 'LIKE', '%' . $user . '%')
-                        // ->orWhere('users.lastname', 'LIKE', '%' . $user . '%')
-                        // END TOTEST
+            // TOTEST per ricerca
+
+
+            // ->whereRaw("concat(users.name, ' ', users.lastname) like '%?%'", [$user])
+            // ->whereRaw('true')
+            // ->orWhere('users.lastname', 'LIKE', '%' . $user . '%')
+            // END TOTEST
             ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
             ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
             ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
@@ -106,6 +115,8 @@ class UserController extends Controller
                     ->where('sponsorplan_users.success', '=', '1')
                     ->where('sponsorplan_users.end_date', '>', Carbon::now());
             })
+            // ->where('users.name', 'LIKE', '%' . $user . '%')
+            // ->orWhere('users.lastname', 'LIKE', '%' . $user . '%')
             ->orderByDesc('success')
             ->orderByDesc('avg_vote')
             ->get();
@@ -113,18 +124,18 @@ class UserController extends Controller
 
 
 
-            // ->leftJoin('sponsorplan_users', function ($join) {
-            //     $join->on('sponsorplan_users.user_id', '=', 'users.id')
-            //         ->where('sponsorplan_users.success', '=', '1')
-            //         ->where('sponsorplan_users.end_date', '>', Carbon::now());
-            // })
-            // ->groupBy('users.id')
+        // ->leftJoin('sponsorplan_users', function ($join) {
+        //     $join->on('sponsorplan_users.user_id', '=', 'users.id')
+        //         ->where('sponsorplan_users.success', '=', '1')
+        //         ->where('sponsorplan_users.end_date', '>', Carbon::now());
+        // })
+        // ->groupBy('users.id')
 
-            $data = [
-                'users' => $users,
-                'success' => true
-            ];
-            return response()->json($data);
+        $data = [
+            'users' => $users,
+            'success' => true
+        ];
+        return response()->json($data);
 
         // TODO: test
         $category = $request['category'];

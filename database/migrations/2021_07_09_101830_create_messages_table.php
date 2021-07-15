@@ -25,8 +25,8 @@ class CreateMessagesTable extends Migration
             $table->string('author_name');
             $table->string('author_email');
             $table->text('text')->nullable();
-            $table->boolean('to_show');
-            $table->boolean('to_read');
+            $table->boolean('to_show')->default(true);
+            $table->boolean('to_read')->default(true);
             $table->timestamps();
         });
     }
