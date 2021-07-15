@@ -32,7 +32,7 @@
                     <a class="btn btn-warning ml-2" href="{{route('sponsor-index')}}">
                         <i class="fas fa-star mr-1"></i> Acquista un piano premium
                     </a>
-                    <a class="btn btn-success ml-2" href="{{route("profile", ['id' => 1])}}">
+                    <a class="btn btn-success ml-2" href="{{route("profile", ['id' => Auth::user()->id])}}">
                         <i class="fas fa-user-alt mr-1"></i> Visualizza il tuo profilo pubblico
                     </a>
                     <a class="btn btn-warning ml-2" href="{{route("admin.statistics", ['id' => Auth::user()->id])}}">

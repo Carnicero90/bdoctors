@@ -9,7 +9,8 @@
         <div class="mb-4 d-flex align-items-center">
             @if ($user->profile)
                 <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
-                    <img src="{{ asset('storage/' . $user->profile->pic) }}" alt="" style="max-height: 100px; width: 100%; height: 100%; object-fit: cover;">
+                    <img src="{{ asset('storage/' . $user->profile->pic) }}" alt=""
+                        style="max-height: 100px; width: 100%; height: 100%; object-fit: cover;">
                 </div>
             @else
                 <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
@@ -49,11 +50,15 @@
             @endif
         </div>
         {{-- END TEST --}}
+        @if ($user->id != Auth::user()->id)
+            <div class="mt-4 mb-5">
+                <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi
+                    recensione</a>
+                <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi
+                    messaggio</a>
+            </div>
+        @endif
 
-        <div class="mt-4 mb-5">
-            <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi recensione</a>
-            <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi messaggio</a>
-        </div>
 
         {{-- PERFORMANCES --}}
         <form>
@@ -72,6 +77,7 @@
         </form>
         {{-- END PERFORMANCES --}}
 
+        {{-- reviews --}}
         <div class="row mt-4">
             <div class="col-12">
                 <h2>Recensioni</h2>
@@ -96,8 +102,13 @@
                                     <i class="fas fa-star"></i>
                                 @endfor
                             </div>
-                            {{-- TODO: non usare direttamente l'id, potrebbe non corrispondere al value del voto! --}}
-                            {{-- <div class="mt-2 mb-2"><span>voto: {{ $review->vote_id }}</span></div> --}}
+                            {{-- div vote --}}
+                            <div class="mt-2 mb-2">
+                                @for ($i = 0; $i < $review->vote->value; $i++)
+                                    <i class="fas fa-star"></i>
+                                @endfor
+                            </div>
+                            {{-- END div vote --}}
                             <div class="mt-2 mb-2">
                                 <p class="card-text text-secondary">
                                     {{ strlen($review->content) > 120 ? substr($review->content, 0, 120) . '...' : $review->content }}
@@ -108,6 +119,8 @@
                 </div>
             @endforeach
         </div>
+        {{-- END reviews --}}
+
 
     </div>
 
