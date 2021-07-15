@@ -30,18 +30,22 @@
                     @endforeach
                 </select>
 
-                <div v-if="searching" style="width: 200px; background: whitesmoke; margin: auto; position: absolute; left: 57.5%; top: 100%; transform: translateX(-50%); z-index: 999;">
+                <div v-if="searching"
+                    style="width: 200px; background: whitesmoke; margin: auto; position: absolute; left: 57.5%; top: 100%; transform: translateX(-50%); z-index: 999;">
                     <ul class="list-group">
                         {{-- TODO: test --}}
                         <li class="list-group-item" v-for="user in users" style="width: 220px">
                             <a :href="'bards/' + user.id" class="d-flex align-items-center">
                                 <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="height: 2em;">
-                                <img class="mr-2" v-else src="http://127.0.0.1:8000/img/user-img.png" alt="" style="height: 2em;">
-                                <span>@{{user . name + ' ' + user . lastname}}</span>
+                                <img class="mr-2" v-else src="http://127.0.0.1:8000/img/user-img.png" alt=""
+                                    style="height: 2em;">
+                                <span>@{{ user . name + ' ' + user . lastname }}</span>
                             </a>
                         </li>
                         <li class="list-group-item list-group-item-action active" style="width: 220px">
-                            <a class="list-group-item-action active" style="color: white" :href=`/advancedsearch?cat=${selectedCategory}&name=${searchString}`>Mostra più risultati</a>
+                            <a class="list-group-item-action active" style="color: white"
+                                :href=`/advancedsearch?cat=${selectedCategory}&name=${searchString}`>Mostra più
+                                risultati</a>
                         </li>
                     </ul>
                 </div>
@@ -75,7 +79,8 @@
                         </div>
                         <div class="card-body">
                             <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="height: 5em;">
-                            <img class="mr-2" v-else src="http://127.0.0.1:8000/img/user-img.png" alt="" style="height: 5em;">
+                            <img class="mr-2" v-else src="http://127.0.0.1:8000/img/user-img.png" alt=""
+                                style="height: 5em;">
                             <span v-if="user.avg_vote > 0"><i v-for="n in parseInt(user.avg_vote)"
                                     class="fas fa-star"></i></span>
                         </div>
