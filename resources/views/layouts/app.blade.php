@@ -9,6 +9,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
+    {{-- TODO: favicon solo di test --}}
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
+
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
