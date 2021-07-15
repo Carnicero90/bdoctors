@@ -35,6 +35,9 @@
                     <a class="btn btn-success ml-2" href="{{route("profile", ['id' => 1])}}">
                         <i class="fas fa-user-alt mr-1"></i> Visualizza il tuo profilo pubblico
                     </a>
+                    <a class="btn btn-warning ml-2" href="{{route("admin.statistics", ['id' => Auth::user()->id])}}">
+                        <i class="fas fa-user-alt mr-1"></i> Stats
+                    </a>
                     <a class="btn btn-danger ml-2" href="#"
                         onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
