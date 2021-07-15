@@ -12,12 +12,16 @@ class ReviewController extends Controller
     public function index()
     {
 
+        $reviews = Review::where('user_id', '=', Auth::user()->id)
+        ->orderByDesc('created_at')
+        ->get();
         $user = Auth::user();
-        
-        $data = [
-            "user" => $user
-        ];
+        //TODO: questo non serve, direi, tanto effettivamente Auth:user lo richiami direttamente dalla pagina, no?
 
+        $data = [
+            "user" => $user,
+            'reviews' => $reviews
+        ];
         return view('admin.reviews.index', $data);
     }
 
