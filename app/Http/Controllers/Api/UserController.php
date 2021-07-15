@@ -94,7 +94,7 @@ class UserController extends Controller
             ->where('category_user.category_id', '=', $category)
             // ->where(function($query))
                         // TOTEST per ricerca
-                        ->where('users.name', 'LIKE', '%' . $user . '%')
+                        ->where('users.lastname', 'LIKE', '%' . $user . '%')
                         // ->orWhere('users.lastname', 'LIKE', '%' . $user . '%')
                         // END TOTEST
             ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')

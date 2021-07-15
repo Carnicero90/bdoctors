@@ -19,6 +19,7 @@ class MessageController extends Controller
         $message->fill($form_data);
         $message->message_date = new Carbon();
         $message->user_id = $id;
+        // $message->to_show = true;
         $message->save();
 
         // con back facciamo il redirect sulla stessa pagina
