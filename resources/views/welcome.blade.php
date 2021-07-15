@@ -74,6 +74,8 @@
                             pallino solo come media recensioni (d'altra parte affari loro, bohbohboh) --}}
                         </div>
                         <div class="card-body">
+                            <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="height: 5em;">
+                            <img class="mr-2" v-else src="http://127.0.0.1:8000/img/user-img.png" alt="" style="height: 5em;">
                             <span v-if="user.avg_vote > 0"><i v-for="n in parseInt(user.avg_vote)"
                                     class="fas fa-star"></i></span>
                         </div>

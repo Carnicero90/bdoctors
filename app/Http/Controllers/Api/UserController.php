@@ -72,9 +72,11 @@ class UserController extends Controller
 
     public function sponsoredUsers()
     {
-        $sponsored_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'))
+        $sponsored_users = User::select('users.*',             'profiles.pic',
+        DB::raw('avg(votes.value) as avg_vote'))
             // ->rightJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
             ->rightJoin('sponsorplan_users', 'sponsorplan_users.user_id', '=', 'users.id')
+            ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
             ->where('sponsorplan_users.success', '=', '1')
             ->where('sponsorplan_users.end_date', '>', Carbon::now())
             ->groupBy('users.id')
