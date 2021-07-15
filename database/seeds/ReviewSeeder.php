@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
 use App\Review;
+use App\User;
+use App\Vote;
 
 class ReviewSeeder extends Seeder
 {
@@ -10,11 +13,22 @@ class ReviewSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
         foreach (config('reviews') as $review ) {
             $rev = new Review();
             $rev->fill($review);
+            $rev->save();
+        }
+
+        for ($i = 0; $i < 100; $i++)
+        {
+            $rev = new Review();
+            $rev->user_id = rand(1, User::count());
+            $rev->vote_id = rand(1, Vote::count());
+            $rev->author_name = $faker->name();
+            $rev->author_email = $faker->email();
+            $rev->content = $faker->text();
             $rev->save();
         }
     }

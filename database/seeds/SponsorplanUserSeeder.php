@@ -17,26 +17,58 @@ class SponsorplanUserSeeder extends Seeder
         $sponsor_plan_users = [
             [
                 'user_id' => 1,
-                'sponsorplan_id' => rand(1, 3),
+                'sponsorplan_id' => 1,
                 'order_date' => Carbon::now(),
-                'end_date' => Carbon::now('+233:30'),
-                'invoice' => 'lorem',
+                'end_date' => Carbon::now()->addHours(24),
+                'invoice' => 'Fattura n° ' . rand(1000, 1999),
                 'success' => 1
             ],
             [
                 'user_id' => 2,
-                'sponsorplan_id' => rand(1, 3),
+                'sponsorplan_id' => 2,
                 'order_date' => Carbon::now(),
-                'end_date' => Carbon::now('+233:30'),
-                'invoice' => 'lorem',
+                'end_date' => Carbon::now()->addHours(72),
+                'invoice' => 'Fattura n° ' . rand(1000, 1999),
                 'success' => 1
             ],
             [
                 'user_id' => 3,
-                'sponsorplan_id' => rand(1, 3),
+                'sponsorplan_id' => 3,
                 'order_date' => Carbon::now(),
-                'end_date' => Carbon::now('+33:30'),
-                'invoice' => 'lorem',
+                'end_date' => Carbon::now()->addHours(144),
+                'invoice' => 'Fattura n° ' . rand(1000, 1999),
+                'success' => 1
+            ],
+            [
+                'user_id' => 4,
+                'sponsorplan_id' => 1,
+                'order_date' => Carbon::now(),
+                'end_date' => Carbon::now()->addHours(24),
+                'invoice' => 'Fattura n° ' . rand(1000, 1999),
+                'success' => 1
+            ],
+            [
+                'user_id' => 5,
+                'sponsorplan_id' => 2,
+                'order_date' => Carbon::now(),
+                'end_date' => Carbon::now()->addHours(72),
+                'invoice' => 'Fattura n° ' . rand(1000, 1999),
+                'success' => 1
+            ],
+            [
+                'user_id' => 6,
+                'sponsorplan_id' => 3,
+                'order_date' => Carbon::now(),
+                'end_date' => Carbon::now()->addHours(144),
+                'invoice' => 'Fattura n° ' . rand(1000, 1999),
+                'success' => 1
+            ],
+            [
+                'user_id' => 7,
+                'sponsorplan_id' => 2,
+                'order_date' => Carbon::now(),
+                'end_date' => Carbon::now()->addHours(72),
+                'invoice' => 'Fattura n° ' . rand(1000, 1999),
                 'success' => 1
             ],
         ];

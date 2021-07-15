@@ -4,9 +4,19 @@
     <div class="container">
 
         {{-- TEST --}}
-        <div class="mb-4">
-            <img class="d-inline-block mr-2" src="{{ $user->profile ? asset('storage/' . $user->profile->pic) : 'defaultimagedainserire' }}" alt="" style="width: 100px">
-            <h1 class="d-inline-block">{{ $user->name }} {{ $user->lastname }}</h1>
+        <div class="mb-4 d-flex align-items-center">
+            @if ($user->profile)
+                <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
+                    <img src="{{asset('storage/' . $user->profile->pic)}}" alt="" style="max-height: 100px; width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            @else
+                <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
+                    <img src="{{asset('img/user-img.png')}}" alt="" style="max-height: 100px;">
+                </div>
+            @endif
+            <div class="d-inline-block ml-4">
+                <h1>{{$user->name}} {{$user->lastname}}</h1>
+            </div>
         </div>
 
         <div class="mb-4">

@@ -41,7 +41,7 @@ class ProfileController extends Controller
                 'work_address' => 'string | max:100 | nullable',
                 'phone_number' => 'digits_between:5,15 | nullable',
                 'image-file' => 'image | nullable',
-                'category' => 'exists:category_id'
+                'category' => 'exists:category_id',
             ]
         );
         $data = $request->only('self_description', 'work_address', 'phone_number', 'category_id');
@@ -68,7 +68,13 @@ class ProfileController extends Controller
 
         foreach(array_keys($request->input()) as $field) {
             if (substr($field, 0, 5) == 'old_s') 
-            {
+            { 
+                $request->validate([
+                    $field.'.title' => 'string | max: 100 | required',
+                    $field.'.description' => 'string | nullable',
+                    // TODO Cambiare eventualmente il decimal
+                    $field.'.hourly_rate' => 'numeric | required'
+                ]);
                 $data = $request[$field];
                 $service = Service::findOrFail($data['id']);
                 $service->update($request[$field]);
@@ -78,6 +84,12 @@ class ProfileController extends Controller
         foreach(array_keys($request->input()) as $field) {
             if (substr($field, 0, 7) == 'service') 
             {
+                $request->validate([
+                    $field.'.title' => 'string | max: 100 | required',
+                    $field.'.description' => 'string | nullable',
+                    // TODO Cambiare eventualmente il decimal
+                    $field.'.hourly_rate' => 'numeric | required'
+                ]);
                 $service = new Service();
                 $service->user_id = Auth::user()->id;
                 $service->fill($request[$field]);
