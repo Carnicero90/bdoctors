@@ -29,19 +29,23 @@
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
                 </select>
-                <div v-if="searching"
-                    style="width: 200px; background: whitesmoke; margin: auto; position: absolute; left: 50%; top: 100%; transform: translateX(-50%)">
+
+                <div v-if="searching" style="width: 200px; background: whitesmoke; margin: auto; position: absolute; left: 57.5%; top: 100%; transform: translateX(-50%); z-index: 999;">
                     <ul class="list-group">
                         {{-- TODO: test --}}
-                        <li class="list-group-item" v-for="user in users">
-                            <img :src="'/storage/' + user.pic" alt="" style="height: 2em;">
-                            <a :href="'bards/' + user.id">
-                                @{{ user . name + ' ' + user . lastname }}
+                        <li class="list-group-item" v-for="user in users" style="width: 220px">
+                            <a :href="'bards/' + user.id" class="d-flex align-items-center">
+                                <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="height: 2em;">
+                                <img class="mr-2" v-else src="http://127.0.0.1:8000/img/user-img.png" alt="" style="height: 2em;">
+                                <span>@{{user . name + ' ' + user . lastname}}</span>
                             </a>
                         </li>
+                        <li class="list-group-item list-group-item-action active" style="width: 220px">
+                            <a class="list-group-item-action active" style="color: white" :href=`/advancedsearch?cat=${selectedCategory}&name=${searchString}`>Ricerca Avanzata</a>
+                        </li>
                     </ul>
-                    <a :href=`/advancedsearch?cat=${selectedCategory}&name=${searchString}` class="btn btn-primary">Ricerca Avanzata</a>
                 </div>
+
                 <label for=""></label>
                 <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="cerca un bard">
             </div>
