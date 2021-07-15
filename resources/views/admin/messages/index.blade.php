@@ -10,9 +10,8 @@
             @include("partials.success-messages")
             {{-- div.row --}}
             <div class="row">
-                @if ($user->messages->isNotEmpty())
-                    @foreach ($user->messages as $message)
-                        @if ($message->to_show)
+                @if ($messages->isNotEmpty())
+                    @foreach ($messages as $message)
                             <div class="col-6">
                                 <div class="card mt-4">
                                     <div class="card-body">
@@ -36,7 +35,6 @@
                                     </div>
                                 </div>
                             </div>
-                        @endif
                         {{-- div message --}}
 
                         {{-- END div message --}}

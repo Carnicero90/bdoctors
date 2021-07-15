@@ -17,13 +17,17 @@ class MessageController extends Controller
     public function index()
     {
 
+        $messages = Message::where('user_id', '=', Auth::user()->id)
+        ->orderByDesc('message_date')
+        ->where('to_show', '=', 1)
+        ->get();
         $user = Auth::user();
         //TODO: questo non serve, direi, tanto effettivamente Auth:user lo richiami direttamente dalla pagina, no?
 
         $data = [
-            "user" => $user
+            "user" => $user,
+            'messages' => $messages
         ];
-
         return view('admin.messages.index', $data);
     }
     /**
