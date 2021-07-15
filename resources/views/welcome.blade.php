@@ -40,7 +40,7 @@
                             </a>
                         </li>
                     </ul>
-                    <a href="{{ route('advanced-search') }}" class="btn btn-primary">Ricerca Avanzata</a>
+                    <a :href=`/advancedsearch?cat=${selectedCategory}&name=${searchString}` class="btn btn-primary">Ricerca Avanzata</a>
                 </div>
                 <label for=""></label>
                 <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="cerca un bard">

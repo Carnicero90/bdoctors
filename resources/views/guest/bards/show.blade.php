@@ -69,8 +69,10 @@
         <div class="row mt-4">
             <div class="col-12">
                 <h2>Recensioni</h2>
-                @foreach ($user->reviews as $review)
+                @dump($reviews)
+                @foreach (Auth::user()->reviews as $review)
                     <div class="card mt-4">
+                        @dump($review->vote->value)
                         <div class="card-header">
                             <span><i class="fas fa-user-circle mr-1"></i></span>
                             <span>{{ $review->author_name }}</span>
@@ -78,7 +80,7 @@
                         <div class="card-body">
                             {{-- <div class="mt-2 mb-2"><span>email: {{ $review->author_email }}</span></div> --}}
                             <div>
-                                @for ($i = 0; $i < $review->vote_id; $i++)
+                                @for ($i = 0; $i < $review->votes; $i++)
                                 <i class="fas fa-star"></i>
                                 @endfor
                             </div>

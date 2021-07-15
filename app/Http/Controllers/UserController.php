@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Review;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -28,9 +29,12 @@ class UserController extends Controller
 
     {
         $user = User::findOrFail($id);
+        $reviews = Review::where('user_id', '=', $user->id)->get();
+
         
         $data = [
-            'user' => $user
+            'user' => $user,
+            'reviews' => $reviews
         ];
 
         return view('guest.bards.show', $data);
