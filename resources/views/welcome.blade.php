@@ -82,9 +82,9 @@
                             {{-- TODO: boh, magari la media voti la mostriamo solo se supera un tot? Pagano, non e' bellino per loro vedersi un
                             pallino solo come media recensioni (d'altra parte affari loro, bohbohboh) --}}
                             <div class="card-body d-flex flex-column align-items-center">
-                                <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden;">
-                                    <img v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="max-height: 50px;">
-                                    <img v-else src="http://127.0.0.1:8000/img/user-img.png" alt="" style="max-height: 50px;">
+                                <div style="width: 70px; height: 70px; border-radius: 50%; overflow: hidden;">
+                                    <img v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="max-height: 70px; width: 100%; height: 100%; object-fit: cover;">
+                                    <img v-else src="http://127.0.0.1:8000/img/user-img.png" alt="" style="max-height: 70px;">
                                 </div>
                                 <div class="mt-3 mb-2">
                                     <span>@{{ user . name + ' ' + user . lastname }}</span>

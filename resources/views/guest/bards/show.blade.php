@@ -9,8 +9,7 @@
         <div class="mb-4 d-flex align-items-center">
             @if ($user->profile)
                 <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
-                    <img src="{{ asset('storage/' . $user->profile->pic) }}" alt=""
-                        style="max-height: 100px; width: 100%; height: 100%; object-fit: cover;">
+                    <img src="{{ asset('storage/' . $user->profile->pic) }}" alt="" style="max-height: 100px; width: 100%; height: 100%; object-fit: cover;">
                 </div>
             @else
                 <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
