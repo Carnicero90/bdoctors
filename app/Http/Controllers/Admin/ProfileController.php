@@ -96,8 +96,7 @@ class ProfileController extends Controller
         return [
         $field.'.title' => 'string | max: 100 | required',
         $field.'.description' => 'string | nullable',
-        // TODO Cambiare eventualmente il decimal
-        $field.'.hourly_rate' => 'numeric | required'
+        $field.'.hourly_rate' => 'numeric | required | between:0,10.999999999'
         ];
         }
 
