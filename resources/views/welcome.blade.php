@@ -41,7 +41,7 @@
                             </a>
                         </li>
                         <li class="list-group-item list-group-item-action active" style="width: 220px">
-                            <a class="list-group-item-action active" style="color: white" :href=`/advancedsearch?cat=${selectedCategory}&name=${searchString}`>Ricerca Avanzata</a>
+                            <a class="list-group-item-action active" style="color: white" :href=`/advancedsearch?cat=${selectedCategory}&name=${searchString}`>Mostra più risultati</a>
                         </li>
                     </ul>
                 </div>

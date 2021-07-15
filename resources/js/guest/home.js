@@ -14,18 +14,16 @@ var app = new Vue({
             if (this.searchString.length > 0) {
                 if (this.selectedCategory) {
                     this.searching = true;
-                    console.log(this.selectedCategory);
                     Axios.get(`api/test?name=${this.searchString}&cat=${this.selectedCategory}`)
                     .then(result => {
-                        this.users = result.data.users;
+                        this.users = result.data.users.slice(0,5);
                     })
                 }
                 else {
                     this.searching = true;
                     Axios.get(`api/index?name=${this.searchString}`)
                         .then(result => {
-                            this.users = result.data.users;
-                            console.log(this.users);
+                            this.users = result.data.users.slice(0,5);
                         })
                 }
             }

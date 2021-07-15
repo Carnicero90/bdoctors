@@ -2120,15 +2120,13 @@ var app = new Vue({
       if (this.searchString.length > 0) {
         if (this.selectedCategory) {
           this.searching = true;
-          console.log(this.selectedCategory);
           Axios.get("api/test?name=".concat(this.searchString, "&cat=").concat(this.selectedCategory)).then(function (result) {
-            _this.users = result.data.users;
+            _this.users = result.data.users.slice(0, 5);
           });
         } else {
           this.searching = true;
           Axios.get("api/index?name=".concat(this.searchString)).then(function (result) {
-            _this.users = result.data.users;
-            console.log(_this.users);
+            _this.users = result.data.users.slice(0, 5);
           });
         }
       } else {
