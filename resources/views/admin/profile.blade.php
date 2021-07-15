@@ -74,7 +74,7 @@
                 {{-- END input#image-file --}}
 <h3>Servizi offerti</h3>
 @foreach (Auth::user()->services as $service)
-<div class="card">
+<div class="card" style="background-color: rgb(0, 162, 255); margin-bottom: 20px; color: white">
     {{-- input#user_id --}}
     <input type="hidden" name="{{'old_s' . $service->id . '[id]'}}" value="{{ $service->id }}">
     {{-- END input#user_id --}}
@@ -100,6 +100,13 @@
         <input type="number" step="0.10" class="form-control" id="hourly_rate" name="{{'old_s' . $service->id . '[hourly_rate]'}}" value="{{ $service->hourly_rate }}">
     </div>
     {{-- END input#hourly_rate --}}
+    {{-- TOTEST --}}
+    <div class="btn btn-danger">
+        <label for="destroy">Elimina servizio</label>
+        <input type="checkbox" name="{{'old_s' . $service->id . '[destroy]'}}" id="destroy">
+    </div>
+
+    {{-- END TOTEST --}}
 </div>
 @endforeach
 

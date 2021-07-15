@@ -12,6 +12,8 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+
+    .js('resources/js/guest/advsearch.js', 'public/js')
     // file relativo a index pubblico
     .js('resources/js/guest/home.js', 'public/js')
     // file relativo a profile privato degli user

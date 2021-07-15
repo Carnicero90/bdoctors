@@ -72,8 +72,14 @@ class ProfileController extends Controller
                 $request->validate($this->serviceParams($field));
                 $data = $request[$field];
                 $service = Service::findOrFail($data['id']);
-                $service->update($request[$field]);
-                $service->save();
+                if (isset($request[$field]['destroy'])) {
+                    $service->delete();
+                }
+                else {
+                    $service->update($request[$field]);
+                    $service->save();
+                }
+
             }
         }
         foreach(array_keys($request->input()) as $field) {

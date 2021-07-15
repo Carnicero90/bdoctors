@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 3);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2094,10 +2094,10 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-/***/ "./resources/js/admin/profile.js":
-/*!***************************************!*\
-  !*** ./resources/js/admin/profile.js ***!
-  \***************************************/
+/***/ "./resources/js/guest/advsearch.js":
+/*!*****************************************!*\
+  !*** ./resources/js/guest/advsearch.js ***!
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -2106,33 +2106,23 @@ var _require = __webpack_require__(/*! axios */ "./node_modules/axios/index.js")
 
 var app = new Vue({
   el: '#root',
-  data: {
-    numbers: 0
-  },
-  methods: {
-    /*
-    * stampa name in console, seguito da un punto esclamativo
-    *
-    * @param str name
-    * return void
-    */
-    sample_func: function sample_func(name) {
-      console.log(name + '!');
-    }
-  },
-  mounted: function mounted() {}
+  data: {},
+  methods: {},
+  mounted: function mounted() {
+    console.log(location.search);
+  }
 });
 
 /***/ }),
 
-/***/ 3:
-/*!*********************************************!*\
-  !*** multi ./resources/js/admin/profile.js ***!
-  \*********************************************/
+/***/ 1:
+/*!***********************************************!*\
+  !*** multi ./resources/js/guest/advsearch.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/filippomontani/booldoctors/bdoctors/resources/js/admin/profile.js */"./resources/js/admin/profile.js");
+module.exports = __webpack_require__(/*! /Users/filippomontani/booldoctors/bdoctors/resources/js/guest/advsearch.js */"./resources/js/guest/advsearch.js");
 
 
 /***/ })
