@@ -77,6 +77,7 @@
         </form>
         {{-- END PERFORMANCES --}}
 
+        {{-- reviews --}}
         <div class="row mt-4">
             <div class="col-12">
                 <h2>Recensioni</h2>
@@ -101,8 +102,13 @@
                                     <i class="fas fa-star"></i>
                                 @endfor
                             </div>
-                            {{-- TODO: non usare direttamente l'id, potrebbe non corrispondere al value del voto! --}}
-                            {{-- <div class="mt-2 mb-2"><span>voto: {{ $review->vote_id }}</span></div> --}}
+                            {{-- div vote --}}
+                            <div class="mt-2 mb-2">
+                                @for ($i = 0; $i < $review->vote->value; $i++)
+                                    <i class="fas fa-star"></i>
+                                @endfor
+                            </div>
+                            {{-- END div vote --}}
                             <div class="mt-2 mb-2">
                                 <p class="card-text text-secondary">
                                     {{ strlen($review->content) > 120 ? substr($review->content, 0, 120) . '...' : $review->content }}
@@ -113,6 +119,8 @@
                 </div>
             @endforeach
         </div>
+        {{-- END reviews --}}
+
 
     </div>
 
