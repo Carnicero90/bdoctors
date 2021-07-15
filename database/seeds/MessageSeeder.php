@@ -5,7 +5,6 @@ use App\Message;
 use Faker\Generator as Faker;
 
 class MessageSeeder extends Seeder
-// TODO: cambia nome
 {
     /**
      * Run the database seeds.

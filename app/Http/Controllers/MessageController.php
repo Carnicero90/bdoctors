@@ -37,9 +37,9 @@ class MessageController extends Controller
             'author_name' => 'required|string',
             'author_email' => 'required|email',
             'terms-conditions' => 'required',
+            'user_id' => 'required | exists:users,id',
 
             // TOREMEMBER SCOMMENTARE
-            // 'user_id' => 'required | exists:users,id',
             // TOTEST
             // 'service_number' => 'required_without: text',
             // 'text' => 'required without: service_number | string'
