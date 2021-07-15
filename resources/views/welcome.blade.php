@@ -13,7 +13,7 @@
 @endsection
 @section('content')
     {{-- vue container --}}
-    <div id="root">
+    <div id="root" style="transform: translateY(-1.4rem)">
         <div class="jumbotrontest text-center">
 
             <div class="mt-5 mb-5">
@@ -53,6 +53,7 @@
             </div>
         </div>
 
+<<<<<<< HEAD
         <div class="mb-5 mt-5 text-center">
             <a href="{{ route('profile', ['id' => 1]) }}" class="btn btn-success ml-2 mr-2">Pagina pubblica profilo
                 diesempio</a>
@@ -60,6 +61,24 @@
             <a href="{{ route('categories') }}" class="btn btn-primary ml-2 mr-2">Visualizza le categorie degli
                 artisti</a>
             <a href="{{ route('advanced-search') }}" class="btn btn-warning ml-2 mr-2">Pagina di ricerca avanzata</a>
+=======
+        {{-- section categories --}}
+        <div class="container mt-5 mb-5">
+            <h2 class="text-center">Categorie</h2>
+            <div class="row mt-4">
+                @foreach ($categories as $category)
+                    <div class="col-3">
+                        <a href="{{route("category-page", ["slug" => $category->slug])}}" style="text-decoration: none">
+                            <div class="card mb-3">
+                                <div class="card-body text-center text-uppercase">
+                                    <span>{{$category->name}}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+>>>>>>> bb170d7941f814843ff15fdbb99909092c3439a9
         </div>
         {{-- END section categories --}}
 
@@ -68,17 +87,21 @@
             <h2 class="text-center">I nostri artisti del momento</h2>
             <div class="row mt-4">
                 <div v-for="user in sponsoredUsers" class="col-3">
-                    <a href="#">
+                    <a :href="'bards/' + user.id" style="text-decoration: none">
                         <div class="card mb-3">
-                            <div class="card-header">
-                                <a :href="'bards/' + user.id">@{{ user . name + ' ' + user . lastname }}</a>
-                                {{-- TODO: boh, magari la media voti la mostriamo solo se supera un tot? Pagano, non e' bellino per loro vedersi un
-                                pallino solo come media recensioni (d'altra parte affari loro, bohbohboh) --}}
-                            </div>
-                            <div class="card-body">
-                                <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="height: 5em;">
-                                <img class="mr-2" v-else src="http://127.0.0.1:8000/img/user-img.png" alt="" style="height: 5em;">
-                                <span v-if="user.avg_vote > 0"><i v-for="n in parseInt(user.avg_vote)" class="fas fa-star"></i></span>
+                            {{-- TODO: boh, magari la media voti la mostriamo solo se supera un tot? Pagano, non e' bellino per loro vedersi un
+                            pallino solo come media recensioni (d'altra parte affari loro, bohbohboh) --}}
+                            <div class="card-body d-flex flex-column align-items-center">
+                                <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden;">
+                                    <img v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="max-height: 50px;">
+                                    <img v-else src="http://127.0.0.1:8000/img/user-img.png" alt="" style="max-height: 50px;">
+                                </div>
+                                <div class="mt-3 mb-2">
+                                    <span>@{{ user . name + ' ' + user . lastname }}</span>
+                                </div>
+                                <div>
+                                    <span v-if="user.avg_vote > 0"><i v-for="n in parseInt(user.avg_vote)" class="fas fa-star"></i></span>
+                                </div>
                             </div>
                         </div>
                     </a>
