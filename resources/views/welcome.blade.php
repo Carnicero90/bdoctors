@@ -59,7 +59,9 @@
                 <div v-for="user in sponsoredUsers" class="col-3">
                     <div class="card">
                         <div class="card-header">
-                            <span> @{{ user.name + ' ' + user.lastname }}</span>
+                            <a :href="'bards/' + user.id">
+                                @{{ user.name + ' ' + user.lastname }}
+                            </a>
                             {{-- TODO: boh, magari la media voti la mostriamo solo se supera un tot? Pagano, non e' bellino per loro vedersi un
                             pallino solo come media recensioni (d'altra parte affari loro, bohbohboh) --}}
                         </div>
