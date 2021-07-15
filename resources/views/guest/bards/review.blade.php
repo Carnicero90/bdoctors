@@ -7,7 +7,12 @@
         @include("partials.validation-errors")
 
         <h1>Lascia una recensione per {{ $user->name . ' ' . $user->lastname }}</h1>
-        <h2>@{{categoria}}</h2>
+        <div class="mb-4">
+            <h6>Categorie:</h6>
+            @foreach ($user->categories as $category)
+                <a class="btn btn-outline-dark" href="{{route("category-page", ["slug" => $category->slug])}}">{{$category->name}}</a>
+            @endforeach
+        </div>
 
         {{-- form lascia una recensione --}}
         <form action="{{route("store-review", ['id' => $user->id])}}" method="post">

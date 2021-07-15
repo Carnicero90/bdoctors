@@ -53,6 +53,7 @@ class UserController extends Controller
         ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
         ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
         ->orderByDesc('avg_vote')
+        ->limit(5)
         ->get();
     }
 }
