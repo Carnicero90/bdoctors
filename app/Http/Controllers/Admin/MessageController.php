@@ -10,7 +10,7 @@ use App\Message;
 class MessageController extends Controller
 {
     /**
-     * Ritorna view con elenco messaggi ricevuti dall'utente loggato
+     * Ritorna view con elenco messaggi ricevuti dall'utente loggato, in ordine cronologico decrescente
      *
      * @return \Illuminate\Http\Response
      */
@@ -18,9 +18,9 @@ class MessageController extends Controller
     {
 
         $messages = Message::where('user_id', '=', Auth::user()->id)
-        ->orderByDesc('message_date')
-        ->where('to_show', '=', 1)
-        ->get();
+            ->orderByDesc('message_date')
+            ->where('to_show', '=', 1)
+            ->get();
         $user = Auth::user();
         //TODO: questo non serve, direi, tanto effettivamente Auth:user lo richiami direttamente dalla pagina, no?
 
@@ -30,6 +30,7 @@ class MessageController extends Controller
         ];
         return view('admin.messages.index', $data);
     }
+
     /**
      * Mostra singolo messaggio, cercati per id
      * 
@@ -49,15 +50,21 @@ class MessageController extends Controller
         return view("admin.messages.show", $data);
     }
 
+    /**
+     * Nasconde il messaggio e reindirizza ad index
+     *
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
     public function hide($id)
     {
         $message = Message::findOrFail($id);
-        
+
         if ($message->user_id == Auth::user()->id) {
             $data = [
                 'to_show' => false
             ];
-            
+
             $message->update(
                 $data
             );
