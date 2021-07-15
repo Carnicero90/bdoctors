@@ -28,8 +28,6 @@ class StatisticController extends Controller
             'messages' => $messages,
             'reviews' => $reviews
         ];
-        dump($messages);
-
 
         return view('admin.statistics.index', $data); 
 

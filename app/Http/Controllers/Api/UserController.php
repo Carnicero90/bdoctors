@@ -30,13 +30,13 @@ class UserController extends Controller
             'profiles.pic',
             DB::raw('avg(success) as success'),
             DB::raw('avg(votes.value) as avg_vote'),
-            DB::raw("CONCAT(users.name, ' ', 'users.lastname') as user_fullname")
+            // DB::raw("CONCAT(users.name, ' ', 'users.lastname') as user_fullname")
 
         ])
-            ->where('user_fullname', 'LIKE', '%' . $user . '%')
+            ->where('users.name', 'LIKE', '%' . $user . '%')
 
             ->rightJoin('category_user', 'users.id', '=', 'category_user.user_id')
-            ->where('category_user.category_id', '=', 2)
+            // ->where('category_user.category_id', '=', 2)
             ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
 
             // TOTEST per ricerca

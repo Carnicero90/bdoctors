@@ -24,6 +24,7 @@
             <div class="mb-5" style="position: relative">
                 <select name="" id="" v-model="selectedCategory" v-on:change="searchUser()">
                     <option value="" selected disabled>Seleziona una categoria</option>
+                    <option value="">All</option>
                     @foreach ($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                     @endforeach
