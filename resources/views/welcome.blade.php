@@ -53,7 +53,6 @@
             </div>
         </div>
 
-<<<<<<< HEAD
         <div class="mb-5 mt-5 text-center">
             <a href="{{ route('profile', ['id' => 1]) }}" class="btn btn-success ml-2 mr-2">Pagina pubblica profilo
                 diesempio</a>
@@ -61,24 +60,6 @@
             <a href="{{ route('categories') }}" class="btn btn-primary ml-2 mr-2">Visualizza le categorie degli
                 artisti</a>
             <a href="{{ route('advanced-search') }}" class="btn btn-warning ml-2 mr-2">Pagina di ricerca avanzata</a>
-=======
-        {{-- section categories --}}
-        <div class="container mt-5 mb-5">
-            <h2 class="text-center">Categorie</h2>
-            <div class="row mt-4">
-                @foreach ($categories as $category)
-                    <div class="col-3">
-                        <a href="{{route("category-page", ["slug" => $category->slug])}}" style="text-decoration: none">
-                            <div class="card mb-3">
-                                <div class="card-body text-center text-uppercase">
-                                    <span>{{$category->name}}</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
->>>>>>> ec47a49fe36ec16e9a3452ba683dcf4113ba6223
         </div>
         {{-- END section categories --}}
 
