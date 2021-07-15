@@ -17,7 +17,22 @@
     <div id="root">
         <div class="container text-center">
             <form class="form-inline">
-                <input class="form-control mr-sm-2" type="search" placeholder="Ricerca Avanzata" aria-label="Search">
+                <input 
+                    class="form-control mr-sm-2" 
+                    type="search" 
+                    placeholder="Ricerca Avanzata" 
+                    aria-label="Search"
+                    v-model="searchString" 
+                    v-on:keyup="searchUser()"
+                >
+                <ul class="list-group">
+                    <li class="list-group-item" v-for="user in users">
+                        <img :src="'/storage/' + user.pic" alt="" style="height: 2em;">
+                        <a :href="'bards/' + user.id">
+                            @{{ user.name + ' ' + user.lastname }}
+                        </a>
+                    </li>
+                </ul>
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Cerca</button>
             </form>
         </div>
