@@ -26,8 +26,8 @@ class CreateSponsorplanUserTable extends Migration
             ->references('id')
             ->on('sponsorplans');
             // ->onDelete('set null');
-            $table->date('order_date'); 
-            $table->date('end_date');
+            $table->dateTime('order_date'); 
+            $table->dateTime('end_date');
             $table->char('invoice');
             $table->boolean('success');
             $table->timestamps();
