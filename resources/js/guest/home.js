@@ -11,7 +11,7 @@ var app = new Vue({
     },
     methods: {
         searchUser() {
-            if (this.searchString.length > 0) {
+            if (this.searchString.length > 2) {
                 if (this.selectedCategory) {
                     this.searching = true;
                     Axios.get(`api/test?name=${this.searchString}&cat=${this.selectedCategory}`)

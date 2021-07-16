@@ -4,13 +4,18 @@ const { sortBy } = require("lodash");
 var app = new Vue({
     el: '#root',
     data: {
-        users: []
+        users: [],
+        visibleUsers: [],
+        avg_vote: 0,
 
     },
     methods: {
+        sortByReviewRate() {
+           this.users = this.users.filter(user => user.avg_vote > this.avg_vote )
+        },
+       
         orderUserByReview() {
-            this.users = this.users.sort((firstUser, secondUser) => secondUser - firstUser);
-            console.table(this.users);
+           return this.users.sort((a,b) => b.nmb_reviews -a.nmb_reviews );
         }
     },
     mounted() {
