@@ -40,7 +40,7 @@
                 <div class="input-group-prepend">
                   <label class="input-group-text" for="inputGroupSelect01">Filtra risultati</label>
                 </div>
-                <select class="custom-select" id="inputGroupSelect01">
+                <select v-on:change="orderUserByReview()" class="custom-select" id="inputGroupSelect01">
                   <option selected>Totale recensioni ricevute</option>
                   @for ($i = 0; $i < 4; $i++)
                   <option value="{{ $review_step*$i }}">{{ $review_step*$i }} +</option>

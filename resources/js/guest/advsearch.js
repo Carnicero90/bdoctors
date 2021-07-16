@@ -1,4 +1,5 @@
-const { default: Axios } = require("axios")
+const { default: Axios } = require("axios");
+const { sortBy } = require("lodash");
 
 var app = new Vue({
     el: '#root',
@@ -7,7 +8,10 @@ var app = new Vue({
 
     },
     methods: {
-       
+        orderUserByReview() {
+            this.users = this.users.sort((firstUser, secondUser) => secondUser - firstUser);
+            console.table(this.users);
+        }
     },
     mounted() {
         this.params = location.search;
