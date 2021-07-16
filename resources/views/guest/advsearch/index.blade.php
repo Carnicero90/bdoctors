@@ -46,7 +46,7 @@
                   <option value="{{ $review_step*$i }}">{{ $review_step*$i }} +</option>
                   @endfor
                 </select>
-                <select class="custom-select" id="inputGroupSelect01">
+                <select class="custom-select" v-on:change="sortByReviewRate()" v-model="avg_vote" id="inputGroupSelect01">
                     <option selected>Media Recensioni</option>
                     @foreach ($votes as $vote)
                         <option value="{{$vote->value}}">

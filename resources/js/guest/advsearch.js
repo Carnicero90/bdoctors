@@ -3,10 +3,14 @@ const { default: Axios } = require("axios")
 var app = new Vue({
     el: '#root',
     data: {
-        users: []
+        users: [],
+        avg_vote: 0,
 
     },
     methods: {
+        sortByReviewRate() {
+           this.users = this.users.filter(user => user.avg_vote > this.avg_vote )
+        }
        
     },
     mounted() {

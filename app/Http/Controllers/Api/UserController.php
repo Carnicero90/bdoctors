@@ -39,8 +39,7 @@ class UserController extends Controller
                     ->orWhere('users.lastname', 'LIKE', '%' . $user . '%');
             })
 
-            ->rightJoin('category_user', 'users.id', '=', 'category_user.user_id')
-            // ->where('category_user.category_id', '=', 2)
+            ->leftJoin('category_user', 'users.id', '=', 'category_user.user_id')
             ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
 
             // TOTEST per ricerca
