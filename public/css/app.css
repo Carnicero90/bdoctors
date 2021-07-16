@@ -10002,7 +10002,30 @@ h3 {
     border-color: #dee2e6;
   }
 }
-.jumbotrontest {
+.logo {
+  width: 60px;
+}
+.logo img {
+  width: 100%;
+}
+
+a, a:visited {
+  color: inherit;
+}
+
+.nav-link {
+  line-height: 50px;
+}
+
+.nav-item {
+  margin: 0 10px;
+}
+
+.jumbo-container {
+  transform: translateY(-1.4rem);
+}
+
+.jumbotron {
   padding: 150px 0;
   background-image: url("/img/jumbotron.jpg");
   background-size: cover;
