@@ -4,6 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
+                @include("partials.validation-errors")
                 <div class="card">
                     <div class="card-header">{{ __('Register') }}</div>
 
@@ -114,6 +115,11 @@
                             </div>
                             {{-- END input#password_confirmation --}}
 
+                            {{-- partials di termini e condizioni --}}
+                            <div class="mt-4 mb-4" style="transform: translateX(+240px);">
+                                @include('partials.terms-conditions')
+                            </div>
+                            
                             {{-- submit --}}
                             <div class="form-group row mb-0">
                                 <div class="col-md-6 offset-md-4">
