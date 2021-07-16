@@ -9,7 +9,7 @@ class Review extends Model
 
     protected $fillable = [
 
-        "author_name", "author_email", "content", "vote_id"
+        "author_name", "author_email", "content", "vote_id", "user_id"
     ];
 
     public function users()

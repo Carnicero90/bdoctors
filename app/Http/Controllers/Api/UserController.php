@@ -35,8 +35,8 @@ class UserController extends Controller
         ])
 
             ->where(function ($q) use ($user) {
-                $q->where('users.name', 'LIKE', '%'.$user.'%')
-                ->orWhere('users.lastname', 'LIKE', '%'.$user.'%');
+                $q->where('users.name', 'LIKE', '%' . $user . '%')
+                    ->orWhere('users.lastname', 'LIKE', '%' . $user . '%');
             })
 
             ->rightJoin('category_user', 'users.id', '=', 'category_user.user_id')
@@ -72,9 +72,11 @@ class UserController extends Controller
 
     public function sponsoredUsers()
     {
-        $sponsored_users = User::select('users.*',             'profiles.pic',
-        DB::raw('avg(votes.value) as avg_vote'))
-            // ->rightJoin('sponsorplan_users', 'users.id', '=', 'sponsorplan_users.user_id')
+        $sponsored_users = User::select(
+            'users.*',
+            'profiles.pic',
+            DB::raw('avg(votes.value) as avg_vote')
+        )
             ->rightJoin('sponsorplan_users', 'sponsorplan_users.user_id', '=', 'users.id')
             ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
             ->where('sponsorplan_users.success', '=', '1')
@@ -108,8 +110,8 @@ class UserController extends Controller
             ->rightJoin('category_user', 'users.id', '=', 'category_user.user_id')
             ->where([['category_user.category_id', '=', $category]])
             ->where(function ($q) use ($user) {
-                $q->where('users.name', 'LIKE', '%'.$user.'%')
-                ->orWhere('users.lastname', 'LIKE', '%'.$user.'%');
+                $q->where('users.name', 'LIKE', '%' . $user . '%')
+                    ->orWhere('users.lastname', 'LIKE', '%' . $user . '%');
             })            // ->where(function($query))
             // TOTEST per ricerca
 

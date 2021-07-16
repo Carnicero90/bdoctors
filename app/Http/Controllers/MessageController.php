@@ -6,12 +6,21 @@ use Illuminate\Http\Request;
 use App\Message;
 use Illuminate\Support\Carbon;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class MessageController extends Controller
 {
     public function store(Request $request, $id) {
+        // verifica che utente con id == $id esista
+        $user = User::findOrFail($id);
+
+        // verifica che ( utente con id == $id ) != utente loggato
+        if (Auth::user()) {
+            if (Auth::user()->id == $user->id) {
+                return redirect()->route('profile', ['id' => Auth::user()->id])->with('errors', 'Non puoi inviarti messaggi da solo!');
+            }
+        }
         
-        // TOTEST
         $request->validate($this->getValidationRules());
         
         $form_data = $request->all();
@@ -36,8 +45,7 @@ class MessageController extends Controller
         return [
             'author_name' => 'required|string',
             'author_email' => 'required|email',
-            'terms-conditions' => 'required',
-            'user_id' => 'required | exists:users,id',
+            'terms-conditions' => 'accepted',
 
             // TOREMEMBER SCOMMENTARE
             // TOTEST

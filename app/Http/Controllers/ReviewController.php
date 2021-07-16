@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Review;
 use App\Vote;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Carbon;
 
 class ReviewController extends Controller
@@ -26,6 +27,13 @@ class ReviewController extends Controller
 
     public function store(Request $request, $id)
     {
+        // tentativo di impedire di inviarsi recensioni da soli, di fatto un utente puo sloggarsi e inviarsene 400
+        if (Auth::user()) {
+            if (Auth::user()->id == $id) {
+                return redirect()->route('profile', ['id' => Auth::user()->id])->with('errors', 'Non puoi inviarti recensioni da solo!');
+            }
+        }
+
 
         $request->validate($this->getValidationRules());
 
@@ -48,7 +56,7 @@ class ReviewController extends Controller
             "author_email" => "required|email|max:255",
             "content" => "nullable|required|string|max:5000",
             "vote_id" => "required|exists:votes,id",
-            "terms-conditions" => "required",
+            "terms-conditions" => "accepted",
         ];
     }
 }

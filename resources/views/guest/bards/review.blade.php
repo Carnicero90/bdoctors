@@ -20,6 +20,8 @@
             @csrf
             @method("POST")
 
+            <input type="hidden" name="user_id" value="{{$user->id}}">
+
             {{-- nome autore --}}
             <div class="form-group mt-4 mb-4">
                 <label for="author_name">Nome</label>
