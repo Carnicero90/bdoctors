@@ -10100,3 +10100,22 @@ footer .copyright i {
 footer .copyright span {
   color: white;
 }
+
+.old_service {
+  background-color: #00a2ff;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 5px;
+  background: red;
+  color: white;
+  font-weight: bolder;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}

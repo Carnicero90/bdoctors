@@ -69,4 +69,35 @@ return         [
 
         ]
     ],
+    [
+        'user' => [
+            'name' => 'Enzo',
+            'lastname' => 'Avitabile',
+            'address' => 'Marianella',
+            'email' => 'enzotipenzo@email.it',
+        ],
+        'profile' => [
+            'self_description' => 'Il Conservatorio. Il pop. Il ritmo afro-americano. La musica antica della pastellessa e della zeza e il canto sacro. Enzo Avitabile ha vissuto nella ricerca di un suono inedito, non solamente originale ma vitale ed essenziale. Demolendo ogni sovrastruttura mercantile, ogni moda. Queste le vere note biografiche del cantante, compositore e polistrumentista nato a Marianella, quartiere popolare di Napoli nel 1955 . Da bambino, Avitabile ha studiato il sassofono; da adolescente si è esibito nei club napoletani affollati dai clienti americani. Quindi si è diplomato nella disciplina del flauto al Conservatorio  di Napoli San Pietro a Majella e ha iniziato a collaborare con artisti pop e rock di tutto il mondo, da James Brown a Tina Turner, ma muovendosi sempre sotto un cielo assolutamente personale, mai comune.',
+            'phone_number' => '3456490133',
+            'work_address' => 'Vesuvio',
+            'pic' =>  'img/enzo.jpg'
+
+        ]
+    ],
+    // TEMPLATE USER
+    // [
+    //     'user' => [
+    //         'name' => '',
+    //         'lastname' => '',
+    //         'address' => '',
+    //         'email' => '',
+    //     ],
+    //     'profile' => [
+    //         'self_description' => '',
+    //         'phone_number' => '',
+    //         'work_address' => '',
+    //         'pic' =>  'img/.jpg'
+
+    //     ]
+    // ],
 ];

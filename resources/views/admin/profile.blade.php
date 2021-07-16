@@ -75,7 +75,7 @@
                 
                 <h3>Servizi offerti</h3>
                 @foreach (Auth::user()->services as $service)
-                    <div class="card" style="background-color: rgb(0, 162, 255); margin-bottom: 20px; color: white">
+                    <div class="card old_service">
                         {{-- input#user_id --}}
                         <input type="hidden" name="{{'old_s' . $service->id . '[id]'}}" value="{{ $service->id }}">
                         {{-- END input#user_id --}}
@@ -114,9 +114,9 @@
                 {{-- singola prestazione --}}
                 <div class="mt-5">
                     <h3>Prestazioni</h3>
-                    <div class="card mb-4" v-for="number in numbers" style="position: relative">
+                    <div class="card mb-4 position-relative" v-for="number, index in numbers">
                         {{-- TODO rimuovi stile inline, lavora sulla funzia (non vogliamo venga cancellato l'ultimo, ma quello su cui lo user clicca) --}}
-                        <a class="remove" style="position: absolute; top: 0; right: 0; padding: 0 5px; background: red; color: white; font-weight: bolder; width: 20px; height: 20px; cursor: pointer;" v-on:click="numbers = numbers - 1"><i class="fas fa-times"></i></a>
+                        <a class="remove" v-on:click="numbers = numbers - 1"><i class="fas fa-times"></i></a>
                         <div class="card-body pb-2">
                             <h4>Aggiungi prestazione</h4>
                             {{-- input#title --}}

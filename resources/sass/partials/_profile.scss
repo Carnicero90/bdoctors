@@ -1,0 +1,19 @@
+// posto a caso in cui raccogliere lo stile inline che levo da admin/profile
+.old_service {
+    background-color: rgb(0, 162, 255);
+    margin-bottom: 20px;
+    color: white;
+}
+
+.remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 5px;
+    background: red;
+    color: white;
+    font-weight: bolder;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}

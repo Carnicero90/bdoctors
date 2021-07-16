@@ -15,7 +15,6 @@ var app = new Vue({
             if (this.searchString.length > 0) {
                 this.searching = true;
                 this.counter = setTimeout(() => {
-                    console.log('searching')
                     axios.get(`api/search?name=${this.searchString}&cat=${this.selectedCategory}`)
                     .then(result => {
                         this.users = result.data.users.slice(0, 5);
