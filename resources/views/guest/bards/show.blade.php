@@ -50,14 +50,17 @@
             @endif
         </div>
         {{-- END TEST --}}
+        @if (Auth::user())
         @if ($user->id != Auth::user()->id)
-            <div class="mt-4 mb-5">
-                <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi
-                    recensione</a>
-                <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi
-                    messaggio</a>
-            </div>
+        <div class="mt-4 mb-5">
+            <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi
+                recensione</a>
+            <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi
+                messaggio</a>
+        </div>
+    @endif
         @endif
+
 
 
         {{-- PERFORMANCES --}}
