@@ -40,7 +40,13 @@ class MessageController extends Controller
     public function show($id)
     {
         $message = Message::findOrFail($id);
+
         $user = Auth::user();
+
+        if($message->user_id != $user->id)
+        {
+            abort(403, 'Accesso non autorizzato');
+        }
 
         $data = [
             "user" => $user,
