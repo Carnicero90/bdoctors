@@ -72,43 +72,44 @@
                     <input type="file" class="form-control-file" id="image-file" name="image-file">
                 </div>
                 {{-- END input#image-file --}}
-<h3>Servizi offerti</h3>
-@foreach (Auth::user()->services as $service)
-<div class="card" style="background-color: rgb(0, 162, 255); margin-bottom: 20px; color: white">
-    {{-- input#user_id --}}
-    <input type="hidden" name="{{'old_s' . $service->id . '[id]'}}" value="{{ $service->id }}">
-    {{-- END input#user_id --}}
+                
+                <h3>Servizi offerti</h3>
+                @foreach (Auth::user()->services as $service)
+                    <div class="card" style="background-color: rgb(0, 162, 255); margin-bottom: 20px; color: white">
+                        {{-- input#user_id --}}
+                        <input type="hidden" name="{{'old_s' . $service->id . '[id]'}}" value="{{ $service->id }}">
+                        {{-- END input#user_id --}}
 
-    {{-- input#name --}}
-    <div class="form-group mt-4 mb-4">
-        <label for="title">Nome servizio</label>
-        <input type="text" class="form-control-file" id="title" name="{{'old_s' . $service->id . '[title]' }}" value="{{ $service->title }}">
-    </div>
-    {{-- END input#name --}}
+                        {{-- input#name --}}
+                        <div class="form-group mt-4 mb-4">
+                            <label for="title">Nome servizio</label>
+                            <input type="text" class="form-control-file" id="title" name="{{'old_s' . $service->id . '[title]' }}" value="{{ $service->title }}">
+                        </div>
+                        {{-- END input#name --}}
 
-    {{-- input#description --}}
-    <div class="form-group mt-4 mb-4">
-        <label for="description">Descrivila</label>
-        <textarea class="form-control" name="{{'old_s' . $service->id . '[description]'}}" id="description" rows="3"
-            placeholder="Descrivi il servizio">{{ $service->description }}</textarea>
-    </div>
-    {{-- END input#description --}}
+                        {{-- input#description --}}
+                        <div class="form-group mt-4 mb-4">
+                            <label for="description">Descrivila</label>
+                            <textarea class="form-control" name="{{'old_s' . $service->id . '[description]'}}" id="description" rows="3"
+                                placeholder="Descrivi il servizio">{{ $service->description }}</textarea>
+                        </div>
+                        {{-- END input#description --}}
 
-    {{-- input#hourly_rate --}}
-    <div class="form-group mt-4 mb-4">
-        <label for="hourly_rate">Tariffa oraria</label>
-        <input type="number" step="0.10" class="form-control" id="hourly_rate" name="{{'old_s' . $service->id . '[hourly_rate]'}}" value="{{ $service->hourly_rate }}">
-    </div>
-    {{-- END input#hourly_rate --}}
-    {{-- TOTEST --}}
-    <div class="btn btn-danger">
-        <label for="destroy">Elimina servizio</label>
-        <input type="checkbox" name="{{'old_s' . $service->id . '[destroy]'}}" id="destroy">
-    </div>
+                        {{-- input#hourly_rate --}}
+                        <div class="form-group mt-4 mb-4">
+                            <label for="hourly_rate">Tariffa oraria</label>
+                            <input type="number" step="0.10" class="form-control" id="hourly_rate" name="{{'old_s' . $service->id . '[hourly_rate]'}}" value="{{ $service->hourly_rate }}">
+                        </div>
+                        {{-- END input#hourly_rate --}}
+                        {{-- TOTEST --}}
+                        <div class="btn btn-danger">
+                            <label for="destroy">Elimina servizio</label>
+                            <input type="checkbox" name="{{'old_s' . $service->id . '[destroy]'}}" id="destroy">
+                        </div>
 
-    {{-- END TOTEST --}}
-</div>
-@endforeach
+                        {{-- END TOTEST --}}
+                    </div>
+                @endforeach
 
                 {{-- singola prestazione --}}
                 <div class="mt-5">

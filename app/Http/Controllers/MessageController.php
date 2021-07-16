@@ -22,11 +22,11 @@ class MessageController extends Controller
         }
         
         $request->validate($this->getValidationRules());
-        
+
         $form_data = $request->all();
         $message = new Message();
         $message->fill($form_data);
-        $message->message_date = new Carbon();
+        $message->message_date = Carbon::now();
         $message->user_id = $id;
         $message->to_show = true;
         $message->save();
