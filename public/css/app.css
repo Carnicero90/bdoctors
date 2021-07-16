@@ -10019,6 +10019,14 @@ h3 {
 }
 
 footer {
-  background-color: red;
   color: white;
+}
+footer .jumbotrontest {
+  background: black;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+footer li {
+  list-style-type: none;
 }
