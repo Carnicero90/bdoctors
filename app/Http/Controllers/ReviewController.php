@@ -56,7 +56,7 @@ class ReviewController extends Controller
             "author_email" => "required|email|max:255",
             "content" => "nullable|required|string|max:5000",
             "vote_id" => "required|exists:votes,id",
-            "terms-conditions" => "required",
+            "terms-conditions" => "accepted",
         ];
     }
 }

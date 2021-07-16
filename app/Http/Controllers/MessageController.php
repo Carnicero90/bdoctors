@@ -45,8 +45,7 @@ class MessageController extends Controller
         return [
             'author_name' => 'required|string',
             'author_email' => 'required|email',
-            'terms-conditions' => 'required',
-            // 'user_id' => 'required | exists:users,id',
+            'terms-conditions' => 'accepted',
 
             // TOREMEMBER SCOMMENTARE
             // TOTEST
