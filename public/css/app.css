@@ -10006,7 +10006,7 @@ h3 {
   padding: 150px 0;
   background-image: url("/img/jumbotron.jpg");
   background-size: cover;
-  filter: grayscale(10%);
+  background-position: center;
 }
 
 .main-title {
@@ -10016,4 +10016,9 @@ h3 {
 
 .select-category {
   -webkit-appearance: none;
+}
+
+footer {
+  background-color: red;
+  color: white;
 }

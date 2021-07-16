@@ -99,6 +99,7 @@
             @yield('content')
         </main>
     </div>
+    @include('partials.footer')
     @yield('footer-scripts')
 </body>
 
