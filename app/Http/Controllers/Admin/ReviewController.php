@@ -27,8 +27,14 @@ class ReviewController extends Controller
 
     public function show($id)
     {
+        
         $review = Review::findOrFail($id);
         $user = Auth::user();
+
+        if($review->user_id != $user->id)
+        {
+            abort(403, 'Accesso non autorizzato');
+        }
 
         $data = [
             "user" => $user,
