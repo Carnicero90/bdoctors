@@ -10021,12 +10021,60 @@ h3 {
 footer {
   color: white;
 }
-footer .jumbotrontest {
+footer .bg-footer {
   background: black;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding: 5%;
 }
-footer li {
+footer .inner {
+  padding: 1% 6%;
+  padding-top: 6%;
+}
+footer .flex-son {
+  flex: 33%;
+  margin: 0 50px;
+}
+footer .flex-son h4 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 45px;
+  font-family: "Noto Serif TC", serif;
+  text-transform: uppercase;
+}
+footer .flex-son p {
+  line-height: 1.8em;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: lightgrey;
+}
+footer .flex-son .category-links {
+  padding: 0 15px;
+}
+footer .flex-son .social-icons i {
+  margin-right: 15px;
+  margin-top: 20px;
+  color: lightgrey;
+  cursor: pointer;
+}
+footer .flex-son li {
   list-style-type: none;
+  margin: 20px 0;
+  color: lightgrey;
+  font-size: 14px;
+  cursor: pointer;
+}
+footer .copyright {
+  text-align: center;
+  margin-top: 5%;
+  font-size: 13px;
+  color: #868586;
+}
+footer .copyright i {
+  font-size: 10px;
+  vertical-align: middle;
+}
+footer .copyright span {
+  color: white;
 }
