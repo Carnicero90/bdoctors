@@ -39,7 +39,7 @@
                                     <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="height: 2em;">
                                     <img class="mr-2" v-else src="http://127.0.0.1:8000/img/user-img.png" alt="" style="height: 2em;">
                                     <span>@{{ user . name + ' ' + user . lastname }}</span>
-                                    <span v-if="user.success" style="position: absolute; top: 5px; right: 5px;">
+                                    <span v-if="user.sponsored" style="position: absolute; top: 5px; right: 5px;">
                                         <i class="fas fa-star"></i>
                                     </span>
                                 </a>

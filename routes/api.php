@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('search', 'Api\UserController@users')->name('search');
-Route::get('index', 'Api\UserController@index');
 Route::get('sponsored', 'Api\UserController@sponsoredUsers');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
