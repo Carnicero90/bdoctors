@@ -34,11 +34,14 @@
                     <div v-if="searching" style="width: 200px; position: absolute; left: 29.3%; top: 105%; transform: translateX(-50%); z-index: 999;">
                         <ul class="list-group">
                             {{-- TODO: test --}}
-                            <li class="list-group-item" v-for="user in users" style="width: 220px; background-color: #111; border-color: #888;">
+                            <li class="list-group-item" v-for="user in users" style="width: 220px; background-color: #111; border-color: #888; position: relative;">
                                 <a :href="'bards/' + user.id" class="d-flex align-items-center" style="color: #888;">
                                     <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="height: 2em;">
                                     <img class="mr-2" v-else src="http://127.0.0.1:8000/img/user-img.png" alt="" style="height: 2em;">
                                     <span>@{{ user . name + ' ' + user . lastname }}</span>
+                                    <span v-if="user.success" style="position: absolute; top: 5px; right: 5px;">
+                                        <i class="fas fa-star"></i>
+                                    </span>
                                 </a>
                             </li>
                             <li class="list-group-item" style="width: 220px; background-color: #111; border-color: #888;">
@@ -87,7 +90,7 @@
                 </div>
                 <div v-for="user in sponsoredUsers" style="width: 21%">
                     <a :href="'bards/' + user.id" style="text-decoration: none; color: #444;">
-                        <div class="card mb-4">
+                        <div class="card mb-4" style="position: relative;">
                             {{-- TODO: boh, magari la media voti la mostriamo solo se supera un tot? Pagano, non e' bellino per loro vedersi un
                             pallino solo come media recensioni (d'altra parte affari loro, bohbohboh) --}}
                             <div class="card-body d-flex flex-column align-items-center">
@@ -105,6 +108,9 @@
                                 <div>
                                     <span v-if="user.avg_vote > 0"><i v-for="n in parseInt(user.avg_vote)" class="fas fa-star"></i></span>
                                 </div>
+                            </div>
+                            <div style="position: absolute; top: 5px; right: 7px;">
+                                <small class="badge badge-secondary">Consigliato</small>
                             </div>
                         </div>
                     </a>
