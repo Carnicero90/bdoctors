@@ -19,7 +19,7 @@ mix.js('resources/js/app.js', 'public/js')
     // file relativo a profile privato degli user
     .js('resources/js/admin/profile.js', 'public/js')
     // Fix a popper.js not found in safari (spero)
-    .js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps()
+    // .js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps()
     .sass('resources/sass/app.scss', 'public/css')
     // per le immaagini di background
     .options({

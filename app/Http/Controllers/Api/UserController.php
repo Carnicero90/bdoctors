@@ -30,6 +30,7 @@ class UserController extends Controller
             'profiles.pic',
             DB::raw('avg(success) as success'),
             DB::raw('avg(votes.value) as avg_vote'),
+            DB::raw("COUNT(reviews.id) as nmb_reviews")
             // DB::raw("CONCAT(users.name, ' ', 'users.lastname') as user_fullname")
 
         ])

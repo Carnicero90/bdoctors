@@ -1,8 +1,8 @@
 {
     "/js/advsearch.js": "/js/advsearch.js",
     "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
     "/js/home.js": "/js/home.js",
     "/js/popper.js": "/js/popper.js",
-    "/js/profile.js": "/js/profile.js",
-    "/css/app.css": "/css/app.css"
+    "/js/profile.js": "/js/profile.js"
 }
