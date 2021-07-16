@@ -97,7 +97,8 @@ var app = new Vue({
   el: '#root',
   data: {
     numbers: 0,
-    preload: ''
+    preload: '',
+    lines: 10
   },
   methods: {
     preloadPic: function preloadPic(event) {
@@ -107,6 +108,9 @@ var app = new Vue({
     destroy: function destroy(event) {
       event.target.parentNode.remove(); // TODO: puo andare bene?
     }
+  },
+  mounted: function mounted() {
+    this.lines = document.getElementById('self_description').value.split(/\r\n|\r|\n/).length;
   }
 });
 
