@@ -40,7 +40,7 @@ class ProfileController extends Controller
                 'self_description' => 'string | max:500 | nullable',
                 'work_address' => 'string | max:100 | nullable',
                 'phone_number' => 'digits_between:5,15 | nullable',
-                'image-file' => 'image | nullable',
+                'image-file' => 'image | nullable | max:4096', //TOTEST: provarlo in concreto con un tot di foto
                 'category' => 'exists:category_id',
             ]
         );
