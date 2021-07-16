@@ -1,58 +1,61 @@
 {{-- TODO --}}
 <!-- FOOTER -->
 <footer>
-    <div class="jumbotrontest">
-        <div class="">
-            <!-- Logo -->
-            <div>
-                <img src="" alt="Author Logo">
-            </div>
-
-            <!-- About me -->
-            <div class="">
-                <div class="">
-                    <h4>About me</h4>
-
-                    <p>
-                        Vivamus suscipit <span>tortor eget felis porttitor</span> volutpat. Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor volutpat.
-                    </p>
+    <div class="bg-footer">
+        <div class="container inner">
+            <div class="d-flex justify-content-around">
+                <!-- Logo -->
+                <div>
+                    <img src="../img/logo-jumb.png" alt="BoolBards Logo">
                 </div>
 
-                <!-- Useful links -->
-                <div class="">
-                    <h4>Useful links</h4>
+                <!-- About me -->
+                <div class="d-flex">
+                    <div class="flex-son">
+                        <h4>Chi siamo</h4>
 
-                    <ul class="">
-                        <li v-for="item in usefulLink">
-                            <i class="fas fa-chevron-right"></i> 
-                        </li>
-                    </ul>
-                </div>
-                
-                <!-- Contact Info -->
-                <div class="">
-                    <h4>Contact info</h4>
+                        <p>
+                            Vivamus suscipit <span>tortor eget felis porttitor</span> volutpat. Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor volutpat.
+                        </p>
+                    </div>
 
-                    <ul>
-                        <li v-for="item in contact">
-                            
-                        </li>
-                    </ul>
+                    <!-- Category links -->
+                    <div class="flex-son">
+                        <h4>Categorie</h4>
 
-                    <div class="social-icons">
-                        <i class="fab fa-facebook-f"></i>
-                        <i class="fab fa-twitter"></i>
-                        <i class="fab fa-instagram"></i>
-                        <i class="fab fa-linkedin-in"></i>
-                        <i class="fab fa-youtube"></i>
+                        <ul class="category-links">
+                            <li v-for="item in category">
+                                <i class="fas fa-chevron-right"></i>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Contact Info -->
+                    <div class="flex-son">
+                        <h4>Contatti</h4>
+
+                        <ul>
+                            <li v-for="item in contact">
+                                
+                            </li>
+                        </ul>
+
+                        <div class="social-icons">
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-instagram"></i>
+                            <i class="fab fa-linkedin-in"></i>
+                            <i class="fab fa-youtube"></i>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- Copyright -->
-        <div class="copyright">
-            <i class="far fa-copyright"></i> Copyright 2020 - 2021 | Developed by <span>I Becci di BoolBards</span> | All Rights Reserved | Powered by <span>Laravel</span>
+
+            </div>
+            <!-- Copyright -->
+            <div class="copyright">
+                <i class="far fa-copyright"></i> Copyright 2020 - 2021 | Developed by <span>I Becci di BoolBards</span> | All Rights Reserved | Powered by <span>Laravel</span>
+            </div>
         </div>
     </div>
 </footer>

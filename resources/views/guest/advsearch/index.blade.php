@@ -37,10 +37,11 @@
 
             {{-- TODO Select --}}
             <div class="input-group mb-3 mt-3">
+                <button class="btn btn-primary"v-on:click="orderUserByReview()" >Ordina per numero recensioni</button>
                 <div class="input-group-prepend">
                   <label class="input-group-text" for="inputGroupSelect01">Filtra risultati</label>
                 </div>
-                <select class="custom-select" id="inputGroupSelect01">
+                <select  class="custom-select" id="inputGroupSelect01">
                   <option selected>Totale recensioni ricevute</option>
                   @for ($i = 0; $i < 4; $i++)
                   <option value="{{ $review_step*$i }}">{{ $review_step*$i }} +</option>
@@ -69,7 +70,10 @@
                             <img v-else src="http://127.0.0.1:8000/img/user-img.png" alt="" style="max-height: 120px;">
                         </div>
                         <div class="mt-3 mb-2 font-weight-bold">
+                            <span>@{{user.nmb_reviews }}</span>
                             <span>@{{ user . name + ' ' + user . lastname }}</span>
+                            {{-- <span>@{{ rece: + ' ' + user.nmb_reviews }}</span> --}}
+
                         </div>
                         <div class="text-secondary">
                             <small><p>categoria user</p></small>

@@ -1,0 +1,23 @@
+// JUMBOTRON
+// TODO
+
+// Jumbotron container
+.jumbo-container {
+    transform: translateY(-1.4rem);
+}
+
+.jumbotron {
+    padding: 150px 0;
+    background-image: url('/img/jumbotron.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.main-title {
+    color: white;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.select-category {
+    -webkit-appearance: none;
+}

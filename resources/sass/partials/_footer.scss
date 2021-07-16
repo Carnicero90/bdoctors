@@ -1,57 +1,75 @@
 // FOOTER
 footer {
     color: white;
-    .jumbotrontest {
+
+    .bg-footer {
         background: black;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        padding: 5%;
     }
 
-    li {
-        list-style-type: none;
+    .inner {
+        padding: 1% 6%;
+        padding-top: 6%;
+    }
+    .flex-son {
+        flex: 33%;
+        margin: 0 50px;
+
+        h4 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 45px;
+            font-family: 'Noto Serif TC', serif;
+            text-transform: uppercase;
+        }
+        p {
+            line-height: 1.8em;
+            font-size: 15px;
+            letter-spacing: 2px;
+            color: lightgrey;
+        }
+
+        .category-links {
+            padding: 0 15px;
+        }
+
+        .social-icons i{
+            margin-right: 15px;
+            margin-top: 20px;
+            color: lightgrey;
+            cursor: pointer;
+        }
+
+        li {
+            list-style-type: none;
+            margin: 20px 0;
+            color: lightgrey;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    
+    }
+
+    .copyright {
+        text-align: center;
+        margin-top: 5%;
+        font-size: 13px;
+        color: #868586;
+        i {
+            font-size: 10px;
+            vertical-align: middle;
+        }
+        span {
+            color: white;
+        }
     }
 }
 // END FOOTER
 
 // Fixed
-// .fixed-top {
-//     position: fixed;
-//     top: 20%;
-//     right: 5px;
-//     .fixed-box {
-//         background-color: white;
-//         padding: 8px 15px;
-//         border-radius: 5px;
-//         box-shadow: 0px 0px 10px 2px gray;
-//         margin-bottom: 5px;
-//         text-align: center;
-//         cursor: pointer;
-//         i {
-//             color: white;
-//             background-color: #33475b;
-//             padding: 5px 10px;
-//             border-radius: 5px;
-//             margin-bottom: 5px;
-//         }
-//         div {
-//             font-size: 12px;
-//             margin-top: 5px;
-//         }
-//         .prize {
-//             font-size: 25px;
-//             position: relative;
-//             color: green;
-//             .dollar {
-//                 position: absolute;
-//                 bottom: 15px;
-//                 right: 35px;
-//                 font-size: 15px;
-//             }
-//         }
-//     }
-// }
-
 // .fixed-bot {
 //     position: fixed;
 //     bottom: 0;
