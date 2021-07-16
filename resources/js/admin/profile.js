@@ -1,22 +1,13 @@
-const { default: Axios } = require("axios")
-
 var app = new Vue({
     el: '#root',
     data: {
-        numbers: 0
+        numbers: 0,
+        preload: ''
     },
     methods: {
-        /*
-        * stampa name in console, seguito da un punto esclamativo
-        *
-        * @param str name
-        * return void
-        */
-       sample_func(name) {
-        console.log(name + '!')
-       }
+        preloadPic(event) {
+            let f = event.target.files[0];
+            this.preload = URL.createObjectURL(f);
+        }
     },
-    mounted() {
-        
-    }
 })

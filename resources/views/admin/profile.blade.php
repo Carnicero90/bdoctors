@@ -67,9 +67,12 @@
                 {{-- END input#self_description --}}
 
                 {{-- input#image-file --}}
+                {{-- TOTEST --}}
+                <img v-bind:src="preload" alt="" style="max-height:300px">
+                {{-- END TOTEST --}}
                 <div class="form-group mt-4">
                     <label for="image-file">Carica un'immagine profilo</label>
-                    <input type="file" class="form-control-file" id="image-file" name="image-file">
+                    <input type="file" v-on:change="preloadPic($event)" class="form-control-file" id="image-file" name="image-file">
                 </div>
                 {{-- END input#image-file --}}
                 
@@ -114,7 +117,7 @@
                 {{-- singola prestazione --}}
                 <div class="mt-5">
                     <h3>Prestazioni</h3>
-                    <div class="card mb-4 position-relative" v-for="number, index in numbers">
+                    <div class="card mb-4 position-relative" v-for="number in numbers">
                         {{-- TODO rimuovi stile inline, lavora sulla funzia (non vogliamo venga cancellato l'ultimo, ma quello su cui lo user clicca) --}}
                         <a class="remove" v-on:click="numbers = numbers - 1"><i class="fas fa-times"></i></a>
                         <div class="card-body pb-2">
