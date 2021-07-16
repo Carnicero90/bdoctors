@@ -11,9 +11,12 @@ use Illuminate\Support\Facades\Auth;
 class MessageController extends Controller
 {
     public function store(Request $request, $id) {
+        // verifica che utente con id == $id esista
+        $user = User::findOrFail($id);
 
+        // verifica che ( utente con id == $id ) != utente loggato
         if (Auth::user()) {
-            if (Auth::user()->id == $id) {
+            if (Auth::user()->id == $user->id) {
                 return redirect()->route('profile', ['id' => Auth::user()->id])->with('errors', 'Non puoi inviarti messaggi da solo!');
             }
         }
