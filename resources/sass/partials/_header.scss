@@ -1,15 +1,24 @@
-.jumbotrontest {
-    padding: 150px 0;
-    background-image: url('/img/jumbotron.jpg');
-    background-size: cover;
-    background-position: center;
+// HEADER
+// Logo
+.logo {
+    width: 60px;
+
+    img {
+        width: 100%;
+    }
 }
 
-.main-title {
-    color: white;
-    text-shadow: 2px 2px 2px #000;
+a, a:visited {
+    color: inherit;
 }
 
-.select-category {
-    -webkit-appearance: none;
+// TODO: Rendere responsive
+.nav-link {
+    // MOOLTO Provvisorio
+    line-height: 50px;
+}
+
+.nav-item {
+    // MOOOLTO PROVVISORIO
+    margin: 0 10px;
 }

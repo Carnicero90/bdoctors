@@ -13,9 +13,9 @@
 @endsection
 @section('content')
     {{-- vue container --}}
-    <div id="root" style="transform: translateY(-1.4rem)">
+    <div id="root" class="jumbo-container">
 
-        <div class="jumbotrontest">
+        <div class="jumbotron">
 
             <div class="container">
 
