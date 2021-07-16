@@ -1,6 +1,3 @@
-const { default: Axios } = require("axios");
-const { sortBy } = require("lodash");
-
 var app = new Vue({
     el: '#root',
     data: {
@@ -15,13 +12,13 @@ var app = new Vue({
         },
        
         orderUserByReview() {
-           return this.users.sort((a,b) => b.nmb_reviews -a.nmb_reviews );
+           return this.users.sort((a,b) => b.nmb_reviews - a.nmb_reviews );
         }
     },
     mounted() {
         this.params = location.search;
         // per ora funzia solo se ci sono i params, domani finisco
-        Axios.get(`api/test${this.params}`)
+        axios.get(`api/test${this.params}`)
         .then(result => {
             this.users = result.data.users;
             console.log(this.users)
