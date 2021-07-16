@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-// TOTEST
-Route::get('test', 'Api\UserController@users');
-Route::get('/index', 'Api\UserController@index');
+
+Route::get('search', 'Api\UserController@users')->name('search');
+Route::get('index', 'Api\UserController@index');
 Route::get('sponsored', 'Api\UserController@sponsoredUsers');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {

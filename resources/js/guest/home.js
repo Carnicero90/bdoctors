@@ -10,20 +10,11 @@ var app = new Vue({
     methods: {
         searchUser() {
             if (this.searchString.length > 2) {
-                if (this.selectedCategory) {
-                    this.searching = true;
-                    axios.get(`api/test?name=${this.searchString}&cat=${this.selectedCategory}`)
+                this.searching = true;
+                axios.get(`api/search?name=${this.searchString}&cat=${this.selectedCategory}`)
                     .then(result => {
-                        this.users = result.data.users.slice(0,5);
+                        this.users = result.data.users.slice(0, 5);
                     })
-                }
-                else {
-                    this.searching = true;
-                    axios.get(`api/index?name=${this.searchString}`)
-                        .then(result => {
-                            this.users = result.data.users.slice(0,5);
-                        })
-                }
             }
             else {
                 this.users = [];

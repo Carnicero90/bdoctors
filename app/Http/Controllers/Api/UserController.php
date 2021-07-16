@@ -95,21 +95,31 @@ class UserController extends Controller
     public function users(Request $request)
     {
         $user = $request['name'];
+
         $category = $request['cat'];
         $users =  User::select([
             'users.id',
             'users.name',
             'users.lastname',
-            DB::raw('avg(category_user.category_id) as cat'),
             'profiles.pic',
-            DB::raw('avg(success) as success'),
-            DB::raw('avg(votes.value) as avg_vote'),
-            DB::raw("CONCAT(users.name, ' ', 'users.lastname') as user_fullname"),
+
+            DB::raw('MAX(category_user.category_id) AS cat'),
+            DB::raw('MAX(success) AS success'), //TODO: rinominala
+            DB::raw('AVG(votes.value) AS avg_vote'),
+            DB::raw("CONCAT(users.name, ' ', users.lastname) AS user_fullname"),
             DB::raw("COUNT(reviews.id) as nmb_reviews")
         ])
 
             ->rightJoin('category_user', 'users.id', '=', 'category_user.user_id')
-            ->where([['category_user.category_id', '=', $category]])
+            // ->where(function ($p) use ($category) {
+            //     if ($category) {
+            //         $p->where('category_user.category_id', '=', $category);
+            //     } 
+            //     else {
+            //         $p->where(DB::raw('1'));
+            //     }
+            // })
+            // ->where(DB::raw('CONCAT_WS(" ", users.name, users.lastname)'), 'LIKE', '%'.$user.'%')
             ->where(function ($q) use ($user) {
                 $q->where('users.name', 'LIKE', '%' . $user . '%')
                     ->orWhere('users.lastname', 'LIKE', '%' . $user . '%');
@@ -130,11 +140,15 @@ class UserController extends Controller
                     ->where('sponsorplan_users.success', '=', '1')
                     ->where('sponsorplan_users.end_date', '>', Carbon::now());
             })
-            // ->where('users.name', 'LIKE', '%' . $user . '%')
-            // ->orWhere('users.lastname', 'LIKE', '%' . $user . '%')
             ->orderByDesc('success')
-            ->orderByDesc('avg_vote')
-            ->get();
+            ->orderByDesc('avg_vote');
+
+            if ($category) {
+                $users=$users->where([['category_user.category_id', '=', $category]]);
+            }
+
+            // TODO: salvi users 400 volte, trova una soluz non da rincoglionito
+            $users = $users->get();
 
 
 
