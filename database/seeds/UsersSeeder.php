@@ -22,7 +22,7 @@ class UsersSeeder extends Seeder
             $profile = new Profile();
             $profile->fill($user['profile']);
             $profile->user_id = $new_user->id;
-            $profile->save;
+            $profile->save();
         }
         foreach (config('users') as $user) {
 

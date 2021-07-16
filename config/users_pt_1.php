@@ -11,6 +11,7 @@ return         [
             'self_description' => 'Disoccupato, amo questo appellativo: io sono disoccupato attivo, anche se, forse, "attivo" non è l\'aggettivo adatto.',
             'phone_number' => '3474140621',
             'work_address' => 'Milano, Sacre Scuole',
+            'pic' =>  'img/dargen.jpg'
         ]
     ],
     [
@@ -33,6 +34,8 @@ return         [
 
             'phone_number' => '349123456',
             'work_address' => 'Mi trovi in circonvalla col T-Max a 190',
+            'pic' =>  'img/fame.jpg'
+
         ]
 
     ],        [
@@ -47,6 +50,8 @@ return         [
             I soldi sono la pozione che mi trasformano in un mostro',
             'phone_number' => '3291234567',
             'work_address' => 'Vivo solo da 10 anni e non ne faccio un dramma',
+            'pic' =>  'img/fibra.jpg'
+
         ]
     ],
     [
@@ -60,6 +65,8 @@ return         [
             'self_description' => 'Sono figlio di Pitagora e di Casadei, di Machiavelli e di Totò, cresciuto con una morale cattolica e con i Depeche Mode',
             'phone_number' => '3456490133',
             'work_address' => 'Milano',
+            'pic' =>  'img/gabri.jpg'
+
         ]
     ],
 ];
