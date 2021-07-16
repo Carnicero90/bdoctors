@@ -10,7 +10,7 @@
         <div class="mb-4 d-flex align-items-center">
             @if ($user->profile)
                 <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
-                    <img src="{{ asset('storage/' . $user->profile->pic) }}" alt="" style="max-height: 100px; width: 100%; height: 100%; object-fit: cover;">
+                    <img src="{{ asset('storage/' . $user->profile->pic) }}" alt="{{ $user->name . ' ' . $user->lastname }}" style="max-height: 100px; width: 100%; height: 100%; object-fit: cover;">
                 </div>
             @else
                 <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
@@ -49,14 +49,15 @@
         </div>
         {{-- END TEST --}}
 
-        {{-- @if (Auth::user())) --}}
-        {{-- @if ($user->id != Auth::user()->id) --}}
+        @if (!(Auth::user() && $user->id == Auth::user()->id))
+        {{-- TODO: magari invece di nasconderlo si fa effetto 'disabled'? --}}
         <div class="mt-4 mb-5">
+            {{-- link form recensioni --}}
             <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi recensione</a>
+            {{-- link form messaggi --}}
             <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi messaggio</a>
         </div>
-        {{-- @endif --}}
-        {{-- @endif --}}
+        @endif
 
         {{-- PERFORMANCES --}}
         <form>
@@ -81,6 +82,7 @@
                 <h2>Recensioni</h2>
             </div>
             @foreach ($reviews as $review)
+            {{-- div review --}}
                 <div class="col-6">
                     <div class="card mt-4">
                         <div class="card-header d-flex">
@@ -115,6 +117,7 @@
                         </div>
                     </div>
                 </div>
+                {{-- END div review --}}
             @endforeach
         </div>
         {{-- END reviews --}}
