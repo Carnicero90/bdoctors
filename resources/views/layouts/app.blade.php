@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Boolbards') }}</title>
     {{-- TODO: favicon solo di test --}}
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
 
