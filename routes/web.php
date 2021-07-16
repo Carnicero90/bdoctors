@@ -99,5 +99,5 @@ Route::prefix('admin')
 =================== */
 // route per provare dd e dump a caso
 Route::get('/prova', function() {
-    return dd(User::count());
+    return dd(Auth::user());
 });

@@ -4,6 +4,7 @@
     <div class="container">
 
         @include("partials.success-messages")
+        @include("partials.error-messages")
 
         {{-- TEST --}}
         <div class="mb-4 d-flex align-items-center">
