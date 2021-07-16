@@ -94,7 +94,7 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <span class="text-secondary">{{ $review->created_at }}</span>
+                            <span class="text-secondary">{{ date('d/m/Y', $review->created_at->timestamp) }}</span>
                             <div>
                                 @for ($i = 0; $i < $review->votes; $i++)
                                     <i class="fas fa-star"></i>

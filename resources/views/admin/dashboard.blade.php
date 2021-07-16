@@ -38,9 +38,7 @@
                     <a class="btn btn-warning ml-2" href="{{route("admin.statistics", ['id' => Auth::user()->id])}}">
                         <i class="fas fa-user-alt mr-1"></i> Stats
                     </a>
-                    <a class="btn btn-danger ml-2" href="#"
-                        onclick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">
+                    <a class="btn btn-danger ml-2" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
 
@@ -74,7 +72,7 @@
                                     <i class="fas fa-star"></i>
                                 @endfor
                             </div>
-                            <span class="text-secondary">{{$review->created_at}}</span>
+                            <span class="text-secondary">{{date('d/m/Y', $review->created_at->timestamp)}}</span>
                         </div>
                         {{-- TODO: non usare direttamente l'id, potrebbe non corrispondere al value del voto! --}}
                         {{-- <div class="mt-2 mb-2"><span>voto: {{ $review->vote_id }}</span></div> --}}
@@ -106,7 +104,7 @@
                     </div>
                     <div class="card-body">
                         <div class="d-flex align-items-center">
-                            <span class="text-secondary">{{$message->created_at}}</span>
+                            <span class="text-secondary">{{date('d/m/Y', $message->created_at->timestamp)}}</span>
                         </div>
                         <div class="mt-2 mb-2">
                             <p class="card-text text-secondary">{{strlen($message->text) > 69 ? substr($message->text, 0, 70) . '...' : $message->text}}</p>
