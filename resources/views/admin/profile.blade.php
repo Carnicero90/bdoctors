@@ -119,7 +119,7 @@
                     <h3>Prestazioni</h3>
                     <div class="card mb-4 position-relative" v-for="number in numbers">
                         {{-- TODO rimuovi stile inline, lavora sulla funzia (non vogliamo venga cancellato l'ultimo, ma quello su cui lo user clicca) --}}
-                        <a class="remove" v-on:click="numbers = numbers - 1"><i class="fas fa-times"></i></a>
+                        <a class="remove" v-on:click="destroy($event)">X</a>
                         <div class="card-body pb-2">
                             <h4>Aggiungi prestazione</h4>
                             {{-- input#title --}}

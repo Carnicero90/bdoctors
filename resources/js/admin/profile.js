@@ -8,6 +8,10 @@ var app = new Vue({
         preloadPic(event) {
             let f = event.target.files[0];
             this.preload = URL.createObjectURL(f);
+        },
+        destroy(event) {
+            event.target.parentNode.remove();
+            // TODO: puo andare bene?
         }
     },
 })
