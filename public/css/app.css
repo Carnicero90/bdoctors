@@ -10017,3 +10017,8 @@ h3 {
 .select-category {
   -webkit-appearance: none;
 }
+
+footer {
+  background-color: red;
+  color: white;
+}

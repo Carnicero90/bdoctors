@@ -10,8 +10,7 @@
         <div class="mb-4 d-flex align-items-center">
             @if ($user->profile)
                 <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
-                    <img src="{{ asset('storage/' . $user->profile->pic) }}" alt=""
-                        style="max-height: 100px; width: 100%; height: 100%; object-fit: cover;">
+                    <img src="{{ asset('storage/' . $user->profile->pic) }}" alt="" style="max-height: 100px; width: 100%; height: 100%; object-fit: cover;">
                 </div>
             @else
                 <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
@@ -24,10 +23,8 @@
         </div>
 
         <div class="mb-4">
-            <h6>Categorie:</h6>
             @foreach ($user->categories as $category)
-                <a class="btn btn-outline-dark"
-                    href="{{ route('category-page', ['slug' => $category->slug]) }}">{{ $category->name }}</a>
+                <a class="btn btn-outline-dark" href="{{ route('category-page', ['slug' => $category->slug]) }}" style="padding: 2px 5px;">{{ $category->name }}</a>
             @endforeach
         </div>
 
@@ -51,18 +48,15 @@
             @endif
         </div>
         {{-- END TEST --}}
+
         {{-- @if (Auth::user())) --}}
         {{-- @if ($user->id != Auth::user()->id) --}}
         <div class="mt-4 mb-5">
-            <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi
-                recensione</a>
-            <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi
-                messaggio</a>
+            <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi recensione</a>
+            <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi messaggio</a>
         </div>
-    {{-- @endif --}}
         {{-- @endif --}}
-
-
+        {{-- @endif --}}
 
         {{-- PERFORMANCES --}}
         <form>
