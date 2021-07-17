@@ -81,49 +81,47 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 3);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/admin/profile.js":
-/*!***************************************!*\
-  !*** ./resources/js/admin/profile.js ***!
-  \***************************************/
+/***/ "./resources/js/guest/review.js":
+/*!**************************************!*\
+  !*** ./resources/js/guest/review.js ***!
+  \**************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 var app = new Vue({
   el: '#root',
   data: {
-    numbers: 0,
-    preload: '',
-    lines: 10
+    vote: 0,
+    votes: []
   },
   methods: {
-    preloadPic: function preloadPic(event) {
-      var f = event.target.files[0];
-      this.preload = URL.createObjectURL(f);
-    },
-    destroy: function destroy(event) {
-      event.target.parentNode.remove(); // TODO: puo andare bene?
-    }
+    selectVote: function selectVote(event) {}
   },
   mounted: function mounted() {
-    this.lines = document.getElementById('self_description').value.split(/\r\n|\r|\n/).length;
+    var _this = this;
+
+    axios.get('api/votes').then(function (result) {
+      console.log(result);
+      _this.votes = result.data.votes;
+    });
   }
 });
 
 /***/ }),
 
-/***/ 4:
-/*!*********************************************!*\
-  !*** multi ./resources/js/admin/profile.js ***!
-  \*********************************************/
+/***/ 3:
+/*!********************************************!*\
+  !*** multi ./resources/js/guest/review.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/filippomontani/booldoctors/bdoctors/resources/js/admin/profile.js */"./resources/js/admin/profile.js");
+module.exports = __webpack_require__(/*! /Users/filippomontani/booldoctors/bdoctors/resources/js/guest/review.js */"./resources/js/guest/review.js");
 
 
 /***/ })

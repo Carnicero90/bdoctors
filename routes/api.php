@@ -14,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* ================
+    VOTES
+=================== */
+Route::get('votes', 'Api\VoteController@index');
+Route::prefix('votes')
+->group(function() {
+    Route::get('index', 'Api\VoteController@index')->name('vote-index');
+});
+
+
 Route::get('search', 'Api\UserController@users')->name('search');
 Route::get('sponsored', 'Api\UserController@sponsoredUsers');
 

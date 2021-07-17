@@ -74,6 +74,7 @@
                 <div class="form-group mt-4 mb-4">
                     <label for="self_description">Descriviti</label>
                     <textarea class="form-control" name="self_description" id="self_description" v-bind:rows="lines"
+                        v-on:keyup.enter="lines ++"
                         placeholder="Scrivi una descrizione per il tuo profilo">{{ Auth::user()->profile ? Auth::user()->profile->self_description : old('self_description') }}</textarea>
                 </div>
                 {{-- END input#self_description --}}

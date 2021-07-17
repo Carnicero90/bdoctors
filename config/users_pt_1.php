@@ -84,6 +84,21 @@ return         [
 
         ]
     ],
+    [
+        'user' => [
+            'name' => 'Riccardo',
+            'lastname' => 'Maniero',
+            'address' => 'Avellino',
+            'email' => 'bombermaniero@mail.com',
+        ],
+        'profile' => [
+            'self_description' => '',
+            'phone_number' => '',
+            'work_address' => '',
+            'pic' =>  'img/maniero.jpg'
+
+        ]
+    ],
     // TEMPLATE USER
     // [
     //     'user' => [
