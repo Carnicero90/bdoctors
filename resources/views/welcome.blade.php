@@ -37,7 +37,7 @@
                             <li class="list-group-item" v-for="user in users" style="width: 220px; background-color: #111; border-color: #888; position: relative;">
                                 <a :href="'bards/' + user.id" class="d-flex align-items-center" style="color: #888;">
                                     <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="height: 2em;">
-                                    <img class="mr-2" v-else src="http://127.0.0.1:8000/img/user-img.png" alt="" style="height: 2em;">
+                                    <img class="mr-2" v-else src="{{asset("/img/user-img.png")}}" alt="" style="height: 2em;">
                                     <span>@{{ user . name + ' ' + user . lastname }}</span>
                                     <span v-if="user.sponsored" style="position: absolute; top: 5px; right: 5px;">
                                         <i class="fas fa-star"></i>
@@ -70,7 +70,7 @@
                         <a href="{{route("category-page", ["slug" => $category->slug])}}" class="font-weight-bold" style="text-decoration: none; color: #444;">
                             <div class="card mb-3">
                                 <div class="card-body text-center text-uppercase">
-                                    <img src="{{'http://127.0.0.1:8000/img/icons/' . $category->slug . '.png'}}" alt="" style="height: 25px;" class="mr-2">
+                                    <img src="{{asset("/img/icons/" . $category->slug . ".png")}}" alt="" style="height: 25px;" class="mr-2">
                                     <span>{{str_replace("registrazione e mixaggio", "rec & mix", $category->name)}}</span>
                                 </div>
                             </div>
@@ -96,7 +96,7 @@
                             <div class="card-body d-flex flex-column align-items-center">
                                 <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden;">
                                     <img v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="max-height: 120px; width: 100%; height: 100%; object-fit: cover;">
-                                    <img v-else src="http://127.0.0.1:8000/img/user-img.png" alt="" style="max-height: 120px;">
+                                    <img v-else src="{{asset("/img/user-img.png")}}" alt="" style="max-height: 120px;">
                                 </div>
                                 <div class="mt-3 mb-2 font-weight-bold">
                                     <span>@{{user.name + ' ' + user.lastname}}</span>
