@@ -24,7 +24,7 @@ class ServiceController extends Controller
             'services' => $services
         ];
 
-        return view('admin.services.index', $data);
+        return view('admin.services', $data);
     }
 
     /**
