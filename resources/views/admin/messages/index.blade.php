@@ -19,6 +19,7 @@
                                         <h5>{{ $message->author_email }}</h5>
                                         <p class="card-text text-secondary">{{ substr($message->text, 0, 120) }}...</p>
                                         <div class="mb-3">
+                                            @dump($message->message_date)
                                             <span>{{ $message->message_date }}</span>
                                         </div>
                                         <a href="{{ route('admin.message-page', ['id' => $message->id]) }}"
