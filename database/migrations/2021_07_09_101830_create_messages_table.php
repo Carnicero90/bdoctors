@@ -21,7 +21,7 @@ class CreateMessagesTable extends Migration
             ->on('users')
             ->onDelete('cascade'); // magari cambia gestione ondelete (anche per stats!)
             $table->integer('service_number')->nullable();
-            $table->date('message_date');
+            $table->datetime('message_date');
             $table->string('author_name');
             $table->string('author_email');
             $table->text('text')->nullable();

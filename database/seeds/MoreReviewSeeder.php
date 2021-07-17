@@ -5,6 +5,7 @@ use Faker\Generator as Faker;
 use App\Review;
 use App\User;
 use App\Vote;
+use Illuminate\Support\Carbon;
 
 class MoreReviewSeeder extends Seeder
 {
@@ -23,6 +24,7 @@ class MoreReviewSeeder extends Seeder
             $rev->author_name = $faker->name();
             $rev->author_email = $faker->email();
             $rev->content = $faker->text();
+            $rev->send_date = Carbon::now();
             $rev->save();
         }
     }

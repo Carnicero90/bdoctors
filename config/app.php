@@ -229,4 +229,16 @@ return [
 
     ],
 
+        /*
+    |--------------------------------------------------------------------------
+    | Standard Date Format
+    |--------------------------------------------------------------------------
+    |
+    | Formato standard in cui stampare a schermo le date
+    | TOASK: va bene piazzarlo qua?
+    |
+    */
+
+    'StandardDateFormat' => 'd/m/Y',
+
 ];
