@@ -29,7 +29,14 @@
                 @endforeach
             </div>
             <div>
-                <i class="fas fa-star" v-for="vote, index in votes"></i>
+                {{-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M8.456.344 10.17 5.66l5.353.065c.461.006.652.62.282.909l-4.295 3.35 1.595 5.358c.137.461-.361.841-.737.562L8 12.658l-4.368 3.246c-.375.28-.874-.101-.737-.561L4.49 9.985.195 6.635c-.37-.289-.179-.904.282-.91L5.83 5.66 7.544.343a.475.475 0 0 1 .912 0z"></path></svg> --}}
+                <i class="fas fa-star" 
+                :style="index <= value ? 'color:red' : '' "
+                v-for="vote, index in votes" 
+                v-on:mouseover="fillStars(index)" 
+                v-on:mouseleave="clickedValue > -1? fillStars(clickedValue) : fillStars(-1)" 
+                v-on:click="clickedValue=index"></i>
+                {{-- <p>@{{ votes }}</p> --}}
             </div>
 
             {{-- form lascia una recensione --}}

@@ -88,7 +88,7 @@
                                     <i class="fas fa-star"></i>
                                 @endfor
                             </div>
-                            <span class="text-secondary">{{date('d/m/Y', $review->created_at->timestamp)}}</span>
+                            <span class="text-secondary">{{date(config('app.StandardDateFormat'), $review->created_at->timestamp)}}</span>
                         </div>
                         {{-- TODO: non usare direttamente l'id, potrebbe non corrispondere al value del voto! --}}
                         {{-- <div class="mt-2 mb-2"><span>voto: {{ $review->vote_id }}</span></div> --}}
@@ -121,7 +121,7 @@
                     </div>
                     <div class="card-body">
                         <div class="d-flex align-items-center">
-                            <span class="text-secondary">{{date('d/m/Y', $message->created_at->timestamp)}}</span>
+                            <span class="text-secondary">{{ $message->message_date }}</span>
                         </div>
                         <div class="mt-2 mb-2">
                             <p class="card-text text-secondary">{{strlen($message->text) > 69 ? substr($message->text, 0, 70) . '...' : $message->text}}</p>

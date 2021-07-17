@@ -19,7 +19,7 @@ var app = new Vue({
                     .then(result => {
                         this.users = result.data.users.slice(0, 5);
                     })
-                }, 600
+                }, 500
                 )
 
             }

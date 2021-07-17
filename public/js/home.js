@@ -116,7 +116,7 @@ var app = new Vue({
           axios.get("api/search?name=".concat(_this.searchString, "&cat=").concat(_this.selectedCategory)).then(function (result) {
             _this.users = result.data.users.slice(0, 5);
           });
-        }, 600);
+        }, 500);
       } else {
         this.users = [];
         this.searching = false;
