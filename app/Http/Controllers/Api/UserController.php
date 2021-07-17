@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
-use Hamcrest\Arrays\IsArray;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -22,10 +21,7 @@ class UserController extends Controller
         $sponsored_users = User::select(
             'users.*',
             'profiles.pic',
-
-            DB::raw('avg(votes.value) as avg_vote'),
-            DB::raw('MAX(success) AS sponsored'),
-
+            DB::raw('avg(votes.value) as avg_vote')
         )
             ->rightJoin('sponsorplan_users', 'sponsorplan_users.user_id', '=', 'users.id')
             ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
@@ -67,11 +63,11 @@ class UserController extends Controller
         ])
 
             ->rightJoin('category_user', 'users.id', '=', 'category_user.user_id')
-            // ->where(function ($q) use ($user) {
-            //     $q->where('users.name', 'LIKE', '%' . $user . '%')
-            //         ->orWhere('users.lastname', 'LIKE', '%' . $user . '%');
-            // })
-            ->where(DB::raw("concat_ws(' ', users.name, users.lastname)"), 'LIKE', '%' . $user . '%')
+            ->where(function ($q) use ($user) {
+                $q->where('users.name', 'LIKE', '%' . $user . '%')
+                    ->orWhere('users.lastname', 'LIKE', '%' . $user . '%');
+            })
+            // ->whereRaw("concat(users.name, ' ', users.lastname) like '%?%'", [$user])
 
             ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
             ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
@@ -86,15 +82,7 @@ class UserController extends Controller
             ->orderByDesc('avg_vote');
 
         if ($category) {
-            if (is_array($category)) {
-                $users = $users->where(function ($q) use ($category) {
-                    foreach ($category as $field) {
-                        $q->orWhere('category_user.category_id', '=', $field);
-                    }
-                });
-            } else {
-                $users = $users->where([['category_user.category_id', '=', $category]]);
-            }
+            $users = $users->where([['category_user.category_id', '=', $category]]);
         }
 
         // TODO: salvi users 400 volte, trova una soluz non da rincoglionito (tipo in if else in un where)

@@ -24,9 +24,9 @@
 
                 <!-- input ricerca da usare con VueJs -->
                 <div class="mb-5" style="position: relative">
-                    <select class="select-category mr-1" name="select-category" id="select-category" aria-label="Seleziona una categoria" v-model="selectedCategory" v-on:change="searchUser()" style="width: 223px; height: 35px; transform:translateY(+3px); padding-left: 15px; background-color: black; color: #888; font-size: 18px; border-radius: 3px;">
+                    <select class="select-category mr-1" name="" id="" v-model="selectedCategory" v-on:change="searchUser()" style="width: 223px; height: 35px; transform:translateY(+3px); padding-left: 15px; background-color: black; color: #888; font-size: 18px; border-radius: 3px;">
                         <option value="" selected disabled>Seleziona una categoria</option>
-                        <option value="#">All</option>
+                        <option value="">All</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                         @endforeach
@@ -53,7 +53,8 @@
                         </ul>
                     </div>
 
-                    <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="Cerca un bard" aria-label="Cerca un musicista" style="width: 200px; height: 37px; transform: translateY(+2px); padding-left: 5px; background-color: black; color: white; font-size: 18px; border: 0; border-bottom: 2px solid #444;">
+                    <label for=""></label>
+                    <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="Cerca un bard" style="width: 200px; height: 37px; transform: translateY(+2px); padding-left: 5px; background-color: black; color: white; font-size: 18px; border: 0; border-bottom: 2px solid #444;">
 
                     <a href="{{ route('advanced-search') }}" class="btn btn-secondary ml-2 mr-2" style="background-color: #111; color: #888"><i class="fas fa-search mr-2"></i>Ricerca avanzata</a>
 

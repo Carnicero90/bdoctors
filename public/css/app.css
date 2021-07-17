@@ -10119,3 +10119,26 @@ footer .copyright span {
   height: 20px;
   cursor: pointer;
 }
+
+.dashboard {
+  padding: 20px 0;
+}
+.dashboard .saluto {
+  text-decoration: none;
+}
+.dashboard .saluto:hover {
+  color: #3490dc;
+}
+.dashboard .dash-list {
+  padding-top: 10px;
+  border-bottom: 1px solid #dee2e6;
+  justify-content: space-between;
+}
+.dashboard .dash-link {
+  text-decoration: none;
+  padding-bottom: 40px;
+}
+.dashboard .dash-link:hover {
+  border-bottom: 2px solid #3490dc;
+  color: #3490dc;
+}

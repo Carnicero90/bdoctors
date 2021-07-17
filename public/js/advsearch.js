@@ -93,13 +93,14 @@
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-// TODO: funziona ma e' inaccettabile, non essere pigro e rifallo decentemente quando sei meno stanco e sciatto
 var app = new Vue({
   el: '#root',
   data: {
     users: [],
     params: '',
+    visibleUsers: [],
     searchString: '',
+    selectedCategory: '',
     categories: [],
     selectedCategories: []
   },
@@ -109,7 +110,8 @@ var app = new Vue({
 
       // TODO: cambia lunghezza stringa minima, ora comoda cosi per test
       if (this.searchString.length > 0) {
-        axios.get("api/search?name=".concat(this.searchString).concat(this.parsedCategories)).then(function (result) {
+        console.log(this.searchString);
+        axios.get("api/search?name=".concat(this.searchString, "&cat=").concat(this.selectedCategory)).then(function (result) {
           _this.users = result.data.users;
         });
       } else {
@@ -119,14 +121,14 @@ var app = new Vue({
     },
     addOrRemoveCat: function addOrRemoveCat(id) {
       if (this.selectedCat(id)) {
-        this.selectedCategories = this.selectedCategories.filter(function (el) {
+        this.selectedCategories.filter(function (el) {
           return el != id;
         });
       } else {
         this.selectedCategories.push(id);
       }
 
-      this.searchUser();
+      console.table(this.selectedCategories);
     },
     selectedCat: function selectedCat(id) {
       return this.selectedCategories.includes(id);
@@ -156,15 +158,6 @@ var app = new Vue({
     axios.get("api/categories/index").then(function (result) {
       _this2.categories = result.data.categories;
     }); // TODO: sembra un poco ripetitivo? inoltre e' uguale alla home, c'e' da fattorizzare
-  },
-  computed: {
-    parsedCategories: function parsedCategories() {
-      if (this.selectedCategories.length > 0) {
-        return "&cat[]=".concat(this.selectedCategories.join('&cat[]='));
-      }
-
-      return '';
-    }
   }
 });
 

@@ -1,0 +1,26 @@
+// DASHBOARD
+.dashboard {
+
+    padding: 20px 0;
+
+    .saluto {
+        text-decoration: none;
+        &:hover {
+            color: $blue;
+        }
+    }
+
+    .dash-list {
+        padding-top: 10px;
+        border-bottom: 1px solid #dee2e6;
+        justify-content: space-between;
+    }
+    .dash-link {
+        text-decoration: none;
+        padding-bottom: 40px;
+        &:hover {
+            border-bottom: 2px solid $blue;
+            color: $blue;
+        }
+    }
+}

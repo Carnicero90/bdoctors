@@ -1,10 +1,11 @@
-// TODO: funziona ma e' inaccettabile, non essere pigro e rifallo decentemente quando sei meno stanco e sciatto
 var app = new Vue({
     el: '#root',
     data: {
         users: [],
         params: '',
+        visibleUsers: [],
         searchString: '',
+        selectedCategory: '',
         categories: [],
         selectedCategories: [],
     },
@@ -12,7 +13,8 @@ var app = new Vue({
         searchUser() {
             // TODO: cambia lunghezza stringa minima, ora comoda cosi per test
             if (this.searchString.length > 0) {
-                axios.get(`api/search?name=${this.searchString}${this.parsedCategories}`)
+                console.log(this.searchString)
+                axios.get(`api/search?name=${this.searchString}&cat=${this.selectedCategory}`)
                     .then(result => {
                         this.users = result.data.users;
                     })
@@ -28,12 +30,12 @@ var app = new Vue({
         addOrRemoveCat(id) {
             if (this.selectedCat(id)) 
             {
-                this.selectedCategories = this.selectedCategories.filter((el) => el!=id);
+                this.selectedCategories.filter((el) => el!=id);
             }
             else {
                 this.selectedCategories.push(id);
             }
-            this.searchUser();
+            console.table(this.selectedCategories);
         },
 
         selectedCat(id) {
@@ -63,14 +65,5 @@ var app = new Vue({
             })
         // TODO: sembra un poco ripetitivo? inoltre e' uguale alla home, c'e' da fattorizzare
 
-    },
-    computed:
-    {
-        parsedCategories() {
-            if (this.selectedCategories.length > 0) {
-                return `&cat[]=${this.selectedCategories.join('&cat[]=')}`
-            }
-            return ''
-        }
     }
 })

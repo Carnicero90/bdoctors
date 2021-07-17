@@ -1,4 +1,8 @@
 @extends('layouts.app')
+
+@section('header-scripts')
+@endsection
+
 @section('content')
 
 <div class="container">
@@ -8,19 +12,37 @@
         @include("partials.error-messages")
     </div>
 
+    {{-- HEADER --}}
     <div class="row justify-content-center">
         <div class="col-md-12 text-center">
 
             {{-- Saluto all'utente loggato --}}
-            <div class="card">
-                <div class="card-header">
-                    <h5>
+            <div class="dashboard">
+                <div class="mb-4 d-flex align-items-center">
+                    @if ($user->profile)
+                        <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
+                            <a href="{{route("profile", ['id' => Auth::user()->id])}}">
+                                <img src="{{ asset('storage/' . $user->profile->pic) }}" alt="{{ $user->name . ' ' . $user->lastname }}" style="max-height: 100px; width: 100%; height: 100%; object-fit: cover;">
+                            </a>
+                        </div>
+                    @else
+                        <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
+                            <a href="{{route("profile", ['id' => Auth::user()->id])}}">
+                                <img src="{{ asset('img/user-img.png') }}" alt="" style="max-height: 100px;">
+                            </a>
+                        </div>
+                    @endif
+                    <h3 class="ml-3">
                         Ciao
-                        <span class="font-weight-bold">{{$user->name}}</span>,
-                        cosa vuoi fare?
-                    </h5>
+                        <a class="saluto" href="{{route("profile", ['id' => Auth::user()->id])}}">
+                            <span class="font-weight-bold">{{$user->name}}</span>
+                        </a>
+                        , cosa vuoi fare?
+                    </h3>
                 </div>
-                <div class="card-body text-center">
+
+                {{-- Tasti navigazione --}}
+                <div class="dash-list d-flex text-center align-items-center">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -28,39 +50,45 @@
                     @endif
 
                     {{-- Crea/Modifica Profilo --}}
-                    <a class="btn btn-success ml-2" href="{{route('admin.profile-index')}}">
-                        <i class="fas fa-user-alt mr-1"></i> Crea / Modifica il tuo profilo
+                    <a class="dash-link" href="{{route('admin.profile-index')}}">
+                        <i class="fas fa-user-alt mr-1"></i>
+                        <div>Crea / Modifica il tuo profilo</div>
                     </a>
                     
                     {{-- Aggiungi/Modifica Prestazione --}}
-                    <a class="btn btn-info ml-2" href="{{route('admin.services')}}">
-                        <i class="fas fa-user-alt mr-1"></i> Aggiungi/modifica prestazione
+                    <a class="dash-link" href="{{route('admin.services')}}">
+                        <i class="fas fa-user-alt mr-1"></i>
+                        <div>Aggiungi/modifica prestazione</div>
                     </a>
 
                     {{-- Acquista Piano Premium --}}
-                    <a class="btn btn-warning ml-2" href="{{route('sponsor-index')}}">
-                        <i class="fas fa-star mr-1"></i> Acquista un piano premium
+                    <a class="dash-link" href="{{route('sponsor-index')}}">
+                        <i class="fas fa-star mr-1"></i>
+                        <div>Acquista un piano premium</div>
                     </a>
 
                     {{-- Visualizza Profilo Pubblico --}}
-                    <a class="btn btn-success ml-2" href="{{route("profile", ['id' => Auth::user()->id])}}">
-                        <i class="fas fa-user-alt mr-1"></i> Visualizza il tuo profilo pubblico
+                    <a class="dash-link" href="{{route("profile", ['id' => Auth::user()->id])}}">
+                        <i class="fas fa-user-alt mr-1"></i>
+                        <div>Visualizza il tuo profilo pubblico</div>
                     </a>
 
                     {{-- Statistiche --}}
-                    <a class="btn btn-warning ml-2" href="{{route("admin.statistics", ['id' => Auth::user()->id])}}">
-                        <i class="fas fa-user-alt mr-1"></i> Stats
+                    <a class="dash-link" href="{{route("admin.statistics", ['id' => Auth::user()->id])}}">
+                        <i class="fas fa-user-alt mr-1"></i>
+                        <div>Stats</div>
                     </a>
 
                     {{-- Logout --}}
-                    <a class="btn btn-danger mt-5 ml-2" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <i class="fas fa-sign-out-alt"></i> Logout
+                    <a class="dash-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <div>Logout</div>
                     </a>
-
                 </div>
             </div>
         </div>
     </div>
+    {{-- END HEADER --}}
 
     {{-- Recensioni --}}
     <div class="row mt-5">
