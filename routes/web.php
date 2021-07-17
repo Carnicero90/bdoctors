@@ -91,7 +91,11 @@ Route::prefix('admin')
         Route::get('/reviews/{id}', 'ReviewController@show')->name('reviews-dettails');
 
         // STATISTICHE
-        Route::get('statistics/{id}', 'StatisticController@index')->name('statistics');
+        Route::get('/statistics/{id}', 'StatisticController@index')->name('statistics');
+
+        // PRESTAZIONI
+        Route::get('/services', 'ServiceController@index')->name('services');
+        Route::get('/services', 'ServiceController@createOrUpdate')->name('services-store');
     });
 
 /* ================

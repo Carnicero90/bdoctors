@@ -11,6 +11,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12 text-center">
 
+            {{-- Saluto all'utente loggato --}}
             <div class="card">
                 <div class="card-header">
                     <h5>
@@ -26,19 +27,33 @@
                         </div>
                     @endif
 
+                    {{-- Crea/Modifica Profilo --}}
                     <a class="btn btn-success ml-2" href="{{route('admin.profile-index')}}">
                         <i class="fas fa-user-alt mr-1"></i> Crea / Modifica il tuo profilo
                     </a>
+                    
+                    {{-- Aggiungi/Modifica Prestazione --}}
+                    <a class="btn btn-info ml-2" href="{{route('admin.services')}}">
+                        <i class="fas fa-user-alt mr-1"></i> Aggiungi/modifica prestazione
+                    </a>
+
+                    {{-- Acquista Piano Premium --}}
                     <a class="btn btn-warning ml-2" href="{{route('sponsor-index')}}">
                         <i class="fas fa-star mr-1"></i> Acquista un piano premium
                     </a>
+
+                    {{-- Visualizza Profilo Pubblico --}}
                     <a class="btn btn-success ml-2" href="{{route("profile", ['id' => Auth::user()->id])}}">
                         <i class="fas fa-user-alt mr-1"></i> Visualizza il tuo profilo pubblico
                     </a>
+
+                    {{-- Statistiche --}}
                     <a class="btn btn-warning ml-2" href="{{route("admin.statistics", ['id' => Auth::user()->id])}}">
                         <i class="fas fa-user-alt mr-1"></i> Stats
                     </a>
-                    <a class="btn btn-danger ml-2" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+
+                    {{-- Logout --}}
+                    <a class="btn btn-danger mt-5 ml-2" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
 
@@ -47,6 +62,7 @@
         </div>
     </div>
 
+    {{-- Recensioni --}}
     <div class="row mt-5">
         <div class="col-6">
             <div class="d-flex align-items-center">
@@ -85,6 +101,7 @@
             @endforeach
         </div>
 
+        {{-- Messaggi --}}
         <div class="col-6">
             <div class="d-flex align-items-center">
                 <h2>Messaggi</h2>
