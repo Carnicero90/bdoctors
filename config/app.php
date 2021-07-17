@@ -239,6 +239,6 @@ return [
     |
     */
 
-    'StandardDateFormat' => 'd/m/Y',
+    'standardDateFormat' => 'd/m/Y',
 
 ];

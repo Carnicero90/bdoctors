@@ -96,17 +96,22 @@
 var app = new Vue({
   el: '#root',
   data: {
-    vote: 0,
-    votes: []
+    value: -1,
+    votes: [],
+    clickedValue: -1
   },
   methods: {
-    selectVote: function selectVote(event) {}
+    fillStars: function fillStars(index) {
+      this.value = index;
+    }
   },
   mounted: function mounted() {
     var _this = this;
 
-    axios.get('api/votes').then(function (result) {
-      console.log(result);
+    axios.get('../api/votes/index') // .catch(function (error) {
+    //     console.log(error);
+    // })
+    .then(function (result) {
       _this.votes = result.data.votes;
     });
   }
