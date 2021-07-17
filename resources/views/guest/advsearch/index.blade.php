@@ -18,68 +18,33 @@
     {{-- vue container --}}
     <div id="root">
 
-        <div class="container text-center">
+        <div class="container">
+
             {{-- Searchbar --}}
-            <div class="form-inline mb-3">
-                <input class="form-control mr-3" type="search" placeholder="Ricerca Avanzata" aria-label="Search"
-                    v-model="searchString" v-on:keyup="searchUser()">
-                <ul class="list-group"></ul>
-                <button class="btn btn-outline-success mr-3">Cerca</button>
-                <button class="btn btn-primary mr-3" v-on:click="sortUsersByReviewNum()">Ordina per numero
-                    recensioni</button>
-                <button class="btn btn-warning mr-3" v-on:click="sortUsersByReviewAvg()">Ordina per media voti</button>
+            <div class="form-inline mt-3 mb-4 flex justify-content-center">
+                <input class="form-control mr-3" type="search" placeholder="Ricerca Avanzata" aria-label="Search" v-model="searchString" v-on:keyup="searchUser()" style="width: 300px;">
+                <button class="btn btn-primary mr-3" v-on:click="sortUsersByReviewNum()"><i class="fas fa-chevron-down mr-1"></i>Ordina per numero recensioni</button>
+                <button class="btn btn-primary mr-3" v-on:click="sortUsersByReviewAvg()"><i class="fas fa-chevron-down mr-1"></i>Ordina per media voti</button>
             </div>
             {{-- End Searchbar --}}
-        </div>
-        <div class="container text-center">
-            <div class="d-flex">
-                <div class="mb-4" :style="selectedCat(category.id) ? 'background: #343a40; color: white;' : ''" v-for="category, index in categories" v-on:click="addOrRemoveCat(category.id)">
-                    <span class="btn btn-outline-dark">@{{category.name}}</span>
+
+            {{-- lista categorie --}}
+            <div class="d-flex justify-content-between mb-5">
+                <div v-for="category, index in categories" v-on:click="addOrRemoveCat(category.id)">
+                    <span class="btn btn-outline-dark" :style="selectedCat(category.id) ? 'background: #343a40; color: white;' : ''">@{{category.name.replace("registrazione e mixaggio", "rec & mix")}}</span>
                 </div>
             </div>
-        </div>
+            {{-- END lista categorie --}}
 
-        <div class="container">
+            {{-- elenco risultati users --}}
             <div class="row mt-4 d-flex align-items-center justify-content-around">
                 <div v-for="user in users" style="width: 21%">
-                    <a :href="'bards/' + user.id" style="text-decoration: none; color: #444;">
-                        <div class="card mb-4" style="height: 297px;">
-                            {{-- TODO: boh, magari la media voti la mostriamo solo se supera un tot? Pagano, non e' bellino per loro vedersi un
-                            pallino solo come media recensioni (d'altra parte affari loro, bohbohboh) --}}
-                            <div class="card-body d-flex flex-column align-items-center">
-                                <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden;">
-                                    <img v-if="user.pic" :src="'/storage/' + user.pic" alt=""
-                                        style="max-height: 120px; width: 100%; height: 100%; object-fit: cover;">
-                                    <img v-else src="{{ asset('/img/user-img.png') }}" alt="" style="max-height: 120px;">
-                                </div>
-                                <div class="mt-3 mb-2 font-weight-bold">
-                                    <span>@{{ user . name + ' ' + user . lastname }}</span>
-                                </div>
-                                <div class="text-secondary">
-                                    <small>
-                                        <span>id categoria = @{{ user . cat }}</span>
-                                    </small>
-                                </div>
-                                <div class="mt-2">
-                                    <span v-if="user.avg_vote > 0">
-                                        <i v-for="n in parseInt(user.avg_vote)" class="fas fa-star"></i>
-                                    </span>
-                                </div>
-                                <div class="mt-2">
-                                    <span v-if="user.nmb_reviews > 0">
-                                        <small>
-                                            <i class="fas fa-file-alt mr-1"></i> @{{ user . nmb_reviews }} recensioni
-                                        </small>
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                    @include("partials.user-card-api")
                 </div>
             </div>
+            {{-- END elenco risultati users --}}
 
         </div>
-
 
     </div>
     {{-- END vue container --}}
