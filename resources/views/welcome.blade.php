@@ -53,8 +53,7 @@
                         </ul>
                     </div>
 
-                    <label for=""></label>
-                    <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="Cerca un bard" style="width: 200px; height: 37px; transform: translateY(+2px); padding-left: 5px; background-color: black; color: white; font-size: 18px; border: 0; border-bottom: 2px solid #444;">
+                    <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="Cerca un bard" arialabel="Cerca un musicista" style="width: 200px; height: 37px; transform: translateY(+2px); padding-left: 5px; background-color: black; color: white; font-size: 18px; border: 0; border-bottom: 2px solid #444;">
 
                     <a href="{{ route('advanced-search') }}" class="btn btn-secondary ml-2 mr-2" style="background-color: #111; color: #888"><i class="fas fa-search mr-2"></i>Ricerca avanzata</a>
 
