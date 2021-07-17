@@ -99,9 +99,7 @@ var app = new Vue({
   data: {
     users: [],
     params: '',
-    visibleUsers: [],
     searchString: '',
-    selectedCategory: '',
     categories: [],
     selectedCategories: []
   },
@@ -111,10 +109,8 @@ var app = new Vue({
 
       // TODO: cambia lunghezza stringa minima, ora comoda cosi per test
       if (this.searchString.length > 0) {
-        console.log("api/search?name=".concat(this.searchString).concat(this.parsedCategories));
         axios.get("api/search?name=".concat(this.searchString).concat(this.parsedCategories)).then(function (result) {
           _this.users = result.data.users;
-          console.log("api/search?name=".concat(_this.searchString).concat(_this.parsedCategories));
         });
       } else {
         this.users = [];

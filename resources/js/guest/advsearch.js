@@ -4,9 +4,7 @@ var app = new Vue({
     data: {
         users: [],
         params: '',
-        visibleUsers: [],
         searchString: '',
-        selectedCategory: '',
         categories: [],
         selectedCategories: [],
     },
@@ -14,11 +12,9 @@ var app = new Vue({
         searchUser() {
             // TODO: cambia lunghezza stringa minima, ora comoda cosi per test
             if (this.searchString.length > 0) {
-                console.log(`api/search?name=${this.searchString}${this.parsedCategories}`)
                 axios.get(`api/search?name=${this.searchString}${this.parsedCategories}`)
                     .then(result => {
                         this.users = result.data.users;
-                        console.log(`api/search?name=${this.searchString}${this.parsedCategories}`)
                     })
             }
             else {
