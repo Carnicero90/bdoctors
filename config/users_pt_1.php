@@ -99,6 +99,22 @@ return         [
 
         ]
     ],
+    [
+        'user' => [
+            'name' => 'Alessandro',
+            'lastname' => 'Scolozzi',
+            'address' => 'Sardegna',
+            'email' => 'ale@mail.com',
+        ],
+        'profile' => [
+            'self_description' => 'Mi sono appassionato al C da bambino grazie alla mia mancanza di passione per la matematica,
+            crescendo mi sono avvicinato al mondo della programmazione ad oggetti. Attualmente ricopro il ruolo di insegnante per Boolean Careers e collaboro con la NASA per progetti in Drupal.',
+            'phone_number' => '345345345',
+            'work_address' => 'room classe 31',
+            'pic' =>  'img/ale.jpeg'
+
+        ]
+    ],
     // TEMPLATE USER
     // [
     //     'user' => [
