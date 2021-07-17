@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use Hamcrest\Arrays\IsArray;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -82,7 +83,17 @@ class UserController extends Controller
             ->orderByDesc('avg_vote');
 
         if ($category) {
-            $users = $users->where([['category_user.category_id', '=', $category]]);
+            if (is_array($category)) {
+                $users = $users->where(function ($q) use ($category) {
+                    foreach($category as $field) {
+                        $q->orWhere('category_user.category_id', '=', $field);
+                    }
+                });
+            }
+            else {
+                $users = $users->where([['category_user.category_id', '=', $category]]);
+            }
+ 
         }
 
         // TODO: salvi users 400 volte, trova una soluz non da rincoglionito (tipo in if else in un where)

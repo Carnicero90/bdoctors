@@ -33,8 +33,9 @@
         </div>
         <div class="container text-center">
             <div class="d-flex">
-                <div class="mb-4" :style="selectedCat(category.id) ? 'background: #343a40; color: white;' : ''" v-for="category, index in categories" v-on:click="addOrRemoveCat(category.id)">
-                    <span class="btn btn-outline-dark">@{{category.name}}</span>
+                <div class="mb-4" :style="selectedCat(category.id) ? 'background: lightgrey;' : ''"
+                    v-for="category, index in categories" v-on:click="addOrRemoveCat(category.id)">
+                    <span class="btn btn-outline-dark">@{{ category . name }}</span>
                 </div>
             </div>
         </div>
