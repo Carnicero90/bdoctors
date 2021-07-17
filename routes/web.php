@@ -95,7 +95,7 @@ Route::prefix('admin')
 
         // PRESTAZIONI
         Route::get('/services', 'ServiceController@index')->name('services');
-        Route::get('/services', 'ServiceController@createOrUpdate')->name('services-store');
+        Route::get('/services/{id}', 'ServiceController@createOrUpdate')->name('services-store');
     });
 
 /* ================
