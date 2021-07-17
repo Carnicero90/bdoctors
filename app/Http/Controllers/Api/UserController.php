@@ -22,7 +22,10 @@ class UserController extends Controller
         $sponsored_users = User::select(
             'users.*',
             'profiles.pic',
-            DB::raw('avg(votes.value) as avg_vote')
+
+            DB::raw('avg(votes.value) as avg_vote'),
+            DB::raw('MAX(success) AS sponsored'),
+
         )
             ->rightJoin('sponsorplan_users', 'sponsorplan_users.user_id', '=', 'users.id')
             ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
@@ -64,11 +67,11 @@ class UserController extends Controller
         ])
 
             ->rightJoin('category_user', 'users.id', '=', 'category_user.user_id')
-            ->where(function ($q) use ($user) {
-                $q->where('users.name', 'LIKE', '%' . $user . '%')
-                    ->orWhere('users.lastname', 'LIKE', '%' . $user . '%');
-            })
-            // ->whereRaw("concat(users.name, ' ', users.lastname) like '%?%'", [$user])
+            // ->where(function ($q) use ($user) {
+            //     $q->where('users.name', 'LIKE', '%' . $user . '%')
+            //         ->orWhere('users.lastname', 'LIKE', '%' . $user . '%');
+            // })
+            ->where(DB::raw("concat_ws(' ', users.name, users.lastname)"), 'LIKE', '%' . $user . '%')
 
             ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')
             ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
@@ -85,15 +88,13 @@ class UserController extends Controller
         if ($category) {
             if (is_array($category)) {
                 $users = $users->where(function ($q) use ($category) {
-                    foreach($category as $field) {
+                    foreach ($category as $field) {
                         $q->orWhere('category_user.category_id', '=', $field);
                     }
                 });
-            }
-            else {
+            } else {
                 $users = $users->where([['category_user.category_id', '=', $category]]);
             }
- 
         }
 
         // TODO: salvi users 400 volte, trova una soluz non da rincoglionito (tipo in if else in un where)
