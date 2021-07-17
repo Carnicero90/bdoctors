@@ -28,6 +28,7 @@ class CreateReviewsTable extends Migration
             $table->string('author_name');
             $table->string('author_email');
             $table->text('content');
+            $table->datetime('send_date');
             $table->timestamps();
             // TODO: gestici gli ondelete
         });
