@@ -15,6 +15,13 @@
             <div>
                 <span v-if="user.avg_vote > 0"><i v-for="n in parseInt(user.avg_vote)" class="fas fa-star"></i></span>
             </div>
+            <div class="mt-2">
+                <span v-if="user.nmb_reviews > 0">
+                    <small>
+                        <i class="fas fa-file-alt mr-1"></i> @{{ user . nmb_reviews }} recensioni
+                    </small>
+                </span>
+            </div>
         </div>
         <div v-if="user.sponsored" style="position: absolute; top: 5px; right: 7px;">
             <small class="badge badge-secondary">Consigliato</small>

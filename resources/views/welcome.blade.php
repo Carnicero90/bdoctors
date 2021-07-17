@@ -81,9 +81,6 @@
             <div class="row mt-4 d-flex align-items-center justify-content-between">
                 <div v-for="user in sponsoredUsers" style="width: 21%">
                     @include("partials.user-card-api")
-                    <div style="position: absolute; top: 5px; right: 7px;">
-                        <small class="badge badge-secondary">Consigliato</small>
-                    </div>
                 </div>
             </div>
         </div>

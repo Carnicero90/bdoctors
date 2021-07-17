@@ -95,7 +95,9 @@ Route::prefix('admin')
 
         // PRESTAZIONI
         Route::get('/services', 'ServiceController@index')->name('services');
-        Route::get('/services/{id}', 'ServiceController@createOrUpdate')->name('services-store');
+        Route::post('/services/{id}', 'ServiceController@createOrUpdate')->name('services-store');
+        Route::put('/services/update/{id}', 'ServiceController@update')->name('service-update');
+        Route::delete('/services/delete/{id}', 'ServiceController@destroy')->name('service-destroy');
     });
 
 /* ================
