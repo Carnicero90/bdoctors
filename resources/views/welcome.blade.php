@@ -11,6 +11,7 @@
 @section('footer-scripts')
     <script src="{{ asset('js/home.js') }}"></script>
 @endsection
+
 @section('content')
     {{-- vue container --}}
     <div id="root" class="jumbo-container">
@@ -68,16 +69,7 @@
             <h2 class="text-center">Categorie</h2>
             <div class="row mt-4">
                 @foreach ($categories as $category)
-                    <div class="col-3">
-                        <a href="{{route("category-page", ["slug" => $category->slug])}}" class="font-weight-bold" style="text-decoration: none; color: #444;">
-                            <div class="card mb-3">
-                                <div class="card-body text-center text-uppercase">
-                                    <img src="{{asset("/img/icons/" . $category->slug . ".png")}}" alt="" style="height: 25px;" class="mr-2">
-                                    <span>{{str_replace("registrazione e mixaggio", "rec & mix", $category->name)}}</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
+                    @include("partials.categories-list")
                 @endforeach
             </div>
         </div>
@@ -88,31 +80,10 @@
             <h2 class="text-center">I nostri artisti del momento</h2>
             <div class="row mt-4 d-flex align-items-center justify-content-between">
                 <div v-for="user in sponsoredUsers" style="width: 21%">
-                    <a :href="'bards/' + user.id" style="text-decoration: none; color: #444;">
-                        <div class="card mb-4" style="position: relative;">
-                            {{-- TODO: boh, magari la media voti la mostriamo solo se supera un tot? Pagano, non e' bellino per loro vedersi un
-                            pallino solo come media recensioni (d'altra parte affari loro, bohbohboh) --}}
-                            <div class="card-body d-flex flex-column align-items-center">
-                                <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden;">
-                                    <img v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="max-height: 120px; width: 100%; height: 100%; object-fit: cover;">
-                                    <img v-else src="{{asset("/img/user-img.png")}}" alt="" style="max-height: 120px;">
-                                </div>
-                                <div class="mt-3 mb-2 font-weight-bold">
-                                    <span>@{{user.name + ' ' + user.lastname}}</span>
-                                </div>
-                                <div class="text-secondary">
-                                    <span>@{{user.categories}}</span>
-                                    <small><p>categoria user</p></small>
-                                </div>
-                                <div>
-                                    <span v-if="user.avg_vote > 0"><i v-for="n in parseInt(user.avg_vote)" class="fas fa-star"></i></span>
-                                </div>
-                            </div>
-                            <div style="position: absolute; top: 5px; right: 7px;">
-                                <small class="badge badge-secondary">Consigliato</small>
-                            </div>
-                        </div>
-                    </a>
+                    @include("partials.user-card-api")
+                    <div style="position: absolute; top: 5px; right: 7px;">
+                        <small class="badge badge-secondary">Consigliato</small>
+                    </div>
                 </div>
             </div>
         </div>
