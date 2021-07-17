@@ -10,7 +10,8 @@ class VoteController extends Controller
 {
     public function index() {
         $data = [
-            'votes' => Vote::all(),
+            'votes' => Vote::all()
+            ->sortBy('value'),
             'success' => true
         ];
 
