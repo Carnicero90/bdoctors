@@ -115,6 +115,79 @@ return         [
 
         ]
     ],
+    [
+        'user' => [
+            'name' => 'Bob',
+            'lastname' => 'Dylan',
+            'address' => 'Down the Highway',
+            'email' => 'bobzimmerman@hotmail.com`',
+        ],
+        'profile' => [
+            'self_description' => 'Well, I\'m walkin\' down the highway
+            With my suitcase in my hand
+            Yes, I\'m walkin\' down the highway
+            With my suitcase in my hand
+            Lord, I really miss my baby
+            She\'s in some far-off land',
+            'phone_number' => '123456789',
+            'work_address' => 'Highway 61',
+            'pic' =>  'img/bob.jpg'
+
+        ]
+    ],
+    [
+        'user' => [
+            'name' => 'Nada',
+            'lastname' => 'Malanima',
+            'address' => 'Rosigliano Marittimo',
+            'email' => 'nadamal@mail.com',
+        ],
+        'profile' => [
+            'self_description' => 'Non cerco un re di denari,
+            io cerco un fante di cuori,
+            sai, la mia reggia, dov\'è,
+            sotto le stelle con te.
+            
+            A chi mi offre denari,
+            io gli rispondo picche,
+            a chi mi offre dei fiori
+            tutto il mio cuore darò.',
+            'phone_number' => '34912345679',
+            'work_address' => 'Festivalbar',
+            'pic' =>  'img/.jpg'
+
+        ]
+    ],
+    // [
+    //     'user' => [
+    //         'name' => '',
+    //         'lastname' => '',
+    //         'address' => '',
+    //         'email' => '',
+    //     ],
+    //     'profile' => [
+    //         'self_description' => '',
+    //         'phone_number' => '',
+    //         'work_address' => '',
+    //         'pic' =>  'img/.jpg'
+
+    //     ]
+    // ],
+    // [
+    //     'user' => [
+    //         'name' => '',
+    //         'lastname' => '',
+    //         'address' => '',
+    //         'email' => '',
+    //     ],
+    //     'profile' => [
+    //         'self_description' => '',
+    //         'phone_number' => '',
+    //         'work_address' => '',
+    //         'pic' =>  'img/.jpg'
+
+    //     ]
+    // ],
     // TEMPLATE USER
     // [
     //     'user' => [
