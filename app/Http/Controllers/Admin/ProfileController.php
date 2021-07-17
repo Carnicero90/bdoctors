@@ -34,7 +34,6 @@ class ProfileController extends Controller
     public function createOrUpdate(Request $request)
     {
 
-        // TODO aggiungi size a validazione immagine
         $request->validate(
             [
                 'self_description' => 'string | max:500 | nullable',

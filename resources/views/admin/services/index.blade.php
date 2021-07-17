@@ -17,10 +17,58 @@
         <div class="container">
             <h1>Aggiungi o crea una prestazione</h1>
     
-            <form action="{{ route('admin.services-store', ['id' => Auth::user()->id]) }}" method="post" enctype="multipart/form-data">
-                @csrf
-                @method('POST')
-    
+                @foreach ($services as $service)
+                    <form action="{{ route('admin.service-update', ['id' => Auth::user()->id]) }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <div>
+                            {{-- input#user_id --}}
+                            <input type="hidden" name="id" value="{{ $service->id }}">
+                        </div>
+                        {{-- END input#user_id --}}
+
+                        {{-- input#name --}}
+                        <div class="form-group mt-4 mb-4">
+                            <label for="title">Nome servizio</label>
+                            <input type="text" class="form-control-file" id="title"
+                                name="title" value="{{ $service->title }}">
+                        </div>
+                        {{-- END input#name --}}
+
+                        {{-- input#description --}}
+                        <div class="form-group mt-4 mb-4">
+                            <label for="description">Descrivila</label>
+                            <textarea class="form-control" name="description"
+                                id="description" rows="3"
+                                placeholder="Descrivi il servizio">{{ $service->description }}</textarea>
+                        </div>
+                        {{-- END input#description --}}
+
+                        {{-- input#hourly_rate --}}
+                        <div class="form-group mt-4 mb-4">
+                            <label for="hourly_rate">Tariffa oraria</label>
+                            <input type="number" step="0.10" class="form-control" id="hourly_rate"
+                                name="hourly_rate"
+                                value="{{ $service->hourly_rate }}">
+                        </div>
+                        {{-- END input#hourly_rate --}}
+
+                        <button class="btn btn-warning mb-2">Salva modifiche</button>
+                    </form>
+                    
+                    {{-- Delete --}}
+                    <form action="{{ route('admin.service-destroy', ['id' => $service->id ]) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger">Elimina</button>
+                    </form>
+
+                @endforeach
+
+                <div class="card">
+
+                </div>
+                {{-- OLD Prestazione --}}
                 {{-- Nome Prestazione --}}
                 <div class="form-group mt-4">
                     <label for="service-name">Nome Prestazione</label>
@@ -46,7 +94,13 @@
                         min='0.00'>
                     <label class="d-inline-block ml-1">€</label>
                 </div>
-            </form>
+
+                {{-- Aggiungere singola prestazione --}}
+                <div class="form-group mt-4">
+                    <button v-on:click="numbers++" class="btn btn-danger">+</button>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Aggiungi prestazione</button>
         </div>
     </div>
 @endsection

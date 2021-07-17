@@ -17,14 +17,14 @@ class ServiceController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $services = Service::where('user_id', '=', Auth::user()->id);
+        $services = Service::where('user_id', '=', Auth::user()->id)->get();
 
         $data = [
             'user' => $user,
             'services' => $services
         ];
 
-        return view('admin.services', $data);
+        return view('admin.services.index', $data);
     }
 
     /**
@@ -33,9 +33,14 @@ class ServiceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function createOrUpdate(Request $request)
+    public function update(Request $request)
     {
         
+
+    }
+
+    public function create($id) {
+
     }
 
     /**
@@ -46,6 +51,9 @@ class ServiceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $service = Service::findOrFail($id);
+        $service->delete();
+
+        return back();
     }
 }
