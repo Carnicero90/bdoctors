@@ -17,10 +17,16 @@ use Illuminate\Support\Facades\Route;
 /* ================
     VOTES
 =================== */
-Route::get('votes', 'Api\VoteController@index');
 Route::prefix('votes')
 ->group(function() {
     Route::get('index', 'Api\VoteController@index')->name('vote-index');
+});
+/* ================
+    CATEGORIES
+=================== */
+Route::prefix('categories')
+->group(function() {
+    Route::get('index', 'Api\CategoryController@index')->name('category-index');
 });
 
 

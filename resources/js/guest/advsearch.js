@@ -4,9 +4,10 @@ var app = new Vue({
         users: [],
         params: '',
         visibleUsers: [],
-        avg_vote: 0,
         searchString: '',
-        selectedCategory: ''
+        selectedCategory: '',
+        categories: [],
+        selectedCategories: [],
     },
     methods: {
         searchUser() {
@@ -16,9 +17,7 @@ var app = new Vue({
                 axios.get(`api/search?name=${this.searchString}&cat=${this.selectedCategory}`)
                     .then(result => {
                         this.users = result.data.users;
-                        console.log(`api/search?name=${this.searchString}&cat=${this.selectedCategory}`)
                     })
-
             }
             else {
                 this.users = [];
@@ -26,6 +25,21 @@ var app = new Vue({
             }
 
 
+        },
+
+        addOrRemoveCat(id) {
+            if (this.selectedCat(id)) 
+            {
+                this.selectedCategories.filter((el) => el!=id);
+            }
+            else {
+                this.selectedCategories.push(id);
+            }
+            console.table(this.selectedCategories);
+        },
+
+        selectedCat(id) {
+            return this.selectedCategories.includes(id);
         },
 
         sortUsersByReviewAvg() {
@@ -37,14 +51,19 @@ var app = new Vue({
         }
     },
     mounted() {
-        this.params = location.search;
-        this.searchString = new URLSearchParams(location.search).get('name');
-        // TODO: sembra un poco ripetitivo? inoltre e' uguale alla home, c'e' da fattorizzare
-        // TODO: anche qua funzia solo se categoria selezionata, va corretta API
-
-        axios.get(`api/search${this.params}`)
+        if (location.search) {
+            this.params = location.search;
+            this.searchString = new URLSearchParams(this.params).get('name');
+            axios.get(`api/search${this.params}`)
+                .then(result => {
+                    this.users = result.data.users;
+                })
+        }
+        axios.get(`api/categories/index`)
             .then(result => {
-                this.users = result.data.users;
+                this.categories = result.data.categories;
             })
+        // TODO: sembra un poco ripetitivo? inoltre e' uguale alla home, c'e' da fattorizzare
+
     }
 })

@@ -99,9 +99,10 @@ var app = new Vue({
     users: [],
     params: '',
     visibleUsers: [],
-    avg_vote: 0,
     searchString: '',
-    selectedCategory: ''
+    selectedCategory: '',
+    categories: [],
+    selectedCategories: []
   },
   methods: {
     searchUser: function searchUser() {
@@ -112,12 +113,25 @@ var app = new Vue({
         console.log(this.searchString);
         axios.get("api/search?name=".concat(this.searchString, "&cat=").concat(this.selectedCategory)).then(function (result) {
           _this.users = result.data.users;
-          console.log("api/search?name=".concat(_this.searchString, "&cat=").concat(_this.selectedCategory));
         });
       } else {
         this.users = [];
         this.searching = false;
       }
+    },
+    addOrRemoveCat: function addOrRemoveCat(id) {
+      if (this.selectedCat(id)) {
+        this.selectedCategories.filter(function (el) {
+          return el != id;
+        });
+      } else {
+        this.selectedCategories.push(id);
+      }
+
+      console.table(this.selectedCategories);
+    },
+    selectedCat: function selectedCat(id) {
+      return this.selectedCategories.includes(id);
     },
     sortUsersByReviewAvg: function sortUsersByReviewAvg() {
       return this.users.sort(function (a, b) {
@@ -133,13 +147,17 @@ var app = new Vue({
   mounted: function mounted() {
     var _this2 = this;
 
-    this.params = location.search;
-    this.searchString = new URLSearchParams(location.search).get('name'); // TODO: sembra un poco ripetitivo? inoltre e' uguale alla home, c'e' da fattorizzare
-    // TODO: anche qua funzia solo se categoria selezionata, va corretta API
+    if (location.search) {
+      this.params = location.search;
+      this.searchString = new URLSearchParams(this.params).get('name');
+      axios.get("api/search".concat(this.params)).then(function (result) {
+        _this2.users = result.data.users;
+      });
+    }
 
-    axios.get("api/search".concat(this.params)).then(function (result) {
-      _this2.users = result.data.users;
-    });
+    axios.get("api/categories/index").then(function (result) {
+      _this2.categories = result.data.categories;
+    }); // TODO: sembra un poco ripetitivo? inoltre e' uguale alla home, c'e' da fattorizzare
   }
 });
 
@@ -152,7 +170,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Tom/BDoctors/bdoctors/resources/js/guest/advsearch.js */"./resources/js/guest/advsearch.js");
+module.exports = __webpack_require__(/*! /Users/filippomontani/booldoctors/bdoctors/resources/js/guest/advsearch.js */"./resources/js/guest/advsearch.js");
 
 
 /***/ })
