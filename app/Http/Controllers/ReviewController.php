@@ -42,6 +42,7 @@ class ReviewController extends Controller
         $review = new Review();
         $review->fill($form_data);
         $review->user_id = $id;
+        $review->send_date = Carbon::now();
         $review->save();
 
         // con back() facciamo il redirect sulla stessa pagina, esempio:

@@ -3,7 +3,8 @@ var app = new Vue({
     data: {
         value: -1,
         votes: [],
-        clickedValue: -1
+        clickedValue: -1,
+        selectedValue: null
     },
     methods: {
         fillStars(index) {
