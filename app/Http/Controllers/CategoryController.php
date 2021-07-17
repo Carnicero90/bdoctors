@@ -29,9 +29,10 @@ class CategoryController extends Controller
             abort("404");
         }
 
-        $category_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'), DB::raw('avg(success) as sponsored'))
+        $category_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'), DB::raw('avg(success) as sponsored'), 'profiles.pic')
         ->leftJoin('category_user', 'users.id', '=', 'category_user.user_id')
         ->where('category_user.category_id', '=', $category->id)
+        ->leftJoin('profiles', 'profiles.user_id', '=', 'users.id')
         ->leftJoin('sponsorplan_users', function ($join) {
             $join->on('sponsorplan_users.user_id', '=', 'users.id')
                 ->where('sponsorplan_users.success', '=', '1')

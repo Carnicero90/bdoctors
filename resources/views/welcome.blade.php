@@ -34,10 +34,12 @@
                     <div v-if="searching" style="width: 200px; position: absolute; left: 29.3%; top: 105%; transform: translateX(-50%); z-index: 999;">
                         <ul class="list-group">
                             {{-- TODO: test --}}
-                            <li class="list-group-item" v-for="user in users" style="width: 220px; background-color: #111; border-color: #888; position: relative;">
+                            <li class="list-group-item" v-for="user in users" style="width: 220px; background-color: #111; border-color: #888; position: relative; padding: 10px;">
                                 <a :href="'bards/' + user.id" class="d-flex align-items-center" style="color: #888;">
-                                    <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="height: 2em;">
-                                    <img class="mr-2" v-else src="{{asset("/img/user-img.png")}}" alt="" style="height: 2em;">
+                                    <div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden;" class="mr-2">
+                                        <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="max-height: 40px;">
+                                        <img class="mr-2" v-else src="{{asset("/img/user-img.png")}}" alt="" style="max-height: 40px;">
+                                    </div>
                                     <span>@{{ user . name + ' ' + user . lastname }}</span>
                                     <span v-if="user.sponsored" style="position: absolute; top: 5px; right: 5px;">
                                         <i class="fas fa-star"></i>
@@ -84,10 +86,7 @@
         {{-- section sponsored --}}
         <div class="container">
             <h2 class="text-center">I nostri artisti del momento</h2>
-            <div class="row mt-4 d-flex align-items-center justify-content-around">
-                <div style="color: #888; font-size: 40px;">
-                    <i class="fas fa-chevron-circle-left"></i>
-                </div>
+            <div class="row mt-4 d-flex align-items-center justify-content-between">
                 <div v-for="user in sponsoredUsers" style="width: 21%">
                     <a :href="'bards/' + user.id" style="text-decoration: none; color: #444;">
                         <div class="card mb-4" style="position: relative;">
@@ -114,9 +113,6 @@
                             </div>
                         </div>
                     </a>
-                </div>
-                <div style="color: #888; font-size: 40px;">
-                    <i class="fas fa-chevron-circle-right"></i>
                 </div>
             </div>
         </div>
