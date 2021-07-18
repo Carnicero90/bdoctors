@@ -25,8 +25,8 @@
                 <!-- input ricerca da usare con VueJs -->
                 <div style="position: relative">
                     <select class="select-category mr-1" name="" id="" v-model="selectedCategory" v-on:change="searchUser()" style="width: 200px; height: 35px; transform:translateY(+3px); padding-left: 15px; background-color: black; color: #888; border-radius: 3px;">
-                        <option value="" selected disabled>Seleziona una categoria</option>
-                        <option value="0">All</option>
+                        <option value="0" selected disabled>Seleziona una categoria</option>
+                        <option value="">All</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ ucfirst($category->name) }}</option>
                         @endforeach
