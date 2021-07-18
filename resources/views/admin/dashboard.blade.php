@@ -32,13 +32,9 @@
                             </a>
                         </div>
                     @endif
-                    <h3 class="ml-3">
-                        Ciao
-                        <a class="saluto" href="{{route("profile", ['id' => $user->id ])}}">
-                            <span class="font-weight-bold">{{$user->name}}</span>
-                        </a>
-                        , cosa vuoi fare?
-                    </h3>
+                    <div class="user-name">
+                        <h3 class="ml-3">Ciao <a class="hover-blue" href="{{route("profile", ['id' => $user->id ])}}"><span class="font-weight-bold">{{$user->name}}</span></a>, cosa vuoi fare?</h3>
+                    </div>
                 </div>
 
                 {{-- Tasti navigazione --}}
@@ -51,37 +47,37 @@
                     @endif
 
                     {{-- Crea/Modifica Profilo --}}
-                    <a class="dash-link" href="{{route('admin.profile-index')}}">
+                    <a class="dash-link hover-blue" href="{{route('admin.profile-index')}}">
                         <i class="fas fa-user-cog mb-2" style="font-size: 20px;"></i>
                         <div>Crea / Modifica profilo</div>
                     </a>
                     
                     {{-- Aggiungi/Modifica Prestazione --}}
-                    <a class="dash-link" href="{{route('admin.services')}}">
+                    <a class="dash-link hover-blue" href="{{route('admin.services')}}">
                         <i class="fas fa-user-plus mb-2" style="font-size: 20px;"></i>
                         <div>Aggiungi / Modifica prestazione</div>
                     </a>
 
                     {{-- Acquista Piano Premium --}}
-                    <a class="dash-link" href="{{route('sponsor-index')}}">
+                    <a class="dash-link hover-blue" href="{{route('sponsor-index')}}">
                         <i class="fas fa-star mb-2" style="font-size: 20px;"></i>
                         <div>Acquista piano premium</div>
                     </a>
 
                     {{-- Visualizza Profilo Pubblico --}}
-                    <a class="dash-link" href="{{route("profile", ['id' => $user->id ])}}">
+                    <a class="dash-link hover-blue" href="{{route("profile", ['id' => $user->id ])}}">
                         <i class="fas fa-user-tie mb-2" style="font-size: 20px;"></i>
                         <div>Visualizza profilo pubblico</div>
                     </a>
 
                     {{-- Statistiche --}}
-                    <a class="dash-link" href="{{route("admin.statistics", ['id' => $user->id ])}}">
+                    <a class="dash-link hover-blue" href="{{route("admin.statistics", ['id' => $user->id ])}}">
                         <i class="fas fa-signal mb-2" style="font-size: 20px;"></i>
                         <div>Stats</div>
                     </a>
 
                     {{-- Logout --}}
-                    <a class="dash-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <a class="dash-link hover-blue" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt mb-2" style="font-size: 20px;"></i>    
                         <div>Logout</div>
                     </a>
@@ -125,7 +121,7 @@
                         <div class="mt-2 mb-2">
                             <p class="card-text text-secondary">{{strlen($review->content) > 69 ? substr($review->content, 0, 70) . '...' : $review->content}}</p>
                         </div>
-                        <a href="{{route("admin.reviews-dettails", ["id" => $review->id])}}" class="btn btn-primary mt-2"><i class="far fa-file-alt"></i> Leggi la recensione</a>
+                        <a href="{{route("admin.reviews-dettails", ["id" => $review->id])}}" class="btn btn-primary mt-2"><i class="far fa-file-alt mr-2"></i>Leggi recensione</a>
                     </div>
                 </div>
             @endforeach
@@ -156,7 +152,7 @@
                         <div class="mt-2 mb-2">
                             <p class="card-text text-secondary">{{strlen($message->text) > 69 ? substr($message->text, 0, 70) . '...' : $message->text}}</p>
                         </div>
-                        <a href="{{route('admin.message-page', ['id' => $message->id])}}" class="btn btn-primary mt-2"><i class="far fa-file-alt"></i> Leggi il messaggio</a>
+                        <a href="{{route('admin.message-page', ['id' => $message->id])}}" class="btn btn-primary mt-2"><i class="far fa-file-alt mr-2"></i>Leggi messaggio</a>
                     </div>
                 </div>
             @endforeach
