@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-use App\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,48 +13,65 @@ use App\User;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// TOTEST
+
+/* ================
+    GUEST
+=================== */
+/* -- MAIN -- */
 Route::get('/', 'HomeController@home');
 
-// TOTEST
-Route::get('/sendmessage/{id}', 'MessageController@create')->name('send-message');
-// Route pagina dettaglio utenti
-Route::post('/storemessage/{id}', 'MessageController@store')->name('store-message');
-// END TOTEST
+/* -- MESSAGES -- */
+// --> send
+Route::get('sendmessage/{id}', 'MessageController@create')
+    ->name('send-message');
+// --> store
+Route::post('storemessage/{id}', 'MessageController@store')
+    ->name('store-message');
 
-// TEST REVIEWS
-Route::get('/sendreview/{id}', 'ReviewController@create')->name("send-review");
-Route::post('/storereview/{id}', 'ReviewController@store')->name("store-review");
-// END TEST REVIEWS
+/* -- REVIEWS -- */
+// --> send
+Route::get('/sendreview/{id}', 'ReviewController@create')
+    ->name("send-review");
+// --> store
+Route::post('/storereview/{id}', 'ReviewController@store')
+    ->name("store-review");
 
-// PROFILO PUBBLICO USER
-Route::get('/bards/{id}', 'UserController@show')->name('profile');
+/* -- ADVSEARCH -- */
+// --> index
+Route::get('/advancedsearch', 'AdvancedSearchController@index')
+    ->name('advanced-search');
 
-// CATEGORIE
-Route::get("/categories", "CategoryController@index")->name("categories");
-Route::get("/categories/{slug}", "CategoryController@show")->name("category-page");
+/* -- USER -- */
+// --> show
+Route::get('/bards/{id}', 'UserController@show')
+    ->name('profile');
 
+/* -- CATEOGRIES --*/
+// --> index
+Route::get("/categories", "CategoryController@index")
+    ->name("categories");
+// --> show
+Route::get("/categories/{slug}", "CategoryController@show")
+    ->name("category-page");
+
+/* ================
+    AUTH
+=================== */
 Auth::routes();
-
-// RICERCA AVANZATA
-Route::get('/advancedsearch', 'AdvancedSearchController@index')->name('advanced-search');
 
 /* ================
     SPONSORPLAN
 =================== */
-
-Route::prefix('premium') // TODO: prefisso arbitrario, poi vediamo quale scegliere
+Route::prefix('premium')
 
     ->group(function () {
-        // View index dei piani di sponsorizzazione
+        // --> index
         Route::get('index', 'SponsorplanController@index')
             ->name('sponsor-index');
-
-        // View di dettaglio dei singoli piani di sponsorizzazione
+        // --> show
         Route::get('{slug}', 'SponsorplanController@show')
             ->name('sponsor-show');
-
-        //Pagina di sottoscrizione sponsorizzazione, da valutare se spostarla in 'admin'
+        // -->store
         Route::get('buy/{id}', 'Admin\SponsorplanUserController@store')
             ->middleware('auth')
             ->name('sponsor-store');
@@ -74,36 +90,62 @@ Route::prefix('admin')
 
     ->group(function () {
 
-        // DASHBOARD
-        Route::get('/dashboard', 'HomeController@index')->name('dashboard');
+        /* -- MAIN -- */
+        Route::get('/dashboard', 'HomeController@index')
+            ->name('dashboard');
 
-        // PROFILO
-        Route::get('/profile', 'ProfileController@index')->name('profile-index');
-        Route::post('/profile/store', 'ProfileController@createOrUpdate')->name('profile-store');
+        /* -- PROFILE --*/
+        // --> index
+        Route::get('/profile', 'ProfileController@index')
+            ->name('profile-index');
+        // --> store
+        Route::post('/profile/store', 'ProfileController@createOrUpdate')
+            ->name('profile-store');
 
-        // MESSAGGI
-        Route::get('/messages', 'MessageController@index')->name('messages');
-        Route::get('/messages/{id}', 'MessageController@show')->name('message-page');
-        Route::post('/messages/{id}', 'MessageController@hide')->name("message-hide");
+        /* -- MESSAGES --*/
+        // --> index
+        Route::get('/messages', 'MessageController@index')
+            ->name('messages');
+        // --> show 
+        Route::get('/messages/{id}', 'MessageController@show')
+            ->name('message-page');
+        // --> store
+        Route::post('/messages/{id}', 'MessageController@hide')
+            ->name("message-hide");
 
-        // RECENSIONI
-        Route::get('/reviews', 'ReviewController@index')->name('reviews');
-        Route::get('/reviews/{id}', 'ReviewController@show')->name('reviews-dettails');
+        /* -- REVIEWS --*/
+        // --> index
+        Route::get('/reviews', 'ReviewController@index')
+            ->name('reviews');
+        // --> show
+        Route::get('/reviews/{id}', 'ReviewController@show')
+            ->name('reviews-dettails');
 
-        // STATISTICHE
-        Route::get('/statistics/{id}', 'StatisticController@index')->name('statistics');
+        /* -- REVIEWS --*/
+        // --> index    
+        Route::get('/statistics/{id}', 'StatisticController@index')
+            ->name('statistics');
 
-        // PRESTAZIONI
-        Route::get('/services', 'ServiceController@index')->name('services');
-        Route::post('/services/{id}', 'ServiceController@createOrUpdate')->name('services-store');
-        Route::put('/services/update/{id}', 'ServiceController@update')->name('service-update');
-        Route::delete('/services/delete/{id}', 'ServiceController@destroy')->name('service-destroy');
+        /* -- SERVICES --*/
+        // TOTEST
+        // --> index    
+        Route::get('/services', 'ServiceController@index')
+            ->name('services');
+        // --> store   
+        Route::post('/services/{id}', 'ServiceController@createOrUpdate')
+            ->name('services-store');
+        // --> update
+        Route::put('/services/update/{id}', 'ServiceController@update')
+            ->name('service-update');
+        // --> destroy   
+        Route::delete('/services/delete/{id}', 'ServiceController@destroy')
+            ->name('service-destroy');
     });
 
 /* ================
    TEST
 =================== */
 // route per provare dd e dump a caso
-Route::get('/prova', function() {
-    return dd(Auth::user());
+Route::get('/prova', function () {
+    return back();
 });
