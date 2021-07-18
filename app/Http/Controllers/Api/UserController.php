@@ -62,7 +62,7 @@ class UserController extends Controller
             DB::raw('MAX(category_user.category_id) AS cat'),
             DB::raw('MAX(success) AS sponsored'),
             DB::raw('AVG(votes.value) AS avg_vote'),
-            DB::raw("COUNT(reviews.id) as nmb_reviews")
+            DB::raw("COUNT(reviews.id) AS nmb_reviews")
         ])
             ->rightJoin('category_user', 'users.id', '=', 'category_user.user_id')
             ->where(DB::raw("concat_ws(' ', users.name, users.lastname)"), 'LIKE', '%' . $user . '%')
@@ -79,20 +79,17 @@ class UserController extends Controller
             ->orderByDesc('sponsored')
             ->orderByDesc('avg_vote');
 
-        if ($category) {
-            if (is_array($category)) {
-                $users = $users->where(function ($q) use ($category) {
-                    foreach ($category as $field) {
-                        $q->orWhere('category_user.category_id', '=', $field);
-                    }
-                });
-            } else {
-                $users = $users->where([['category_user.category_id', '=', $category]]);
+            if ($category) {
+                if(is_array($category)) {
+                    $users = $users->whereIn('category_user.category_id', $category)->get();
+                }
+                else {
+                    $users = $users->where('category_user.category_id', '=', $category)->get();
+                }
             }
-        }
-
-        // TODO: salvi users 400 volte, trova una soluz non da rincoglionito (tipo in if else in un where)
-        $users = $users->get();
+            else {
+                $users = $users->get();
+            }
 
         $data = [
             'users' => $users,
