@@ -1,3 +1,4 @@
+var Api = require('../api');
 var app = new Vue({
     el: '#root',
     data: {
@@ -15,26 +16,21 @@ var app = new Vue({
             if (this.searchString.length > 0) {
                 this.searching = true;
                 this.counter = setTimeout(() => {
-                    axios.get(`api/search?name=${this.searchString}&cat=${this.selectedCategory}`)
+                    Api.promisedUsers(Api.allUsersPath, `name=${this.searchString}`, `cat=${this.selectedCategory}`)
                     .then(result => {
                         this.users = result.data.users.slice(0, 5);
                     })
                 }, 500
                 )
-
             }
             else {
                 this.users = [];
                 this.searching = false;
             }
-
-
         }
     },
     mounted() {
-        axios.get('api/sponsored')
-            .then(result => {
-                this.sponsoredUsers = result.data;
-            })
+        Api.promisedUsers(Api.sponsoredUsersPath)
+            .then(response => this.sponsoredUsers = response.data);
     }
 })

@@ -1,3 +1,4 @@
+var Api = require('../api');
 // TODO: funziona ma e' inaccettabile, non essere pigro e rifallo decentemente quando sei meno stanco e sciatto
 var app = new Vue({
     el: '#root',
@@ -6,7 +7,6 @@ var app = new Vue({
         params: '',
         visibleUsers: [],
         searchString: '',
-        selectedCategory: '',
         categories: [],
         selectedCategories: [],
     },
@@ -14,25 +14,20 @@ var app = new Vue({
         searchUser() {
             // TODO: cambia lunghezza stringa minima, ora comoda cosi per test
             if (this.searchString.length > 0) {
-                console.log(`api/search?name=${this.searchString}${this.parsedCategories}`)
-                axios.get(`api/search?name=${this.searchString}${this.parsedCategories}`)
+                Api.promisedUsers(Api.allUsersPath, `name=${this.searchString}`, ...this.parsedCategories)
                     .then(result => {
                         this.users = result.data.users;
-                        console.log(`api/search?name=${this.searchString}${this.parsedCategories}`)
                     })
             }
             else {
                 this.users = [];
                 this.searching = false;
             }
-
-
         },
 
         addOrRemoveCat(id) {
-            if (this.selectedCat(id)) 
-            {
-                this.selectedCategories = this.selectedCategories.filter((el) => el!=id);
+            if (this.selectedCat(id)) {
+                this.selectedCategories = this.selectedCategories.filter((el) => el != id);
             }
             else {
                 this.selectedCategories.push(id);
@@ -54,9 +49,9 @@ var app = new Vue({
     },
     mounted() {
         if (location.search) {
-            this.params = location.search;
-            this.searchString = new URLSearchParams(this.params).get('name');
-            axios.get(`api/search${this.params}`)
+            const params = Api.parseQueryString(location.search);
+            
+            Api.promisedUsers(Api.allUsersPath, params)
                 .then(result => {
                     this.users = result.data.users;
                 })
@@ -71,10 +66,7 @@ var app = new Vue({
     computed:
     {
         parsedCategories() {
-            if (this.selectedCategories.length > 0) {
-                return `&cat[]=${this.selectedCategories.join('&cat[]=')}`
-            }
-            return ''
+            return this.selectedCategories.map(value => `cat[]=${value}`);
         }
     }
 })

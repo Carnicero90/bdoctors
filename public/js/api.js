@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -151,110 +151,14 @@ var ApiPath = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./resources/js/guest/advsearch.js":
-/*!*****************************************!*\
-  !*** ./resources/js/guest/advsearch.js ***!
-  \*****************************************/
+/***/ 1:
+/*!***********************************!*\
+  !*** multi ./resources/js/api.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-var Api = __webpack_require__(/*! ../api */ "./resources/js/api.js"); // TODO: funziona ma e' inaccettabile, non essere pigro e rifallo decentemente quando sei meno stanco e sciatto
-
-
-var app = new Vue({
-  el: '#root',
-  data: {
-    users: [],
-    params: '',
-    visibleUsers: [],
-    searchString: '',
-    categories: [],
-    selectedCategories: []
-  },
-  methods: {
-    searchUser: function searchUser() {
-      var _this = this;
-
-      // TODO: cambia lunghezza stringa minima, ora comoda cosi per test
-      if (this.searchString.length > 0) {
-        Api.promisedUsers.apply(Api, [Api.allUsersPath, "name=".concat(this.searchString)].concat(_toConsumableArray(this.parsedCategories))).then(function (result) {
-          _this.users = result.data.users;
-        });
-      } else {
-        this.users = [];
-        this.searching = false;
-      }
-    },
-    addOrRemoveCat: function addOrRemoveCat(id) {
-      if (this.selectedCat(id)) {
-        this.selectedCategories = this.selectedCategories.filter(function (el) {
-          return el != id;
-        });
-      } else {
-        this.selectedCategories.push(id);
-      }
-
-      this.searchUser();
-    },
-    selectedCat: function selectedCat(id) {
-      return this.selectedCategories.includes(id);
-    },
-    sortUsersByReviewAvg: function sortUsersByReviewAvg() {
-      return this.users.sort(function (a, b) {
-        return b.avg_vote - a.avg_vote;
-      });
-    },
-    sortUsersByReviewNum: function sortUsersByReviewNum() {
-      return this.users.sort(function (a, b) {
-        return b.nmb_reviews - a.nmb_reviews;
-      });
-    }
-  },
-  mounted: function mounted() {
-    var _this2 = this;
-
-    if (location.search) {
-      var params = Api.parseQueryString(location.search);
-      Api.promisedUsers(Api.allUsersPath, params).then(function (result) {
-        _this2.users = result.data.users;
-      });
-    }
-
-    axios.get("api/categories/index").then(function (result) {
-      _this2.categories = result.data.categories;
-    }); // TODO: sembra un poco ripetitivo? inoltre e' uguale alla home, c'e' da fattorizzare
-  },
-  computed: {
-    parsedCategories: function parsedCategories() {
-      return this.selectedCategories.map(function (value) {
-        return "cat[]=".concat(value);
-      });
-    }
-  }
-});
-
-/***/ }),
-
-/***/ 2:
-/*!***********************************************!*\
-  !*** multi ./resources/js/guest/advsearch.js ***!
-  \***********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(/*! /Users/filippomontani/booldoctors/bdoctors/resources/js/guest/advsearch.js */"./resources/js/guest/advsearch.js");
+module.exports = __webpack_require__(/*! /Users/filippomontani/booldoctors/bdoctors/resources/js/api.js */"./resources/js/api.js");
 
 
 /***/ })
