@@ -17,7 +17,8 @@
                                 <h5>{{$review->author_email}}</h5>
                                 <h6>Il {{date('d/m/Y', $review->created_at->timestamp)}}</h6>
                                 <p class="card-text text-secondary">{{substr($review->content, 0, 120)}}...</p>
-                                <div class="mb-3"><span>Voto {{$review->vote_id}} su 5</span></div>
+                                <div class="mb-3"><span>Voto {{ $review->vote->value }} su 5</span></div>
+                                {{-- TODO: eliminare riferimento hardcoded a voto max, lo recuperiamo dal db --}}
                                 <div><a href="{{route("admin.reviews-dettails", ["id" => $review->id])}}" class="btn btn-primary"><i class="far fa-file-alt"></i> Leggi la recensione</a></div>
                             </div>
                         </li>
