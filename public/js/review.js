@@ -104,15 +104,26 @@ var app = new Vue({
   methods: {
     fillStars: function fillStars(index) {
       this.value = index;
+    },
+    selectVoteValue: function selectVoteValue(index, voteValue) {
+      // al click
+      this.clickedValue = index;
+      this.selectedValue = voteValue;
+    },
+    backToPreviousVoteValue: function backToPreviousVoteValue() {
+      // al mouseleave
+      if (this.clickedValue > -1) // verifica se l'utente ha gia' selezionato un voto
+        {
+          this.fillStars(this.clickedValue);
+        } else {
+        this.fillStars(-1);
+      }
     }
   },
   mounted: function mounted() {
     var _this = this;
 
-    axios.get('../api/votes/index') // .catch(function (error) {
-    //     console.log(error);
-    // })
-    .then(function (result) {
+    axios.get('../api/votes/index').then(function (result) {
       _this.votes = result.data.votes;
     });
   }

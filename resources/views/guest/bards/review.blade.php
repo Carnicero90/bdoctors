@@ -29,7 +29,6 @@
                 @endforeach
             </div>
 
-
             {{-- form lascia una recensione --}}
             <form action="{{ route('store-review', ['id' => $user->id]) }}" method="post">
 
@@ -38,13 +37,16 @@
 
                 <input type="hidden" name="user_id" value="{{ $user->id }}">
                 {{-- voto recensione TODO: rimetti a posto --}}
+                {{-- TOASK: metto un select nascosto, per robe di usabilita? --}}
                 <div class="d-flex">
                     <input type="hidden" name="vote_id" :value="selectedValue">
                     <div v-for="vote, index in votes">
                         <div>
-                            <i class="fas fa-star" :style="index <= value ? 'color:red' : '' " v-on:mouseover="fillStars(index)"
-                                v-on:mouseleave="clickedValue > -1? fillStars(clickedValue) : fillStars(-1)"
-                                v-on:click="clickedValue=index; selectedValue=vote.value"></i>
+                            {{-- TODO: sposta in sass --}}
+                            <i class="fas fa-star" :style="index <= value ? 'color:red' : '' " 
+                                v-on:mouseover="fillStars(index)"
+                                v-on:mouseleave="backToPreviousVoteValue()"
+                                v-on:click="selectVoteValue(index, vote.value)"></i>
                         </div>
                         <p v-if="clickedValue == index">@{{ vote . label }}</p>
                     </div>
