@@ -65,7 +65,7 @@
                     </a>
 
                     {{-- Visualizza Profilo Pubblico --}}
-                    <a class="dash-link hover-blue" href="{{route("profile", ['id' => $user->id ])}}">
+                    <a class="dash-link hover-blue" href="{{route("profile", ['id' => Auth::user()->id])}}">
                         <i class="fas fa-user-tie mb-2" style="font-size: 20px;"></i>
                         <div>Visualizza profilo pubblico</div>
                     </a>
@@ -78,7 +78,7 @@
 
                     {{-- Logout --}}
                     <a class="dash-link hover-blue" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <i class="fas fa-sign-out-alt mb-2" style="font-size: 20px;"></i>    
+                        <i class="fas fa-sign-out-alt mb-2" style="font-size: 20px;"></i>
                         <div>Logout</div>
                     </a>
 
