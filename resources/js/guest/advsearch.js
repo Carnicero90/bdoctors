@@ -13,8 +13,9 @@ var app = new Vue({
     methods: {
         searchUser() {
             // TODO: cambia lunghezza stringa minima, ora comoda cosi per test
+            console.log(this.parsedCategories)
             if (this.searchString.length > 0) {
-                Api.promisedUsers(Api.allUsersPath, `name=${this.searchString}`, ...this.parsedCategories)
+                Api.promisedUsers(Api.allUsersPath, { name: this.searchString, ...Api.parseQueryString(this.parsedCategories)})
                     .then(result => {
                         this.users = result.data.users;
                     })
@@ -50,7 +51,10 @@ var app = new Vue({
     mounted() {
         if (location.search) {
             const params = Api.parseQueryString(location.search);
-            
+            if (params['cat']) {
+                this.selectedCategories.push(parseInt(params['cat']));
+            }    
+            console.log(this.selectedCategories)
             Api.promisedUsers(Api.allUsersPath, params)
                 .then(result => {
                     this.users = result.data.users;
@@ -66,7 +70,7 @@ var app = new Vue({
     computed:
     {
         parsedCategories() {
-            return this.selectedCategories.map(value => `cat[]=${value}`);
+            return this.selectedCategories.map((value, index) => `cat[${index}]=${value}`).join('&');
         }
     }
 })

@@ -90,7 +90,7 @@
 /*!*****************************!*\
   !*** ./resources/js/api.js ***!
   \*****************************/
-/*! exports provided: allUsersPath, sponsoredUsersPath, categories, promisedUsers, parseQueryString */
+/*! exports provided: allUsersPath, sponsoredUsersPath, categories, promisedUsers, parseQueryString, getStringFromObject */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100,6 +100,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "categories", function() { return categories; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "promisedUsers", function() { return promisedUsers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "parseQueryString", function() { return parseQueryString; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStringFromObject", function() { return getStringFromObject; });
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -107,23 +108,42 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 // TODO: magari strutturare ad oggetto, pero boh per ora va bene
-var allUsersPath = 'api/search?'; // path per la ricerca di tutti gli utenti
+var allUsersPath = 'api/search'; // path per la ricerca di tutti gli utenti
 
 var sponsoredUsersPath = 'api/sponsored'; // path utenti sponsorizzati
 
 var categories = "api/categories/index";
 function promisedUsers(apiPath) {
-  for (var _len = arguments.length, params = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-    params[_key - 1] = arguments[_key];
-  }
-
-  var paramsArray = [].concat(params);
-  return axios.get(apiPath + '?' + paramsArray.join('&'));
+  var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
+  console.log(getStringFromObject(params));
+  return axios.get(apiPath + getStringFromObject(params));
 }
 function parseQueryString(queryString) {
-  queryString.replace(/^\?/, '');
-  return queryString.split('&');
-} // export f
+  var params = queryString.replace(/^\?/, '').split('&');
+  var paramsParsed = params.map(function (param) {
+    return param.split('=');
+  });
+  return Object.fromEntries(paramsParsed);
+}
+function getStringFromObject(obj) {
+  var get_null = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+  var objk = Object.entries(obj);
+
+  if (!get_null) {
+    objk = objk.filter(function (item) {
+      return item[1] !== '';
+    });
+  }
+
+  var str = '?' + objk.map(function (i) {
+    return i[0] + '=' + i[1];
+  }).join('&');
+  return str;
+} // export function cleanObj(obj) {
+// }
+// export function getInputValue(input, get_empty=false)
+// {
+// }
 // test stupidi
 
 var ApiPath = /*#__PURE__*/function () {
@@ -165,8 +185,7 @@ var app = new Vue({
     users: [],
     sponsoredUsers: [],
     searchString: '',
-    searching: false,
-    selectedCategory: '',
+    selectedCategory: 0,
     timeOutCounter: 0
   },
   methods: {
@@ -176,16 +195,12 @@ var app = new Vue({
       // test sul coso (bounceback?)
       clearTimeout(this.timeOutCounter);
 
-      if (this.searchString.length > 0) {
-        this.searching = true;
+      if (this.searching) {
         this.timeOutCounter = setTimeout(function () {
-          Api.promisedUsers(Api.allUsersPath, "name=".concat(_this.searchString), "cat=".concat(_this.selectedCategory)).then(function (result) {
+          Api.promisedUsers(Api.allUsersPath, _this.searchParams).then(function (result) {
             _this.users = result.data.users.slice(0, 5);
           });
         }, 500);
-      } else {
-        this.users = [];
-        this.searching = false;
       }
     }
   },
@@ -195,6 +210,17 @@ var app = new Vue({
     Api.promisedUsers(Api.sponsoredUsersPath).then(function (response) {
       return _this2.sponsoredUsers = response.data;
     });
+  },
+  computed: {
+    searchParams: function searchParams() {
+      return {
+        name: this.searchString,
+        cat: this.selectedCategory || ''
+      };
+    },
+    searching: function searching() {
+      return this.searchString.length > 0;
+    }
   }
 });
 

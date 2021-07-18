@@ -10009,10 +10009,6 @@ h3 {
   width: 100%;
 }
 
-a, a:visited {
-  color: inherit;
-}
-
 .nav-link {
   line-height: 50px;
 }
@@ -10123,12 +10119,6 @@ footer .copyright span {
 .dashboard {
   padding: 20px 0;
 }
-.dashboard .saluto {
-  text-decoration: none;
-}
-.dashboard .saluto:hover {
-  color: #3490dc;
-}
 .dashboard .dash-list {
   padding-top: 10px;
   border-bottom: 1px solid #dee2e6;
@@ -10141,6 +10131,12 @@ footer .copyright span {
 }
 .dashboard .dash-link:hover {
   border-bottom: 2px solid #3490dc;
+}
+.dashboard .hover-blue {
+  color: #212529;
+}
+.dashboard .hover-blue:hover {
+  text-decoration: none;
   color: #3490dc;
 }
 

@@ -25,7 +25,7 @@
                 <!-- input ricerca da usare con VueJs -->
                 <div class="mb-5" style="position: relative">
                     <select class="select-category mr-1" name="" id="" v-model="selectedCategory" v-on:change="searchUser()" style="width: 223px; height: 35px; transform:translateY(+3px); padding-left: 15px; background-color: black; color: #888; font-size: 18px; border-radius: 3px;">
-                        <option value="" selected disabled>Seleziona una categoria</option>
+                        <option value="0" selected disabled>Seleziona una categoria</option>
                         <option value="">All</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -48,7 +48,7 @@
                                 </a>
                             </li>
                             <li class="list-group-item" style="width: 220px; background-color: #111; border-color: #888;">
-                                <a style="color: #888" :href=`/advancedsearch?cat=${selectedCategory}&name=${searchString}`><i class="fas fa-search mr-2"></i>Mostra più risultati</a>
+                                <a style="color: #888" :href=`/advancedsearch?name=${searchString}&cat=${selectedCategory}`><i class="fas fa-search mr-2"></i>Mostra più risultati</a>
                             </li>
                         </ul>
                     </div>
