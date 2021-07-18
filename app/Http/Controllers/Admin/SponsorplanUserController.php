@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Auth;
 
 class SponsorplanUserController extends Controller
 {
-    // TOASK: francamente non so manco se metterlo in admin, ma mi pareva piu corretto
     public function store($id)
     {   
         $plan = Sponsorplan::findOrFail($id);
@@ -20,8 +19,7 @@ class SponsorplanUserController extends Controller
         // si "finge" che il pagamento sia andato a buon fine
         if (!Auth::user()) 
         {
-            // TOADD: redirect a login: in teoria gia dovrebbe essere impedito che uno possa provare a 
-            // abbonarsi senza essere loggato via middleware, ma hai visto mai
+            return redirect( route('login') );
         }
 
         $user_id = Auth::user()->id;

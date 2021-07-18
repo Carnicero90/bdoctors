@@ -17,7 +17,8 @@ class ServiceController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $services = Service::where('user_id', '=', Auth::user()->id)->get();
+
+        $services = Service::where('user_id', '=', $user->id)->get();
 
         $data = [
             'user' => $user,
@@ -52,7 +53,9 @@ class ServiceController extends Controller
     public function destroy($id)
     {
         $service = Service::findOrFail($id);
-        $service->delete();
+        if ($service->user_id == Auth::user()->id) {
+            $service->delete();
+        }
 
         return back();
     }

@@ -118,7 +118,6 @@ function promisedUsers(apiPath) {
   }
 
   var paramsArray = [].concat(params);
-  console.log(paramsArray.join('&'));
   return axios.get(apiPath + '?' + paramsArray.join('&'));
 }
 function parseQueryString(queryString) {
@@ -132,7 +131,7 @@ var ApiPath = /*#__PURE__*/function () {
     _classCallCheck(this, ApiPath);
 
     this.path = path;
-    this.availableParams = params;
+    this.availableParams = availableParams;
   }
 
   _createClass(ApiPath, [{
@@ -168,18 +167,18 @@ var app = new Vue({
     searchString: '',
     searching: false,
     selectedCategory: '',
-    counter: 0
+    timeOutCounter: 0
   },
   methods: {
     searchUser: function searchUser() {
       var _this = this;
 
       // test sul coso (bounceback?)
-      clearTimeout(this.counter);
+      clearTimeout(this.timeOutCounter);
 
       if (this.searchString.length > 0) {
         this.searching = true;
-        this.counter = setTimeout(function () {
+        this.timeOutCounter = setTimeout(function () {
           Api.promisedUsers(Api.allUsersPath, "name=".concat(_this.searchString), "cat=".concat(_this.selectedCategory)).then(function (result) {
             _this.users = result.data.users.slice(0, 5);
           });

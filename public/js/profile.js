@@ -106,7 +106,7 @@ var app = new Vue({
       this.preload = URL.createObjectURL(f);
     },
     destroy: function destroy(event) {
-      event.target.parentNode.remove(); // TODO: puo andare bene?
+      event.target.parentNode.remove();
     }
   },
   mounted: function mounted() {

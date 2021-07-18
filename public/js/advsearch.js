@@ -118,7 +118,6 @@ function promisedUsers(apiPath) {
   }
 
   var paramsArray = [].concat(params);
-  console.log(paramsArray.join('&'));
   return axios.get(apiPath + '?' + paramsArray.join('&'));
 }
 function parseQueryString(queryString) {
@@ -132,7 +131,7 @@ var ApiPath = /*#__PURE__*/function () {
     _classCallCheck(this, ApiPath);
 
     this.path = path;
-    this.availableParams = params;
+    this.availableParams = availableParams;
   }
 
   _createClass(ApiPath, [{

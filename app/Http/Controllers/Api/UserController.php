@@ -43,8 +43,8 @@ class UserController extends Controller
     }
     /**
      * Ritorna l'elenco degli utenti il cui nome o cognome corrispondono a
-     * $request['name'], appartenenti a categoria = $request['cat'], qualora
-     * sia stata specificata.
+     * $request['name'], appartenenti a categorie = $request['cat'], qualora
+     * siano state specificate.
      *
      * @return \Illuminate\Contracts\Support\JsonResponse
      */
@@ -62,15 +62,9 @@ class UserController extends Controller
             DB::raw('MAX(category_user.category_id) AS cat'),
             DB::raw('MAX(success) AS sponsored'),
             DB::raw('AVG(votes.value) AS avg_vote'),
-            DB::raw("CONCAT(users.name, ' ', users.lastname) AS user_fullname"),
             DB::raw("COUNT(reviews.id) as nmb_reviews")
         ])
-
             ->rightJoin('category_user', 'users.id', '=', 'category_user.user_id')
-            // ->where(function ($q) use ($user) {
-            //     $q->where('users.name', 'LIKE', '%' . $user . '%')
-            //         ->orWhere('users.lastname', 'LIKE', '%' . $user . '%');
-            // })
             ->where(DB::raw("concat_ws(' ', users.name, users.lastname)"), 'LIKE', '%' . $user . '%')
 
             ->leftJoin('profiles', 'users.id', '=', 'profiles.user_id')

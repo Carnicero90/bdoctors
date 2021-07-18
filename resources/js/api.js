@@ -5,7 +5,6 @@ export const categories = `api/categories/index`;
 
 export function promisedUsers(apiPath, ...params) {
     let paramsArray = [...params];
-    console.log(paramsArray.join('&'))
     return axios.get(apiPath + '?' + paramsArray.join('&'));
 }
 
@@ -20,7 +19,7 @@ export function parseQueryString(queryString) {
 class ApiPath {
     constructor(path, availableParams) {
         this.path = path;
-        this.availableParams = params;
+        this.availableParams = availableParams;
     }
     call(params) {
         if (!this.availableParams.includes(params)) {

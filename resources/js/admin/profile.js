@@ -12,7 +12,6 @@ var app = new Vue({
         },
         destroy(event) {
             event.target.parentNode.remove();
-            // TODO: puo andare bene?
         }
     },
     mounted() {

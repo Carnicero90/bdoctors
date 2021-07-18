@@ -7,15 +7,15 @@ var app = new Vue({
         searchString: '',
         searching: false,
         selectedCategory: '',
-        counter: 0
+        timeOutCounter: 0
     },
     methods: {
         searchUser() {
             // test sul coso (bounceback?)
-            clearTimeout(this.counter);
+            clearTimeout(this.timeOutCounter);
             if (this.searchString.length > 0) {
                 this.searching = true;
-                this.counter = setTimeout(() => {
+                this.timeOutCounter = setTimeout(() => {
                     Api.promisedUsers(Api.allUsersPath, `name=${this.searchString}`, `cat=${this.selectedCategory}`)
                     .then(result => {
                         this.users = result.data.users.slice(0, 5);

@@ -11,12 +11,11 @@ class ReviewController extends Controller
 {
     public function index()
     {
+        $user = Auth::user();
 
-        $reviews = Review::where('user_id', '=', Auth::user()->id)
+        $reviews = Review::where('user_id', '=', $user->id)
         ->orderByDesc('created_at')
         ->get();
-        $user = Auth::user();
-        //TODO: questo non serve, direi, tanto effettivamente Auth:user lo richiami direttamente dalla pagina, no?
 
         $data = [
             "user" => $user,
@@ -27,9 +26,9 @@ class ReviewController extends Controller
 
     public function show($id)
     {
-        
-        $review = Review::findOrFail($id);
         $user = Auth::user();
+
+        $review = Review::findOrFail($id);
 
         if($review->user_id != $user->id)
         {
