@@ -35,22 +35,28 @@
                 @csrf
                 @method("POST")
 
-                <input type="hidden" name="user_id" value="{{ $user->id }}">
-                {{-- voto recensione TODO: rimetti a posto --}}
-                {{-- TOASK: metto un select nascosto, per robe di usabilita? --}}
-                <div class="d-flex">
-                    <input type="hidden" name="vote_id" :value="selectedValue">
-                    <div v-for="vote, index in votes">
-                        <div>
-                            {{-- TODO: sposta in sass --}}
-                            <i class="fas fa-star" :style="index <= value ? 'color:red' : '' " 
-                                v-on:mouseover="fillStars(index)"
-                                v-on:mouseleave="backToPreviousVoteValue()"
-                                v-on:click="selectVoteValue(index, vote.value)"></i>
+                {{-- voto recensione --}}
+                <div class="form-group">
+                    <h3>Quanto ti ritieni soddisfatto del NON MI VIENE IL TERMINE di {{ $user->name }}?</h3>
+                    <input type="hidden" name="user_id" value="{{ $user->id }}">
+                    {{-- voto recensione TODO: rimetti a posto --}}
+                    {{-- TOASK: metto un select nascosto, per robe di usabilita? --}}
+                    <div class="vote d-flex">
+                        <input type="hidden" name="vote_id" :value="selectedValue">
+                        <div v-for="vote, index in votes">
+                            <div class="votes">
+                                {{-- TODO: sposta in sass --}}
+                                <i class="fas fa-star" :style="index <= value ? 'color:red' : '' " 
+                                    v-on:mouseover="fillStars(index)"
+                                    v-on:mouseleave="backToPreviousVoteValue()"
+                                    v-on:click="selectVoteValue(index, vote.value)"></i>
+                            </div>
+                            <span class="vote-label" v-if="clickedValue == index">@{{ vote . label }}</span>
                         </div>
-                        <p v-if="clickedValue == index">@{{ vote . label }}</p>
                     </div>
                 </div>
+
+
 
                 {{-- nome autore --}}
                 <div class="form-group mt-4 mb-4">

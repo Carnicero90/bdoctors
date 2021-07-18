@@ -10142,3 +10142,19 @@ footer .copyright span {
   border-bottom: 2px solid #3490dc;
   color: #3490dc;
 }
+
+.vote {
+  position: relative;
+}
+.vote .votes {
+  font-size: 2em;
+}
+.vote .votes.selected {
+  color: red;
+}
+.vote .vote-label {
+  font-size: 0.8em;
+  position: absolute;
+  bottom: -1em;
+  text-transform: uppercase;
+}

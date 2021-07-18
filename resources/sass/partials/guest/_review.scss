@@ -1,0 +1,17 @@
+.vote {
+    position: relative;
+    .votes {
+        font-size: 2em;
+        &.selected {
+            // TOTEST: solo colore di prova
+            color: red;
+        }
+    }
+
+    .vote-label {
+        font-size: .8em;
+        position: absolute;
+        bottom: -1em;
+        text-transform: uppercase;
+    }
+}
