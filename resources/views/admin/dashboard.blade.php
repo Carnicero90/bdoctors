@@ -21,20 +21,20 @@
                 <div class="mb-4 d-flex align-items-center">
                     @if ($user->profile)
                         <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
-                            <a href="{{route("profile", ['id' => Auth::user()->id])}}">
+                            <a href="{{route("profile", ['id' => $user->id ])}}">
                                 <img src="{{ asset('storage/' . $user->profile->pic) }}" alt="{{ $user->name . ' ' . $user->lastname }}" style="max-height: 100px; width: 100%; height: 100%; object-fit: cover;">
                             </a>
                         </div>
                     @else
                         <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
-                            <a href="{{route("profile", ['id' => Auth::user()->id])}}">
+                            <a href="{{route("profile", ['id' => $user->id ])}}">
                                 <img src="{{ asset('img/user-img.png') }}" alt="" style="max-height: 100px;">
                             </a>
                         </div>
                     @endif
                     <h3 class="ml-3">
                         Ciao
-                        <a class="saluto" href="{{route("profile", ['id' => Auth::user()->id])}}">
+                        <a class="saluto" href="{{route("profile", ['id' => $user->id ])}}">
                             <span class="font-weight-bold">{{$user->name}}</span>
                         </a>
                         , cosa vuoi fare?
@@ -68,13 +68,13 @@
                     </a>
 
                     {{-- Visualizza Profilo Pubblico --}}
-                    <a class="dash-link" href="{{route("profile", ['id' => Auth::user()->id])}}">
+                    <a class="dash-link" href="{{route("profile", ['id' => $user->id ])}}">
                         <i class="fas fa-user-alt mr-1"></i>
                         <div>Visualizza il tuo profilo pubblico</div>
                     </a>
 
                     {{-- Statistiche --}}
-                    <a class="dash-link" href="{{route("admin.statistics", ['id' => Auth::user()->id])}}">
+                    <a class="dash-link" href="{{route("admin.statistics", ['id' => $user->id ])}}">
                         <i class="fas fa-user-alt mr-1"></i>
                         <div>Stats</div>
                     </a>
@@ -111,15 +111,15 @@
                     </div>
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between">
+                            {{-- review vote --}}
                             <div>
-                                @for ($i = 0; $i < $review->vote_id; $i++)
+                                @for ($i = 0; $i < $review->vote->value; $i++)
                                     <i class="fas fa-star"></i>
                                 @endfor
                             </div>
+                            {{-- review date --}}
                             <span class="text-secondary">{{date(config('app.StandardDateFormat'), $review->created_at->timestamp)}}</span>
                         </div>
-                        {{-- TODO: non usare direttamente l'id, potrebbe non corrispondere al value del voto! --}}
-                        {{-- <div class="mt-2 mb-2"><span>voto: {{ $review->vote_id }}</span></div> --}}
                         <div class="mt-2 mb-2">
                             <p class="card-text text-secondary">{{strlen($review->content) > 69 ? substr($review->content, 0, 70) . '...' : $review->content}}</p>
                         </div>
