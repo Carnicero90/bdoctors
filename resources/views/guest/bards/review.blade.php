@@ -37,7 +37,8 @@
 
                 {{-- voto recensione --}}
                 <div class="form-group">
-                    <h3>Quanto ti ritieni soddisfatto del NON MI VIENE IL TERMINE di {{ $user->name }}?</h3>
+                    {{-- TODO: per ora lasciamo un h3, che poi potrebbe essere un label (dipende da cosa rispondono al TOASK sottostante) --}}
+                    <h3>Come valuteresti il servizio offertoti da {{ $user->name }}?</h3>
                     <input type="hidden" name="user_id" value="{{ $user->id }}">
                     {{-- voto recensione TODO: rimetti a posto --}}
                     {{-- TOASK: metto un select nascosto, per robe di usabilita? --}}
