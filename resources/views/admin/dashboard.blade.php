@@ -43,6 +43,7 @@
 
                 {{-- Tasti navigazione --}}
                 <div class="dash-list d-flex text-center align-items-center">
+                    
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -51,39 +52,40 @@
 
                     {{-- Crea/Modifica Profilo --}}
                     <a class="dash-link" href="{{route('admin.profile-index')}}">
-                        <i class="fas fa-user-alt mr-1"></i>
-                        <div>Crea / Modifica il tuo profilo</div>
+                        <i class="fas fa-user-cog mb-2" style="font-size: 20px;"></i>
+                        <div>Crea / Modifica profilo</div>
                     </a>
                     
                     {{-- Aggiungi/Modifica Prestazione --}}
                     <a class="dash-link" href="{{route('admin.services')}}">
-                        <i class="fas fa-user-alt mr-1"></i>
-                        <div>Aggiungi/modifica prestazione</div>
+                        <i class="fas fa-user-plus mb-2" style="font-size: 20px;"></i>
+                        <div>Aggiungi / Modifica prestazione</div>
                     </a>
 
                     {{-- Acquista Piano Premium --}}
                     <a class="dash-link" href="{{route('sponsor-index')}}">
-                        <i class="fas fa-star mr-1"></i>
-                        <div>Acquista un piano premium</div>
+                        <i class="fas fa-star mb-2" style="font-size: 20px;"></i>
+                        <div>Acquista piano premium</div>
                     </a>
 
                     {{-- Visualizza Profilo Pubblico --}}
                     <a class="dash-link" href="{{route("profile", ['id' => $user->id ])}}">
-                        <i class="fas fa-user-alt mr-1"></i>
-                        <div>Visualizza il tuo profilo pubblico</div>
+                        <i class="fas fa-user-tie mb-2" style="font-size: 20px;"></i>
+                        <div>Visualizza profilo pubblico</div>
                     </a>
 
                     {{-- Statistiche --}}
                     <a class="dash-link" href="{{route("admin.statistics", ['id' => $user->id ])}}">
-                        <i class="fas fa-user-alt mr-1"></i>
+                        <i class="fas fa-signal mb-2" style="font-size: 20px;"></i>
                         <div>Stats</div>
                     </a>
 
                     {{-- Logout --}}
                     <a class="dash-link" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                        <i class="fas fa-sign-out-alt"></i>
+                        <i class="fas fa-sign-out-alt mb-2" style="font-size: 20px;"></i>    
                         <div>Logout</div>
                     </a>
+
                 </div>
             </div>
         </div>
