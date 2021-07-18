@@ -249,6 +249,7 @@ var app = new Vue({
         this.selectedCategories.push(parseInt(params['cat']));
       }
 
+      this.searchString = params['name'];
       console.log(this.selectedCategories);
       Api.promisedUsers(Api.allUsersPath, params).then(function (result) {
         _this2.users = result.data.users;
