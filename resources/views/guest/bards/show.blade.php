@@ -51,29 +51,34 @@
 
         @if (!(Auth::user() && $user->id == Auth::user()->id))
         {{-- TODO: magari invece di nasconderlo si fa effetto 'disabled'? --}}
-        <div class="mt-4 mb-5">
+        <div class="mt-4">
             {{-- link form recensioni --}}
             <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi recensione</a>
             {{-- link form messaggi --}}
             <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi messaggio</a>
         </div>
         @endif
+        <hr>
 
         {{-- PERFORMANCES --}}
-        <form>
-            <h2 class="mb-4">Servizi</h2>
+        <div class="row mt-4">
+            <div class="col-12">
+                <h2>Servizi</h2>
+            </div>
             @foreach ($user->services as $service)
-                <div class="card">
-                    <div class="card-header">
-                        <h4>{{ $service->title }}</h4>
-                    </div>
-                    <div class="card-body">
-                        <span>{{ $service->hourly_rate }} € all'ora</span>
-                        <p>{{ $service->description }}</p>
+                <div class="col-6">
+                    <div class="card mb-3">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            <h4>{{ $service->title }}</h4>
+                            <h5>€ {{ $service->hourly_rate }} all'ora</h5>
+                        </div>
+                        <div class="card-body">
+                            <p class="text-secondary">{{ $service->description }}</p>
+                        </div>
                     </div>
                 </div>
             @endforeach
-        </form>
+        </div>
         {{-- END PERFORMANCES --}}
 
         {{-- reviews --}}
@@ -84,9 +89,9 @@
             @foreach ($reviews as $review)
             {{-- div review --}}
                 <div class="col-6">
-                    <div class="card mt-4">
-                        <div class="card-header d-flex">
-                            <div class="mr-5">
+                    <div class="card mb-3">
+                        <div class="card-header d-flex align-items-center justify-content-between">
+                            <div>
                                 <span><i class="fas fa-user-circle mr-1"></i></span>
                                 <span>{{ $review->author_name }}</span>
                             </div>

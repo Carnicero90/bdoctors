@@ -10002,6 +10002,10 @@ h3 {
     border-color: #dee2e6;
   }
 }
+input, select {
+  outline: none;
+}
+
 .logo {
   width: 60px;
 }
