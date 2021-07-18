@@ -15,24 +15,24 @@
                             <div class="col-6">
                                 <div class="card mt-4">
                                     <div class="card-body">
-                                        <h4>{{ $message->author_name }}</h4>
+                                        <div class="d-flex justify-content-between">
+                                            <h4>{{ $message->author_name }}</h4>
+                                            <span class="text-secondary">{{$message->message_date}}</span>
+                                        </div>
                                         <h5>{{ $message->author_email }}</h5>
                                         <p class="card-text text-secondary">{{ substr($message->text, 0, 120) }}...</p>
-                                        <div class="mb-3">
-                                            @dump($message->message_date)
-                                            <span>{{ $message->message_date }}</span>
+                                        <div class="mb-3 text-right">
                                         </div>
-                                        <a href="{{ route('admin.message-page', ['id' => $message->id]) }}"
-                                            class="btn btn-primary"><i class="far fa-file-alt"></i> Leggi il messaggio</a>
+                                        <a href="{{ route('admin.message-page', ['id' => $message->id]) }}" class="btn btn-primary mr-2"><i class="far fa-file-alt mr-2"></i>Leggi</a>
+                                        
                                         {{-- form delete --}}
-                                        <form class="form-group d-inline-block"
-                                            action="{{ route('admin.message-hide', ['id' => $message->id]) }}"
-                                            method="post">
+                                        <form class="form-group d-inline-block" action="{{ route('admin.message-hide', ['id' => $message->id]) }}" method="post">
                                             @csrf
                                             @method("POST")
-                                            <input class="btn btn-danger" type="submit" value="Elimina il messaggio" onclick="return confirm('Vuoi Eliminare il messaggio?')">
+                                            <button class="btn btn-danger mr-2" type="submit" onclick="return confirm('Vuoi Eliminare il messaggio?')"><i class="fas fa-times mr-2"></i>Elimina</button>
                                         </form>
                                         {{-- END form delete --}}
+
                                     </div>
                                 </div>
                             </div>

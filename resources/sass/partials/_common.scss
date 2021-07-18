@@ -2,3 +2,9 @@
 input, select {
     outline: none;
 }
+
+.zoom {
+    &:hover {
+        transform: scale(107%);
+    }
+}

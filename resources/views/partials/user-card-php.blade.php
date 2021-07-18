@@ -1,5 +1,5 @@
 <a href="{{route("profile", ["id" => $user->id])}}" style="text-decoration: none; color: #444;">
-    <div class="card mb-4" style="position: relative;">    
+    <div class="card mb-4 zoom" style="position: relative;">    
         <div class="card-body d-flex flex-column align-items-center">
             <div style="width: 120px; height: 120px; border-radius: 50%; overflow: hidden;">
                 @if ($user->pic)

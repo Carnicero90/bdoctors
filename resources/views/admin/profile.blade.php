@@ -126,31 +126,27 @@
                     <h3>Prestazioni</h3>
                     <div class="card mb-4 position-relative" v-for="number in numbers">
                         {{-- TODO rimuovi stile inline, lavora sulla funzia (non vogliamo venga cancellato l'ultimo, ma quello su cui lo user clicca) --}}
-                        <a class="remove" v-on:click="destroy($event)">X</a>
+                        <span class="remove" v-on:click="destroy($event)"><i class="fas fa-times"></i></span>
                         <div class="card-body pb-2">
                             <h4>Aggiungi prestazione</h4>
                             {{-- input#title --}}
                             <div class="form-group mt-3 mb-4">
                                 <label for="title">Nome servizio</label>
-                                <input type="text" class="form-control" id="title" :name="'service' + number + '[title]'"
-                                    placeholder="Inserisci il nome del servizio">
+                                <input type="text" class="form-control" id="title" :name="'service' + number + '[title]'" placeholder="Inserisci il nome del servizio">
                             </div>
                             {{-- END input#name --}}
 
                             {{-- input#description --}}
                             <div class="form-group mt-4 mb-4">
                                 <label for="description">Descrizione servizio</label>
-                                <textarea class="form-control" :name="'service' + number + '[description]'" id="description"
-                                    rows="3" placeholder="Descrivi il servizio offerto"></textarea>
+                                <textarea class="form-control" :name="'service' + number + '[description]'" id="description" rows="3" placeholder="Descrivi il servizio offerto"></textarea>
                             </div>
                             {{-- END input#description --}}
 
                             {{-- input#hourly_rate --}}
                             <div class="form-group mt-4">
                                 <label for="hourly_rate" class="d-inline-block mr-1">Tariffa oraria</label>
-                                <input type="number" step="0.50" class="form-control d-inline-block" style="width: 100px;"
-                                    id="hourly_rate" :name="'service' + number + '[hourly_rate]'" placeholder="00.00"
-                                    min='0.00'>
+                                <input type="number" step="0.50" class="form-control d-inline-block" style="width: 100px;" id="hourly_rate" :name="'service' + number + '[hourly_rate]'" placeholder="00.00" min='0.00'>
                                 <label class="d-inline-block ml-1">€</label>
                             </div>
                             {{-- END input#hourly_rate --}}
@@ -161,21 +157,16 @@
 
                 {{-- tasto per aggiungere altra prestazione --}}
                 <div>
-                    <a class="btn btn-primary" v-on:click="numbers++">
-                        <i class="fas fa-plus"></i>
-                        Aggiungi altra prestazione
-                    </a>
+                    <a class="btn btn-primary mt-2 mb-2" v-on:click="numbers++"><i class="fas fa-plus"></i>Aggiungi altra prestazione</a>
                 </div>
                 {{-- END tasto per aggiungere altra prestazione --}}
 
                 {{-- bottone per invio form --}}
-                <button type="submit" class="btn btn-success mt-5">
-                    @if (Auth::user()->profile)
-                        Salva modifiche
-                    @else
-                        Crea profilo
-                    @endif
-                </button>
+                @if (Auth::user()->profile)
+                    <button type="submit" class="btn btn-success"><i class="fas fa-check mr-2"></i>Salva modifiche</button>
+                @else
+                    <button type="submit" class="btn btn-success"><i class="fas fa-user-check mr-2"></i>Crea profilo</button>
+                @endif
                 {{-- END bottone per invio form --}}
 
             </form>

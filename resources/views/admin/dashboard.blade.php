@@ -33,7 +33,7 @@
                         </div>
                     @endif
                     <div class="user-name">
-                        <h3 class="ml-3">Ciao <a class="hover-blue" href="{{route("profile", ['id' => $user->id ])}}"><span class="font-weight-bold">{{$user->name}}</span></a>, cosa vuoi fare?</h3>
+                        <h2 class="ml-3">Ciao <a class="hover-blue" href="{{route("profile", ['id' => $user->id ])}}">{{$user->name}}</a>, cosa vuoi fare?</h2>
                     </div>
                 </div>
 
@@ -73,7 +73,7 @@
                     {{-- Statistiche --}}
                     <a class="dash-link hover-blue" href="{{route("admin.statistics", ['id' => $user->id ])}}">
                         <i class="fas fa-signal mb-2" style="font-size: 20px;"></i>
-                        <div>Stats</div>
+                        <div>Statistiche</div>
                     </a>
 
                     {{-- Logout --}}
@@ -91,12 +91,11 @@
     {{-- Recensioni --}}
     <div class="row mt-5">
         <div class="col-6">
-            <div class="d-flex align-items-center">
-                <h2>Recensioni</h2>
-                <a class="btn btn-primary ml-3" href="{{route('admin.reviews')}}"><i class="far fa-list-alt mr-1"></i> Leggi tutte le recensioni</a>
+            <div class="d-flex align-items-center mb-2">
+                <a class="hover-blue" href="{{route('admin.reviews')}}"><h3>Recensioni</h3></a>
             </div>
             @foreach ($user->reviews as $review)
-                <div class="card mt-4">
+                <div class="card mb-3">
                     <div class="card-header d-flex">
                         <div class="mr-5">
                             <span><i class="fas fa-user-circle mr-1"></i></span>
@@ -129,12 +128,11 @@
 
         {{-- Messaggi --}}
         <div class="col-6">
-            <div class="d-flex align-items-center">
-                <h2>Messaggi</h2>
-                <a class="btn btn-primary ml-3" href="{{route('admin.messages')}}"><i class="far fa-envelope mr-1"></i> Leggi tutti i messaggi</a>
+            <div class="d-flex align-items-center mb-2">
+                <h3><a class="hover-blue" href="{{route('admin.messages')}}">Messaggi</a></h3>
             </div>
             @foreach ($user->messages as $message)
-                <div class="card mt-4">
+                <div class="card mb-3">
                     <div class="card-header d-flex">
                         <div class="mr-5">
                             <span><i class="fas fa-user-circle mr-1"></i></span>
@@ -152,7 +150,7 @@
                         <div class="mt-2 mb-2">
                             <p class="card-text text-secondary">{{strlen($message->text) > 69 ? substr($message->text, 0, 70) . '...' : $message->text}}</p>
                         </div>
-                        <a href="{{route('admin.message-page', ['id' => $message->id])}}" class="btn btn-primary mt-2"><i class="far fa-file-alt mr-2"></i>Leggi messaggio</a>
+                        <a href="{{route('admin.message-page', ['id' => $message->id])}}" class="btn btn-primary mt-2"><i class="far fa-envelope mr-2"></i>Leggi messaggio</a>
                     </div>
                 </div>
             @endforeach
