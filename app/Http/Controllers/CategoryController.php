@@ -28,6 +28,7 @@ class CategoryController extends Controller
         if (!$category) {
             abort("404");
         }
+        // TODO: sta roba e' fondamentalmente uguale a UserController
 
         $category_users = User::select('users.*', DB::raw('avg(votes.value) as avg_vote'), DB::raw('avg(success) as sponsored'), 'profiles.pic')
         ->leftJoin('category_user', 'users.id', '=', 'category_user.user_id')

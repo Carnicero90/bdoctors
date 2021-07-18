@@ -10009,9 +10009,9 @@ h3 {
   width: 100%;
 }
 
-/* a, a:visited {
+a, a:visited {
   color: inherit;
-} */
+}
 
 .nav-link {
   line-height: 50px;
