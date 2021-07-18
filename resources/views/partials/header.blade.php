@@ -50,22 +50,9 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
 
-                                <a class="dropdown-item" href="{{route('admin.profile-index')}}">Crea / Modifica profilo privato</a>
+                                <a class="dropdown-item" href="{{ route('admin.dashboard') }}"><i class="fas fa-user-edit mr-2"></i>Dashboard</a>
 
-                                <a class="dropdown-item" href="{{route("profile", ['id' => Auth::user()->id])}}">Visualizza profilo pubblico</a>
-
-                                <a class="dropdown-item" href="{{ route('admin.dashboard') }}">Vai alla Dashboard</a>
-
-                                <a class="dropdown-item" href="{{ route('admin.messages') }}">Leggi i tuoi messaggi</a>
-
-                                <a class="dropdown-item" href="{{ route('admin.reviews') }}">Leggi recensioni lasciate per te</a>
-
-                                <a class="dropdown-item" href="{{ route('sponsor-index') }}">Acquista un piano Premium</a>
-
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ "Esegui " . __('Logout') }}
-                                </a>
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt mr-2"></i>{{ "Esegui " . __('Logout') }}</a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
