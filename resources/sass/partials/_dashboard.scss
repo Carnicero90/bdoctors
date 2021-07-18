@@ -5,6 +5,7 @@
 
     .saluto {
         text-decoration: none;
+
         &:hover {
             color: $blue;
         }
@@ -17,7 +18,9 @@
     }
     .dash-link {
         text-decoration: none;
-        padding-bottom: 40px;
+        padding-bottom: 30px;
+        border-bottom: 2px solid #f8fafc;
+
         &:hover {
             border-bottom: 2px solid $blue;
             color: $blue;
