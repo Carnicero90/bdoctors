@@ -8,9 +8,8 @@
             <div class="mt-3 mb-2 font-weight-bold">
                 <span>@{{user.name + ' ' + user.lastname}}</span>
             </div>
-            <div class="text-secondary">
-                <span>@{{user.categories}}</span>
-                <small><p>categoria user</p></small>
+            <div class="text-secondary mb-2">
+                <small><span>icone categorie</span></small>
             </div>
             <div>
                 <span v-if="user.avg_vote > 0"><i v-for="n in parseInt(user.avg_vote)" class="fas fa-star"></i></span>
@@ -18,7 +17,7 @@
             <div class="mt-2">
                 <span v-if="user.nmb_reviews > 0">
                     <small>
-                        <i class="fas fa-file-alt mr-1"></i> @{{ user . nmb_reviews }} recensioni
+                        <i class="fas fa-file-alt mr-2"></i>@{{user . nmb_reviews}} recensioni
                     </small>
                 </span>
             </div>

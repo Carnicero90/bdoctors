@@ -11,11 +11,21 @@
             <div class="mt-3 mb-2 font-weight-bold">
                 <span>{{ucfirst($user->name) . " " . ucfirst($user->lastname)}}</span>
             </div>
+
+            <div class="text-secondary mb-2">
+                <small><span>icone categorie</span></small>
+            </div>
             <div>
-                {{-- intval() ritorna un intero da una stringa --}}
-                @for ($i = 0; $i < intval($user->avg_vote); $i++)
+                @for ($i = 0; $i < intval($user->avg_vote); $i++) {{-- intval() ritorna un intero da una stringa --}}
                     <span><i class="fas fa-star"></i></span>
                 @endfor
+            </div>
+            <div class="mt-2">
+                <span>
+                    <small>
+                        <i class="fas fa-file-alt mr-2"></i>numero recensioni
+                    </small>
+                </span>
             </div>
             @if ($user->sponsored)
                 <div style="position: absolute; top: 5px; right: 7px;">
