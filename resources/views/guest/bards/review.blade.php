@@ -40,16 +40,13 @@
                     {{-- TODO: per ora lasciamo un h3, che poi potrebbe essere un label (dipende da cosa rispondono al TOASK sottostante) --}}
                     <h3>Come valuteresti il servizio offertoti da {{ $user->name }}?</h3>
                     <input type="hidden" name="user_id" value="{{ $user->id }}">
-                    {{-- voto recensione TODO: rimetti a posto --}}
                     {{-- TOASK: metto un select nascosto, per robe di usabilita? --}}
                     <div class="vote d-flex">
                         <input type="hidden" name="vote_id" :value="selectedValue">
                         <div v-for="vote, index in votes">
                             <div class="votes">
-                                {{-- TODO: sposta in sass --}}
-                                <i class="fas fa-star" :style="index <= value ? 'color:red' : '' " 
-                                    v-on:mouseover="fillStars(index)"
-                                    v-on:mouseleave="backToPreviousVoteValue()"
+                                <i class="fas fa-star star" :class="index <= value ? 'filled' : 'empty'"
+                                    v-on:mouseover="fillStars(index)" v-on:mouseleave="backToPreviousVoteValue()"
                                     v-on:click="selectVoteValue(index, vote.value)"></i>
                             </div>
                             <span class="vote-label" v-if="clickedValue == index">@{{ vote . label }}</span>
@@ -80,19 +77,6 @@
                         placeholder="Scrivi la recensione">{{ old('content') }}</textarea>
                 </div>
 
-                {{-- voto recensione --}}
-                {{-- <div class="form-group mt-4 mb-4">
-                    <label for="vote_id" class="mr-4">Come definiresti la prestazione dell'artista?</label>
-                    <select class="custom-select col-md-3" name="vote_id" id="vote_id">
-                        <option selected>Seleziona una valutazione</option>
-                        @foreach ($votes as $vote)
-                            <option value="{{ $vote->value }}">
-                                {{ $vote->value . ' - ' . ucfirst($vote->label) }}
-                            </option>
-                        @endforeach
-                    </select>
-                </div> --}}
-
                 {{-- partials di termini e condizioni --}}
                 @include('partials.terms-conditions')
 
@@ -102,11 +86,6 @@
                 </button>
 
             </form>
-
-            {{-- tasto per refreshare la pagina --}}
-            <div class="text-right">
-                {{-- <a class="btn btn-outline-dark" href="{{route("send-review")}}" style="transform: translateY(-38px)">Svuota i campi</a> --}}
-            </div>
         </div>
         {{-- END div#root --}}
     </div>

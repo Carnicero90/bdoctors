@@ -10198,3 +10198,12 @@ footer .copyright span {
   bottom: -1em;
   text-transform: uppercase;
 }
+.vote .star {
+  text-shadow: 1px 1px 1px #000;
+}
+.vote .star.empty {
+  color: inherit;
+}
+.vote .star.filled {
+  color: #e3342f;
+}
