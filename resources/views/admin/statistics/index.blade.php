@@ -96,7 +96,21 @@
 
 @section('content')
     <div class="container">
-        <h1>Statistiche utente</h1>
+
+        {{-- HEADER --}}
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <div class="dashboard">
+                    @include('partials.dashboard-nav')
+                </div>
+            </div>
+        </div>
+        {{-- END HEADER --}}
+
+        <div class="mt-3 mb-4">
+            <h1>Statistiche utente</h1>
+        </div>
+
         <div class="row">
 
             {{-- section#mails --}}

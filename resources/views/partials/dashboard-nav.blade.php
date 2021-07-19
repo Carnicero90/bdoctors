@@ -7,33 +7,33 @@
     @endif
 
     {{-- Crea/Modifica Profilo --}}
-    <a class="dash-link hover-blue" href="{{route('admin.profile-index')}}">
+    <a class="dash-link hover-blue" href="{{ route('admin.profile-index') }}">
         <i class="fas fa-user-cog mb-2" style="font-size: 20px;"></i>
         <div>Crea / Modifica profilo</div>
     </a>
-    
+
     {{-- Aggiungi/Modifica Prestazione --}}
-    <a class="dash-link hover-blue" href="{{route('admin.services')}}">
+    <a class="dash-link hover-blue" href="{{ route('admin.services') }}">
         <i class="fas fa-user-plus mb-2" style="font-size: 20px;"></i>
         <div>Aggiungi / Modifica prestazione</div>
     </a>
 
     {{-- Acquista Piano Premium --}}
-    <a class="dash-link hover-blue" href="{{route('sponsor-index')}}">
+    <a class="dash-link hover-blue" href="{{ route('sponsor-index') }}">
         <i class="fas fa-star mb-2" style="font-size: 20px;"></i>
         <div>Acquista piano premium</div>
     </a>
 
-    {{-- Visualizza Profilo Pubblico --}}
-    <a class="dash-link hover-blue" href="{{route("profile", ['id' => Auth::user()->id])}}">
-        <i class="fas fa-user-tie mb-2" style="font-size: 20px;"></i>
-        <div>Visualizza profilo pubblico</div>
-    </a>
-
     {{-- Statistiche --}}
-    <a class="dash-link hover-blue" href="{{route("admin.statistics", ['id' => $user->id ])}}">
+    <a class="dash-link hover-blue" href="{{ route('admin.statistics', ['id' => Auth::user()->id]) }}">
         <i class="fas fa-signal mb-2" style="font-size: 20px;"></i>
         <div>Statistiche</div>
+    </a>
+
+    {{-- Visualizza Profilo Pubblico --}}
+    <a class="dash-link hover-blue" href="{{ route('profile', ['id' => Auth::user()->id]) }}">
+        <i class="fas fa-user-tie mb-2" style="font-size: 20px;"></i>
+        <div>Visualizza profilo pubblico</div>
     </a>
 
     {{-- Logout --}}
