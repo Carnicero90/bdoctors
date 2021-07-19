@@ -8,3 +8,11 @@ input, select {
         transform: scale(107%);
     }
 }
+
+.no-decorations {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
