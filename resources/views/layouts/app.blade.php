@@ -33,6 +33,9 @@
 <body>
     {{-- HEADER --}}
     @include('partials.header')
+    <main class="py-4" style="min-height: calc(100vh - 87px);">
+        @yield('content')
+    </main>
     {{-- FOOTER --}}
     @include('partials.footer')
     @yield('footer-scripts')

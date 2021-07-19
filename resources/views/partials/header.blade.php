@@ -1,8 +1,7 @@
 {{-- HEADER --}}
-<div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
-            <ul class="navbar-nav ml-auto left-menu" style="align-items: center">
+            <ul class="navbar-nav left-menu" style="align-items: center">
                 <li class="nav-item">
                     <a class="navbar-brand logo" href="/">
                         <img src="{{ asset('img/boolbards-logo-black-1.png') }}" alt="Logo">
@@ -65,7 +64,3 @@
         </div>
     </nav>
 
-    <main class="py-4" style="min-height: calc(100vh - 87px);">
-        @yield('content')
-    </main>
-</div>
