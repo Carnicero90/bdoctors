@@ -12,7 +12,7 @@
     <title>{{ config('app.name', 'Boolbards') }}</title>
 
     <!-- TODO: favicon solo di test -->
-    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ asset('img/boolbards-logo-black-green.png') }}">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
