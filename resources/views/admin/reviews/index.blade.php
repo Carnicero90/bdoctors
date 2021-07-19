@@ -32,7 +32,7 @@
                     </div>
                 @endforeach
             @else
-                <div class="col-12">
+                <div class="col-12 mt-3">
                     <span>Nessuna recensione presente</span>
                 </div>
             @endif

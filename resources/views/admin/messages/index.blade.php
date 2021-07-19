@@ -36,7 +36,7 @@
                 @endforeach
             @else
                 <div class="col-12 mt-3">
-                    <span>Nessun messaggio ricevuto</span>
+                    <span>Nessun messaggio da mostrare</span>
                 </div>
             @endif
         </div>
