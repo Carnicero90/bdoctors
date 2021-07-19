@@ -24,15 +24,15 @@
 
             <div class="container">
 
-                <h1 class="main-title mb-4" style="font-size: 70px">
-                    <img class="jumbo-logo mr-3" src="{{asset('img/boolbards-white-1.png')}}" alt=""></i>
-                </h1>
+                <div>
+                    <img class="jumbo-logo" src="{{asset('img/boolbards-white-1.png')}}" alt="">
+                </div>
 
                 <!-- input ricerca da usare con VueJs -->
                 <div style="position: relative">
                     <select class="select-category mr-1" name="" id="" v-model="selectedCategory" v-on:change="searchUser()" style="width: 200px; height: 35px; transform:translateY(+3px); padding-left: 15px; background-color: black; color: #888; border-radius: 3px;">
                         <option value="0" selected disabled>Seleziona una categoria</option>
-                        <option value="">All</option>
+                        <option value="">Tutte le categorie</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ ucfirst($category->name) }}</option>
                         @endforeach

@@ -10037,19 +10037,12 @@ input, select {
 }
 
 .jumbotron {
-  padding: 150px 0;
   background-image: url("/img/jumbotron.jpg");
   background-size: cover;
-  background-position: center;
+  padding: 30px 0 90px 0;
 }
 .jumbotron .jumbo-logo {
-  width: 50%;
-  transform: translateY(-5px);
-}
-
-.main-title {
-  color: white;
-  text-shadow: 2px 2px 2px #000;
+  width: 40%;
 }
 
 .select-category {

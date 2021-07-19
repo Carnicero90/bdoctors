@@ -25,8 +25,8 @@ class StatisticController extends Controller
         $reviews = Review::where('user_id', '=', $id)->get();
 
         $data = [
-            'messages' => $messages,
-            'reviews' => $reviews
+            'messages' => json_encode($messages),
+            'reviews' => $reviews->toJson(JSON_PRETTY_PRINT),
         ];
 
         return view('admin.statistics.index', $data); 

@@ -103,16 +103,23 @@ class UserController extends Controller
         $user_id = $request->id;
         $year_ago  = Carbon::now()->subMonths(12)->firstOfMonth();
         // dd($year_ago);
-       $messages = Message::select(DB::raw('COUNT(id) AS tot'), DB::raw('MONTH(message_date)'), DB::raw('YEAR(message_date)'))
+       $messages = Message::select(DB::raw('COUNT(id) AS tot'), DB::raw('MONTH(message_date) as month'), DB::raw('YEAR(message_date) as year'))
        ->where('user_id', '=', $user_id)
        ->where('message_date', '>', $year_ago)
        ->groupBy(DB::raw('MONTH(message_date), YEAR(message_date)'))
+       ->orderBy('year')
+       ->orderBy('month')
 
        ->get();
-       $reviews = Review::select(DB::raw('COUNT(id) AS tot'), DB::raw('MONTH(send_date)'), DB::raw('YEAR(send_date)'))
+
+
+       $reviews = Review::select(DB::raw('COUNT(id) AS tot'), DB::raw('MONTH(send_date) as month'), DB::raw('YEAR(send_date) as year'))
        ->where('user_id', '=', $user_id)
        ->where('send_date', '>', $year_ago)
        ->groupBy(DB::raw('MONTH(send_date), YEAR(send_date)'))
+       ->orderBy('year')
+       ->orderBy('month')
+       
        ->get();
 
        $data = [

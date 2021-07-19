@@ -117,7 +117,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/filippomontani/booldoctors/bdoctors/resources/js/admin/services.js */"./resources/js/admin/services.js");
+module.exports = __webpack_require__(/*! /Users/filippomontani/becci/bdoctors/resources/js/admin/services.js */"./resources/js/admin/services.js");
 
 
 /***/ })
