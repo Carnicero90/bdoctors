@@ -9,6 +9,7 @@ use App\Review;
 use App\Message;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Carbon\CarbonPeriod;
 
 class UserController extends Controller
 {
@@ -120,9 +121,15 @@ class UserController extends Controller
        
        ->get();
 
+       $year_ago = new CarbonPeriod($year_ago, '1 month', Carbon::now());
+       $last_year = [];
+       foreach ($year_ago as $month) {
+           $last_year[] = $month->format('Y-m');
+       };
        $data = [
            'messages' => $messages,
            'reviews' => $reviews,
+           'last_year' => $last_year,
            'succes' => true
        ];
         return $data;

@@ -145,12 +145,14 @@ Route::prefix('admin')
 /* ================
    TEST
 =================== */
+use Carbon\CarbonPeriod;
+use Carbon\Carbon;
 // route per provare dd e dump a caso
 Route::get('/prova', function () {
-    dump(Auth::user()->messages->filter(function($item)
-{
-    if($item->to_show) {
-        return $item;
+    $a = new CarbonPeriod('2018-1-1', '1 month', Carbon::now());
+    $arr = [];
+    foreach($a as $tot) {
+        $arr[] = $tot->format('Y-m');
     }
-}));
+    dump($arr);
 });
