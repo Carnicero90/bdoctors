@@ -88,8 +88,8 @@
     </div>
     {{-- END HEADER --}}
 
-    {{-- Recensioni --}}
     <div class="row mt-5">
+        {{-- Recensioni --}}
         <div class="col-6">
             <div class="d-flex align-items-center mb-2">
                 <a class="hover-blue" href="{{route('admin.reviews')}}"><h3>Recensioni</h3></a>

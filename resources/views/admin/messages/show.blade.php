@@ -2,27 +2,29 @@
 @section('content')
 
     <div class="container">
-        <h2>Ciao {{$user->name . " " . $user->lastname}}</h2>
+        <h1>Messaggio</h1>
 
-        <div class="row">
+        <div class="row mt-3">
             <div class="col-12">
                 <div class="card mt-4">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <div class="mt-2 mb-2"><h4><small>da </small>{{$message->author_name}}</h4></div>
+                        <div class="mt-2 mb-2"><h6><i class="fas fa-envelope mr-2"></i>{{$message->author_email}}</h6><span></div>
+                    </div>
                     <div class="card-body">
-                        <div class="mt-2 mb-2"><span>da: {{$message->author_name}}</span></div>
-                        <div class="mt-2 mb-2"><span>email: {{$message->author_email}}</span></div>
-                        <div class="mt-2 mb-2">
-                            <span>Testo</span>
+                        <div class="mt-2 mb-4">
                             <p class="card-text text-secondary">{{$message->text}}</p>
                         </div>
-                        <div class="mb-3"><span>Data ricezione: {{$message->message_date}}</span></div>
-
-
-                        <form class="form-group d-inline-block" action="{{ route('admin.message-hide', ['id' => $message->id]) }}" method="post">
-                            @csrf
-                            @method("POST")
-                            <input class="btn btn-danger" type="submit" value="Elimina il messaggio">
-                        </form>
-
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <form class="form-group d-inline-block" action="{{ route('admin.message-hide', ['id' => $message->id]) }}" method="post">
+                                    @csrf
+                                    @method("POST")
+                                    <button class="btn btn-danger mr-2" type="submit" onclick="return confirm('Vuoi Eliminare il messaggio?')"><i class="fas fa-times mr-2"></i>Elimina</button>
+                                </form>
+                            </div>
+                            <div class="mt-2 mb-2 text-secondary">ricevuto il {{date("d/m/Y", $message->created_at->timestamp)}}</div>
+                        </div>
                     </div>
                 </div>
             </div>

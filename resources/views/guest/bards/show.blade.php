@@ -83,47 +83,42 @@
 
         {{-- reviews --}}
         <div class="row mt-4">
-            <div class="col-12">
+            <div class="col-12 mb-2">
                 <h2>Recensioni</h2>
             </div>
-            @foreach ($reviews as $review)
-            {{-- div review --}}
-                <div class="col-6">
+            
+            <div class="col-12">
+                @foreach ($user->reviews as $review)
                     <div class="card mb-3">
-                        <div class="card-header d-flex align-items-center justify-content-between">
-                            <div>
+                        <div class="card-header d-flex justify-content-between">
+                            <div class="mr-5">
                                 <span><i class="fas fa-user-circle mr-1"></i></span>
-                                <span>{{ $review->author_name }}</span>
+                                <span>{{$review->author_name}}</span>
                             </div>
                             <div>
                                 <span><i class="fas fa-envelope mr-1"></i></span>
-                                <span>{{ $review->author_email }}</span>
+                                <span>{{$review->author_email}}</span>
                             </div>
                         </div>
                         <div class="card-body">
-                            <span class="text-secondary">{{ date('d/m/Y', $review->created_at->timestamp) }}</span>
-                            <div>
-                                @for ($i = 0; $i < $review->votes; $i++)
-                                    <i class="fas fa-star"></i>
-                                @endfor
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <div>
+                                    <span class="text-secondary">voto: </span>
+                                    @for ($i = 0; $i < $review->vote->value; $i++)
+                                        <i class="fas fa-star"></i>
+                                    @endfor
+                                </div>
+                                <div>
+                                    <span class="text-secondary">ricevuta il {{date("d/m/Y", $review->created_at->timestamp)}}</span>
+                                </div>
                             </div>
-                            {{-- div vote --}}
                             <div class="mt-2 mb-2">
-                                @for ($i = 0; $i < $review->vote->value; $i++)
-                                    <i class="fas fa-star"></i>
-                                @endfor
-                            </div>
-                            {{-- END div vote --}}
-                            <div class="mt-2 mb-2">
-                                <p class="card-text text-secondary">
-                                    {{ strlen($review->content) > 120 ? substr($review->content, 0, 120) . '...' : $review->content }}
-                                </p>
+                                <p class="card-text text-secondary">{{$review->content}}</p>
                             </div>
                         </div>
                     </div>
-                </div>
-                {{-- END div review --}}
-            @endforeach
+                @endforeach
+            </div>
         </div>
         {{-- END reviews --}}
 
