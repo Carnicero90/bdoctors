@@ -10002,6 +10002,11 @@ h3 {
     border-color: #dee2e6;
   }
 }
+main {
+  background: #addbc7;
+  background: linear-gradient(360deg, rgba(173, 219, 199, 0.9023984594) 0%, rgba(223, 231, 236, 0.8743872549) 0%);
+}
+
 input, select {
   outline: none;
 }

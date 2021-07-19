@@ -5,7 +5,5 @@
     "/css/app.css": "/css/app.css",
     "/js/home.js": "/js/home.js",
     "/js/profile.js": "/js/profile.js",
-    "/js/review.js": "/js/review.js",
-    "/js/services.js": "/js/services.js",
-    "/js/stats.js": "/js/stats.js"
+    "/js/review.js": "/js/review.js"
 }
