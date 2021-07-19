@@ -115,7 +115,7 @@
                                 @endfor
                             </div>
                             {{-- review date --}}
-                            <span class="text-secondary">{{date(config('app.StandardDateFormat'), $review->created_at->timestamp)}}</span>
+                            <span class="text-secondary">{{ $review->send_date }}</span>
                         </div>
                         <div class="mt-2 mb-2">
                             <p class="card-text text-secondary">{{strlen($review->content) > 69 ? substr($review->content, 0, 70) . '...' : $review->content}}</p>

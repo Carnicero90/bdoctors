@@ -156,7 +156,7 @@ var reviewsChart = new Chart(reviewsCanvas, {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/filippomontani/booldoctors/bdoctors/resources/js/admin/stats.js */"./resources/js/admin/stats.js");
+module.exports = __webpack_require__(/*! /Users/filippomontani/becci/bdoctors/resources/js/admin/stats.js */"./resources/js/admin/stats.js");
 
 
 /***/ })

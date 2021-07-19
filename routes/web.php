@@ -147,6 +147,10 @@ Route::prefix('admin')
 =================== */
 // route per provare dd e dump a caso
 Route::get('/prova', function () {
-    return 'un solo ' . trans_choice('categories.chitarrista', 1) .
-    ', tanti ' . trans_choice('categories.chitarrista', 3);
+    dump(Auth::user()->messages->filter(function($item)
+{
+    if($item->to_show) {
+        return $item;
+    }
+}));
 });
