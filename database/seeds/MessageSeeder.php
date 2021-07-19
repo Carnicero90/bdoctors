@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Message;
 use Faker\Generator as Faker;
+use Illuminate\Support\Carbon;
 
 class MessageSeeder extends Seeder
 {
@@ -19,7 +20,7 @@ class MessageSeeder extends Seeder
             $new_message->author_name = $faker->firstName() . ' ' . $faker->lastName();
             $new_message->author_email = $faker->email();
             $new_message->text = $faker->paragraph();
-            $new_message->message_date = $faker->date();
+            $new_message->message_date = Carbon::now()->subDays(rand(0,365));
             $new_message->user_id = 1;
             $new_message->to_show = 1;
             $new_message->to_read = 1;
