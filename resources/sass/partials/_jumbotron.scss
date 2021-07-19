@@ -7,20 +7,13 @@
 }
 
 .jumbotron {
-    padding: 150px 0;
     background-image: url('/img/jumbotron.jpg');
     background-size: cover;
-    background-position: center;
+    padding: 30px 0 90px 0;
 
     .jumbo-logo {
-        width: 50%;
-        transform: translateY(-5px);
+        width: 40%;
     }
-}
-
-.main-title {
-    color: white;
-    text-shadow: 2px 2px 2px #000;
 }
 
 .select-category {
