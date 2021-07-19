@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Message;
+use App\Review;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
@@ -24,10 +24,11 @@ class HomeController extends Controller
             ->limit(5)
             ->get();
 
-        $data = [
-            "user" => $user
-        ];
+        $reviews = Review::where('user_id', '=', $user->id)
+            ->orderByDesc('send_date')
+            ->limit(5)
+            ->get();
 
-        return view('admin.dashboard', compact('user', 'messages'));
+        return view('admin.dashboard', compact('user', 'messages', 'reviews'));
     }
 }
