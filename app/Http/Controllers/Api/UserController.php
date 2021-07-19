@@ -103,22 +103,20 @@ class UserController extends Controller
         $user_id = $request->id;
         $year_ago  = Carbon::now()->subMonths(12)->firstOfMonth();
         // dd($year_ago);
-       $messages = Message::select(DB::raw('COUNT(id) AS tot'), DB::raw('MONTH(message_date) as month'), DB::raw('YEAR(message_date) as year'))
+       $messages = Message::select(DB::raw('COUNT(id) AS tot'), DB::raw('DATE_FORMAT(message_date, "%Y-%m") AS date'))
        ->where('user_id', '=', $user_id)
        ->where('message_date', '>', $year_ago)
-       ->groupBy(DB::raw('MONTH(message_date), YEAR(message_date)'))
-       ->orderBy('year')
-       ->orderBy('month')
+       ->groupBy('date')
+       ->orderBy('date')
 
        ->get();
 
-
-       $reviews = Review::select(DB::raw('COUNT(id) AS tot'), DB::raw('MONTH(send_date) as month'), DB::raw('YEAR(send_date) as year'))
+       $reviews = Review::select(DB::raw('COUNT(reviews.id) AS tot'), DB::raw('AVG(votes.value) AS avg_vote'), DB::raw('DATE_FORMAT(send_date, "%Y-%m") AS date'))
        ->where('user_id', '=', $user_id)
        ->where('send_date', '>', $year_ago)
-       ->groupBy(DB::raw('MONTH(send_date), YEAR(send_date)'))
-       ->orderBy('year')
-       ->orderBy('month')
+       ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
+       ->groupBy('date')
+       ->orderBy('date')
        
        ->get();
 

@@ -22,32 +22,47 @@
                 const reviews = stats['reviews'];
 
                 const now = new Date();
-                console.log(now.getMonth())
-                const labels = messages.map(item => item.month + '/' + item.year);
-                console.log(labels);
+                console.log(now.getMonth());
+                // const labels = messages.map(item => item.month + '/' + item.year);
+                // console.log(labels);
                 console.log(messages);
 
 
+
+
                 // let messagesReviews = document.getElementById("messagesReviews").getContext("2d");
-                // let messagesCanvas = document.getElementById("messagesCanvas").getContext("2d");
-                // let reviewsCanvas = document.getElementById("reviewsCanvas").getContext("2d");
+                let messagesCanvas = document.getElementById("messagesCanvas").getContext("2d");
+                let reviewsCanvas = document.getElementById("reviewsCanvas").getContext("2d");
+                let reviewsCanvasChart = new Chart(reviewsCanvas, {
+                    type: 'bar',
+                    data: {
+                        datasets: [{
+                            label: 'Recensioni ricevute',
+                            data: reviews,
+                            backgroundColor: ["green"],
+                            parsing: {
+                                yAxisKey: 'tot',
+                                xAxisKey: 'date'
+                            }
+                        }]
+                    }
+                })
 
-                // let messageCanvasChart = new Chart(messagesCanvas, {
-                //     type: 'bar',
-                //     datasets: [{
-                //         data: messages,
-                //     backgroundColor: ["#e3342f", ],
-                //     }  ]
-                
-                
-
-                // },
-                // options: {
-                //     parsing: {
-                //         xAxisKey: 'month'
-                //         yAxisKey: 'tot'
-                //     }
-                // })
+                let messageCanvasChart = new Chart(messagesCanvas, {
+                    type: 'bar',
+                    data: {
+                        datasets: [{
+                            label: 'Messaggi ricevuti',
+                            data: messages,
+                            backgroundColor: ["#e3342f", ],
+                            parsing: {
+                                yAxisKey: 'tot',
+                                xAxisKey: 'date',
+                            }
+                            
+                        }]
+                    }
+                });
 
                 // let messagesReviewsChart = new Chart(messagesReviews, {
 
