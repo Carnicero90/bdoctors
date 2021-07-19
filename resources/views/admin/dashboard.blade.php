@@ -39,7 +39,7 @@
 
                 {{-- Tasti navigazione --}}
                 <div class="dash-list d-flex text-center align-items-center">
-                    
+                    {{-- TOASK: che roba e'? --}}
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}

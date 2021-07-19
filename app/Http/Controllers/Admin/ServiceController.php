@@ -37,7 +37,7 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate(
+        $request->validate($this->paramsToValidate()
         );
 
         $modif_service = Service::findOrFail($id);

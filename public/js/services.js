@@ -96,14 +96,16 @@
 var app = new Vue({
   el: '#root',
   data: {
-    show: false
+    show: false,
+    old_services: []
   },
   methods: {
     showForm: function showForm() {
       this.show = true;
       console.log(this.show);
     }
-  }
+  },
+  mounted: function mounted() {}
 });
 
 /***/ }),
