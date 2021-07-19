@@ -95,8 +95,8 @@
                 <div class="d-flex align-items-center mb-2">
                     <a class="hover-blue" href="{{ route('admin.reviews') }}"><h3>Recensioni</h3></a>
                 </div>
-                @if ($user->reviews->isNotEmpty())
-                    @foreach ($user->reviews as $review)
+                @if ($reviews->isNotEmpty())
+                    @foreach ($reviews as $review)
                         <div class="card mb-3">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="mr-5">
