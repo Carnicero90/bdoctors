@@ -134,7 +134,7 @@
             <div class="d-flex align-items-center mb-2">
                 <h3><a class="hover-blue" href="{{route('admin.messages')}}">Messaggi</a></h3>
             </div>
-            @foreach ($user->messages as $message)
+            @foreach ($messages as $message)
                 <div class="card mb-3">
                     <div class="card-header d-flex justify-content-between">
                         <div class="mr-5">
@@ -152,7 +152,7 @@
                         </div>
                         <div class="d-flex align-items-center justify-content-between">
                             <a href="{{route('admin.message-page', ['id' => $message->id])}}" class="btn btn-primary mt-2"><i class="far fa-envelope mr-2"></i>Leggi messaggio</a>
-                            <span class="text-secondary">ricevuto il {{date("d/m/Y", $message->created_at->timestamp)}}</span>
+                            <span class="text-secondary">ricevuto il {{ $message->message_date }}</span>
                         </div>
                     </div>
                 </div>
