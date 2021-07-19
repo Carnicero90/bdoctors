@@ -74,7 +74,7 @@
                                 <form action="{{ route('admin.service-destroy', ['id' => $service->id]) }}" method="post">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-danger"><i class="fas fa-times mr-2"></i>Elimina</button>
+                                    <button class="btn btn-danger" onclick="return confirm('Sei sicuro di volere eliminare il tuo servizio?')"><i class="fas fa-times mr-2"></i>Elimina</button>
                                 </form>
                             </div>
                         </div>
