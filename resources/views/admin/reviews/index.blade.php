@@ -21,7 +21,7 @@
                                             <i class="fas fa-star"></i>
                                         @endfor
                                     </div>
-                                    <div class="mt-2 mb-2 text-secondary">ricevuta il {{date("d/m/Y", $review->created_at->timestamp)}}</div>
+                                    <div class="mt-2 mb-2 text-secondary">ricevuta il {{ $review->send_date }}</div>
                                 </div>
                                 <div class="mt-2 mb-3">
                                     <p class="card-text text-secondary">{{$review->content}}</p>

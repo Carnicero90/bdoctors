@@ -23,7 +23,7 @@
                                     <button class="btn btn-danger mr-2" type="submit" onclick="return confirm('Vuoi Eliminare il messaggio?')"><i class="fas fa-times mr-2"></i>Elimina</button>
                                 </form>
                             </div>
-                            <div class="mt-2 mb-2 text-secondary">ricevuto il {{date("d/m/Y", $message->created_at->timestamp)}}</div>
+                            <div class="mt-2 mb-2 text-secondary">ricevuto il {{ $message->message_date }}</div>
                         </div>
                     </div>
                 </div>

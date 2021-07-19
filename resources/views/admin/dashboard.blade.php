@@ -124,7 +124,7 @@
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <a href="{{route("admin.reviews-dettails", ["id" => $review->id])}}" class="btn btn-primary mt-2"><i class="far fa-file-alt mr-2"></i>Leggi recensione</a>
-                                    <span class="text-secondary">ricevuta il {{date("d/m/Y", $review->created_at->timestamp)}}</span>
+                                    <span class="text-secondary">ricevuta il {{ $review->send_date }}</span>
                                 </div>
                             </div>
                         </div>

@@ -109,7 +109,7 @@
                                     @endfor
                                 </div>
                                 <div>
-                                    <span class="text-secondary">ricevuta il {{date("d/m/Y", $review->created_at->timestamp)}}</span>
+                                    <span class="text-secondary">ricevuta il {{ $review->send_date }}</span>
                                 </div>
                             </div>
                             <div class="mt-2 mb-2">
