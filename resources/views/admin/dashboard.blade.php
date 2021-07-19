@@ -88,15 +88,15 @@
     </div>
     {{-- END HEADER --}}
 
-    {{-- Recensioni --}}
     <div class="row mt-5">
+        {{-- Recensioni --}}
         <div class="col-6">
             <div class="d-flex align-items-center mb-2">
                 <a class="hover-blue" href="{{route('admin.reviews')}}"><h3>Recensioni</h3></a>
             </div>
             @foreach ($user->reviews as $review)
                 <div class="card mb-3">
-                    <div class="card-header d-flex">
+                    <div class="card-header d-flex justify-content-between">
                         <div class="mr-5">
                             <span><i class="fas fa-user-circle mr-1"></i></span>
                             <span>{{$review->author_name}}</span>
@@ -110,17 +110,20 @@
                         <div class="d-flex align-items-center justify-content-between">
                             {{-- review vote --}}
                             <div>
+                                <span class="text-secondary">voto: </span>
                                 @for ($i = 0; $i < $review->vote->value; $i++)
                                     <i class="fas fa-star"></i>
                                 @endfor
                             </div>
                             {{-- review date --}}
-                            <span class="text-secondary">{{ $review->send_date }}</span>
                         </div>
                         <div class="mt-2 mb-2">
                             <p class="card-text text-secondary">{{strlen($review->content) > 69 ? substr($review->content, 0, 70) . '...' : $review->content}}</p>
                         </div>
-                        <a href="{{route("admin.reviews-dettails", ["id" => $review->id])}}" class="btn btn-primary mt-2"><i class="far fa-file-alt mr-2"></i>Leggi recensione</a>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="{{route("admin.reviews-dettails", ["id" => $review->id])}}" class="btn btn-primary mt-2"><i class="far fa-file-alt mr-2"></i>Leggi recensione</a>
+                            <span class="text-secondary">ricevuta il {{date("d/m/Y", $review->created_at->timestamp)}}</span>
+                        </div>
                     </div>
                 </div>
             @endforeach
@@ -133,7 +136,7 @@
             </div>
             @foreach ($user->messages as $message)
                 <div class="card mb-3">
-                    <div class="card-header d-flex">
+                    <div class="card-header d-flex justify-content-between">
                         <div class="mr-5">
                             <span><i class="fas fa-user-circle mr-1"></i></span>
                             <span>{{$message->author_name}}</span>
@@ -144,13 +147,13 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="d-flex align-items-center">
-                            <span class="text-secondary">{{ $message->message_date }}</span>
-                        </div>
                         <div class="mt-2 mb-2">
-                            <p class="card-text text-secondary">{{strlen($message->text) > 69 ? substr($message->text, 0, 70) . '...' : $message->text}}</p>
+                            <p class="card-text text-secondary">{{strlen($message->text) > 139 ? substr($message->text, 0, 140) . '...' : $message->text}}</p>
                         </div>
-                        <a href="{{route('admin.message-page', ['id' => $message->id])}}" class="btn btn-primary mt-2"><i class="far fa-envelope mr-2"></i>Leggi messaggio</a>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <a href="{{route('admin.message-page', ['id' => $message->id])}}" class="btn btn-primary mt-2"><i class="far fa-envelope mr-2"></i>Leggi messaggio</a>
+                            <span class="text-secondary">ricevuto il {{date("d/m/Y", $message->created_at->timestamp)}}</span>
+                        </div>
                     </div>
                 </div>
             @endforeach

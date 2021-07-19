@@ -11,6 +11,11 @@
     background-image: url('/img/jumbotron.jpg');
     background-size: cover;
     background-position: center;
+
+    .jumbo-logo {
+        width: 50%;
+        transform: translateY(-5px);
+    }
 }
 
 .main-title {
