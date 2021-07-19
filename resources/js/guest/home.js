@@ -31,11 +31,15 @@ var app = new Vue({
        searchParams() {
            return {
                name: this.searchString,
-               cat: this.selectedCategory || ''
+               cat: this.advsearchCat
            };
        },
        searching() {
            return this.searchString.length > 0;
+       },
+
+       advsearchCat() {
+           return this.selectedCategory || ''
        }
     }
 

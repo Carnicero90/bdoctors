@@ -54,7 +54,7 @@
                                 </a>
                             </li>
                             <li class="list-group-item" style="width: 220px; background-color: #111; border-color: #888;">
-                                <a style="color: #888" :href=`/advancedsearch?name=${searchString}&cat=${selectedCategory}`><i class="fas fa-search mr-2"></i>Mostra più risultati</a>
+                                <a style="color: #888" :href="'/advancedsearch?name=' + searchString + '&cat=' + advsearchCat"><i class="fas fa-search mr-2"></i>Mostra più risultati</a>
                             </li>
                         </ul>
                     </div>

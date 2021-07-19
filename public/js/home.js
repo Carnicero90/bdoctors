@@ -215,11 +215,14 @@ var app = new Vue({
     searchParams: function searchParams() {
       return {
         name: this.searchString,
-        cat: this.selectedCategory || ''
+        cat: this.advsearchCat
       };
     },
     searching: function searching() {
       return this.searchString.length > 0;
+    },
+    advsearchCat: function advsearchCat() {
+      return this.selectedCategory || '';
     }
   }
 });
