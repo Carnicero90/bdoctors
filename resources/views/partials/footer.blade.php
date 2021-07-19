@@ -5,8 +5,8 @@
         <div class="container inner" style="padding: 50px 0;">
             <div class="d-flex justify-content-around">
                 <!-- Logo -->
-                <div>
-                    <img src="../img/logo-jumb.png" alt="BoolBards Logo">
+                <div class="flex-son">
+                    <img src="../img/boolbards-logo-white-1.png" alt="BoolBards Logo">
                 </div>
 
                 <!-- About me -->

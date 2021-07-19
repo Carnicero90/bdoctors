@@ -24,7 +24,9 @@
 
             <div class="container">
 
-                <h1 class="main-title mb-4" style="font-size: 70px"><img class="mr-3" style="height: 80px; transform: translateY(-5px);" src="{{asset('img/logo-jumb.png')}}" alt=""></i>BOOLBARDS</h1>
+                <h1 class="main-title mb-4" style="font-size: 70px">
+                    <img class="jumbo-logo mr-3" src="{{asset('img/boolbards-white-1.png')}}" alt=""></i>
+                </h1>
 
                 <!-- input ricerca da usare con VueJs -->
                 <div style="position: relative">

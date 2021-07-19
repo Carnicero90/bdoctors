@@ -10035,6 +10035,10 @@ input, select {
   background-size: cover;
   background-position: center;
 }
+.jumbotron .jumbo-logo {
+  width: 50%;
+  transform: translateY(-5px);
+}
 
 .main-title {
   color: white;
@@ -10048,8 +10052,11 @@ input, select {
 footer {
   color: white;
 }
+footer img {
+  width: 100px;
+}
 footer .bg-footer {
-  background: black;
+  background-image: url("/img/footer-jumbo.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -2,8 +2,12 @@
 footer {
     color: white;
 
+    img {
+        width: 100px;
+    }
+
     .bg-footer {
-        background: black;
+        background-image: url('/img/footer-jumbo.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
