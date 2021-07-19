@@ -10163,7 +10163,7 @@ footer .copyright span {
 }
 .dashboard .dash-list {
   padding-top: 10px;
-  border-bottom: 1px solid #9999;
+  border-bottom: 1px solid #d2d2d2;
   justify-content: space-between;
 }
 .dashboard .dash-link {

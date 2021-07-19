@@ -44,8 +44,13 @@
                     @foreach ($services as $key => $service)
                     {{-- div service --}}
                         <div class="card mb-4" style="padding-bottom: 0;">
-                            <div class="card-header">
-                                <h3>{{ $service->title }}</h3>
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h3>{{ $service->title }}</h3>
+                                </div>
+                                <div>
+                                    <h5>€ {{ $service->hourly_rate }} all'ora</h5>
+                                </div>
                             </div>
                             <div class="card-body">
                                 <form action="{{ route('admin.service-update', ['id' => $service->id]) }}" method="post">
