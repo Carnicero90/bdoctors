@@ -8,10 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <!-- Titolo App -->
     <title>{{ config('app.name', 'Boolbards') }}</title>
-    {{-- TODO: favicon solo di test --}}
-    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
 
+    <!-- TODO: favicon solo di test -->
+    <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}">
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -19,12 +20,14 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     @yield('header-scripts')
+
 </head>
 
 <body>
