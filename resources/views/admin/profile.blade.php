@@ -27,7 +27,7 @@
             </div>
             {{-- END HEADER --}}
 
-            <div class="mt-3 mb-4">
+            <div class="mt-3 mb-3">
                 <h1>Modifica profilo</h1>
             </div>
 
@@ -41,7 +41,7 @@
 
                 {{-- input#image-file --}}
                 <img v-bind:src="preload" alt="" style="max-height:300px">
-                <div class="form-group mt-4">
+                <div class="form-group">
                     <label for="image-file">Carica un'immagine profilo</label>
                     <input type="file" v-on:change="preloadPic($event)" class="form-control-file" id="image-file" name="image-file">
                 </div>

@@ -46,7 +46,7 @@
         </div>
         {{-- END HEADER --}}
 
-        <div class="row mt-5">
+        <div class="row mt-4">
 
             {{-- Recensioni --}}
             <div class="col-6">

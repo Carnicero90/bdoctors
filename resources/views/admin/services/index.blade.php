@@ -37,7 +37,7 @@
 
             {{-- servizi gia esistenti, editabili o eliminabili --}}
             <div class="row">
-                <div class="col-12 mt-3 mb-4">
+                <div class="col-12 mb-4">
                     <h2>I tuoi attuali servizi</h2>
                 </div>
                 <div class="col-12">
