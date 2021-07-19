@@ -10068,7 +10068,7 @@ footer .inner {
 }
 footer .flex-son {
   flex: 33%;
-  margin: 0 50px;
+  margin: 0 30px;
 }
 footer .flex-son h4 {
   font-size: 18px;
@@ -10085,11 +10085,27 @@ footer .flex-son p {
 footer .flex-son .category-links {
   padding: 0 15px;
 }
+footer .flex-son .categories-ul {
+  flex-wrap: wrap;
+}
+footer .flex-son .categories-ul .categories-li {
+  flex: 50%;
+}
+footer .flex-son .categories-ul .categories-li a {
+  color: #868586;
+  text-decoration: none;
+}
+footer .flex-son .categories-ul .categories-li a:hover {
+  color: white;
+}
 footer .flex-son .social-icons i {
   margin-right: 15px;
   margin-top: 20px;
-  color: lightgrey;
+  color: #868586;
   cursor: pointer;
+}
+footer .flex-son .social-icons i:hover {
+  color: white;
 }
 footer .flex-son li {
   list-style-type: none;
@@ -10097,6 +10113,12 @@ footer .flex-son li {
   color: lightgrey;
   font-size: 14px;
   cursor: pointer;
+}
+footer .flex-son .contatti {
+  line-height: 1.8em;
+  font-size: 15px;
+  letter-spacing: 2px;
+  color: lightgrey;
 }
 footer .copyright {
   text-align: center;
