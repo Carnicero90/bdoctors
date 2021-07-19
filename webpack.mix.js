@@ -26,6 +26,9 @@ mix.js('resources/js/app.js', 'public/js')
     // file relativo a admin/stats per le statistiche user
     .js('resources/js/admin/stats.js', 'public/js')
 
+    .js('resources/js/admin/services.js', 'public/js')
+
+
     // Fix a popper.js not found in safari (spero)
     // .js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps()
     .sass('resources/sass/app.scss', 'public/css')

@@ -132,8 +132,8 @@ Route::prefix('admin')
         Route::get('/services', 'ServiceController@index')
             ->name('services');
         // --> store   
-        Route::post('/services/{id}', 'ServiceController@create')
-            ->name('services-store');
+        Route::post('/services/create', 'ServiceController@create')
+            ->name('service-create');
         // --> update
         Route::put('/services/update/{id}', 'ServiceController@update')
             ->name('service-update');

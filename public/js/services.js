@@ -81,82 +81,41 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/admin/stats.js":
-/*!*************************************!*\
-  !*** ./resources/js/admin/stats.js ***!
-  \*************************************/
+/***/ "./resources/js/admin/services.js":
+/*!****************************************!*\
+  !*** ./resources/js/admin/services.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-console.log("test");
-var messagesReviews = document.getElementById("messagesReviews").getContext("2d");
-var messagesCanvas = document.getElementById("messagesCanvas").getContext("2d");
-var reviewsCanvas = document.getElementById("reviewsCanvas").getContext("2d");
-var months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
-var messagesNumber = ["8", "9", "7", "10", "6", "9", "10", "9", "12", "8", "7", "14"];
-var reviewsNumber = ["7", "10", "6", "9", "10", "9", "12", "8", "7", "14", "8", "9"];
-var messagesReviewsChart = new Chart(messagesReviews, {
-  type: "bar",
+var app = new Vue({
+  el: '#root',
   data: {
-    labels: months,
-    datasets: [{
-      label: "Numero messaggi",
-      data: messagesNumber,
-      backgroundColor: ["#e3342f"]
-    }, {
-      label: "Numero recensioni",
-      data: reviewsNumber,
-      backgroundColor: ["#3490dc"]
-    }],
-    options: {
-      legend: {
-        display: false,
-        position: "right"
-      }
+    show: false
+  },
+  methods: {
+    showForm: function showForm() {
+      this.show = true;
+      console.log(this.show);
     }
-  },
-  options: {}
-});
-var messagesChart = new Chart(messagesCanvas, {
-  type: "bar",
-  data: {
-    labels: months,
-    datasets: [{
-      label: "Numero messaggi",
-      data: messagesNumber,
-      backgroundColor: ["#e3342f"]
-    }]
-  },
-  options: {}
-});
-var reviewsChart = new Chart(reviewsCanvas, {
-  type: "bar",
-  data: {
-    labels: months,
-    datasets: [{
-      label: "Numero recensioni",
-      data: reviewsNumber,
-      backgroundColor: ["#3490dc"]
-    }]
-  },
-  options: {}
+  }
 });
 
 /***/ }),
 
-/***/ 6:
-/*!*******************************************!*\
-  !*** multi ./resources/js/admin/stats.js ***!
-  \*******************************************/
+/***/ 7:
+/*!**********************************************!*\
+  !*** multi ./resources/js/admin/services.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/filippomontani/booldoctors/bdoctors/resources/js/admin/stats.js */"./resources/js/admin/stats.js");
+module.exports = __webpack_require__(/*! /Users/filippomontani/booldoctors/bdoctors/resources/js/admin/services.js */"./resources/js/admin/services.js");
 
 
 /***/ })

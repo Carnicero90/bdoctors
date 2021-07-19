@@ -233,7 +233,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Tom/BDoctors/bdoctors/resources/js/guest/home.js */"./resources/js/guest/home.js");
+module.exports = __webpack_require__(/*! /Users/filippomontani/booldoctors/bdoctors/resources/js/guest/home.js */"./resources/js/guest/home.js");
 
 
 /***/ })
