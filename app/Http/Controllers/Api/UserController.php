@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
-use Hamcrest\Arrays\IsArray;
+use App\Review;
+use App\Message;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -96,5 +97,29 @@ class UserController extends Controller
             'success' => true
         ];
         return response()->json($data);
+    }
+
+    public function stats(Request $request) {
+        $user_id = $request->id;
+        $year_ago  = Carbon::now()->subMonths(12)->firstOfMonth();
+        // dd($year_ago);
+       $messages = Message::select(DB::raw('COUNT(id) AS tot'), DB::raw('MONTH(message_date)'), DB::raw('YEAR(message_date)'))
+       ->where('user_id', '=', $user_id)
+       ->where('message_date', '>', $year_ago)
+       ->groupBy(DB::raw('MONTH(message_date), YEAR(message_date)'))
+
+       ->get();
+       $reviews = Review::select(DB::raw('COUNT(id) AS tot'), DB::raw('MONTH(send_date)'), DB::raw('YEAR(send_date)'))
+       ->where('user_id', '=', $user_id)
+       ->where('send_date', '>', $year_ago)
+       ->groupBy(DB::raw('MONTH(send_date), YEAR(send_date)'))
+       ->get();
+
+       $data = [
+           'messages' => $messages,
+           'reviews' => $reviews,
+           'succes' => true
+       ];
+        return $data;
     }
 }
