@@ -23,7 +23,7 @@
             @foreach ($services as $service)
                 <div class="card mb-4" style="height: 330px;">
                     <div class="card-body" style="padding: 0 20px;">
-                        <form action="{{ route('admin.service-update', ['id' => Auth::user()->id]) }}" method="post" enctype="multipart/form-data">
+                        <form action="{{ route('admin.service-update', ['id' => $service->id]) }}" method="post" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
 
@@ -55,7 +55,9 @@
                             </div>
                             {{-- END input#hourly_rate --}}
     
-                            <button class="btn btn-success"><i class="fas fa-check mr-2"></i>Salva modifiche</button>
+                            {{-- Button Modifica Prestazione --}}
+                            <button type="submit" class="btn btn-success">Modifica Prestazione</button>
+            
                         </form>
                         
                         {{-- Delete --}}
