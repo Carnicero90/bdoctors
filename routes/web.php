@@ -107,7 +107,7 @@ Route::prefix('admin')
         // --> index
         Route::get('payment/{id}', 'PaymentController@index')->name('pay');
         // --> make
-        Route::get('/payment/make', 'PaymentController@make')->name('payment.make');
+        Route::get('payment/make/{id}', 'PaymentController@make')->name('payment.make');
 
 
         /* -- MESSAGES --*/

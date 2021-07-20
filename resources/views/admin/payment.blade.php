@@ -18,12 +18,12 @@
         }, function(createErr, instance) {
             button.addEventListener('click', function() {
                 instance.requestPaymentMethod(function(err, payload) {
-                    $.get('{{ route('admin.payment.make') }}', {
+                    $.get('{{ route('admin.payment.make', ['id' => $plan->id ]) }}', {
                         payload
                     }, function(response) {
                         console.log(response);
                         if (response.success) {
-                            alert('Abbonamento avvenuto con s!ccesso@')
+                            alert('Abbonamento avvenuto con successo')
                             location.href = '/';
                         } else {
                             alert('Hai fallito perche sei un fallito');
@@ -37,7 +37,6 @@
 
 @section('content')
     <div class="container">
-        @dump($plan->name)
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div id="dropin-container"></div>

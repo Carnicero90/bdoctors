@@ -23,7 +23,7 @@ class PaymentController extends Controller
     public function make(Request $request)
     {
         //    TOTEST
-        $plan = Sponsorplan::find(1);
+        $plan = Sponsorplan::find(2);
 
         $payload = $request->input('payload', false);
         $user = Auth::user();
