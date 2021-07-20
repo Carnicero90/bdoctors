@@ -96,47 +96,68 @@
 
 @section('content')
     <div class="container">
-        <h1>Statistiche utente</h1>
+
+        {{-- HEADER --}}
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <div class="dashboard">
+                    @include('partials.dashboard-nav')
+                </div>
+            </div>
+        </div>
+        {{-- END HEADER --}}
+
+        <div class="mt-3 mb-4">
+            <h1>Statistiche utente</h1>
+        </div>
+
         <div class="row">
 
-            {{-- section#mails --}}
-            <section id="mails" class="col-6 mt-5 mb-5">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Messaggi ricevuti per mese</h2>
+            <div class="col-6 mb-5">
+                {{-- section#mails --}}
+                <section id="mails">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Messaggi ricevuti per mese</h2>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="messagesCanvas"></canvas>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <canvas id="messagesCanvas"></canvas>
-                    </div>
-                </div>
-            </section>
-            {{-- END section#mails --}}
+                </section>
+                {{-- END section#mails --}}
+            </div>
 
-            {{-- section#reviews --}}
-            <section id="reviews" class="col-6 mt-5 mb-5">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Recensioni ricevute per mese</h2>
+            <div class="col-6 mb-5">
+                {{-- section#reviews --}}
+                <section id="reviews">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Recensioni ricevute per mese</h2>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="reviewsCanvas"></canvas>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <canvas id="reviewsCanvas"></canvas>
-                    </div>
-                </div>
-            </section>
-            {{-- END section#reviews --}}
+                </section>
+                {{-- END section#reviews --}}
+            </div>
 
-            {{-- section#votes --}}
-            <section id="votes" class="col-6 mt-5 mb-5">
-                <div class="card">
-                    <div class="card-header">
-                        <h2>Voto medio recensioni per mese</h2>
+            <div class="col-6 mb-5">
+                {{-- section#votes --}}
+                <section id="votes">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2>Voto medio recensioni per mese</h2>
+                        </div>
+                        <div class="card-body">
+                            <canvas id="averageVotes"></canvas>
+                        </div>
                     </div>
-                    <div class="card-body">
-                        <canvas id="averageVotes"></canvas>
-                    </div>
-                </div>
-            </section>
-            {{-- END section#votes --}}
+                </section>
+                {{-- END section#votes --}}
+            </div>
+
         </div>
     </div>
 @endsection
