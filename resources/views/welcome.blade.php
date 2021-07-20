@@ -29,8 +29,8 @@
                 </div>
 
                 <!-- input ricerca da usare con VueJs -->
-                <div style="position: relative">
-                    <select class="select-category mr-1" name="catselector" v-model="selectedCategory" v-on:change="searchUser()" style="width: 200px; height: 35px; transform:translateY(+3px); padding-left: 15px; background-color: black; color: #888; border-radius: 3px;">
+                <div class="rel">
+                    <select class="select-category mr-1" name="catselector" v-model="selectedCategory" v-on:change="searchUser()">
                         <option value="0" selected disabled>Seleziona una categoria</option>
                         <option value="">Tutte le categorie</option>
                         @foreach ($categories as $category)
@@ -38,10 +38,10 @@
                         @endforeach
                     </select>
 
-                    <div v-if="searching" style="width: 200px; position: absolute; left: 26.75%; top: 105%; transform: translateX(-50%); z-index: 999;">
+                    <div v-if="searching" class="searchbox">
                         <ul class="list-group">
                             {{-- TODO: test --}}
-                            <li class="list-group-item" v-for="user in users" style="width: 220px; background-color: #111; border-color: #888; position: relative; padding: 10px;">
+                            <li class="list-group-item" v-for="user in users">
                                 <a :href="'bards/' + user.id" class="d-flex align-items-center" style="color: #888;">
                                     <div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden;" class="mr-2">
                                         <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="max-height: 40px;">
