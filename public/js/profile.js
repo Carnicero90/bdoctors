@@ -98,12 +98,14 @@ var app = new Vue({
   data: {
     numbers: 0,
     preload: '',
-    lines: 10
+    lines: 10 // loadedPic: false 
+    // TODO: vogliamo compaia magari qualcosa per lo store della nuova immagine
+
   },
   methods: {
     preloadPic: function preloadPic(event) {
       var f = event.target.files[0];
-      this.preload = URL.createObjectURL(f);
+      this.preload = URL.createObjectURL(f); // this.loadedPic = true;
     },
     destroy: function destroy(event) {
       event.target.parentNode.remove();
