@@ -10041,9 +10041,6 @@ header {
   z-index: 1;
   transition: 0.6s;
 }
-header img {
-  display: none;
-}
 header a {
   color: white !important;
 }
