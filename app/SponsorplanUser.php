@@ -26,4 +26,8 @@ class SponsorplanUser extends Model
 
         return $user_active_plans->isNotEmpty();
     }
+
+    protected $fillable = [
+        'user_id', 'success', 'sponsorplan_id', 'order_date', 'end_date', 'invoice' 
+    ];
 }

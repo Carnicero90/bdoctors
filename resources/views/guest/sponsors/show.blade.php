@@ -11,7 +11,7 @@
                 <div class="mb-4"><span class="card-text">Sponsorizzazione da {{ $sponsorPlan->duration_in_hours }} ore
                 </div>
                 @if (Auth::user())
-                    <div><a href="{{ route('sponsor-store', ['id' => $sponsorPlan->id]) }}"
+                    <div><a href="{{ route('admin.pay', ['id' => $sponsorPlan->id]) }}"
                             class="btn btn-success">Acquista a soli € {{ $sponsorPlan->pricing }}</a></div>
 
                 @else

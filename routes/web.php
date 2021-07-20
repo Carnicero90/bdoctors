@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Auth;
     GUEST
 =================== */
 /* -- MAIN -- */
+
 Route::get('/', 'HomeController@home');
 
 /* -- MESSAGES -- */
@@ -102,6 +103,13 @@ Route::prefix('admin')
         Route::post('/profile/store', 'ProfileController@createOrUpdate')
             ->name('profile-store');
 
+        /* -- PAYMENT --*/
+        // --> index
+        Route::get('payment/{id}', 'PaymentController@index')->name('pay');
+        // --> make
+        Route::get('/payment/make', 'PaymentController@make')->name('payment.make');
+
+
         /* -- MESSAGES --*/
         // --> index
         Route::get('/messages', 'MessageController@index')
@@ -145,13 +153,14 @@ Route::prefix('admin')
 /* ================
    TEST
 =================== */
+
 use Carbon\CarbonPeriod;
 use Carbon\Carbon;
 // route per provare dd e dump a caso
 Route::get('/prova', function () {
     $a = new CarbonPeriod('2018-1-1', '1 month', Carbon::now());
     $arr = [];
-    foreach($a as $tot) {
+    foreach ($a as $tot) {
         $arr[] = $tot->format('Y-m');
     }
     dump($arr);
