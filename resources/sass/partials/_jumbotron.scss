@@ -1,15 +1,13 @@
 // JUMBOTRON
 // TODO
 
-// Jumbotron container
-.jumbo-container {
-    transform: translateY(-1.4rem);
-}
-
-.jumbotron {
-    background-image: url('/img/jumbotron.jpg');
+.mio-jumbotron {
+    // background-image: url('/img/jumbotron.jpg');
+    background-color: black;
     background-size: cover;
-    padding: 30px 0 90px 0;
+    background-position: right;
+    padding: 90px 0;
+    height: 100vh;
 
     .jumbo-logo {
         width: 40%;

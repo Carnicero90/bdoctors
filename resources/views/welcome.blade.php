@@ -18,9 +18,9 @@
 
 @section('content')
     {{-- vue container --}}
-    <div id="root" class="jumbo-container">
+    <div id="root">
 
-        <div class="jumbotron">
+        <div class="mio-jumbotron">
 
             <div class="container">
 

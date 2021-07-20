@@ -1,5 +1,6 @@
 {{-- HEADER --}}
-    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<header>
+    <nav class="navbar navbar-expand-md navbar-light">
         <div class="container">
             <ul class="navbar-nav left-menu" style="align-items: center">
                 <li class="nav-item">
@@ -63,5 +64,13 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav> 
+</header>
+<script type="text/javascript">
+    window.addEventListener('scroll', function() {
+        let header = document.querySelector("header");
+        header.classList.toggle("sticky", window.scrollY > 0);
+    })
+</script>
+    
 

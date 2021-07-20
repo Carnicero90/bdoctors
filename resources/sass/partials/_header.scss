@@ -1,4 +1,42 @@
 // HEADER
+// Sticky Header
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    transition: 0.6s;
+
+    img {
+        display: none;
+    }
+    
+    a {
+        color: white !important;
+    }
+
+    nav {
+        position: relative;
+        transition: 0.6s;
+    }
+
+    &.sticky {
+        background-color: white;
+        transition: 0.6s;
+    }
+}
+
+.sticky {
+    a {
+        color: black !important;
+    }
+
+    img {
+        display: block;
+    }
+}
+
 // Logo
 .logo {
     width: 60px;
