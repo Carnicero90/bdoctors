@@ -6,7 +6,7 @@
             <div class="d-flex justify-content-around pt-5 xs-container">
                 <!-- Logo -->
                 <div class="flex-son">
-                    <img src="../img/boolbards-logo-white-1.png" alt="BoolBards Logo">
+                    <img src="{{asset('img/boolbards-logo-white-1.png')}}" alt="BoolBards Logo">
                 </div>
 
                 <!-- About me -->
@@ -23,84 +23,84 @@
 
                             <li class="categories-li">
                                 <i class="fas fa-chevron-right"></i>
-                                <a href="http://127.0.0.1:8000/categories/violinisti">
+                                <a href="{{route("category-page", ["slug" => "violinisti"])}}">
                                    Violinisti
                                 </a>
                             </li>
 
                             <li class="categories-li">
                                 <i class="fas fa-chevron-right"></i>
-                                <a href="http://127.0.0.1:8000/categories/dj">
+                                <a href="{{route("category-page", ["slug" => "dj"])}}">
                                    Dj
                                 </a>
                             </li>
 
                             <li class="categories-li">
                                 <i class="fas fa-chevron-right"></i>
-                                <a href="http://127.0.0.1:8000/categories/cantanti">
+                                <a href="{{route("category-page", ["slug" => "cantanti"])}}">
                                    Cantanti
                                 </a>
                             </li>
 
                             <li class="categories-li">
                                 <i class="fas fa-chevron-right"></i>
-                                <a href="http://127.0.0.1:8000/categories/batteristi">
+                                <a href="{{route("category-page", ["slug" => "batteristi"])}}">
                                    Batteristi
                                 </a>
                             </li>
 
                             <li class="categories-li">
                                 <i class="fas fa-chevron-right"></i>
-                                <a href="http://127.0.0.1:8000/categories/bassisti">
+                                <a href="{{route("category-page", ["slug" => "bassisti"])}}">
                                    Bassisti
                                 </a>
                             </li>
 
                             <li class="categories-li">
                                 <i class="fas fa-chevron-right"></i>
-                                <a href="http://127.0.0.1:8000/categories/chitarristi">
+                                <a href="{{route("category-page", ["slug" => "chitarristi"])}}">
                                    Chitarristi
                                 </a>
                             </li>
 
                             <li class="categories-li">
                                 <i class="fas fa-chevron-right"></i>
-                                <a href="http://127.0.0.1:8000/categories/sassofonisti">
+                                <a href="{{route("category-page", ["slug" => "sassofonisti"])}}">
                                    Sassofonisti
                                 </a>
                             </li>
 
                             <li class="categories-li">
                                 <i class="fas fa-chevron-right"></i>
-                                <a href="http://127.0.0.1:8000/categories/registrazione-e-mixaggio">
+                                <a href="{{route("category-page", ["slug" => "registrazione-e-mixaggio"])}}">
                                    Rec & Mix
                                 </a>
                             </li>
 
                             <li class="categories-li">
                                 <i class="fas fa-chevron-right"></i>
-                                <a href="http://127.0.0.1:8000/categories/percussionisti">
+                                <a href="{{route("category-page", ["slug" => "percussionisti"])}}">
                                    Percussionisti
                                 </a>
                             </li>
 
                             <li class="categories-li">
                                 <i class="fas fa-chevron-right"></i>
-                                <a href="http://127.0.0.1:8000/categories/tastieristi">
+                                <a href="{{route("category-page", ["slug" => "tastieristi"])}}">
                                    Tastieristi
                                 </a>
                             </li>
 
                             <li class="categories-li">
                                 <i class="fas fa-chevron-right"></i>
-                                <a href="http://127.0.0.1:8000/categories/trombettisti">
+                                <a href="{{route("category-page", ["slug" => "trombettisti"])}}">
                                    Trombettisti
                                 </a>
                             </li>
 
                             <li class="categories-li">
                                 <i class="fas fa-chevron-right"></i>
-                                <a href="http://127.0.0.1:8000/categories/flautisti">
+                                <a href="{{route("category-page", ["slug" => "flautisti"])}}">
                                    Flautisti
                                 </a>
                             </li>
