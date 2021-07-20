@@ -215,11 +215,14 @@ var app = new Vue({
     searchParams: function searchParams() {
       return {
         name: this.searchString,
-        cat: this.selectedCategory || ''
+        cat: this.advsearchCat
       };
     },
     searching: function searching() {
       return this.searchString.length > 0;
+    },
+    advsearchCat: function advsearchCat() {
+      return this.selectedCategory || '';
     }
   }
 });
@@ -233,7 +236,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Tom/BDoctors/bdoctors/resources/js/guest/home.js */"./resources/js/guest/home.js");
+module.exports = __webpack_require__(/*! /Users/filippomontani/becci/bdoctors/resources/js/guest/home.js */"./resources/js/guest/home.js");
 
 
 /***/ })

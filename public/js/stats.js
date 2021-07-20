@@ -81,64 +81,82 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/guest/review.js":
-/*!**************************************!*\
-  !*** ./resources/js/guest/review.js ***!
-  \**************************************/
+/***/ "./resources/js/admin/stats.js":
+/*!*************************************!*\
+  !*** ./resources/js/admin/stats.js ***!
+  \*************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-var app = new Vue({
-  el: '#root',
+console.log("test");
+var messagesReviews = document.getElementById("messagesReviews").getContext("2d");
+var messagesCanvas = document.getElementById("messagesCanvas").getContext("2d");
+var reviewsCanvas = document.getElementById("reviewsCanvas").getContext("2d");
+var months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
+var messagesNumber = ["8", "9", "7", "10", "6", "9", "10", "9", "12", "8", "7", "14"];
+var reviewsNumber = ["7", "10", "6", "9", "10", "9", "12", "8", "7", "14", "8", "9"];
+var messagesReviewsChart = new Chart(messagesReviews, {
+  type: "bar",
   data: {
-    value: -1,
-    votes: [],
-    clickedValue: -1,
-    selectedValue: null
-  },
-  methods: {
-    fillStars: function fillStars(index) {
-      this.value = index;
-    },
-    selectVoteValue: function selectVoteValue(index, voteValue) {
-      // al click
-      this.clickedValue = index;
-      this.selectedValue = voteValue;
-    },
-    backToPreviousVoteValue: function backToPreviousVoteValue() {
-      // al mouseleave
-      if (this.clickedValue > -1) // verifica se l'utente ha gia' selezionato un voto
-        {
-          this.fillStars(this.clickedValue);
-        } else {
-        this.fillStars(-1);
+    labels: months,
+    datasets: [{
+      label: "Numero messaggi",
+      data: messagesNumber,
+      backgroundColor: ["#e3342f"]
+    }, {
+      label: "Numero recensioni",
+      data: reviewsNumber,
+      backgroundColor: ["#3490dc"]
+    }],
+    options: {
+      legend: {
+        display: false,
+        position: "right"
       }
     }
   },
-  mounted: function mounted() {
-    var _this = this;
-
-    axios.get('../api/votes/index').then(function (result) {
-      _this.votes = result.data.votes;
-    });
-  }
+  options: {}
+});
+var messagesChart = new Chart(messagesCanvas, {
+  type: "bar",
+  data: {
+    labels: months,
+    datasets: [{
+      label: "Numero messaggi",
+      data: messagesNumber,
+      backgroundColor: ["#e3342f"]
+    }]
+  },
+  options: {}
+});
+var reviewsChart = new Chart(reviewsCanvas, {
+  type: "bar",
+  data: {
+    labels: months,
+    datasets: [{
+      label: "Numero recensioni",
+      data: reviewsNumber,
+      backgroundColor: ["#3490dc"]
+    }]
+  },
+  options: {}
 });
 
 /***/ }),
 
-/***/ 4:
-/*!********************************************!*\
-  !*** multi ./resources/js/guest/review.js ***!
-  \********************************************/
+/***/ 6:
+/*!*******************************************!*\
+  !*** multi ./resources/js/admin/stats.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/filippomontani/becci/bdoctors/resources/js/guest/review.js */"./resources/js/guest/review.js");
+module.exports = __webpack_require__(/*! /Users/filippomontani/becci/bdoctors/resources/js/admin/stats.js */"./resources/js/admin/stats.js");
 
 
 /***/ })

@@ -1,15 +1,19 @@
 @extends('layouts.app')
 @section('header-scripts')
+
     {{-- Axios --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     {{-- Vuejs --}}
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
 @endsection
 
 @section('footer-scripts')
+
+    {{-- file JavaScript --}}
     <script src="{{ asset('js/home.js') }}"></script>
+
 @endsection
 
 @section('content')
@@ -20,23 +24,25 @@
 
             <div class="container">
 
-                <h1 class="main-title mb-4" style="font-size: 70px"><img class="mr-3" style="height: 80px; transform: translateY(-5px);" src="{{asset('img/logo-jumb.png')}}" alt=""></i>BOOLBARDS</h1>
+                <div>
+                    <img class="jumbo-logo" src="{{asset('img/boolbards-white-1.png')}}" alt="">
+                </div>
 
                 <!-- input ricerca da usare con VueJs -->
-                <div style="position: relative">
-                    <select class="select-category mr-1" name="" id="" v-model="selectedCategory" v-on:change="searchUser()" style="width: 200px; height: 35px; transform:translateY(+3px); padding-left: 15px; background-color: black; color: #888; border-radius: 3px;">
+                <div class="rel">
+                    <select class="select-category c-1 mr-1" name="catselector" v-model="selectedCategory" v-on:change="searchUser()">
                         <option value="0" selected disabled>Seleziona una categoria</option>
-                        <option value="">All</option>
+                        <option value="">Tutte le categorie</option>
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ ucfirst($category->name) }}</option>
                         @endforeach
                     </select>
 
-                    <div v-if="searching" style="width: 200px; position: absolute; left: 26.75%; top: 105%; transform: translateX(-50%); z-index: 999;">
+                    <div v-if="searching" class="searchbox">
                         <ul class="list-group">
                             {{-- TODO: test --}}
-                            <li class="list-group-item" v-for="user in users" style="width: 220px; background-color: #111; border-color: #888; position: relative; padding: 10px;">
-                                <a :href="'bards/' + user.id" class="d-flex align-items-center" style="color: #888;">
+                            <li class="list-group-item" v-for="user in users">
+                                <a :href="'bards/' + user.id" class="d-flex align-items-center c-1">
                                     <div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden;" class="mr-2">
                                         <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="max-height: 40px;">
                                         <img class="mr-2" v-else src="{{asset("/img/user-img.png")}}" alt="" style="max-height: 40px;">
@@ -48,7 +54,7 @@
                                 </a>
                             </li>
                             <li class="list-group-item" style="width: 220px; background-color: #111; border-color: #888;">
-                                <a style="color: #888" :href=`/advancedsearch?name=${searchString}&cat=${selectedCategory}`><i class="fas fa-search mr-2"></i>Mostra più risultati</a>
+                                <a :href="'/advancedsearch?name=' + searchString + '&cat=' + advsearchCat" class="c-1"><i class="fas fa-search mr-2"></i>Mostra più risultati</a>
                             </li>
                         </ul>
                     </div>

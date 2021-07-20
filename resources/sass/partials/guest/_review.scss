@@ -14,4 +14,16 @@
         bottom: -1em;
         text-transform: uppercase;
     }
+
+    .star {
+        text-shadow: 1px 1px 1px #000;
+        &.empty {
+            // TOTEST
+            color: inherit;
+        }
+        &.filled {
+            // TOTEST;
+            color: $red;
+        }
+    }
 }

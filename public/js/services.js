@@ -81,64 +81,43 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 7);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/js/guest/review.js":
-/*!**************************************!*\
-  !*** ./resources/js/guest/review.js ***!
-  \**************************************/
+/***/ "./resources/js/admin/services.js":
+/*!****************************************!*\
+  !*** ./resources/js/admin/services.js ***!
+  \****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
 var app = new Vue({
   el: '#root',
   data: {
-    value: -1,
-    votes: [],
-    clickedValue: -1,
-    selectedValue: null
+    show: false,
+    old_services: []
   },
   methods: {
-    fillStars: function fillStars(index) {
-      this.value = index;
-    },
-    selectVoteValue: function selectVoteValue(index, voteValue) {
-      // al click
-      this.clickedValue = index;
-      this.selectedValue = voteValue;
-    },
-    backToPreviousVoteValue: function backToPreviousVoteValue() {
-      // al mouseleave
-      if (this.clickedValue > -1) // verifica se l'utente ha gia' selezionato un voto
-        {
-          this.fillStars(this.clickedValue);
-        } else {
-        this.fillStars(-1);
-      }
+    showForm: function showForm() {
+      this.show = true;
+      console.log(this.show);
     }
   },
-  mounted: function mounted() {
-    var _this = this;
-
-    axios.get('../api/votes/index').then(function (result) {
-      _this.votes = result.data.votes;
-    });
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
 
-/***/ 4:
-/*!********************************************!*\
-  !*** multi ./resources/js/guest/review.js ***!
-  \********************************************/
+/***/ 7:
+/*!**********************************************!*\
+  !*** multi ./resources/js/admin/services.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/filippomontani/becci/bdoctors/resources/js/guest/review.js */"./resources/js/guest/review.js");
+module.exports = __webpack_require__(/*! /Users/filippomontani/becci/bdoctors/resources/js/admin/services.js */"./resources/js/admin/services.js");
 
 
 /***/ })

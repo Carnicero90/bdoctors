@@ -1,4 +1,17 @@
 // COMMON
+/* =============
+    COLORS
+   ============= */
+.c-1 {
+    color: $c-1;
+}
+
+// TEST
+main {
+    background: rgb(173,219,199);
+    background: linear-gradient(360deg, rgba(173,219,199,0.9023984593837535) 0%, rgba(223,231,236,0.8743872549019608) 0%);
+}
+
 input, select {
     outline: none;
 }
@@ -6,5 +19,17 @@ input, select {
 .zoom {
     &:hover {
         transform: scale(107%);
+    }
+}
+
+.rel {
+    position: relative;
+}
+
+.no-decorations {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
     }
 }

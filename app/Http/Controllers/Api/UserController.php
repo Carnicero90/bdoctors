@@ -5,9 +5,11 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
-use Hamcrest\Arrays\IsArray;
+use App\Review;
+use App\Message;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Carbon\CarbonPeriod;
 
 class UserController extends Controller
 {
@@ -96,5 +98,40 @@ class UserController extends Controller
             'success' => true
         ];
         return response()->json($data);
+    }
+
+    public function stats(Request $request) {
+        $user_id = $request->id;
+        $year_ago  = Carbon::now()->subMonths(12)->firstOfMonth();
+        // dd($year_ago);
+       $messages = Message::select(DB::raw('COUNT(id) AS tot'), DB::raw('DATE_FORMAT(message_date, "%Y-%m") AS date'))
+       ->where('user_id', '=', $user_id)
+       ->where('message_date', '>', $year_ago)
+       ->groupBy('date')
+       ->orderBy('date')
+
+       ->get();
+
+       $reviews = Review::select(DB::raw('COUNT(reviews.id) AS tot'), DB::raw('AVG(votes.value) AS avg_vote'), DB::raw('DATE_FORMAT(send_date, "%Y-%m") AS date'))
+       ->where('user_id', '=', $user_id)
+       ->where('send_date', '>', $year_ago)
+       ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
+       ->groupBy('date')
+       ->orderBy('date')
+       
+       ->get();
+
+       $year_ago = new CarbonPeriod($year_ago, '1 month', Carbon::now());
+       $last_year = [];
+       foreach ($year_ago as $month) {
+           $last_year[] = $month->format('Y-m');
+       };
+       $data = [
+           'messages' => $messages,
+           'reviews' => $reviews,
+           'last_year' => $last_year,
+           'succes' => true
+       ];
+        return $data;
     }
 }

@@ -37,11 +37,7 @@ class ServiceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $request->validate([
-            'title' => 'string | max:200 | required',
-            'hourly_rate' => 'numeric | required | between:0.00,1000000.00',
-            'description' => 'string | nullable'
-        ]
+        $request->validate($this->paramsToValidate()
         );
 
         $modif_service = Service::findOrFail($id);
@@ -53,14 +49,23 @@ class ServiceController extends Controller
             abort(403, 'Accesso non autorizzato');
         }        
 
+        $data = $request->all();
+        $modif_service->update($data);
 
-        // TODO Update
-        $modif_service->update();
-
-        return redirect()->route('admin.services');
+        return redirect()->route('admin.services')->with('success', 'Prestazione modificata correttamente.');
     }
 
-    public function create($id) {
+    public function create(Request $request) {
+
+                $request->validate($this->paramsToValidate());
+                $data = $request->all();
+                $service = new Service();
+                $service->user_id = Auth::user()->id;
+                $service->fill($data);
+                $service->save();
+
+                return back()->with('success', 'Prestazione salvata correttamente.');
+
 
     }
 
@@ -77,6 +82,14 @@ class ServiceController extends Controller
             $service->delete();
         }
 
-        return back();
+        return back()->with('success', 'Prestazione eliminata correttamente.');
+    }
+
+    public function paramsToValidate() {
+        return [
+            'title' => 'string | max:200 | required',
+            'hourly_rate' => 'numeric | required | between:0.00,1000000.00',
+            'description' => 'string | nullable'
+        ];
     }
 }

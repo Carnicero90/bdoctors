@@ -3,10 +3,10 @@
 <footer>
     <div class="bg-footer" style="padding: 0">
         <div class="container inner" style="padding: 50px 0;">
-            <div class="d-flex justify-content-around">
+            <div class="d-flex justify-content-around pt-5">
                 <!-- Logo -->
-                <div>
-                    <img src="../img/logo-jumb.png" alt="BoolBards Logo">
+                <div class="flex-son">
+                    <img src="../img/boolbards-logo-white-1.png" alt="BoolBards Logo">
                 </div>
 
                 <!-- About me -->
@@ -19,9 +19,90 @@
                     <!-- Category links -->
                     <div class="flex-son">
                         <h4>Categorie</h4>
-                        <ul class="category-links">
-                            <li v-for="item in category">
+                        <ul class="category-links d-flex categories-ul">
+
+                            <li class="categories-li">
                                 <i class="fas fa-chevron-right"></i>
+                                <a href="http://127.0.0.1:8000/categories/violinisti">
+                                   Violinisti
+                                </a>
+                            </li>
+
+                            <li class="categories-li">
+                                <i class="fas fa-chevron-right"></i>
+                                <a href="http://127.0.0.1:8000/categories/dj">
+                                   Dj
+                                </a>
+                            </li>
+
+                            <li class="categories-li">
+                                <i class="fas fa-chevron-right"></i>
+                                <a href="http://127.0.0.1:8000/categories/cantanti">
+                                   Cantanti
+                                </a>
+                            </li>
+
+                            <li class="categories-li">
+                                <i class="fas fa-chevron-right"></i>
+                                <a href="http://127.0.0.1:8000/categories/batteristi">
+                                   Batteristi
+                                </a>
+                            </li>
+
+                            <li class="categories-li">
+                                <i class="fas fa-chevron-right"></i>
+                                <a href="http://127.0.0.1:8000/categories/bassisti">
+                                   Bassisti
+                                </a>
+                            </li>
+
+                            <li class="categories-li">
+                                <i class="fas fa-chevron-right"></i>
+                                <a href="http://127.0.0.1:8000/categories/chitarristi">
+                                   Chitarristi
+                                </a>
+                            </li>
+
+                            <li class="categories-li">
+                                <i class="fas fa-chevron-right"></i>
+                                <a href="http://127.0.0.1:8000/categories/sassofonisti">
+                                   Sassofonisti
+                                </a>
+                            </li>
+
+                            <li class="categories-li">
+                                <i class="fas fa-chevron-right"></i>
+                                <a href="http://127.0.0.1:8000/categories/registrazione-e-mixaggio">
+                                   Rec & Mix
+                                </a>
+                            </li>
+
+                            <li class="categories-li">
+                                <i class="fas fa-chevron-right"></i>
+                                <a href="http://127.0.0.1:8000/categories/percussionisti">
+                                   Percussionisti
+                                </a>
+                            </li>
+
+                            <li class="categories-li">
+                                <i class="fas fa-chevron-right"></i>
+                                <a href="http://127.0.0.1:8000/categories/tastieristi">
+                                   Tastieristi
+                                </a>
+                            </li>
+
+                            <li class="categories-li">
+                                <i class="fas fa-chevron-right"></i>
+                                <a href="http://127.0.0.1:8000/categories/trombettisti">
+                                   Trombettisti
+                                </a>
+                            </li>
+
+                            <li class="categories-li">
+                                <i class="fas fa-chevron-right"></i>
+                                <a href="http://127.0.0.1:8000/categories/flautisti">
+                                   Flautisti
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -29,9 +110,11 @@
                     <!-- Contact Info -->
                     <div class="flex-son">
                         <h4>Contatti</h4>
-                        <ul>
-                            <li v-for="item in contact"></li>
-                        </ul>
+                        <div class="contatti">
+                            Becci di Boolbards, Italy <br>
+                            Piazza Cinque Giornate 10 Cap 20129 <br>
+                            Numero REA: MI - 2078111 Milano (MI), Italia
+                        </div>
                         <div class="social-icons">
                             <i class="fab fa-facebook-f"></i>
                             <i class="fab fa-twitter"></i>

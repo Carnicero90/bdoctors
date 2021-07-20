@@ -132,8 +132,8 @@ Route::prefix('admin')
         Route::get('/services', 'ServiceController@index')
             ->name('services');
         // --> store   
-        Route::post('/services/{id}', 'ServiceController@create')
-            ->name('services-store');
+        Route::post('/services/create', 'ServiceController@create')
+            ->name('service-create');
         // --> update
         Route::put('/services/update/{id}', 'ServiceController@update')
             ->name('service-update');
@@ -145,8 +145,14 @@ Route::prefix('admin')
 /* ================
    TEST
 =================== */
+use Carbon\CarbonPeriod;
+use Carbon\Carbon;
 // route per provare dd e dump a caso
 Route::get('/prova', function () {
-    return 'un solo ' . trans_choice('categories.chitarrista', 1) .
-    ', tanti ' . trans_choice('categories.chitarrista', 3);
+    $a = new CarbonPeriod('2018-1-1', '1 month', Carbon::now());
+    $arr = [];
+    foreach($a as $tot) {
+        $arr[] = $tot->format('Y-m');
+    }
+    dump($arr);
 });

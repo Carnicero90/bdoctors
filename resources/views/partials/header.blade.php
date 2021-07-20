@@ -1,11 +1,10 @@
 {{-- HEADER --}}
-<div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
-            <ul class="navbar-nav ml-auto left-menu">
+            <ul class="navbar-nav left-menu" style="align-items: center">
                 <li class="nav-item">
                     <a class="navbar-brand logo" href="/">
-                        <img src="{{ asset('img/logo.png') }}" alt="Logo">
+                        <img src="{{ asset('img/boolbards-logo-black-1.png') }}" alt="Logo">
                     </a>
                 </li>
                 <li class="nav-item">
@@ -44,7 +43,8 @@
                     @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{-- TO REMEMBER: rimosso v-pre in fondo a tag precedente, non dovrebbe contare --}}
                                 {{ Auth::user()->name }}
                             </a>
 
@@ -65,7 +65,3 @@
         </div>
     </nav>
 
-    <main class="py-4" style="min-height: calc(100vh - 87px);">
-        @yield('content')
-    </main>
-</div>

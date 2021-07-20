@@ -32,6 +32,7 @@ Route::prefix('categories')
 
 Route::get('search', 'Api\UserController@users')->name('search');
 Route::get('sponsored', 'Api\UserController@sponsoredUsers');
+Route::get('stats', 'Api\UserController@stats');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

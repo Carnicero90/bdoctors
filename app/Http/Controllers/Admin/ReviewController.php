@@ -14,7 +14,7 @@ class ReviewController extends Controller
         $user = Auth::user();
 
         $reviews = Review::where('user_id', '=', $user->id)
-        ->orderByDesc('created_at')
+        ->orderByDesc('send_date')
         ->get();
 
         $data = [

@@ -5,13 +5,13 @@
 
     .dash-list {
         padding-top: 10px;
-        border-bottom: 1px solid #dee2e6;
+        border-bottom: 1px solid #d2d2d2;
         justify-content: space-between;
     }
     .dash-link {
         text-decoration: none;
         padding-bottom: 30px;
-        border-bottom: 2px solid #f8fafc;
+        border-bottom: 2px solid transparent;
 
         &:hover {
             border-bottom: 2px solid $blue;
