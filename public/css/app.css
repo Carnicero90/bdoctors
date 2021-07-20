@@ -10002,6 +10002,13 @@ h3 {
     border-color: #dee2e6;
   }
 }
+/* =============
+    COLORS
+   ============= */
+.c-1 {
+  color: #888;
+}
+
 main {
   background: #addbc7;
   background: linear-gradient(360deg, rgba(173, 219, 199, 0.9023984594) 0%, rgba(223, 231, 236, 0.8743872549) 0%);
@@ -10218,7 +10225,6 @@ footer .copyright span {
   transform: translateY(3px);
   padding-left: 15px;
   background-color: black;
-  color: #888;
   border-radius: 3px;
 }
 

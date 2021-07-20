@@ -2,10 +2,10 @@
     "/js/advsearch.js": "/js/advsearch.js",
     "/js/api.js": "/js/api.js",
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css",
     "/js/home.js": "/js/home.js",
     "/js/profile.js": "/js/profile.js",
     "/js/review.js": "/js/review.js",
     "/js/services.js": "/js/services.js",
-    "/js/stats.js": "/js/stats.js"
+    "/js/stats.js": "/js/stats.js",
+    "/css/app.css": "/css/app.css"
 }

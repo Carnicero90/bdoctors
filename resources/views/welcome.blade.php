@@ -30,7 +30,7 @@
 
                 <!-- input ricerca da usare con VueJs -->
                 <div class="rel">
-                    <select class="select-category mr-1" name="catselector" v-model="selectedCategory" v-on:change="searchUser()">
+                    <select class="select-category c-1 mr-1" name="catselector" v-model="selectedCategory" v-on:change="searchUser()">
                         <option value="0" selected disabled>Seleziona una categoria</option>
                         <option value="">Tutte le categorie</option>
                         @foreach ($categories as $category)
@@ -42,7 +42,7 @@
                         <ul class="list-group">
                             {{-- TODO: test --}}
                             <li class="list-group-item" v-for="user in users">
-                                <a :href="'bards/' + user.id" class="d-flex align-items-center" style="color: #888;">
+                                <a :href="'bards/' + user.id" class="d-flex align-items-center c-1">
                                     <div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden;" class="mr-2">
                                         <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="max-height: 40px;">
                                         <img class="mr-2" v-else src="{{asset("/img/user-img.png")}}" alt="" style="max-height: 40px;">
@@ -54,7 +54,7 @@
                                 </a>
                             </li>
                             <li class="list-group-item" style="width: 220px; background-color: #111; border-color: #888;">
-                                <a style="color: #888" :href="'/advancedsearch?name=' + searchString + '&cat=' + advsearchCat"><i class="fas fa-search mr-2"></i>Mostra più risultati</a>
+                                <a :href="'/advancedsearch?name=' + searchString + '&cat=' + advsearchCat" class="c-1"><i class="fas fa-search mr-2"></i>Mostra più risultati</a>
                             </li>
                         </ul>
                     </div>
