@@ -3,7 +3,7 @@
 <footer>
     <div class="bg-footer" style="padding: 0">
         <div class="container inner" style="padding: 50px 0;">
-            <div class="d-flex justify-content-around pt-5">
+            <div class="d-flex justify-content-around pt-5 xs-container">
                 <!-- Logo -->
                 <div class="flex-son">
                     <img src="../img/boolbards-logo-white-1.png" alt="BoolBards Logo">

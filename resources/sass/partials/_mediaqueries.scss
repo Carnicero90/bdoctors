@@ -1,0 +1,23 @@
+// MEDIA QUERIES
+
+/* S */
+@media all and ( min-width: 576px ) and ( max-width: 991px ) {
+    .xs-container {
+        flex-direction: column;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+}
+
+/* XS */
+@media all and ( max-width: 575px ) {
+    .xs-container {
+        flex-direction: column;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+}
