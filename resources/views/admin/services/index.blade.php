@@ -91,7 +91,7 @@
                                 </form>
 
                                 {{-- Delete --}}
-                                <div class="text-right" style="transform: translateY(-38px);">
+                                <div class="text-right" style="transform: translateY(-38px); width: max-content; margin-left: auto;">
                                     <form action="{{ route('admin.service-destroy', ['id' => $service->id]) }}" method="post">
                                         @csrf
                                         @method('DELETE')

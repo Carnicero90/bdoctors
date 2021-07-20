@@ -26,7 +26,7 @@ class ReviewSeeder extends Seeder
         for ($i = 0; $i < 100; $i++)
         {
             $rev = new Review();
-            $rev->user_id = rand(1, User::count());
+            $rev->user_id = 2;
             $rev->vote_id = rand(1, Vote::count());
             $rev->author_name = $faker->name();
             $rev->author_email = $faker->email();

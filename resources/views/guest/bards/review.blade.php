@@ -37,10 +37,8 @@
 
                 {{-- voto recensione --}}
                 <div class="form-group">
-                    {{-- TODO: per ora lasciamo un h3, che poi potrebbe essere un label (dipende da cosa rispondono al TOASK sottostante) --}}
                     <h3>Come valuteresti il servizio offertoti da {{ $user->name }}?</h3>
                     <input type="hidden" name="user_id" value="{{ $user->id }}">
-                    {{-- TOASK: metto un select nascosto, per robe di usabilita? --}}
                     <div class="vote d-flex">
                         <input type="hidden" name="vote_id" :value="selectedValue">
                         <div v-for="vote, index in votes">
