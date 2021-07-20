@@ -49,7 +49,7 @@
                         datasets: [{
                             label: 'Recensioni ricevute',
                             data: reviews,
-                            backgroundColor: ["green"],
+                            backgroundColor: ["#4e8c8c"],
                             parsing: {
                                 yAxisKey: 'tot',
                                 xAxisKey: 'date'
@@ -64,7 +64,7 @@
                         datasets: [{
                             label: 'Messaggi ricevuti',
                             data: messages,
-                            backgroundColor: ["#e3342f", ],
+                            backgroundColor: ["#8c4e4e", ],
                             parsing: {
                                 yAxisKey: 'tot',
                                 xAxisKey: 'date',
@@ -80,7 +80,7 @@
                         datasets: [{
                             label: 'Media recensioni',
                             data: reviews,
-                            backgroundColor: ['blue', ],
+                            backgroundColor: ['#4e6b8c', ],
                             parsing: {
                                 yAxisKey: 'avg_vote',
                                 xAxisKey: 'date',

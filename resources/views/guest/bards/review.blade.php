@@ -20,6 +20,9 @@
             @include("partials.success-messages")
             @include("partials.validation-errors")
 
+            {{--TEST_LEVARE--}}
+            {{-- {{dd($reviews)}} --}}
+
             <h1>Lascia una recensione per {{ $user->name . ' ' . $user->lastname }}</h1>
             <div class="mb-4">
                 <h6>Categorie:</h6>
@@ -74,6 +77,30 @@
                     <textarea class="form-control" name="content" id="content" rows="10"
                         placeholder="Scrivi la recensione">{{ old('content') }}</textarea>
                 </div>
+
+                {{-- select servizio ricevuto --}}
+                <div class="form-group">
+                    <label for="content">Hai ricevuto la prestazione?</label>
+                    <select class="form-control" name="service_received" id="service_received">
+
+                        <option value="1">Si</option>
+
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                {{-- voto recensione --}}
+                {{-- <div class="form-group mt-4 mb-4">
+                    <label for="vote_id" class="mr-4">Come definiresti la prestazione dell'artista?</label>
+                    <select class="custom-select col-md-3" name="vote_id" id="vote_id">
+                        <option selected>Seleziona una valutazione</option>
+                        @foreach ($votes as $vote)
+                            <option value="{{ $vote->value }}">
+                                {{ $vote->value . ' - ' . ucfirst($vote->label) }}
+                            </option>
+                        @endforeach
+                    </select>
+                </div> --}}
 
                 {{-- partials di termini e condizioni --}}
                 @include('partials.terms-conditions')

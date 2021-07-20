@@ -16,10 +16,15 @@ class ReviewController extends Controller
         $user = User::findOrFail($id);
         $votes = Vote::all();
 
+        //Passo il model review riferito all'id dello user selezionato
+        $reviews = Review::where('user_id', '=', $user->id)
+            ->get();
+
 
         $data = [
             'votes' => $votes,
             'user' => $user,
+            'reviews' => $reviews
         ];
 
         return view("guest.bards.review", $data);
@@ -43,7 +48,12 @@ class ReviewController extends Controller
         $review->fill($form_data);
         $review->user_id = $id;
         $review->send_date = Carbon::now();
+
+        // Prendo l'input dalla select
+        $service_received = $request->input('service_received');
+
         $review->save();
+
 
         // con back() facciamo il redirect sulla stessa pagina, esempio:
         // return back()->with("success", "Recensione salvata correttamente");
