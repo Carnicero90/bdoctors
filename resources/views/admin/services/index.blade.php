@@ -29,7 +29,7 @@
         {{-- END HEADER --}}
 
             <div class="mt-3 mb-4">
-                <h1>Aggiungi o crea una prestazione</h1>
+                <h1>Aggiungi o crea un servizio</h1>
             </div>
 
             @include('partials.success-messages')
@@ -83,7 +83,7 @@
                                     </div>
                                     {{-- END input#hourly_rate --}}
 
-                                    {{-- Button Modifica Prestazione --}}
+                                    {{-- Button Modifica Servizio --}}
                                     <div class="mt-4">
                                         <button type="submit" class="btn btn-success"><i class="fas fa-check mr-2"></i>Salva modifiche</button>
                                     </div>
@@ -121,15 +121,15 @@
                         <form action="{{ route('admin.service-create') }}" method="post">
                             @csrf
                             @method('POST')
-                            {{-- Nome Prestazione --}}
+                            {{-- Nome Servizio --}}
                             <div class="form-group">
-                                <label for="service-name">Nome prestazione</label>
+                                <label for="service-name">Nome servizio</label>
                                 <input type="text" class="form-control" id="title" name="title" placeholder="Inserisci il nome del servizio">
                             </div>
 
-                            {{-- Descrizione Prestazione --}}
+                            {{-- Descrizione Servizio --}}
                             <div class="form-group">
-                                <label for="description">Descrizione la prestazione</label>
+                                <label for="description">Descrizione servizio</label>
                                 <textarea class="form-control" name="description" id="description" rows="3" placeholder="Descrivi il servizio offerto"></textarea>
                             </div>
 

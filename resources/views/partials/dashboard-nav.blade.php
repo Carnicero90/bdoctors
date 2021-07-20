@@ -12,10 +12,10 @@
         <div>Crea / Modifica profilo</div>
     </a>
 
-    {{-- Aggiungi/Modifica Prestazione --}}
+    {{-- Aggiungi/Modifica Servizio --}}
     <a class="dash-link hover-blue" href="{{ route('admin.services') }}">
         <i class="fas fa-user-plus mb-2" style="font-size: 20px;"></i>
-        <div>Aggiungi / Modifica prestazione</div>
+        <div>Aggiungi / Modifica servizio</div>
     </a>
 
     {{-- Acquista Piano Premium --}}

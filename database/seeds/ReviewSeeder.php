@@ -20,6 +20,7 @@ class ReviewSeeder extends Seeder
             $rev = new Review();
             $rev->fill($review);
             $rev->send_date = Carbon::now()->subDays(rand(0,365));
+            $rev->service_received = rand(0,1);
             $rev->save();
         }
 
@@ -32,7 +33,7 @@ class ReviewSeeder extends Seeder
             $rev->author_email = $faker->email();
             $rev->content = $faker->text();
             $rev->send_date = Carbon::now();
-            $rev->service_received = 0;
+            $rev->service_received = rand(0,1);
             $rev->send_date = Carbon::now()->subDays(rand(0,365));
             $rev->save();
         }

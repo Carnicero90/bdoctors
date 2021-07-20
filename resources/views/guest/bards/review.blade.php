@@ -80,7 +80,7 @@
 
                 {{-- select servizio ricevuto --}}
                 <div class="form-group">
-                    <label for="content">Hai ricevuto la prestazione?</label>
+                    <label for="content">Hai usufruito di un servizio?</label>
                     <select class="form-control" name="service_received" id="service_received">
 
                         <option value="1">Si</option>
@@ -91,7 +91,7 @@
 
                 {{-- voto recensione --}}
                 {{-- <div class="form-group mt-4 mb-4">
-                    <label for="vote_id" class="mr-4">Come definiresti la prestazione dell'artista?</label>
+                    <label for="vote_id" class="mr-4">Come definiresti il servizio dell'artista?</label>
                     <select class="custom-select col-md-3" name="vote_id" id="vote_id">
                         <option selected>Seleziona una valutazione</option>
                         @foreach ($votes as $vote)

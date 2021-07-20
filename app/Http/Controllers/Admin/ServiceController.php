@@ -52,7 +52,7 @@ class ServiceController extends Controller
         $data = $request->all();
         $modif_service->update($data);
 
-        return redirect()->route('admin.services')->with('success', 'Prestazione modificata correttamente.');
+        return redirect()->route('admin.services')->with('success', 'Servizio modificato correttamente.');
     }
 
     public function create(Request $request) {
@@ -64,7 +64,7 @@ class ServiceController extends Controller
                 $service->fill($data);
                 $service->save();
 
-                return back()->with('success', 'Prestazione salvata correttamente.');
+                return back()->with('success', 'Servizio salvato correttamente.');
 
 
     }
@@ -82,7 +82,7 @@ class ServiceController extends Controller
             $service->delete();
         }
 
-        return back()->with('success', 'Prestazione eliminata correttamente.');
+        return back()->with('success', 'Servizio eliminato correttamente.');
     }
 
     public function paramsToValidate() {

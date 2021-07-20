@@ -23,10 +23,10 @@
                     }, function(response) {
                         console.log(response);
                         if (response.success) {
-                            alert('Abbonamento avvenuto con successo')
+                            alert('Pagamento riuscito')
                             location.href = '/';
                         } else {
-                            alert('Hai fallito perche sei un fallito');
+                            alert('Pagamento fallito');
                         }
                     }, 'json');
                 });
@@ -38,9 +38,43 @@
 @section('content')
     <div class="container">
         <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h5>Carta per transazione fallita<i class="fas fa-times ml-2"></i></h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-secondary">4830635544216121</div>
+                        <div class="d-flex">
+                            <div class="text-secondary mr-5">04/23</div>
+                            <div class="text-secondary">963</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <h5>Carta per transazione riuscita<i class="fas fa-check ml-2"></i></h5>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="text-secondary">5555555555554444</div>
+                        <div class="d-flex">
+                            <div class="text-secondary mr-5">12/21</div>
+                            <div class="text-secondary">123</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div id="dropin-container"></div>
-                <button id="submit-button">PAGA</button>
+                <button id="submit-button" class="btn btn-success">PAGA</button>
             </div>
         </div>
     </div>
