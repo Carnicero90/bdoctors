@@ -31,6 +31,8 @@ class ReviewSeeder extends Seeder
             $rev->author_name = $faker->name();
             $rev->author_email = $faker->email();
             $rev->content = $faker->text();
+            $rev->send_date = Carbon::now();
+            $rev->service_received = 0;
             $rev->send_date = Carbon::now()->subDays(rand(0,365));
             $rev->save();
         }
