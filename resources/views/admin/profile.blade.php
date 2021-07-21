@@ -27,7 +27,7 @@
                     </div>
                 </div>
                 {{-- END HEADER --}}
-
+                
                 <div class="mt-3 mb-3">
                     <h1>Modifica profilo</h1>
                 </div>

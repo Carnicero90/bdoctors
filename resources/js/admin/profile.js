@@ -5,7 +5,7 @@ var app = new Vue({
         preload: '',
         lines: 10,
         loadedPic: false 
-        // TODO: vogliamo compaia magari qualcosa per lo store della nuova immagine
+
     },
     methods: {
         preloadPic(event) {
@@ -19,6 +19,7 @@ var app = new Vue({
         }
     },
     mounted() {
+        // 
         this.lines = document.getElementById('self_description').value.split(/\r\n|\r|\n/).length;
     },
 })

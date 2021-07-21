@@ -99,8 +99,7 @@ var app = new Vue({
     numbers: 0,
     preload: '',
     lines: 10,
-    loadedPic: false // TODO: vogliamo compaia magari qualcosa per lo store della nuova immagine
-
+    loadedPic: false
   },
   methods: {
     preloadPic: function preloadPic(event) {
@@ -113,6 +112,7 @@ var app = new Vue({
     }
   },
   mounted: function mounted() {
+    // 
     this.lines = document.getElementById('self_description').value.split(/\r\n|\r|\n/).length;
   }
 });
@@ -126,7 +126,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Tom/BDoctors/bdoctors/resources/js/admin/profile.js */"./resources/js/admin/profile.js");
+module.exports = __webpack_require__(/*! /Users/filippomontani/becci/bdoctors/resources/js/admin/profile.js */"./resources/js/admin/profile.js");
 
 
 /***/ })
