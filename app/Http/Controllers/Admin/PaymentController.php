@@ -35,7 +35,6 @@ class PaymentController extends Controller
         $plan = Sponsorplan::findOrFail($id);
 
         $payload = $request['payload'];
-        // $new_user_sponsored = new SponsorplanUser();
 
         $nonce = $payload['nonce'];
         $status = Transaction::sale([
