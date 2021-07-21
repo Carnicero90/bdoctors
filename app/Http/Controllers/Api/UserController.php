@@ -27,6 +27,7 @@ class UserController extends Controller
 
             DB::raw('avg(votes.value) as avg_vote'),
             DB::raw('MAX(success) AS sponsored'),
+            DB::raw("COUNT(reviews.id) AS nmb_reviews")
 
         )
             ->rightJoin('sponsorplan_users', 'sponsorplan_users.user_id', '=', 'users.id')
