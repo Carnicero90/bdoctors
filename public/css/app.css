@@ -10019,6 +10019,7 @@ h3 {
 }
 
 main {
+  margin-top: 70px;
   background: #addbc7;
   background: linear-gradient(360deg, rgba(173, 219, 199, 0.9023984594) 0%, rgba(223, 231, 236, 0.8743872549) 0%);
 }
