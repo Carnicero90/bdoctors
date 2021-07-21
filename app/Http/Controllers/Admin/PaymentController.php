@@ -34,7 +34,7 @@ class PaymentController extends Controller
         //    TOTEST
         $plan = Sponsorplan::findOrFail($id);
 
-        $payload = $request->input('payload', false);
+        $payload = $request['payload'];
         // $new_user_sponsored = new SponsorplanUser();
 
         $nonce = $payload['nonce'];

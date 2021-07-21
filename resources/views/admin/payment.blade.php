@@ -29,7 +29,8 @@
                         payload
                     }, function(response) {
                         console.log(response)
-                        status_input.value = response.success;
+                        status_input.value = response.success ? 1 : 0;
+                        console.log(status_input.value)
                         f.submit()
                         alert(response.success);
                         if (response.success) {

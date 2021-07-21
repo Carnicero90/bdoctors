@@ -36,6 +36,9 @@ class SponsorplanUserController extends Controller
         $new_subscription->invoice = 'bababa';
         $new_subscription->success = intval($request['success']);
         $new_subscription->save();
+        if (!$new_subscription->success) {
+            return dd($new_subscription);
+        }
 
         return redirect()->route("admin.dashboard")->with("success", "Abbonamento sottoscritto");
     }
