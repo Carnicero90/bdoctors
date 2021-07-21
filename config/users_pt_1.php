@@ -113,8 +113,24 @@ return         [
             'work_address' => 'room classe 31',
             'pic' =>  'img/ale.jpeg'
 
-        ]
+        ],
     ],
+
+    //     [
+    // 'user' => [
+    //     'name' => 'Al',
+    //     'lastname' => 'Pacino',
+    //     'address' => '',
+    //     'email' => '',
+    // ],
+    // 'profile' => [
+    //     'self_description' => '',
+    //     'phone_number' => '',
+    //     'work_address' => '',
+    //     'pic' =>  'img/.jpg'
+
+    // ],
+    // ],
     // TEMPLATE USER
     // [
     //     'user' => [

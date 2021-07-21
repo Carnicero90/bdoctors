@@ -22,3 +22,43 @@
         padding: 10px;
     }
 }
+
+.profile-img-search-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    .profile-img-search {
+        max-height: 40px;
+    }
+}
+
+.sponsored-badge-search {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.show-more-res {
+    width: 220px;
+    background-color: #111;
+    border-color: #888;
+}
+
+.search-a-bard {
+    width: 200px;
+    height: 37px;
+    transform: translateY(+2px);
+    padding-left: 30px;
+    background-color: transparent;
+    color: white;
+    border: 0;
+    border-bottom: 2px solid #444;
+}
+
+.search-icon {
+    color: #777;
+    top: 13px;
+    left: 7px;
+}

@@ -10,21 +10,31 @@
 
 @section('footer-scripts')
     <script>
-        var button = document.querySelector('#submit-button');
+        const f = document.querySelector('#payment-form');
+        const button = document.querySelector('#submit-button');
+        const status_input = document.querySelector('#status');
         braintree.dropin.create({
             authorization: "{{ \Braintree\ClientToken::generate() }}",
             container: '#dropin-container',
             locale: 'it_IT'
         }, function(createErr, instance) {
             button.addEventListener('click', function() {
+                event.preventDefault();
                 instance.requestPaymentMethod(function(err, payload) {
-                    $.get('{{ route('admin.payment.make', ['id' => $plan->id ]) }}', {
+                    console.log(payload);
+                    if (err) {
+                        alert(err);
+                    }
+                    $.get('{{ route('admin.payment.make', ['id' => $plan->id]) }}', {
                         payload
                     }, function(response) {
-                        console.log(response);
+                        console.log(response)
+                        status_input.value = response.success ? 1 : 0;
+                        console.log(status_input.value)
+                        f.submit()
+                        alert(response.success);
                         if (response.success) {
-                            alert('Pagamento riuscito')
-                            location.href = '/';
+
                         } else {
                             alert('Pagamento fallito');
                         }
@@ -73,7 +83,13 @@
         </div>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <div id="dropin-container"></div>
+                <form action="{{ route('sponsor-store', ['id' => $plan->id ]) }}" id="payment-form" method="get">
+                    @csrf
+                    @method('GET')
+                    <input type="hidden" name="success" id="status">
+                    <input type="hidden" name="sponsorplan_id">
+                    <div id="dropin-container"></div>
+                </form>
                 <button id="submit-button" class="btn btn-success">PAGA</button>
             </div>
         </div>

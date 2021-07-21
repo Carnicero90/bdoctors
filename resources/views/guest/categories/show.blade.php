@@ -8,7 +8,7 @@
 
         <div class="row mt-4 d-flex align-items-center">
             @foreach ($category_users as $user)
-                <div class="mr-4" style="width: 21%">
+                <div class="mr-4">
                     @include("partials.user-card-php")
                 </div>
             @endforeach

@@ -9,12 +9,12 @@
         {{-- TEST --}}
         <div class="mb-4 d-flex align-items-center">
             @if ($user->profile)
-                <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
-                    <img src="{{ asset('storage/' . $user->profile->pic) }}" alt="{{ $user->name . ' ' . $user->lastname }}" style="max-height: 100px; width: 100%; height: 100%; object-fit: cover;">
+                <div class="profile-img-dashboard-container">
+                    <img src="{{ asset('storage/' . $user->profile->pic) }}" alt="{{ $user->name . ' ' . $user->lastname }}" class="profile-img-dashboard">
                 </div>
             @else
-                <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
-                    <img src="{{ asset('img/user-img.png') }}" alt="" style="max-height: 100px;">
+                <div class="profile-img-dashboard-container">
+                    <img src="{{ asset('img/user-img.png') }}" alt="" class="profile-img-dashboard">
                 </div>
             @endif
             <div class="d-inline-block ml-4">
@@ -24,7 +24,7 @@
 
         <div class="mb-4">
             @foreach ($user->categories as $category)
-                <a class="btn btn-outline-dark" href="{{ route('category-page', ['slug' => $category->slug]) }}" style="padding: 2px 5px;">{{ $category->name }}</a>
+                <a class="btn btn-outline-dark profile-badge-category" href="{{ route('category-page', ['slug' => $category->slug]) }}">{{ $category->name }}</a>
             @endforeach
         </div>
 

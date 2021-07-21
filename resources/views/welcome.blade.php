@@ -44,25 +44,25 @@
                             {{-- TODO: test --}}
                             <li class="list-group-item" v-for="user in users">
                                 <a :href="'bards/' + user.id" class="d-flex align-items-center c-1">
-                                    <div style="width: 40px; height: 40px; border-radius: 50%; overflow: hidden;" class="mr-2">
-                                        <img class="mr-2" v-if="user.pic" :src="'/storage/' + user.pic" alt="" style="max-height: 40px;">
-                                        <img class="mr-2" v-else src="{{asset("/img/user-img.png")}}" alt="" style="max-height: 40px;">
+                                    <div class="mr-2 profile-img-search-container position-relative">
+                                        <img class="mr-2 profile-img-search" v-if="user.pic" :src="'/storage/' + user.pic" alt="">
+                                        <img class="mr-2 profile-img-search" v-else src="{{asset("/img/user-img.png")}}" alt="">
                                     </div>
                                     <span>@{{ user . name + ' ' + user . lastname }}</span>
-                                    <span v-if="user.sponsored" style="position: absolute; top: 5px; right: 5px;">
+                                    <span v-if="user.sponsored" class="sponsored-badge-search">
                                         <i class="fas fa-star"></i>
                                     </span>
                                 </a>
                             </li>
-                            <li class="list-group-item" style="width: 220px; background-color: #111; border-color: #888;">
+                            <li class="list-group-item" class="show-more-res">
                                 <a :href="'/advancedsearch?name=' + searchString + '&cat=' + advsearchCat" class="c-1"><i class="fas fa-search mr-2"></i>Mostra più risultati</a>
                             </li>
                         </ul>
                     </div>
 
-                    <div class="d-inline-block" style="position: relative;">
-                        <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="Cerca un bard" style="width: 200px; height: 37px; transform: translateY(+2px); padding-left: 30px; background-color: transparent; color: white; border: 0; border-bottom: 2px solid #444;">
-                        <i class="fas fa-search" style="color: #777; position: absolute; top: 13px; left: 7px;"></i>
+                    <div class="d-inline-block position-relative">
+                        <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="Cerca un bard" class="search-a-bard">
+                        <i class="fas fa-search position-absolute search-icon"></i>
                     </div>
 
                 </div>
@@ -86,7 +86,7 @@
         <div class="container">
             <h2 class="text-center">I nostri artisti del momento</h2>
             <div class="row mt-4 d-flex align-items-center justify-content-between">
-                <div v-for="user in sponsoredUsers" style="width: 21%">
+                <div v-for="user in sponsoredUsers">
                     @include("partials.user-card-api")
                 </div>
             </div>

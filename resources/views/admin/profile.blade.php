@@ -40,7 +40,7 @@
                 @method("POST")
 
                 {{-- input#image-file --}}
-                <img v-bind:src="preload" alt="" style="max-height:300px">
+                <img v-bind:src="preload" alt="" class="profile-preload-img">
                 <div class="form-group">
                     <label for="image-file">Carica un'immagine profilo</label>
                     <input type="file" v-on:change="preloadPic($event)" class="form-control-file" id="image-file" name="image-file">

@@ -43,7 +43,7 @@
                 <div class="col-12">
                     @foreach ($services as $key => $service)
                     {{-- div service --}}
-                        <div class="card mb-4" style="padding-bottom: 0;">
+                        <div class="card mb-4 service-card">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <div>
                                     <h3>{{ $service->title }}</h3>
@@ -78,7 +78,7 @@
                                     {{-- input#hourly_rate --}}
                                     <div class="form-group">
                                         <label for="hourly_rate" class="d-inline-block mr-1">Tariffa oraria</label>
-                                        <input type="number" step="0.50" class="form-control d-inline-block" id="hourly_rate" name="hourly_rate" value="{{ $service->hourly_rate }}" style="width: 100px;">
+                                        <input type="number" step="0.50" class="form-control d-inline-block hourly-rate" id="hourly_rate" name="hourly_rate" value="{{ $service->hourly_rate }}">
                                         <label class="d-inline-block ml-1">€</label>
                                     </div>
                                     {{-- END input#hourly_rate --}}
@@ -91,7 +91,7 @@
                                 </form>
 
                                 {{-- Delete --}}
-                                <div class="text-right" style="transform: translateY(-38px); width: max-content; margin-left: auto;">
+                                <div class="text-right delete-btn">
                                     <form action="{{ route('admin.service-destroy', ['id' => $service->id]) }}" method="post">
                                         @csrf
                                         @method('DELETE')
@@ -136,7 +136,7 @@
                             {{-- Tariffa oraria --}}
                             <div class="form-group">
                                 <label for="hourly_rate" class="d-inline-block mr-1">Tariffa oraria</label>
-                                <input type="number" step="0.50" class="form-control d-inline-block" style="width: 100px;" id="hourly_rate" name='hourly_rate' placeholder="00.00" min='0.00'>
+                                <input type="number" step="0.50" class="form-control d-inline-block hourly-rate" id="hourly_rate" name='hourly_rate' placeholder="00.00" min='0.00'>
                                 <label class="d-inline-block ml-1">€</label>
                             </div>
                             <button class="btn btn-success"><i class="fas fa-check mr-2"></i>Salva</button>

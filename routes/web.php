@@ -129,7 +129,7 @@ Route::prefix('admin')
         Route::get('/reviews/{id}', 'ReviewController@show')
             ->name('reviews-dettails');
 
-        /* -- REVIEWS --*/
+        /* -- STATISTICS --*/
         // --> index    
         Route::get('/statistics/{id}', 'StatisticController@index')
             ->name('statistics');
@@ -158,10 +158,5 @@ use Carbon\CarbonPeriod;
 use Carbon\Carbon;
 // route per provare dd e dump a caso
 Route::get('/prova', function () {
-    $a = new CarbonPeriod('2018-1-1', '1 month', Carbon::now());
-    $arr = [];
-    foreach ($a as $tot) {
-        $arr[] = $tot->format('Y-m');
-    }
-    dump($arr);
-});
+    dd(intval('true'));
+    });
