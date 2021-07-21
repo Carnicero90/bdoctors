@@ -1,5 +1,5 @@
 <a href="{{route("profile", ["id" => $user->id])}}" class="user-card-a">
-    <div class="card mb-4 zoom position-relative user-card">
+    <div class="card mb-4 zoom position-relative user-card shadow">
         <div class="card-body d-flex flex-column align-items-center">
             <div class="profile-img-card-container mb-3">
                 @if ($user->pic)
@@ -23,11 +23,20 @@
                     <span class="text-secondary"><small>nessun voto ricevuto</small></span>
                 </div>
             @endif
-            <div>
-                <span>
-                    <small><i class="fas fa-file-alt mr-2"></i>numero recensioni</small>
-                </span>
-            </div>
+            @if (count($user->reviews))
+                <div>
+                    <span>
+                        <small>
+                            <i class="fas fa-file-alt mr-2"></i>{{count($user->reviews)}}
+                            @if (count($user->reviews) == 1)
+                                recensione
+                            @elseif (count($user->reviews) > 1)
+                                recensioni    
+                            @endif
+                            </small>
+                    </span>
+                </div>
+            @endif
             @if ($user->sponsored)
                 <div class="recommended-badge">
                     <small class="badge badge-secondary">Consigliato</small>

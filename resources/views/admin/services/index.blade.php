@@ -65,21 +65,21 @@
                                     {{-- input#name --}}
                                     <div class="form-group">
                                         <label for="title">Nome servizio</label>
-                                        <input type="text" class="form-control" id="title" name="title" value="{{ $service->title }}">
+                                        <input type="text" class="form-control" id="title" name="title" value="{{ $service->title }}" placeholder="Inserisci il nome del servizio">
                                     </div>
                                     {{-- END input#name --}}
 
                                     {{-- input#description --}}
                                     <div class="form-group">
                                         <label for="description">Descrizione:</label>
-                                        <textarea class="form-control" name="description" id="description" rows="2" placeholder="Descrivi il servizio">{{ $service->description }}</textarea>
+                                        <textarea class="form-control" name="description" id="description" rows="2" placeholder="Descrivi il servizio offerto">{{ $service->description }}</textarea>
                                     </div>
                                     {{-- END input#description --}}
 
                                     {{-- input#hourly_rate --}}
                                     <div class="form-group">
                                         <label for="hourly_rate" class="d-inline-block mr-1">Tariffa oraria</label>
-                                        <input type="number" step="0.50" class="form-control d-inline-block hourly-rate" id="hourly_rate" name="hourly_rate" value="{{ $service->hourly_rate }}">
+                                        <input type="number" step="0.50" class="form-control d-inline-block hourly-rate" id="hourly_rate" name="hourly_rate" placeholder="00.00" value="{{ $service->hourly_rate }}">
                                         <label class="d-inline-block ml-1">€</label>
                                     </div>
                                     {{-- END input#hourly_rate --}}

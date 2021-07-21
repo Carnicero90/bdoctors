@@ -62,6 +62,39 @@
             </div>
             {{-- END HEADER --}}
 
+            <div class="row mt-4 mb-4">
+                <div class="col-4">
+                    <a href="{{ route('admin.statistics', ['id' => Auth::user()->id]) }}" style="color: #333">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <h3>Statistiche</h3>
+                                <img src="{{asset("img/dashboard/statistiche.png")}}" alt="" style="height: 200px;">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a class="hover-blue" href="{{ route('admin.reviews') }}" style="color: #333">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <h3>Profilo</h3>
+                                <img src="{{asset("img/dashboard/profilo.png")}}" alt="" style="height: 200px;">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a class="hover-blue" href="{{ route('admin.services') }}" style="color: #333">
+                        <div class="card shadow">
+                            <div class="card-body">
+                                <h3>Servizi</h3>
+                                <img src="{{asset("img/dashboard/servizi.png")}}" alt="" style="height: 200px;">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
             <div class="row mt-4">
 
                 {{-- Recensioni --}}

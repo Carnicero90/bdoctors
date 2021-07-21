@@ -1,5 +1,5 @@
 <a :href="'bards/' + user.id" class="user-card-a">
-    <div class="card mb-4 zoom position-relative user-card">
+    <div class="card mb-4 zoom position-relative user-card shadow">
         <div class="card-body d-flex flex-column align-items-center">
             <div class="profile-img-card-container mb-3">
                 <img v-if="user.pic" :src="'/storage/' + user.pic" alt="" class="profile-img-card">
