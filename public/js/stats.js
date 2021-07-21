@@ -98,8 +98,6 @@ var messagesReviews = document.getElementById("messagesReviews").getContext("2d"
 var messagesCanvas = document.getElementById("messagesCanvas").getContext("2d");
 var reviewsCanvas = document.getElementById("reviewsCanvas").getContext("2d");
 var months = ["Gennaio", "Febbraio", "Marzo", "Aprile", "Maggio", "Giugno", "Luglio", "Agosto", "Settembre", "Ottobre", "Novembre", "Dicembre"];
-var messagesNumber = ["8", "9", "7", "10", "6", "9", "10", "9", "12", "8", "7", "14"];
-var reviewsNumber = ["7", "10", "6", "9", "10", "9", "12", "8", "7", "14", "8", "9"];
 var messagesReviewsChart = new Chart(messagesReviews, {
   type: "bar",
   data: {

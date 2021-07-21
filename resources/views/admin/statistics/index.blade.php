@@ -24,6 +24,20 @@
                 const reviews = stats['reviews'];
                 const review_dates = reviews.map(item => item.date);
 
+                test = last_year.map(el => {
+                    return {
+                        tot: 0,
+                        date: el
+                    }
+                });
+                messages.forEach(element => {
+                    test[test.findIndex(el => el.date = element.date)].tot = element.tot;
+                    console.log(test[test.findIndex(el => el.date = element.date)])
+                });
+                console.log(test)
+                console.log(last_year)
+                console.log(messages)
+
                 // last_year.forEach(element => {
                 //    if (!message_dates.includes(element)) {
                 //        messages.push({
