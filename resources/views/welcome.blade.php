@@ -24,12 +24,13 @@
 
             <div class="container">
 
-                <div>
+                <div class="jumbo-container">
                     <img class="jumbo-logo" src="{{asset('img/boolbards-white-1.png')}}" alt="">
+                    <h1 class="display-2 heading-logo">Cerca il tuo Bardo</h1>
                 </div>
 
                 <!-- input ricerca da usare con VueJs -->
-                <div class="rel">
+                <div class="rel ricerca">
                     <select class="select-category c-1 mr-1" name="catselector" v-model="selectedCategory" v-on:change="searchUser()">
                         <option value="0" selected disabled>Seleziona una categoria</option>
                         <option value="">Tutte le categorie</option>
