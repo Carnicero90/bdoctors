@@ -31,7 +31,7 @@
 
                 <!-- input ricerca da usare con VueJs -->
                 <div class="rel ricerca">
-                    <select class="select-category c-1 mr-1" name="catselector" v-model="selectedCategory" v-on:change="searchUser()">
+                    <select class="select-category c-1" name="catselector" v-model="selectedCategory" v-on:change="searchUser()">
                         <option value="0" selected disabled>Seleziona una categoria</option>
                         <option value="">Tutte le categorie</option>
                         @foreach ($categories as $category)
@@ -39,30 +39,32 @@
                         @endforeach
                     </select>
 
-                    <div v-if="searching" class="searchbox">
-                        <ul class="list-group">
-                            {{-- TODO: test --}}
-                            <li class="list-group-item" v-for="user in users">
-                                <a :href="'bards/' + user.id" class="d-flex align-items-center c-1">
-                                    <div class="mr-2 profile-img-search-container position-relative">
-                                        <img class="mr-2 profile-img-search" v-if="user.pic" :src="'/storage/' + user.pic" alt="">
-                                        <img class="mr-2 profile-img-search" v-else src="{{asset("/img/user-img.png")}}" alt="">
-                                    </div>
-                                    <span>@{{ user . name + ' ' + user . lastname }}</span>
-                                    <span v-if="user.sponsored" class="sponsored-badge-search">
-                                        <i class="fas fa-star"></i>
-                                    </span>
-                                </a>
-                            </li>
-                            <li class="list-group-item" class="show-more-res">
-                                <a :href="'/advancedsearch?name=' + searchString + '&cat=' + advsearchCat" class="c-1"><i class="fas fa-search mr-2"></i>Mostra più risultati</a>
-                            </li>
-                        </ul>
-                    </div>
+                    <div class="d-inline-block position-relative search-a-bard">
+                        <div class="search-bard-input">
+                            <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="Cerca un bard">
+                            <i class="fas fa-search position-absolute search-icon"></i>
+                        </div>
 
-                    <div class="d-inline-block position-relative">
-                        <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="Cerca un bard" class="search-a-bard">
-                        <i class="fas fa-search position-absolute search-icon"></i>
+                        <div v-if="searching" class="searchbox">
+                            <ul class="list-group">
+                                {{-- TODO: test --}}
+                                <li class="list-group-item" v-for="user in users">
+                                    <a :href="'bards/' + user.id" class="d-flex align-items-center c-1">
+                                        <div class="mr-2 profile-img-search-container position-relative">
+                                            <img class="mr-2 profile-img-search" v-if="user.pic" :src="'/storage/' + user.pic" alt="">
+                                            <img class="mr-2 profile-img-search" v-else src="{{asset("/img/user-img.png")}}" alt="">
+                                        </div>
+                                        <span>@{{ user . name + ' ' + user . lastname }}</span>
+                                        <span v-if="user.sponsored" class="sponsored-badge-search">
+                                            <i class="fas fa-star"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li class="list-group-item" class="show-more-res">
+                                    <a :href="'/advancedsearch?name=' + searchString + '&cat=' + advsearchCat" class="c-1"><i class="fas fa-search mr-2"></i>Mostra più risultati</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
 
                 </div>
