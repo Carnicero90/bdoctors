@@ -1,6 +1,5 @@
 <a href="{{route("profile", ["id" => $user->id])}}" class="user-card-a">
     <div class="card mb-4 zoom position-relative user-card">
-        @dump($user)
         <div class="card-body d-flex flex-column align-items-center">
             <div class="profile-img-card-container mb-3">
                 @if ($user->pic)
