@@ -16,8 +16,7 @@
         let stats;
         axios.get('../../api/stats?id=' + id)
             .then(response => stats = response.data)
-            .catch((reason) => document.querySelector('#page-content').innerHTML = reason
-            )
+            .catch((reason) => document.querySelector('#page-content').innerHTML = reason)
             .finally(() => {
 
                 const messagesCanvas = document.getElementById("messagesCanvas").getContext("2d");
@@ -25,13 +24,16 @@
                 const averageVotes = document.getElementById("averageVotes").getContext("2d");
                 // in caso non arrivino le stats, per qualche ragione non 'coperta' dal catch
                 if (!stats) {
-                    document.querySelector('#page-content').innerHTML = "Siamo spiacenti, non è stato possibile caricare le tue statistiche. Riprovare più tardi"
+                    document.querySelector('#page-content').innerHTML =
+                        "Siamo spiacenti, non è stato possibile caricare le tue statistiche. Riprovare più tardi"
                     return
                 }
 
-                const last_year = stats['last_year']; // array di stringhe (le date dei mesi dell'ultimo anno solare, ordinate)
+                const last_year = stats[
+                'last_year']; // array di stringhe (le date dei mesi dell'ultimo anno solare, ordinate)
                 const messages = stats['messages']; // array di oggetti, elenco dei messaggi ricevuti per mese
-                const reviews = stats['reviews']; // array di oggetti, elenco delle recensioni ricevute per mese e relativa media voti mensile
+                const reviews = stats[
+                'reviews']; // array di oggetti, elenco delle recensioni ricevute per mese e relativa media voti mensile
 
                 // creiamo degli array di oggetti in cui siano presenti anche i mesi in cui il totale dei messaggi o delle recensioni e' == 0
                 const mess_months = fillEmptyMonths(messages, last_year);
@@ -86,89 +88,91 @@
                 });
 
                 function fillEmptyMonths(filler, year) {
-                        const fillable = year.map(el => {
-                            return {
-                                date: el
-                            }
-                        });
-                        filler.forEach(element => {
-                            fillable[fillable.findIndex(el => el.date == element.date)] = { ...element};
-                        })
-                        return fillable;
-                    }
+                    const fillable = year.map(el => {
+                        return {
+                            date: el
+                        }
+                    });
+                    filler.forEach(element => {
+                        fillable[fillable.findIndex(el => el.date == element.date)] = {
+                            ...element
+                        };
+                    })
+                    return fillable;
+                }
             });
     </script>
 
 @endsection
 
 @section('content')
-<div class="top-margine">
-    <div class="container">
+    <div class="top-margine">
+        <div class="container">
 
-        {{-- HEADER --}}
-        <div class="row justify-content-center">
-            <div class="col-md-12 text-center">
-                <div class="dashboard">
-                    @include('partials.dashboard-nav')
+            {{-- HEADER --}}
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center">
+                    <div class="dashboard">
+                        @include('partials.dashboard-nav')
+                    </div>
+                </div>
+            </div>
+            {{-- END HEADER --}}
+
+            <div class="mt-3 mb-4">
+                <h1>Statistiche utente</h1>
+                <a href="#mails" class="btn mr-2 text-white" style="background-color: #8c4e4e">Messaggi ricevuti</a>
+                <a href="#reviews" class="btn mr-2 text-white" style="background-color: #4e8c8c">Recensioni ricevute</a>
+                <a href="#votes" class="btn mr-2 text-white" style="background-color: #4e6b8c">Media voti</a>
+            </div>
+
+            <div class="row" id="page-content">
+
+                <div class="col-md-6 mb-5">
+                    {{-- section#mails --}}
+                    <section id="mails">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Messaggi ricevuti per mese</h2>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="messagesCanvas"></canvas>
+                            </div>
+                        </div>
+                    </section>
+                    {{-- END section#mails --}}
+                </div>
+
+                <div class="col-md-6 mb-5">
+                    {{-- section#reviews --}}
+                    <section id="reviews">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Recensioni ricevute per mese</h2>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="reviewsCanvas"></canvas>
+                            </div>
+                        </div>
+                    </section>
+                    {{-- END section#reviews --}}
+                </div>
+
+                <div class="col-md-6 mb-5">
+                    {{-- section#votes --}}
+                    <section id="votes">
+                        <div class="card">
+                            <div class="card-header">
+                                <h2>Voto medio recensioni per mese</h2>
+                            </div>
+                            <div class="card-body">
+                                <canvas id="averageVotes"></canvas>
+                            </div>
+                        </div>
+                    </section>
+                    {{-- END section#votes --}}
                 </div>
             </div>
         </div>
-        {{-- END HEADER --}}
-
-        <div class="mt-3 mb-4">
-            <h1>Statistiche utente</h1>
-            <a href="#mails" class="btn mr-2">Messaggi ricevuti</a>
-            <a href="#reviews" class="btn mr-2">Recensioni ricevute</a>
-            <a href="#votes" class="btn mr-2">Media voti</a>
-        </div>
-
-        <div class="row" id="page-content">
-
-            <div class="col-6 mb-5">
-                {{-- section#mails --}}
-                <section id="mails">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Messaggi ricevuti per mese</h2>
-                        </div>
-                        <div class="card-body">
-                            <canvas id="messagesCanvas"></canvas>
-                        </div>
-                    </div>
-                </section>
-                {{-- END section#mails --}}
-            </div>
-
-            <div class="col-6 mb-5">
-                {{-- section#reviews --}}
-                <section id="reviews">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Recensioni ricevute per mese</h2>
-                        </div>
-                        <div class="card-body">
-                            <canvas id="reviewsCanvas"></canvas>
-                        </div>
-                    </div>
-                </section>
-                {{-- END section#reviews --}}
-            </div>
-
-            <div class="col-6 mb-5">
-                {{-- section#votes --}}
-                <section id="votes">
-                    <div class="card">
-                        <div class="card-header">
-                            <h2>Voto medio recensioni per mese</h2>
-                        </div>
-                        <div class="card-body">
-                            <canvas id="averageVotes"></canvas>
-                        </div>
-                    </div>
-                </section>
-                {{-- END section#votes --}}
-            </div>
-        </div>
     </div>
-</div>
 @endsection
