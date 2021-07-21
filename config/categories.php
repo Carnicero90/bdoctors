@@ -1,8 +1,10 @@
 <?php
 return [
-    [
+    'violinisti' => [
         'name' => 'violinisti',
-        'slug' => 'violinisti'
+        'slug' => 'violinisti',
+        'immagine' => 'violisti.png',
+
     ],
     [
         'name' => 'dj',

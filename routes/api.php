@@ -21,6 +21,11 @@ Route::prefix('votes')
 ->group(function() {
     Route::get('index', 'Api\VoteController@index')->name('vote-index');
 });
+
+/* ================
+    Reviews
+=================== */
+Route::get('reviews/{id}', 'Api\ReviewController@show');
 /* ================
     CATEGORIES
 =================== */
