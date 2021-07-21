@@ -16,18 +16,28 @@
         let stats;
         axios.get('../../api/stats?id=' + id)
             .then(response => stats = response.data)
+            .catch((reason) => document.querySelector('#page-content').innerHTML = reason
+            )
             .finally(() => {
+
                 const messagesCanvas = document.getElementById("messagesCanvas").getContext("2d");
                 const reviewsCanvas = document.getElementById("reviewsCanvas").getContext("2d");
                 const averageVotes = document.getElementById("averageVotes").getContext("2d");
-                
-                const last_year = stats['last_year'];
-                const messages = stats['messages'];
-                const reviews = stats['reviews'];
+                // in caso non arrivino le stats, per qualche ragione non 'coperta' dal catch
+                if (!stats) {
+                    document.querySelector('#page-content').innerHTML = "Siamo spiacenti, non è stato possibile caricare le tue statistiche. Riprovare più tardi"
+                    return
+                }
 
+                const last_year = stats['last_year']; // array di stringhe (le date dei mesi dell'ultimo anno solare, ordinate)
+                const messages = stats['messages']; // array di oggetti, elenco dei messaggi ricevuti per mese
+                const reviews = stats['reviews']; // array di oggetti, elenco delle recensioni ricevute per mese e relativa media voti mensile
+
+                // creiamo degli array di oggetti in cui siano presenti anche i mesi in cui il totale dei messaggi o delle recensioni e' == 0
                 const mess_months = fillEmptyMonths(messages, last_year);
                 const rev_months = fillEmptyMonths(reviews, last_year);
 
+                // popoliamo i nostri grafici
                 const reviewsCanvasChart = new Chart(reviewsCanvas, {
                     type: 'bar',
                     data: {
@@ -74,7 +84,7 @@
                         }]
                     }
                 });
-
+                
                 function fillEmptyMonths(filler, year) {
                         const fillable = year.map(el => {
                             return {
@@ -109,7 +119,7 @@
             <h1>Statistiche utente</h1>
         </div>
 
-        <div class="row">
+        <div class="row" id="page-content">
 
             <div class="col-6 mb-5">
                 {{-- section#mails --}}
@@ -155,7 +165,6 @@
                 </section>
                 {{-- END section#votes --}}
             </div>
-
         </div>
     </div>
 </div>
