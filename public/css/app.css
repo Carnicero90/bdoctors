@@ -10018,8 +10018,9 @@ h3 {
   color: #888;
 }
 
-main {
-  margin-top: 100px;
+.top-margine {
+  padding-top: 100px;
+  padding-bottom: 50px;
   background: #addbc7;
   background: linear-gradient(360deg, rgba(173, 219, 199, 0.9023984594) 0%, rgba(223, 231, 236, 0.8743872549) 0%);
 }
@@ -10097,8 +10098,8 @@ header.sticky {
 }
 .mio-jumbotron .jumbo-logo {
   width: 60%;
-  -webkit-animation-name: logo;
-          animation-name: logo;
+  -webkit-animation-name: cercabardo;
+          animation-name: cercabardo;
   -webkit-animation-duration: 3s;
           animation-duration: 3s;
   -webkit-animation-delay: 0s;
@@ -10107,50 +10108,6 @@ header.sticky {
           animation-timing-function: linear;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
-}
-@-webkit-keyframes logo {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  25% {
-    transform: scale(0.25);
-    opacity: 0.25;
-  }
-  50% {
-    transform: scale(0.5);
-    opacity: 0.5;
-  }
-  75% {
-    transform: scale(0.75);
-    opacity: 0.75;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-@keyframes logo {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  25% {
-    transform: scale(0.25);
-    opacity: 0.25;
-  }
-  50% {
-    transform: scale(0.5);
-    opacity: 0.5;
-  }
-  75% {
-    transform: scale(0.75);
-    opacity: 0.75;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
 }
 .mio-jumbotron .heading-logo {
   padding: 20px 0;

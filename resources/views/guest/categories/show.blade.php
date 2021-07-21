@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
+<div class="top-margine">
     <div class="container">
         <div class="row mb-4">
             <h3>{{ucfirst($category->name)}}</h3>
@@ -14,5 +15,6 @@
             @endforeach
         </div>
     </div>
+</div>
 
 @endsection

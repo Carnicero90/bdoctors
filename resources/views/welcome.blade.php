@@ -71,27 +71,29 @@
 
         </div>
 
-        {{-- section categories --}}
-        <div class="container mt-5 mb-5">
-            <h2 class="text-center">Categorie</h2>
-            <div class="row mt-4">
-                @foreach ($categories as $category)
-                    @include("partials.categories-list")
-                @endforeach
-            </div>
-        </div>
-        {{-- END section categories --}}
-
-        {{-- section sponsored --}}
-        <div class="container">
-            <h2 class="text-center">I nostri artisti del momento</h2>
-            <div class="row mt-4 d-flex align-items-center justify-content-between">
-                <div v-for="user in sponsoredUsers">
-                    @include("partials.user-card-api")
+        <div class="top-margine">
+            {{-- section categories --}}
+            <div class="container mt-5 mb-5">
+                <h2 class="text-center">Categorie</h2>
+                <div class="row mt-4">
+                    @foreach ($categories as $category)
+                        @include("partials.categories-list")
+                    @endforeach
                 </div>
             </div>
+            {{-- END section categories --}}
+
+            {{-- section sponsored --}}
+            <div class="container">
+                <h2 class="text-center">I nostri artisti del momento</h2>
+                <div class="row mt-4 d-flex align-items-center justify-content-between">
+                    <div v-for="user in sponsoredUsers">
+                        @include("partials.user-card-api")
+                    </div>
+                </div>
+            </div>
+            {{-- END section sponsored --}}
         </div>
-        {{-- END section sponsored --}}
 
     </div>
     {{-- END vue container --}}

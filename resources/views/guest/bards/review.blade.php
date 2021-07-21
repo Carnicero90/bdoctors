@@ -13,6 +13,7 @@
 
 @section('content')
 
+<div class="top-margine">
     <div class="container">
         {{-- div#root --}}
         <div id="root">
@@ -114,5 +115,6 @@
         </div>
         {{-- END div#root --}}
     </div>
+</div>
 
 @endsection

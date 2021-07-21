@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
+<div class="top-margine">
     <div class="container">
         <h1>Recensioni</h1>
 
@@ -38,6 +39,8 @@
             @endif
         </div>
     </div>
+</div>
+
 @endsection
 
 
