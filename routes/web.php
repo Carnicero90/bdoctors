@@ -129,7 +129,7 @@ Route::prefix('admin')
         Route::get('/reviews/{id}', 'ReviewController@show')
             ->name('reviews-dettails');
 
-        /* -- REVIEWS --*/
+        /* -- STATISTICS --*/
         // --> index    
         Route::get('/statistics/{id}', 'StatisticController@index')
             ->name('statistics');

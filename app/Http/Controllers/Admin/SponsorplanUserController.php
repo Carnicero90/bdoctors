@@ -11,12 +11,11 @@ use Illuminate\Support\Facades\Auth;
 
 class SponsorplanUserController extends Controller
 {
-    public function store($id)
+    public function store(Request $request, $id)
     {   
         $plan = Sponsorplan::findOrFail($id);
 
-        // TOSAY: qua saltiamo la verifica in braintree, che verra aggiunta successivamente:
-        // si "finge" che il pagamento sia andato a buon fine
+
         if (!Auth::user()) 
         {
             return redirect( route('login') );
@@ -28,7 +27,6 @@ class SponsorplanUserController extends Controller
         {
             return redirect()->route('admin.dashboard')->with("errors", "Non puoi acquistare il piano, hai già un abbonamento attivo!");
         }
-
         $new_subscription = new SponsorplanUser();
         $new_subscription->user_id = $user_id;
         $new_subscription->order_date = Carbon::now();
@@ -36,8 +34,9 @@ class SponsorplanUserController extends Controller
         $new_subscription->sponsorplan_id = $id;
         // TOTEST
         $new_subscription->invoice = 'bababa';
-        $new_subscription->success = true;
+        $new_subscription->success = intval($request['success']);
         $new_subscription->save();
+
         return redirect()->route("admin.dashboard")->with("success", "Abbonamento sottoscritto");
     }
 }
