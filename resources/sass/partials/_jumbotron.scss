@@ -16,34 +16,40 @@
 
   // Animazioni
   .jumbo-logo {
-      width: 50%;
-      animation-name: cercabardo;
-      animation-duration: 3s;
-      animation-delay: 0s;
-      animation-timing-function: linear;
-      animation-iteration-count: 1;
-  }
-
-  .heading-logo {
-    padding: 5vh 0;
-    color: white;
-    animation-name: cercabardo;
-    animation-duration: 5s;
+    width: 50%;
+    padding-bottom: 20px;
+    animation-name: logo;
+    animation-duration: 7s;
     animation-delay: 0s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
+  }
+
+  .heading-logo {
+    color: white;
+    animation-name: cercabardo;
+    animation-duration: 3.5s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
   }
 
   .ricerca {
     text-align: center;
-    animation-name: cercabardo;
-    animation-duration: 6s;
+    animation-name: logo;
+    animation-duration: 7s;
     animation-delay: 0s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
   }
 
-  @keyframes cercabardo {
+  @keyframes logo {
     0% {
       opacity: 0;
     }
@@ -58,6 +64,24 @@
     }
     100% {
       opacity: 1;
+    }
+  }
+
+  @keyframes cercabardo {
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    75% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
     }
   }
 

@@ -24,9 +24,9 @@
 
             <div class="container">
 
-                <div class="jumbo-container">
-                    <img class="jumbo-logo" src="{{asset('img/boolbards-white-1.png')}}" alt="">
+                <div class="jumbo-container position-relative">
                     <h1 class="display-2 heading-logo">Trova il tuo Bardo</h1>
+                    <img class="jumbo-logo" src="{{asset('img/boolbards-white-1.png')}}" alt="">
                 </div>
 
                 <!-- input ricerca da usare con VueJs -->
