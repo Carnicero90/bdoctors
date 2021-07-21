@@ -14,6 +14,7 @@
 
 @section('content')
 
+<div class="top-margine">
     {{-- vue container --}}
     <div id="root">
         <div class="container">
@@ -154,4 +155,6 @@
         </div>
     </div>
     {{-- END vue container --}}
+</div>    
+
 @endsection

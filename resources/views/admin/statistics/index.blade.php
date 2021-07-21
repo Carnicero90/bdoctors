@@ -95,6 +95,7 @@
 @endsection
 
 @section('content')
+<div class="top-margine">
     <div class="container">
 
         {{-- HEADER --}}
@@ -160,4 +161,5 @@
 
         </div>
     </div>
+</div>
 @endsection

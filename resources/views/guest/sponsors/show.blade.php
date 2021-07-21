@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
+<div class="top-margine">
     <div class="container">
         <div class="card mt-4">
             <div class="card-body">
@@ -22,5 +23,6 @@
             </div>
         </div>
     </div>
+</div>
 
 @endsection

@@ -5,6 +5,7 @@
 
 @section('content')
 
+<div class="top-margine">
     <div class="container">
 
         <div class="text-center">
@@ -135,4 +136,5 @@
         </div>
 
     </div>
+</div>
 @endsection

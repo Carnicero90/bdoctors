@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 
+<div class="top-margine">
     <div class="container">
 
         @include("partials.success-messages")
@@ -48,5 +49,6 @@
         </section>
 
     </div>
+</div>
 
 @endsection
