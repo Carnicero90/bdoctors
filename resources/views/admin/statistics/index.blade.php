@@ -24,34 +24,25 @@
                 const reviews = stats['reviews'];
                 const review_dates = reviews.map(item => item.date);
 
-                test = last_year.map(el => {
+                mess_to_fill = last_year.map(el => {
                     return {
                         tot: 0,
                         date: el
                     }
                 });
-                messages.forEach(element => {
-                    test[test.findIndex(el => el.date = element.date)].tot = element.tot;
-                    console.log(test[test.findIndex(el => el.date = element.date)])
+                rev_to_fill = last_year.map(el => {
+                    return {
+                        tot: 0,
+                        date: el
+                    }
                 });
-                console.log(test)
-                console.log(last_year)
-                console.log(messages)
-
-                // last_year.forEach(element => {
-                //    if (!message_dates.includes(element)) {
-                //        messages.push({
-                //            tot: 0,
-                //            date: element
-                //        })
-                //    }
-                //    if (!review_dates.includes(element)) {
-                //        reviews.push({
-                //            tot: 0,
-                //            date: element
-                //        })
-                //    }
-                // });
+                // TODO raccogli in funzia
+                messages.forEach(element => {
+                    mess_to_fill[mess_to_fill.findIndex(el => el.date == element.date)].tot = element.tot
+                });
+                reviews.forEach(element => {
+                    rev_to_fill[rev_to_fill.findIndex(el => el.date == element.date)].tot = element.tot
+                });
 
                 const messagesCanvas = document.getElementById("messagesCanvas").getContext("2d");
                 const reviewsCanvas = document.getElementById("reviewsCanvas").getContext("2d");
@@ -62,7 +53,7 @@
                     data: {
                         datasets: [{
                             label: 'Recensioni ricevute',
-                            data: reviews,
+                            data: rev_to_fill,
                             backgroundColor: ["#4e8c8c"],
                             parsing: {
                                 yAxisKey: 'tot',
@@ -77,7 +68,7 @@
                     data: {
                         datasets: [{
                             label: 'Messaggi ricevuti',
-                            data: messages,
+                            data: mess_to_fill,
                             backgroundColor: ["#8c4e4e", ],
                             parsing: {
                                 yAxisKey: 'tot',
