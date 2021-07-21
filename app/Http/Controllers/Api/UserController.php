@@ -103,7 +103,7 @@ class UserController extends Controller
 
     public function stats(Request $request) {
         $user_id = $request->id;
-        $year_ago  = Carbon::now()->subMonths(12)->firstOfMonth();
+        $year_ago  = Carbon::now()->subMonths(11)->firstOfMonth();
         // dd($year_ago);
        $messages = Message::select(DB::raw('COUNT(id) AS tot'), DB::raw('DATE_FORMAT(message_date, "%Y-%m") AS date'))
        ->where('user_id', '=', $user_id)

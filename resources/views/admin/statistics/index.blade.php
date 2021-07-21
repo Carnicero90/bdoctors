@@ -17,43 +17,23 @@
         axios.get('../../api/stats?id=' + id)
             .then(response => stats = response.data)
             .finally(() => {
-                const last_year = stats['last_year'];
-                const messages = stats['messages'];
-                const message_dates = messages.map(item => item.date);
-
-                const reviews = stats['reviews'];
-                const review_dates = reviews.map(item => item.date);
-
-                mess_to_fill = last_year.map(el => {
-                    return {
-                        tot: 0,
-                        date: el
-                    }
-                });
-                rev_to_fill = last_year.map(el => {
-                    return {
-                        tot: 0,
-                        date: el
-                    }
-                });
-                // TODO raccogli in funzia
-                messages.forEach(element => {
-                    mess_to_fill[mess_to_fill.findIndex(el => el.date == element.date)].tot = element.tot
-                });
-                reviews.forEach(element => {
-                    rev_to_fill[rev_to_fill.findIndex(el => el.date == element.date)].tot = element.tot
-                });
-
                 const messagesCanvas = document.getElementById("messagesCanvas").getContext("2d");
                 const reviewsCanvas = document.getElementById("reviewsCanvas").getContext("2d");
                 const averageVotes = document.getElementById("averageVotes").getContext("2d");
+                
+                const last_year = stats['last_year'];
+                const messages = stats['messages'];
+                const reviews = stats['reviews'];
+
+                const mess_months = fillEmptyMonths(messages, last_year);
+                const rev_months = fillEmptyMonths(reviews, last_year);
 
                 const reviewsCanvasChart = new Chart(reviewsCanvas, {
                     type: 'bar',
                     data: {
                         datasets: [{
                             label: 'Recensioni ricevute',
-                            data: rev_to_fill,
+                            data: rev_months,
                             backgroundColor: ["#4e8c8c"],
                             parsing: {
                                 yAxisKey: 'tot',
@@ -68,7 +48,7 @@
                     data: {
                         datasets: [{
                             label: 'Messaggi ricevuti',
-                            data: mess_to_fill,
+                            data: mess_months,
                             backgroundColor: ["#8c4e4e", ],
                             parsing: {
                                 yAxisKey: 'tot',
@@ -84,7 +64,7 @@
                     data: {
                         datasets: [{
                             label: 'Media recensioni',
-                            data: reviews,
+                            data: rev_months,
                             backgroundColor: ['#4e6b8c', ],
                             parsing: {
                                 yAxisKey: 'avg_vote',
@@ -94,6 +74,18 @@
                         }]
                     }
                 });
+
+                function fillEmptyMonths(filler, year) {
+                        const fillable = year.map(el => {
+                            return {
+                                date: el
+                            }
+                        });
+                        filler.forEach(element => {
+                            fillable[fillable.findIndex(el => el.date == element.date)] = { ...element};
+                        })
+                        return fillable;
+                    }
             });
     </script>
 
