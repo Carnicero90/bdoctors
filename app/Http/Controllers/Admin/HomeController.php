@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Message;
 use App\Review;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use App\SponsorplanUser;
 
 class HomeController extends Controller
 {
@@ -16,8 +18,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-
         $user = Auth::user();
+        $user->sponsored =  $user->sponsorplanUsers->where('end_date', '>', Carbon::now())->where('success', '=', 1)->first();
         $messages = Message::where('user_id', '=', $user->id)
             ->where('to_show', '=', 1)
             ->orderByDesc('message_date')
