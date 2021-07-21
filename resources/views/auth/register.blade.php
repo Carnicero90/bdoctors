@@ -116,7 +116,7 @@
                             {{-- END input#password_confirmation --}}
 
                             {{-- partials di termini e condizioni --}}
-                            <div class="mt-4 mb-4" style="transform: translateX(+240px);">
+                            <div class="mt-4 mb-4">
                                 @include('partials.terms-conditions')
                             </div>
                             

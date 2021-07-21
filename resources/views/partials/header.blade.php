@@ -2,7 +2,7 @@
 <header>
     <nav class="navbar navbar-expand-md navbar-light">
         <div class="container">
-            <ul class="navbar-nav left-menu" style="align-items: center">
+            <ul class="navbar-nav left-menu align-items-center">
                 <li class="nav-item">
                     <a class="navbar-brand logo" href="/">
                         <img src="{{ asset('img/boolbards-logo-black-1.png') }}" alt="Logo">

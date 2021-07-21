@@ -21,15 +21,15 @@
 
                     <div class="mb-4 d-flex align-items-center">
                         @if ($user->profile)
-                            <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
+                            <div class="profile-img-dashboard-container">
                                 <a href="{{ route('profile', ['id' => $user->id]) }}">
-                                    <img src="{{ asset('storage/' . $user->profile->pic) }}" alt="{{ $user->name . ' ' . $user->lastname }}" style="max-height: 100px; width: 100%; height: 100%; object-fit: cover;">
+                                    <img src="{{ asset('storage/' . $user->profile->pic) }}" alt="{{ $user->name . ' ' . $user->lastname }}" class="profile-img-dashboard">
                                 </a>
                             </div>
                         @else
-                            <div style="width: 100px; height: 100px; border-radius: 50%; overflow: hidden;">
+                            <div class="profile-img-dashboard-container">
                                 <a href="{{ route('profile', ['id' => $user->id]) }}">
-                                    <img src="{{ asset('img/user-img.png') }}" alt="" style="max-height: 100px;">
+                                    <img src="{{ asset('img/user-img.png') }}" alt="" class="profile-img-dashboard">
                                 </a>
                             </div>
                         @endif

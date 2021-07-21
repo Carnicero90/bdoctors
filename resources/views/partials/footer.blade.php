@@ -1,8 +1,8 @@
 {{-- TODO --}}
 <!-- FOOTER -->
 <footer>
-    <div class="bg-footer" style="padding: 0">
-        <div class="container inner" style="padding: 50px 0;">
+    <div class="bg-footer">
+        <div class="container inner">
             <div class="d-flex justify-content-around pt-5 xs-container">
                 <!-- Logo -->
                 <div class="flex-son">
@@ -128,7 +128,7 @@
             </div>
             <!-- Copyright -->
             <div class="copyright">
-                <i class="far fa-copyright" style="font-size: 15px; transform: translateY(-2px); margin-right: 5px;"></i>Copyright 2021 | Developed by <span>i Becci di BoolBards</span> | All Rights Reserved | Powered by <span>Laravel</span>
+                <i class="far fa-copyright"></i>Copyright 2021 | Developed by <span>i Becci di BoolBards</span> | All Rights Reserved | Powered by <span>Laravel</span>
             </div>
         </div>
     </div>
