@@ -10005,6 +10005,10 @@ h3 {
 /* =============
     COLORS
    ============= */
+body {
+  background-color: white;
+}
+
 .cat-icon-container img {
   height: 25px;
   width: auto;
@@ -10021,8 +10025,6 @@ h3 {
 .top-margine {
   padding-top: 100px;
   padding-bottom: 50px;
-  background: #addbc7;
-  background: linear-gradient(360deg, rgba(173, 219, 199, 0.9023984594) 0%, rgba(223, 231, 236, 0.8743872549) 0%);
 }
 
 input, select {
@@ -10052,6 +10054,9 @@ header {
   z-index: 1;
   transition: 0.6s;
 }
+header .navbar {
+  padding: 0;
+}
 header a {
   color: white !important;
 }
@@ -10063,6 +10068,12 @@ header.sticky {
   background-color: white;
   transition: 0.6s;
 }
+header .logo {
+  height: 60px;
+}
+header .logo img {
+  height: 100%;
+}
 
 .sticky a {
   color: black !important;
@@ -10071,19 +10082,16 @@ header.sticky {
   display: block;
 }
 
-.logo {
-  width: 60px;
-}
-.logo img {
-  width: 100%;
-}
-
 .nav-link {
   line-height: 50px;
 }
 
 .nav-item {
   margin: 0 10px;
+}
+
+.navbar-brand {
+  padding: 8px 0 3px 0;
 }
 
 .mio-jumbotron {
@@ -10095,9 +10103,10 @@ header.sticky {
 }
 .mio-jumbotron .jumbo-container {
   text-align: center;
+  padding-top: 7vh;
 }
 .mio-jumbotron .jumbo-logo {
-  width: 60%;
+  width: 50%;
   -webkit-animation-name: cercabardo;
           animation-name: cercabardo;
   -webkit-animation-duration: 3s;
@@ -10110,7 +10119,7 @@ header.sticky {
           animation-iteration-count: 1;
 }
 .mio-jumbotron .heading-logo {
-  padding: 20px 0;
+  padding: 5vh 0;
   color: white;
   -webkit-animation-name: cercabardo;
           animation-name: cercabardo;
