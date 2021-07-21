@@ -34,9 +34,7 @@
 
                 @include("partials.success-messages")
                 @include("partials.validation-errors")
-
-                {{-- form profile --}}
-                <form id="profile-form" action="{{ route('admin.profile-store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin.profile-store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method("POST")
 
@@ -73,6 +71,14 @@
                             name="image-file">
                     </div>
                     {{-- END input#image-file --}}
+                </form>
+
+                {{-- form profile --}}
+                <form id="profile-form" action="{{ route('admin.profile-store') }}" method="post">
+                    @csrf
+                    @method("POST")
+
+
                     {{-- input#work_address --}}
                     <div class="form-group mt-4 mb-4">
                         <label for="work_address">Indirizzo / Luogo di Lavoro</label>
