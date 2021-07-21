@@ -22,8 +22,9 @@ header {
     }
 
     &.sticky {
-        background-color: white;
+        background-color: rgba(0, 0, 0, 0.8);
         transition: 0.6s;
+        
     }
 
     // Logo
@@ -38,7 +39,7 @@ header {
 
 .sticky {
     a {
-        color: black !important;
+        color: white !important;
     }
 
     img {
@@ -51,11 +52,6 @@ header {
     // MOOLTO Provvisorio
     line-height: 50px;
 
-    // TODO da rimuovere
-    text-shadow: 2px 2px 12px black;
-}
-
-.dropdown-item {
     // TODO da rimuovere
     text-shadow: 2px 2px 12px black;
 }

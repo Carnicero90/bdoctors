@@ -10066,7 +10066,7 @@ header nav {
   transition: 0.6s;
 }
 header.sticky {
-  background-color: white;
+  background-color: rgba(0, 0, 0, 0.8);
   transition: 0.6s;
 }
 header .logo {
@@ -10077,7 +10077,7 @@ header .logo img {
 }
 
 .sticky a {
-  color: black !important;
+  color: white !important;
 }
 .sticky img {
   display: block;
@@ -10085,10 +10085,6 @@ header .logo img {
 
 .nav-link {
   line-height: 50px;
-  text-shadow: 2px 2px 12px black;
-}
-
-.dropdown-item {
   text-shadow: 2px 2px 12px black;
 }
 
