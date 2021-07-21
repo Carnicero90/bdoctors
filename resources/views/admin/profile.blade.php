@@ -36,7 +36,7 @@
                 @include("partials.validation-errors")
 
                 {{-- form profile --}}
-                <form action="{{ route('admin.profile-store') }}" method="post" enctype="multipart/form-data">
+                <form id="profile-form" action="{{ route('admin.profile-store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method("POST")
 
@@ -55,9 +55,17 @@
                             <img src="{{ asset('img/user-img.png') }}" alt="" class="profile-img-dashboard">
                         @endif
                     </div>
+                    {{-- TOTEST --}}
+
+                    {{-- ENDTOTEST --}}
 
                     <div v-else class="profile-img-dashboard-container">
                         <img v-bind:src="preload" alt="" class="profile-img-dashboard">
+                    </div>
+                    <div v-if="loadedPic">
+                        <button class="btn btn-warning" onclick="f = document.querySelector('#profile-form'); f.submit()">
+                            Salva nuova foto
+                        </button>
                     </div>
                     <div class="form-group">
                         <label for="image-file">Carica un'immagine profilo</label>

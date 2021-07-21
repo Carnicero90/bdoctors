@@ -9,7 +9,7 @@
     {{-- Crea/Modifica Profilo --}}
     <a class="dash-link hover-blue" href="{{ route('admin.profile-index') }}">
         <i class="fas fa-user-cog mb-2 dashboard-icon"></i>
-        <div>Crea / Modifica profilo</div>
+        <div>{{ Auth::user()->profile ? 'Modifica' : 'Crea' }} profilo</div>
     </a>
 
     {{-- Aggiungi/Modifica Servizio --}}
