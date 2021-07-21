@@ -11,11 +11,12 @@
 
   .jumbo-container {
     text-align: center;
+    padding-top: 7vh;
   }
 
   // Animazioni
   .jumbo-logo {
-      width: 60%;
+      width: 50%;
       animation-name: cercabardo;
       animation-duration: 3s;
       animation-delay: 0s;
@@ -24,7 +25,7 @@
   }
 
   .heading-logo {
-    padding: 20px 0;
+    padding: 5vh 0;
     color: white;
     animation-name: cercabardo;
     animation-duration: 5s;

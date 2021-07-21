@@ -1,5 +1,5 @@
 {{-- HEADER --}}
-<header>
+<header class="shadow-sm">
     <nav class="navbar navbar-expand-md navbar-light">
         <div class="container">
             <ul class="navbar-nav left-menu align-items-center">

@@ -7,6 +7,10 @@ header {
     width: 100%;
     z-index: 1;
     transition: 0.6s;
+
+    .navbar {
+        padding: 0;
+    }
     
     a {
         color: white !important;
@@ -21,6 +25,15 @@ header {
         background-color: white;
         transition: 0.6s;
     }
+
+    // Logo
+    .logo {
+    height: 60px;
+
+    img {
+        height: 100%;
+    }
+}
 }
 
 .sticky {
@@ -33,15 +46,6 @@ header {
     }
 }
 
-// Logo
-.logo {
-    width: 60px;
-
-    img {
-        width: 100%;
-    }
-}
-
 // TODO: Rendere responsive
 .nav-link {
     // MOOLTO Provvisorio
@@ -51,4 +55,8 @@ header {
 .nav-item {
     // MOOOLTO PROVVISORIO
     margin: 0 10px;
+}
+
+.navbar-brand {
+    padding: 8px 0 3px 0;
 }
