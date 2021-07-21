@@ -34,7 +34,7 @@
 
                 @include("partials.success-messages")
                 @include("partials.validation-errors")
-                <form action="{{ route('admin.profile-store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('admin.pic-store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method("POST")
 
@@ -61,7 +61,7 @@
                         <img v-bind:src="preload" alt="" class="profile-img-dashboard">
                     </div>
                     <div v-if="loadedPic">
-                        <button class="btn btn-warning" onclick="f = document.querySelector('#profile-form'); f.submit()">
+                        <button class="btn btn-warning">
                             Salva nuova foto
                         </button>
                     </div>
