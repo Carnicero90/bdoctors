@@ -10043,10 +10043,6 @@ input, select {
   text-decoration: none;
 }
 
-.julius-font {
-  font-family: "Julius Sans One";
-}
-
 header {
   position: fixed;
   top: 0;
@@ -10054,6 +10050,7 @@ header {
   width: 100%;
   z-index: 1;
   transition: 0.6s;
+  font-family: "Julius Sans One";
 }
 header .navbar {
   padding: 0;
