@@ -100,6 +100,8 @@ Route::prefix('admin')
         Route::get('/profile', 'ProfileController@index')
             ->name('profile-index');
         // --> store
+        Route::post('profile/pic/store', 'ProfileController@changePic')
+            ->name('pic-store');
         Route::post('/profile/store', 'ProfileController@createOrUpdate')
             ->name('profile-store');
 
@@ -159,4 +161,4 @@ use Carbon\Carbon;
 // route per provare dd e dump a caso
 Route::get('/prova', function () {
     dd(intval('true'));
-    });
+});
