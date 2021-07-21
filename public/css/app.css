@@ -10106,10 +10106,11 @@ header .logo img {
 }
 .mio-jumbotron .jumbo-logo {
   width: 50%;
-  -webkit-animation-name: cercabardo;
-          animation-name: cercabardo;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
+  padding-bottom: 20px;
+  -webkit-animation-name: logo;
+          animation-name: logo;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
   -webkit-animation-timing-function: linear;
@@ -10118,25 +10119,30 @@ header .logo img {
           animation-iteration-count: 1;
 }
 .mio-jumbotron .heading-logo {
-  padding: 5vh 0;
   color: white;
   -webkit-animation-name: cercabardo;
           animation-name: cercabardo;
-  -webkit-animation-duration: 5s;
-          animation-duration: 5s;
+  -webkit-animation-duration: 3.5s;
+          animation-duration: 3.5s;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
 }
 .mio-jumbotron .ricerca {
   text-align: center;
-  -webkit-animation-name: cercabardo;
-          animation-name: cercabardo;
-  -webkit-animation-duration: 6s;
-          animation-duration: 6s;
+  -webkit-animation-name: logo;
+          animation-name: logo;
+  -webkit-animation-duration: 7s;
+          animation-duration: 7s;
   -webkit-animation-delay: 0s;
           animation-delay: 0s;
   -webkit-animation-timing-function: linear;
@@ -10144,7 +10150,7 @@ header .logo img {
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
 }
-@-webkit-keyframes cercabardo {
+@-webkit-keyframes logo {
   0% {
     opacity: 0;
   }
@@ -10159,6 +10165,40 @@ header .logo img {
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes logo {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes cercabardo {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 @keyframes cercabardo {
@@ -10169,13 +10209,13 @@ header .logo img {
     opacity: 0;
   }
   50% {
-    opacity: 0;
-  }
-  75% {
     opacity: 0.5;
   }
-  100% {
+  75% {
     opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 

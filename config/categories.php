@@ -3,51 +3,61 @@ return [
     'violinisti' => [
         'name' => 'violinisti',
         'slug' => 'violinisti',
-        'immagine' => 'violisti.png',
-
+        'img' => 'violinisti.jpg'
     ],
     [
         'name' => 'dj',
-        'slug' => 'dj'
+        'slug' => 'dj',
+        'img' => 'dj.jpg'
     ],
     [
         'name' => 'cantanti',
-        'slug' => 'cantanti'
+        'slug' => 'cantanti',
+        'img' => 'cantanti.jpg'
     ],
     [
         'name' => 'batteristi',
-        'slug' => 'batteristi'
+        'slug' => 'batteristi',
+        'img' => 'batteristi.jpg'
     ],
     [
         'name' => 'bassisti',
-        'slug' => 'bassisti'
+        'slug' => 'bassisti',
+        'img' => 'bassisti.jpg'
     ],
     [
         'name' => 'chitarristi',
-        'slug' => 'chitarristi'
+        'slug' => 'chitarristi',
+        'img' => 'chitarristi.jpg'
     ],
     [
         'name' => 'sassofonisti',
-        'slug' => 'sassofonisti'
+        'slug' => 'sassofonisti',
+        'img' => 'sassofonist.jpg'
     ],
     [
         'name' => 'registrazione e mixaggio',
-        'slug' => 'registrazione-e-mixaggio'
+        'slug' => 'registrazione-e-mixaggio',
+        'img' => 'rec&mix.jpg'
     ],
     [
         'name' => 'percussionisti',
-        'slug' => 'percussionisti'
+        'slug' => 'percussionisti',
+        'img' => 'percussionisti.jpg'
     ],
     [
         'name' => 'tastieristi',
-        'slug' => 'tastieristi'
+        'slug' => 'tastieristi',
+        'img' => 'tastieristi.jpg'
     ],
     [
         'name' => 'trombettisti',
-        'slug' => 'trombettisti'
+        'slug' => 'trombettisti',
+        'img' => 'trombettisti.jpg'
     ],
     [
         'name' => 'flautisti',
-        'slug' => 'flautisti'
+        'slug' => 'flautisti',
+        'img' => 'flautisti.jpg'
     ],
 ];
