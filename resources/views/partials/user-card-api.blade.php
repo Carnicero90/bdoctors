@@ -9,9 +9,6 @@
                 <span>@{{user.name + ' ' + user.lastname}}</span>
             </div>
             <div>
-                <small><span>icone categorie</span></small>
-            </div>
-            <div>
                 <span v-if="user.avg_vote > 0"><i v-for="n in parseInt(user.avg_vote)" class="fas fa-star"></i></span>
             </div>
             <div>

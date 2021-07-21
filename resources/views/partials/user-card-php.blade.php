@@ -1,5 +1,6 @@
 <a href="{{route("profile", ["id" => $user->id])}}" class="user-card-a">
-    <div class="card mb-4 zoom position-relative user-card">    
+    <div class="card mb-4 zoom position-relative user-card">
+        @dump($user)
         <div class="card-body d-flex flex-column align-items-center">
             <div class="profile-img-card-container mb-3">
                 @if ($user->pic)
@@ -11,22 +12,21 @@
             <div class="font-weight-bold">
                 <span>{{ucfirst($user->name) . " " . ucfirst($user->lastname)}}</span>
             </div>
-            <div>
-                {{-- TODO to remove --}}
-                <small><span>icone categorie</span></small>
-            </div>
-            <div>
-                {{-- TODO to remove --}}
-                <small><span>stelline voto medio</span><span><i class="fas fa-star"></i></span><span><i class="fas fa-star"></i></span></small>
-                @for ($i = 0; $i < intval($user->avg_vote); $i++) {{-- intval() ritorna un intero da una stringa --}}
-                    <span><i class="fas fa-star"></i></span>
-                @endfor
-            </div>
+            @if ($user->avg_vote)
+                <div>
+                    {{-- intval() ritorna un intero da una stringa --}}
+                    @for ($i = 0; $i < intval($user->avg_vote); $i++)
+                        <span><i class="fas fa-star"></i></span>
+                    @endfor
+                </div>
+            @else
+                <div>
+                    <span class="text-secondary"><small>nessun voto ricevuto</small></span>
+                </div>
+            @endif
             <div>
                 <span>
-                    <small>
-                        <i class="fas fa-file-alt mr-2"></i>numero recensioni
-                    </small>
+                    <small><i class="fas fa-file-alt mr-2"></i>numero recensioni</small>
                 </span>
             </div>
             @if ($user->sponsored)

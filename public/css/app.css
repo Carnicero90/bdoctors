@@ -10005,10 +10005,6 @@ h3 {
 /* =============
     COLORS
    ============= */
-body {
-  background-color: white;
-}
-
 .cat-icon-container img {
   height: 25px;
   width: auto;
@@ -10369,7 +10365,8 @@ footer .copyright span {
 }
 
 .user-card {
-  min-height: 270px;
+  min-height: 248px;
+  min-height: 250px;
 }
 
 .profile-img-card-container {
