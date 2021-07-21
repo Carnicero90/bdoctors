@@ -1,3 +1,16 @@
+.user-card-a {
+    color: #444;
+
+    &:hover {
+        color: #444;
+        text-decoration: none;
+    }
+}
+
+.user-card {
+    min-height: 270px;
+}
+
 .profile-img-card-container {
     width: 120px;
     height: 120px;

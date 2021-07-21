@@ -39,8 +39,8 @@
             {{-- END lista categorie --}}
 
             {{-- elenco risultati users --}}
-            <div class="row mt-4 d-flex align-items-center justify-content-around">
-                <div v-for="user in users">
+            <div class="row mt-4 d-flex align-items-center justify-content-between">
+                <div v-for="user in users" class="col-3">
                     @include("partials.user-card-api")
                 </div>
             </div>
