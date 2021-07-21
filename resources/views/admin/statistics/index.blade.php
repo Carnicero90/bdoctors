@@ -84,7 +84,7 @@
                         }]
                     }
                 });
-                
+
                 function fillEmptyMonths(filler, year) {
                         const fillable = year.map(el => {
                             return {
@@ -117,6 +117,9 @@
 
         <div class="mt-3 mb-4">
             <h1>Statistiche utente</h1>
+            <a href="#mails" class="btn mr-2">Messaggi ricevuti</a>
+            <a href="#reviews" class="btn mr-2">Recensioni ricevute</a>
+            <a href="#votes" class="btn mr-2">Media voti</a>
         </div>
 
         <div class="row" id="page-content">

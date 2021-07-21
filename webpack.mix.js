@@ -23,8 +23,6 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/guest/review.js', 'public/js')
     // file relativo a profile privato degli user
     .js('resources/js/admin/profile.js', 'public/js')
-    // file relativo a admin/stats per le statistiche user
-    .js('resources/js/admin/stats.js', 'public/js')
 
     .js('resources/js/admin/services.js', 'public/js')
 
