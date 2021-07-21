@@ -86,7 +86,7 @@
             {{-- section sponsored --}}
             <div class="container">
                 <h2 class="text-center">I nostri artisti del momento</h2>
-                <div class="row mt-4 d-flex align-items-center justify-content-between">
+                <div class="row mt-4 d-flex align-items-center justify-content-center">
                     <div v-for="user in sponsoredUsers" class="col-3">
                         @include("partials.user-card-api")
                     </div>

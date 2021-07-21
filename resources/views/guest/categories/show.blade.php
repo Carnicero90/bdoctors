@@ -7,7 +7,7 @@
             <h3>{{ucfirst($category->name)}}</h3>
         </div>
 
-        <div class="row mt-4 d-flex align-items-center justify-content-between">
+        <div class="row mt-4 d-flex align-items-center justify-content-center">
             @foreach ($category_users as $user)
                 <div class="col-3">
                     @include("partials.user-card-php")
