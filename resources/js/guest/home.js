@@ -6,9 +6,31 @@ var app = new Vue({
         sponsoredUsers: [],
         searchString: '',
         selectedCategory: 0,
-        timeOutCounter: 0
+        timeOutCounter: 0,
+        tot_to_show: 4,
+        start_index: 0
     },
     methods: {
+        slideLeft() {
+            const slicer = this.start_index - this.tot_to_show;
+            if ( slicer < 0 ) {
+                this.sponsoredUsers = [...this.sponsoredUsers.slice(this.sponsoredUsers.length + slicer, this.sponsoredUsers.length), ...this.sponsoredUsers.slice(0, this.sponsoredUsers.length + slicer)]
+            }
+            else {
+                this.start_index -= this.tot_to_show;
+            }
+            console.log(this.sponsoredUsers.length)
+        },
+        slideRight() {
+            const slicer = this.start_index + this.tot_to_show;
+            if (slicer > this.sponsoredUsers.length -1 -this.tot_to_show) {
+                this.sponsoredUsers = [...this.sponsoredUsers.slice(this.sponsoredUsers.length - slicer, this.sponsoredUsers.length), ...this.sponsoredUsers.slice(0, this.sponsoredUsers.length - slicer)]
+            }
+            else {
+                this.start_index = slicer;
+            }
+
+        },
         searchUser() {
             // test sul coso (bounceback?)
             clearTimeout(this.timeOutCounter);
@@ -26,7 +48,14 @@ var app = new Vue({
     mounted() {
         Api.promisedUsers(Api.sponsoredUsersPath)
             .then(response => this.sponsoredUsers = response.data);
+
     },
+    created() {
+        setInterval(() => {
+            this.slideRight();
+        }, 5000)
+    },
+
     computed: {
        searchParams() {
            return {
