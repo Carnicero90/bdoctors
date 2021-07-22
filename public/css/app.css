@@ -10562,6 +10562,18 @@ footer .copyright span {
   left: 7px;
 }
 
+.card-sponsored {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-slider {
+  font-size: 35px;
+  cursor: pointer;
+}
+
 /* S */
 @media all and (min-width: 576px) and (max-width: 991px) {
   .xs-container {
