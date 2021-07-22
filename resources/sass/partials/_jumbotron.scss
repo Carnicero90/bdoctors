@@ -3,8 +3,10 @@
 
 .mio-jumbotron {
   background-image: url('/img/jumbotron.jpg'); 
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: right;
+  background-attachment: fixed;
   padding: 90px 0;
   height: 100vh;
 
@@ -40,6 +42,7 @@
     font-family: $primary_font;
     text-transform: uppercase;
     font-weight: 500;
+    text-shadow: 2px 2px 5px black;
   }
 
   .ricerca {
@@ -95,8 +98,11 @@
 
 // CATEGORIES JUMBOTRON
 .cat-jumbotron {
-  height: 500px;
+  height: 100vh;
   background-size: cover;
-  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  // color: white;
   font-family: $header_font;
 }

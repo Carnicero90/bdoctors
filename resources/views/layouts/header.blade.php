@@ -5,7 +5,7 @@
             <ul class="navbar-nav left-menu align-items-center">
                 <li class="nav-item">
                     <a class="navbar-brand logo" href="/">
-                        <img src="{{ asset('img/boolbards-logo-black-1.png') }}" alt="Logo">
+                        <img src="{{ asset('img/boolbards-logo-white-1.png') }}" alt="Logo">
                     </a>
                 </li>
                 <li class="nav-item">

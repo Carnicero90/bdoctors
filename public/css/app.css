@@ -10002,6 +10002,11 @@ h3 {
     border-color: #dee2e6;
   }
 }
+body {
+  color: gainsboro;
+  background-color: #141414;
+}
+
 main {
   min-height: 100vh;
 }
@@ -10070,7 +10075,7 @@ header nav {
   transition: 0.6s;
 }
 header.sticky {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: black;
   transition: 0.6s;
 }
 header .logo {
@@ -10102,8 +10107,10 @@ header .logo img {
 
 .mio-jumbotron {
   background-image: url("/img/jumbotron.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: right;
+  background-attachment: fixed;
   padding: 90px 0;
   height: 100vh;
 }
@@ -10146,6 +10153,7 @@ header .logo img {
   font-family: "Poppins";
   text-transform: uppercase;
   font-weight: 500;
+  text-shadow: 2px 2px 5px black;
 }
 .mio-jumbotron .ricerca {
   text-align: center;
@@ -10234,9 +10242,11 @@ header .logo img {
 }
 
 .cat-jumbotron {
-  height: 500px;
+  height: 100vh;
   background-size: cover;
-  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   font-family: "Julius Sans One";
 }
 
