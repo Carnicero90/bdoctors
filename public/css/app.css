@@ -10109,7 +10109,7 @@ header .logo img {
   padding-top: 7vh;
 }
 .mio-jumbotron .jumbo-logo {
-  width: 50%;
+  width: 70%;
   padding-bottom: 20px;
   -webkit-animation-name: logo;
           animation-name: logo;
@@ -10257,6 +10257,10 @@ footer .flex-son p {
   font-size: 15px;
   letter-spacing: 2px;
   color: lightgrey;
+}
+footer .flex-son p .text-evident {
+  color: white;
+  font-weight: 700;
 }
 footer .flex-son .category-links {
   padding: 0 15px;
