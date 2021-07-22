@@ -32,7 +32,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "Nunito", sans-serif;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -55,7 +55,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
@@ -5584,7 +5584,7 @@ a.close.disabled {
   z-index: 1070;
   display: block;
   margin: 0;
-  font-family: "Nunito", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -5686,7 +5686,7 @@ a.close.disabled {
   z-index: 1060;
   display: block;
   max-width: 276px;
-  font-family: "Nunito", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-style: normal;
   font-weight: 400;
   line-height: 1.6;
@@ -10005,6 +10005,7 @@ h3 {
 body {
   color: gainsboro;
   background-color: #141414;
+  font-family: "Poppins", sans-serif;
 }
 
 main {
@@ -10049,7 +10050,7 @@ input, select {
 }
 
 .cat-list-title {
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   font-weight: 200;
   color: white;
   line-height: 200px;
@@ -10062,7 +10063,7 @@ header {
   width: 100%;
   z-index: 1;
   transition: 0.6s;
-  font-family: "Julius Sans One";
+  font-family: "Julius Sans One", sans-serif;
 }
 header .navbar {
   padding: 0;
@@ -10150,7 +10151,7 @@ header .logo img {
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 100%;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
   text-transform: uppercase;
   font-weight: 500;
   text-shadow: 2px 2px 5px black;
@@ -10247,7 +10248,7 @@ header .logo img {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: "Julius Sans One";
+  font-family: "Julius Sans One", sans-serif;
 }
 
 footer {
@@ -10486,8 +10487,9 @@ footer .copyright span {
 
 .cat-card {
   background-size: cover;
+  background-repeat: no-repeat;
   height: 200px;
-  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  border: 0;
 }
 
 .ricerca {

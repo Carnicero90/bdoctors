@@ -1,5 +1,4 @@
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
@@ -17,9 +16,9 @@ $cyan: #6cb2eb;
 
 // Fonts
 // Julius Sans One
-$header_font: "Julius Sans One";
+$header_font: "Julius Sans One", sans-serif;
 // Poppins
-$primary_font: "Poppins";
+$primary_font: 'Poppins', sans-serif;
 
 // TOTEST
 // Palette
