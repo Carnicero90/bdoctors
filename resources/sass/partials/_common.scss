@@ -57,6 +57,21 @@ input, select {
     }
 }
 
+.cat-box {
+    background-color: rgb(226, 226, 226);
+    &.selected {
+        background-color:rgb(20, 20, 20);
+    }
+}
+
+.btn-custom-danger {
+    background-color: rgb(214, 22, 70);
+}
+
+.btn-custom-success {
+    background-color: #4e8c8c;
+}
+
 // Category List Title
 .cat-list-title {
     font-family: $primary_font;

@@ -24,8 +24,8 @@
             {{-- Searchbar --}}
             <div class="form-inline mt-3 mb-4 flex justify-content-center">
                 <input class="form-control mr-3 adv-search-bar" type="search" placeholder="Ricerca Avanzata" aria-label="Search" v-model="searchString" v-on:keyup="searchUser()">
-                <button class="btn btn-primary mr-3" v-on:click="sortUsersByReviewNum()"><i class="fas fa-chevron-down mr-1"></i>Ordina per numero recensioni</button>
-                <button class="btn btn-primary mr-3" v-on:click="sortUsersByReviewAvg()"><i class="fas fa-chevron-down mr-1"></i>Ordina per media voti</button>
+                <button class="btn btn-custom-danger mr-3 text-white" v-on:click="sortUsersByReviewNum()"><i class="fas fa-chevron-down mr-1"></i>Ordina per numero recensioni</button>
+                <button class="btn btn-custom-success mr-3 text-white" v-on:click="sortUsersByReviewAvg()"><i class="fas fa-chevron-down mr-1"></i>Ordina per media voti</button>
             </div>
             {{-- End Searchbar --}}
 
@@ -33,7 +33,7 @@
             {{-- btn-dark --}}
             <div class="d-flex justify-content-between mb-5">
                 <div v-for="category, index in categories" v-on:click="addOrRemoveCat(category.id)">
-                    <span class="btn btn-outline-dark" :class="selectedCat(category.id) ? 'btn-dark text-white' : '' ">@{{category.name.replace("registrazione e mixaggio", "rec & mix")}}</span>
+                    <span class="btn btn-outline-dark cat-box" :class="selectedCat(category.id) ? 'selected text-white' : '' ">@{{category.name.replace("registrazione e mixaggio", "rec & mix")}}</span>
                 </div>
             </div>
             {{-- END lista categorie --}}

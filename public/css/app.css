@@ -10049,6 +10049,21 @@ input, select {
   text-decoration: none;
 }
 
+.cat-box {
+  background-color: #e2e2e2;
+}
+.cat-box.selected {
+  background-color: #141414;
+}
+
+.btn-custom-danger {
+  background-color: #d61646;
+}
+
+.btn-custom-success {
+  background-color: #4e8c8c;
+}
+
 .cat-list-title {
   font-family: "Poppins", sans-serif;
   font-weight: 200;
@@ -10490,6 +10505,12 @@ footer .copyright span {
   background-repeat: no-repeat;
   height: 200px;
   border: 0;
+}
+
+.cat-header {
+  padding: 0.5em;
+  border-radius: 0.25em;
+  background-color: rgba(20, 20, 20, 0.6);
 }
 
 .ricerca {
