@@ -53,6 +53,11 @@ input, select {
     }
 }
 
-.cat-card {
-    background-size: cover;
+// Category List Title
+.cat-list-title {
+    font-family: $primary_font;
+    font-weight: 200;
+    color: white;
+    // TOTEST
+    line-height: 200px;
 }

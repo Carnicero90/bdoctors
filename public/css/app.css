@@ -10043,8 +10043,11 @@ input, select {
   text-decoration: none;
 }
 
-.cat-card {
-  background-size: cover;
+.cat-list-title {
+  font-family: "Poppins";
+  font-weight: 200;
+  color: white;
+  line-height: 200px;
 }
 
 header {
@@ -10140,6 +10143,9 @@ header .logo img {
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 100%;
+  font-family: "Poppins";
+  text-transform: uppercase;
+  font-weight: 200;
 }
 .mio-jumbotron .ricerca {
   text-align: center;
@@ -10225,6 +10231,13 @@ header .logo img {
 
 .select-category {
   -webkit-appearance: none;
+}
+
+.cat-jumbotron {
+  height: 500px;
+  background-size: cover;
+  color: white;
+  font-family: "Julius Sans One";
 }
 
 footer {
@@ -10460,6 +10473,12 @@ footer .copyright span {
 }
 .vote .star.filled {
   color: #e3342f;
+}
+
+.cat-card {
+  background-size: cover;
+  height: 200px;
+  box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 .ricerca {

@@ -126,7 +126,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\laravel-projects\bdoctors-1\resources\js\admin\profile.js */"./resources/js/admin/profile.js");
+module.exports = __webpack_require__(/*! /Users/Tom/BDoctors/bdoctors/resources/js/admin/profile.js */"./resources/js/admin/profile.js");
 
 
 /***/ })

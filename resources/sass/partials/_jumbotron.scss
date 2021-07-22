@@ -38,6 +38,9 @@
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: 100%;
+    font-family: $primary_font;
+    text-transform: uppercase;
+    font-weight: 200;
   }
 
   .ricerca {
@@ -89,4 +92,12 @@
 
 .select-category {
     -webkit-appearance: none;
+}
+
+// CATEGORIES JUMBOTRON
+.cat-jumbotron {
+  height: 500px;
+  background-size: cover;
+  color: white;
+  font-family: $header_font;
 }

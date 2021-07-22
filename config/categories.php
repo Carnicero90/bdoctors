@@ -3,17 +3,17 @@ return [
     'violinisti' => [
         'name' => 'violinisti',
         'slug' => 'violinisti',
-        'img' => 'violinisti.jpg'
+        'img' => 'violinisti.jpg',
     ],
     'dj' => [
         'name' => 'dj',
         'slug' => 'dj',
-        'img' => 'dj.jpg'
+        'img' => 'dj.jpg',
     ],
     'cantanti' => [
         'name' => 'cantanti',
         'slug' => 'cantanti',
-        'img' => 'cantanti.jpg'
+        'img' => 'cantanti.jpg',
     ],
     'batteristi' => [
         'name' => 'batteristi',
