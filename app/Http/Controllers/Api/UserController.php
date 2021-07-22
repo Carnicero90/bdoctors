@@ -37,7 +37,7 @@ class UserController extends Controller
             ->groupBy('users.id')
             ->leftJoin('reviews', 'users.id', '=', 'reviews.user_id')
             ->leftJoin('votes', 'reviews.vote_id', '=', 'votes.id')
-            ->orderByDesc('avg_vote')
+            // ->orderByDesc('avg_vote')
 
             ->orderByDesc(DB::raw('max(sponsorplan_users.end_date)'))
             ->get();
