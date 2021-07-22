@@ -7,10 +7,16 @@ use App\Review;
 
 class ReviewController extends Controller
 {
-    public function show($id) {
+    public function show($id)
+    {
         $data = [
-            'reviews' => Review::where('user_id', '=', $id)->get(),
-            'succes' => true ];
+            'reviews' => Review::select('reviews.*', 'votes.value')
+                ->where('user_id', '=', $id)
+                ->leftJoin('votes', 'vote_id', '=', 'votes.id')
+                ->orderByDesc('send_date')
+                ->get(),
+            'succes' => true
+        ];
         return $data;
     }
 }

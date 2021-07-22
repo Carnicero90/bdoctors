@@ -19,10 +19,10 @@
     </a>
 
     {{-- Acquista Piano Premium --}}
-    <a class="dash-link hover-blue" href="{{ route('sponsor-index') }}">
+    {{-- <a class="dash-link hover-blue" href="{{ route('sponsor-index') }}">
         <i class="fas fa-star mb-2 dashboard-icon"></i>
         <div>Acquista piano premium</div>
-    </a>
+    </a> --}}
 
     {{-- Statistiche --}}
     <a class="dash-link hover-blue" href="{{ route('admin.statistics', ['id' => Auth::user()->id]) }}">
@@ -37,9 +37,9 @@
     </a>
 
     {{-- Logout --}}
-    <a class="dash-link hover-blue" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+    {{-- <a class="dash-link hover-blue" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
         <i class="fas fa-sign-out-alt mb-2 dashboard-icon"></i>
         <div>Logout</div>
-    </a>
+    </a> --}}
 
 </div>
