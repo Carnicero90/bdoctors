@@ -33,7 +33,7 @@
             {{-- btn-dark --}}
             <div class="d-flex justify-content-between mb-5">
                 <div v-for="category, index in categories" v-on:click="addOrRemoveCat(category.id)">
-                    <span class="btn btn-outline-dark" :class="selectedCat(category.id) ? 'btn-dark text-white' : '' ">@{{category.name.replace("registrazione e mixaggio", "rec & mix")}}</span>
+                    <span class="btn btn-outline-dark cat-box" :class="selectedCat(category.id) ? 'selected text-white' : '' ">@{{category.name.replace("registrazione e mixaggio", "rec & mix")}}</span>
                 </div>
             </div>
             {{-- END lista categorie --}}

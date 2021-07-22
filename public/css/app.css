@@ -10049,6 +10049,13 @@ input, select {
   text-decoration: none;
 }
 
+.cat-box {
+  background-color: #e2e2e2;
+}
+.cat-box.selected {
+  background-color: #141414;
+}
+
 .cat-list-title {
   font-family: "Poppins", sans-serif;
   font-weight: 200;

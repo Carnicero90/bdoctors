@@ -57,6 +57,13 @@ input, select {
     }
 }
 
+.cat-box {
+    background-color: rgb(226, 226, 226);
+    &.selected {
+        background-color:rgb(20, 20, 20);
+    }
+}
+
 // Category List Title
 .cat-list-title {
     font-family: $primary_font;
