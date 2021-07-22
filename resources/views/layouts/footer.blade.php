@@ -13,7 +13,7 @@
                 <div class="d-flex">
                     <div class="flex-son">
                         <h4>Chi siamo</h4>
-                        <p>Quattro tartaruga sempre pronte, sempre allerta come i <span class="text-evident">Ninja</span>. Quattro tartarughe tutte identiche d'aspetto, tutte <span class="text-evident">Ninja</span>. Per la pizza vanno matte sai e ne mangian sempre più che mai.</p>
+                        <p>Cinque tartarughe sempre pronte, sempre allerta come i <span class="text-evident">Ninja</span>. Cinque tartarughe tutte identiche d'aspetto, tutte <span class="text-evident">Ninja</span>. Per la pizza vanno matte sai e ne mangian sempre più che mai.</p>
                     </div>
 
                     {{-- TO DELETE --}}
