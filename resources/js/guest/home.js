@@ -19,7 +19,6 @@ var app = new Vue({
             else {
                 this.start_index -= this.tot_to_show;
             }
-            console.log(this.sponsoredUsers.length)
         },
         slideRight() {
             const slicer = this.start_index + this.tot_to_show;

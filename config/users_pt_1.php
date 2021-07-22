@@ -2,6 +2,22 @@
 return         [
     [
         'user' => [
+            'name' => 'Filippo',
+            'lastname' => 'Montani',
+            'address' => 'Comunità di San Patrignano',
+            'email' => 'calavera90@mail.com',
+        ],
+        'profile' => [
+            'self_description' => 'Io sono un licantropo, misogino e misantropo, mi sputi dal terrazzo quando vedi che mi arrampico.',
+            'phone_number' => '3474140622',
+            'work_address' => 'Genova, Liguria, Italia, Mondo',
+            'pic' =>  'img/filo.jpg'
+
+        ],
+    ],
+    [
+
+        'user' => [
             'name' => 'Dargen',
             'lastname' => 'D\'Amico',
             'address' => 'Milano',
