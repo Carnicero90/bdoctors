@@ -42,23 +42,8 @@
                             </li>
                         @endif
                     @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{-- TO REMEMBER: rimosso v-pre in fondo a tag precedente, non dovrebbe contare --}}
-                                {{ Auth::user()->name }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-
-                                <a class="dropdown-item" href="{{ route('admin.dashboard') }}"><i class="fas fa-user-edit mr-2"></i>Dashboard</a>
-
-                                {{-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt mr-2"></i>{{ "Esegui " . __('Logout') }}</a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form> --}}
-                            </div>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin.dashboard') }}">{{ Auth::user()->name }}</a>
                         </li>
 
                         <li class="nav-item">
