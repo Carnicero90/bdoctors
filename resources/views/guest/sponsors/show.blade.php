@@ -17,7 +17,7 @@
 
                 @else
                     <div><a href="{{ route('register') }}" class="btn btn-success">Iscriviti per accedere ai nostri piani
-                            premium {{ $sponsorPlan->pricing }}</a></div>
+                            premium</a></div>
 
                 @endif
             </div>

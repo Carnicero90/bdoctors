@@ -41,16 +41,17 @@
                                     vuoi fare?</h2>
                             </div>
                             <div class="ml-auto">
-                                <span class="btn btn-warning">
-                                    @if ($user->sponsored)
-                                        La tua sponsorizzazione scade: {{$user->sponsored->end_date}}
-                                    @else
-                                        <a href="{{ route('sponsor-index') }}">
-                                            <i class="fas fa-star mb-2"></i>
-                                            <div>Acquista piano premium</div>
-                                        </a>
-                                    @endif
-                                </span>
+                                @if ($user->sponsored)
+                                    <a class="btn btn-outline-success" href="{{ route('sponsor-index') }}">
+                                        <h4>Sei un utente Premium</h4>
+                                        <span>fino al {{date("d/m/y", strtotime($user->sponsored->end_date)) . " alle ore " . date("H:i", strtotime($user->sponsored->end_date))}}</span>
+                                    </a>
+                                @else
+                                    <a class="btn btn-outline-success" href="{{ route('sponsor-index') }}">
+                                        <h4>Acquista un piano Premium</h4>
+                                        <span>Vedi i piani disponibili</span>
+                                    </a>
+                                @endif
                             </div>
                         </div>
 
@@ -64,28 +65,28 @@
 
             <div class="row mt-4 mb-4">
                 <div class="col-4">
-                    <a href="{{ route('admin.statistics', ['id' => Auth::user()->id]) }}" style="color: #333">
-                        <div class="card shadow">
+                    <a href="{{ route('admin.profile-index') }}" style="color: #333" class="no-decorations">
+                        <div class="card shadow zoom">
                             <div class="card-body">
-                                <h3>Statistiche</h3>
+                                <h3>{{ Auth::user()->profile ? 'Modifica' : 'Crea' }} profilo</h3>
                                 <img src="{{asset("img/dashboard/statistiche.png")}}" alt="" style="height: 200px;">
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-4">
-                    <a class="hover-blue" href="{{ route('admin.reviews') }}" style="color: #333">
-                        <div class="card shadow">
+                    <a href="{{ route('profile', ['id' => Auth::user()->id]) }}" style="color: #333" class="no-decorations">
+                        <div class="card shadow zoom">
                             <div class="card-body">
-                                <h3>Profilo</h3>
+                                <h3>Profilo pubblico</h3>
                                 <img src="{{asset("img/dashboard/profilo.png")}}" alt="" style="height: 200px;">
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-4">
-                    <a class="hover-blue" href="{{ route('admin.services') }}" style="color: #333">
-                        <div class="card shadow">
+                    <a href="{{ route('admin.services') }}" style="color: #333" class="no-decorations">
+                        <div class="card shadow zoom">
                             <div class="card-body">
                                 <h3>Servizi</h3>
                                 <img src="{{asset("img/dashboard/servizi.png")}}" alt="" style="height: 200px;">
@@ -95,10 +96,43 @@
                 </div>
             </div>
 
+            <div class="row mt-4 mb-4">
+                <div class="col-4">
+                    <a href="{{ route('admin.reviews') }}" style="color: #333" class="no-decorations">
+                        <div class="card shadow zoom">
+                            <div class="card-body">
+                                <h3>Recensioni</h3>
+                                <img src="{{asset("img/dashboard/profilo.png")}}" alt="" style="height: 200px;">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="{{ route('admin.messages') }}" style="color: #333" class="no-decorations">
+                        <div class="card shadow zoom">
+                            <div class="card-body">
+                                <h3>Messaggi</h3>
+                                <img src="{{asset("img/dashboard/servizi.png")}}" alt="" style="height: 200px;">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="{{ route('admin.statistics', ['id' => Auth::user()->id]) }}" style="color: #333" class="no-decorations">
+                        <div class="card shadow zoom">
+                            <div class="card-body">
+                                <h3>Statistiche</h3>
+                                <img src="{{asset("img/dashboard/statistiche.png")}}" alt="" style="height: 200px;">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
             <div class="row mt-4">
 
                 {{-- Recensioni --}}
-                <div class="col-6">
+                {{-- <div class="col-6">
                     <div class="d-flex align-items-center mb-2">
                         <a class="hover-blue" href="{{ route('admin.reviews') }}">
                             <h3>Recensioni</h3>
@@ -119,14 +153,14 @@
                                 </div>
                                 <div class="card-body">
                                     <div class="d-flex align-items-center justify-content-between">
-                                        {{-- review vote --}}
+
                                         <div>
                                             <span class="text-secondary">voto: </span>
                                             @for ($i = 0; $i < $review->vote->value; $i++)
                                                 <i class="fas fa-star"></i>
                                             @endfor
                                         </div>
-                                        {{-- review date --}}
+
                                     </div>
                                     <div class="mt-2 mb-2">
                                         <p class="card-text text-secondary">
@@ -137,7 +171,7 @@
                                         <a href="{{ route('admin.reviews-dettails', ['id' => $review->id]) }}"
                                             class="btn btn-primary mt-2"><i class="far fa-file-alt mr-2"></i>Leggi
                                             recensione</a>
-                                        <span class="text-secondary">ricevuta il {{ $review->send_date }}</span>
+                                        <span class="text-secondary">ricevuta il {{date("d/m/y", strtotime($review->send_date)) . " ore " . date("H:i", strtotime($review->send_date))}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -147,10 +181,10 @@
                             Nessuna recensione presente
                         </div>
                     @endif
-                </div>
+                </div> --}}
 
                 {{-- Messaggi --}}
-                <div class="col-6">
+                {{-- <div class="col-6">
                     <div class="d-flex align-items-center mb-2">
                         <h3><a class="hover-blue" href="{{ route('admin.messages') }}">Messaggi</a></h3>
                     </div>
@@ -177,7 +211,7 @@
                                         <a href="{{ route('admin.message-page', ['id' => $message->id]) }}"
                                             class="btn btn-primary mt-2"><i class="far fa-envelope mr-2"></i>Leggi
                                             messaggio</a>
-                                        <span class="text-secondary">ricevuto il {{ $message->message_date }}</span>
+                                        <span class="text-secondary">ricevuta il {{date("d/m/y", strtotime($message->message_date)) . " ore " . date("H:i", strtotime($message->message_date))}}</span>
                                     </div>
                                 </div>
                             </div>
@@ -189,7 +223,8 @@
                         </div>
                     @endif
 
-                </div>
+                </div> --}}
+
             </div>
 
         </div>
