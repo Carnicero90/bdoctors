@@ -277,7 +277,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/filippomontani/becci/bdoctors/resources/js/guest/home.js */"./resources/js/guest/home.js");
+module.exports = __webpack_require__(/*! C:\laravel-projects\bdoctors-1\resources\js\guest\home.js */"./resources/js/guest/home.js");
 
 
 /***/ })
