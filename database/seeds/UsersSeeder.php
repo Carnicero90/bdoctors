@@ -24,8 +24,8 @@ class UsersSeeder extends Seeder
             $profile->user_id = $new_user->id;
             $profile->save();
         }
-        foreach (config('users') as $user) {
 
+        foreach (config('users') as $user) {
             $new_user = new User();
             $new_user->fill($user);
             $new_user->password = Hash::make('cavecanem');

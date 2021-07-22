@@ -14,9 +14,7 @@ class AddPicSeeder extends Seeder
     {
         for ($i = 1; $i < 9; $i++) {
             $profile = Profile::updateOrCreate(
-                [
-                    'user_id' => $i + count(config('users_pt_1')) //TODO potenzialmente problematico ma non credo
-                ],
+                ['user_id' => $i + count(config('users_pt_1'))],
                 [ 'pic' => 'img/foto' . $i . '.jpg']
             );
         }

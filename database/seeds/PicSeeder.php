@@ -12,17 +12,11 @@ class PicSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 1; $i < 4; $i++) 
-        {
+        for ($i = 1; $i < 4; $i++) {
             $user = Profile::updateOrCreate(
-                [
-                    'user_id' => $i
-                ],
-                [
-                    'pic' => 'uploads/user_pics/guitar' . $i . '.jpeg'
-                ]
+                ['user_id' => $i],
+                ['pic' => 'uploads/user_pics/guitar' . $i . '.jpeg']
             );
-
         }
     }
 }

@@ -14,9 +14,7 @@ class SponsorplansSeeder extends Seeder
     public function run()
     {
         foreach (config('sponsor_plans') as $plan) {
-
             $new_plan = new Sponsorplan();
-    
             $new_plan->name = $plan['name'];
             $new_plan->duration_in_hours = $plan['duration_in_hours'];
             $new_plan->description = $plan['description'];

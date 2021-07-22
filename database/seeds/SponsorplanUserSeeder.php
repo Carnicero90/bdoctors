@@ -98,7 +98,6 @@ class SponsorplanUserSeeder extends Seeder
         ];
 
         foreach($sponsor_plan_users as $plan_user) {
-
             $new_plan_user = new SponsorplanUser();
             $new_plan_user->user_id = $plan_user['user_id'];
             $new_plan_user->sponsorplan_id = $plan_user['sponsorplan_id'];
@@ -106,7 +105,6 @@ class SponsorplanUserSeeder extends Seeder
             $new_plan_user->end_date = $plan_user['end_date'];
             $new_plan_user->invoice = $plan_user['invoice'];
             $new_plan_user->success = $plan_user['success'];
-            
             $new_plan_user->save();
         }
     }
