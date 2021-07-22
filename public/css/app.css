@@ -10505,12 +10505,35 @@ footer .copyright span {
   background-repeat: no-repeat;
   height: 200px;
   border: 0;
+  filter: blur(1px);
+  border-radius: 75px 0px 75px 0px;
+  transition: 1s;
+}
+.cat-card:hover {
+  filter: none;
+  border-radius: 7px;
+}
+.cat-card .cat-header {
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
 }
 
-.cat-header {
-  padding: 0.5em;
-  border-radius: 0.25em;
-  background-color: rgba(20, 20, 20, 0.6);
+.cat-card::before {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  border-radius: 75px 0px 75px 0px;
+  transition: all 1s ease-out;
+  background: linear-gradient(360deg, rgba(40, 45, 48, 0.874) 0%, rgba(40, 77, 87, 0.902) 99%);
+  opacity: 0;
+}
+
+.cat-card:hover:before {
+  opacity: 0.4;
+  border-radius: 7px;
 }
 
 .ricerca {
