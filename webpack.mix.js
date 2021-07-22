@@ -26,6 +26,9 @@ mix.js('resources/js/app.js', 'public/js')
 
     .js('resources/js/admin/services.js', 'public/js')
 
+    .js('resources/js/guest/show.js', 'public/js')
+
+
 
     // Fix a popper.js not found in safari (spero)
     // .js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps()
