@@ -10056,6 +10056,14 @@ input, select {
   background-color: #141414;
 }
 
+.btn-custom-danger {
+  background-color: #d61646;
+}
+
+.btn-custom-success {
+  background-color: #4e8c8c;
+}
+
 .cat-list-title {
   font-family: "Poppins", sans-serif;
   font-weight: 200;
