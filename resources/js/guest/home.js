@@ -13,7 +13,7 @@ var app = new Vue({
     methods: {
         slideLeft() {
             const slicer = this.start_index - this.tot_to_show;
-            if ( slicer < 0 ) {
+            if (slicer < 0) {
                 this.sponsoredUsers = [...this.sponsoredUsers.slice(this.sponsoredUsers.length + slicer, this.sponsoredUsers.length), ...this.sponsoredUsers.slice(0, this.sponsoredUsers.length + slicer)]
             }
             else {
@@ -22,7 +22,7 @@ var app = new Vue({
         },
         slideRight() {
             const slicer = this.start_index + this.tot_to_show;
-            if (slicer > this.sponsoredUsers.length -1 -this.tot_to_show) {
+            if (slicer > this.sponsoredUsers.length - 1 - this.tot_to_show) {
                 this.sponsoredUsers = [...this.sponsoredUsers.slice(this.sponsoredUsers.length - slicer, this.sponsoredUsers.length), ...this.sponsoredUsers.slice(0, this.sponsoredUsers.length - slicer)]
             }
             else {
@@ -46,29 +46,35 @@ var app = new Vue({
     },
     mounted() {
         Api.promisedUsers(Api.sponsoredUsersPath)
-            .then(response => this.sponsoredUsers = response.data);
+            .then(response => this.sponsoredUsers = response.data)
+            .finally( i => {
+                if (!(this.tot_to_show >= this.sponsoredUsers)) {
+                    setInterval(() => {
+                        this.slideRight();
+                    }, 5000)
+                }
+            }
+            )
 
     },
     created() {
-        setInterval(() => {
-            this.slideRight();
-        }, 5000)
+
     },
 
     computed: {
-       searchParams() {
-           return {
-               name: this.searchString,
-               cat: this.advsearchCat
-           };
-       },
-       searching() {
-           return this.searchString.length > 0;
-       },
+        searchParams() {
+            return {
+                name: this.searchString,
+                cat: this.advsearchCat
+            };
+        },
+        searching() {
+            return this.searchString.length > 0;
+        },
 
-       advsearchCat() {
-           return this.selectedCategory || ''
-       }
+        advsearchCat() {
+            return this.selectedCategory || ''
+        }
     }
 
 })

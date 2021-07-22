@@ -41,7 +41,7 @@
 
                     <div class="d-inline-block position-relative search-a-bard">
                         <div class="search-bard-input">
-                            <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="Cerca un bard">
+                            <input type="text" v-model="searchString" v-on:keyup="searchUser()" placeholder="Cerca un bardo">
                             <i class="fas fa-search position-absolute search-icon"></i>
                         </div>
 
@@ -49,7 +49,7 @@
                             <ul class="list-group">
                                 {{-- TODO: test --}}
                                 <li class="list-group-item" v-for="user in users">
-                                    <a :href="'bards/' + user.id" class="d-flex align-items-center c-1">
+                                    <a :href="'bards/' + user.id" class="d-flex align-items-center c-1 no-decorations">
                                         <div class="mr-2 profile-img-search-container position-relative">
                                             <img class="mr-2 profile-img-search" v-if="user.pic" :src="'/storage/' + user.pic" alt="">
                                             <img class="mr-2 profile-img-search" v-else src="{{asset("/img/user-img.png")}}" alt="">

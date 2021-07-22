@@ -38,12 +38,12 @@
 
 <body>
     {{-- HEADER --}}
-    @include('partials.header')
+    @include('layouts.header')
     <main>
         @yield('content')
     </main>
     {{-- FOOTER --}}
-    @include('partials.footer')
+    @include('layouts.footer')
     @yield('footer-scripts')
 </body>
 
