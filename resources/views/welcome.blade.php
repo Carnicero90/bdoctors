@@ -95,7 +95,7 @@
                     </div>
     
                     <div class="row mt-4 card-sponsored">
-                        <div v-for="user in sponsoredUsers.slice(start_index, start_index + tot_to_show)" class="col-md-3 col-sm-12">
+                        <div v-for="user in sponsoredUsers.slice(start_index, start_index + tot_to_show)" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                             @include("partials.user-card-api")
                         </div>
                     </div>

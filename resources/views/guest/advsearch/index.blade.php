@@ -40,7 +40,7 @@
 
             {{-- elenco risultati users --}}
             <div class="row mt-4 d-flex align-items-center justify-content-center">
-                <div v-for="user in users" class="col-3">
+                <div v-for="user in users" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
                     @include("partials.user-card-api")
                 </div>
             </div>
