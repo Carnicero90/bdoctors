@@ -86,7 +86,7 @@
 
                                     {{-- Button Modifica Servizio --}}
                                     <div class="mt-4">
-                                        <button type="submit" class="btn btn-success"><i class="fas fa-check mr-2"></i>Salva modifiche</button>
+                                        <button type="submit" class="btn btn-outline-success"><i class="fas fa-check mr-2"></i>Salva modifiche</button>
                                     </div>
 
                                 </form>
@@ -96,7 +96,7 @@
                                     <form action="{{ route('admin.service-destroy', ['id' => $service->id]) }}" method="post">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger" onclick="return confirm('Sei sicuro di volere eliminare il tuo servizio?')"><i class="fas fa-times mr-2"></i>Elimina</button>
+                                        <button class="btn btn-outline-danger" onclick="return confirm('Sei sicuro di volere eliminare il tuo servizio?')"><i class="fas fa-times mr-2"></i>Elimina</button>
                                     </form>
                                 </div>
                             </div>
@@ -109,7 +109,7 @@
 
             {{-- button che al click fa comparire sezione dedicata a inserimento nuovo servizio --}}
             <div class="form-group mt-4 mb-5">
-                <button v-on:click="showForm()" class="btn btn-primary"><i class="fas fa-plus mr-2"></i>Crea nuovo servizio</button>
+                <button v-on:click="showForm()" class="btn btn-outline-primary"><i class="fas fa-plus mr-2"></i>Crea nuovo servizio</button>
             </div>
 
             {{-- nuovi servizi --}}
@@ -140,7 +140,7 @@
                                 <input type="number" step="0.50" class="form-control d-inline-block hourly-rate" id="hourly_rate" name='hourly_rate' placeholder="00.00" min='0.00'>
                                 <label class="d-inline-block ml-1">€</label>
                             </div>
-                            <button class="btn btn-success"><i class="fas fa-check mr-2"></i>Salva</button>
+                            <button class="btn btn-outline-success"><i class="fas fa-check mr-2"></i>Salva</button>
 
                         </form>
 

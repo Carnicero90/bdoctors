@@ -41,14 +41,10 @@
                     {{-- input#image-file --}}
                     <div v-if="!loadedPic" class="profile-img-dashboard-container">
                         @if (Auth::user()->profile)
-
                             @if (Auth::user()->profile->pic)
-
                                 <img src="{{ asset('storage/' . Auth::user()->profile->pic) }}"
                                     class="profile-img-dashboard">
                             @endif
-
-
                         @else
                             <img src="{{ asset('img/user-img.png') }}" alt="" class="profile-img-dashboard">
                         @endif
@@ -61,7 +57,7 @@
                         <img v-bind:src="preload" alt="" class="profile-img-dashboard">
                     </div>
                     <div v-if="loadedPic">
-                        <button class="btn btn-warning">
+                        <button class="btn btn-outline-success">
                             Salva nuova foto
                         </button>
                     </div>
@@ -124,10 +120,10 @@
                     </div>
                     {{-- END input#self_description --}}
                     @if (Auth::user()->profile)
-                        <button type="submit" class="btn btn-success"><i class="fas fa-check mr-2"></i>Salva
+                        <button type="submit" class="btn btn-outline-success"><i class="fas fa-check mr-2"></i>Salva
                             modifiche</button>
                     @else
-                        <button type="submit" class="btn btn-success"><i class="fas fa-user-check mr-2"></i>Crea
+                        <button type="submit" class="btn btn-outline-success"><i class="fas fa-user-check mr-2"></i>Crea
                             profilo</button>
                     @endif
                     {{-- END bottone per invio form --}}

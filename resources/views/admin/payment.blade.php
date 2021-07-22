@@ -57,10 +57,10 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="text-secondary">4830635544216121</div>
+                        <div>4830635544216121</div>
                         <div class="d-flex">
-                            <div class="text-secondary mr-5">04/23</div>
-                            <div class="text-secondary">963</div>
+                            <div class="mr-5">04/23</div>
+                            <div>963</div>
                         </div>
                     </div>
                 </div>
@@ -73,10 +73,10 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <div class="text-secondary">5555555555554444</div>
+                        <div>5555555555554444</div>
                         <div class="d-flex">
-                            <div class="text-secondary mr-5">12/21</div>
-                            <div class="text-secondary">123</div>
+                            <div class="mr-5">12/21</div>
+                            <div>123</div>
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                     <input type="hidden" name="sponsorplan_id">
                     <div id="dropin-container"></div>
                 </form>
-                <button id="submit-button" class="btn btn-success">PAGA</button>
+                <button id="submit-button" class="btn btn-outline-success">PAGA</button>
             </div>
         </div>
     </div>

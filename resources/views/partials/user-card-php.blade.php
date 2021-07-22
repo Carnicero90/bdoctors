@@ -20,7 +20,7 @@
                 </div>
             @else
                 <div>
-                    <span class="text-secondary"><small>nessun voto ricevuto</small></span>
+                    <span><small>nessun voto ricevuto</small></span>
                 </div>
             @endif
             @if (count($user->reviews))

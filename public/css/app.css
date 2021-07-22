@@ -10012,6 +10012,44 @@ main {
   min-height: 100vh;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+a {
+  color: inherit;
+}
+a :hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.card {
+  background-color: #282828;
+  border-color: rgba(220, 220, 220, 0.3);
+  color: gainsboro;
+}
+.card span {
+  font-weight: 300;
+}
+.card .card-header {
+  background-color: #1e1e1e;
+}
+
+.form-control {
+  background-color: #282828;
+  color: gainsboro;
+  border-color: rgba(220, 220, 220, 0.3);
+}
+.form-control:focus {
+  background-color: #282828;
+  color: gainsboro;
+}
+
+.img_100 {
+  width: 100%;
+}
+
 .cat-icon-container img {
   height: 25px;
   width: auto;
@@ -10388,18 +10426,6 @@ footer .copyright span {
 .dashboard .dash-link {
   text-decoration: none;
   padding-bottom: 30px;
-  border-bottom: 2px solid transparent;
-}
-.dashboard .dash-link:hover {
-  border-bottom: 2px solid #3490dc;
-}
-.dashboard .hover-blue {
-  text-decoration: none;
-  color: #212529;
-}
-.dashboard .hover-blue:hover {
-  text-decoration: none;
-  color: #3490dc;
 }
 
 .profile-img-dashboard-container {

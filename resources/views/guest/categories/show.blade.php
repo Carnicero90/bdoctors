@@ -11,7 +11,7 @@
 
         <div class="row mt-4 d-flex align-items-center justify-content-center">
             @foreach ($category_users as $user)
-                <div class="col-3">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
                     @include("partials.user-card-php")
                 </div>
             @endforeach

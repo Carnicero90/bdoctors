@@ -49,21 +49,21 @@
 
                 <div class="mb-4">
                     <h6>Email:</h6>
-                    <span class="text-secondary">{{ $user->email }}</span>
+                    <span>{{ $user->email }}</span>
                 </div>
 
 
                 <div class="mb-4">
                     <h6>Indirizzo:</h6>
                     @if ($user->profile)
-                        <span class="text-secondary">{{ $user->profile->work_address }}</span>
+                        <span>{{ $user->profile->work_address }}</span>
                     @endif
                 </div>
 
                 <div class="mb-4">
                     <h6>Vi parlo di me:</h6>
                     @if ($user->profile)
-                        <p class="text-secondary">{{ $user->profile->self_description }}</p>
+                        <p>{{ $user->profile->self_description }}</p>
                     @endif
                 </div>
                 {{-- END TEST --}}
@@ -72,10 +72,10 @@
                     {{-- TODO: magari invece di nasconderlo si fa effetto 'disabled'? --}}
                     <div class="mt-4">
                         {{-- link form recensioni --}}
-                        <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi
+                        <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
                             recensione</a>
                         {{-- link form messaggi --}}
-                        <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-primary mr-3">Scrivi
+                        <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
                             messaggio</a>
                     </div>
                 @endif
@@ -83,9 +83,7 @@
 
                 {{-- PERFORMANCES --}}
                 <div class="row mt-4">
-                    <div class="col-12">
-                        <h2>Servizi</h2>
-                    </div>
+                    <h2>Servizi</h2>
                     @foreach ($user->services as $service)
                         <div class="col-6">
                             <div class="card mb-3">
@@ -94,7 +92,7 @@
                                     <h5>€ {{ $service->hourly_rate }} all'ora</h5>
                                 </div>
                                 <div class="card-body">
-                                    <p class="text-secondary">{{ $service->description }}</p>
+                                    <p>{{ $service->description }}</p>
                                 </div>
                             </div>
                         </div>
@@ -103,45 +101,42 @@
                 {{-- END PERFORMANCES --}}
 
                 {{-- reviews --}}
-                <div class="row mt-4">
-                    <div class="col-12 mb-2">
-                        <h2>Recensioni</h2>
-                    </div>
-
-                    <div class="col-12">
-                            <div v-for="review in reviews.slice(0, reviews_to_show)" class="card mb-3">
-                                <div class="card-header d-flex justify-content-between">
-                                    <div class="mr-5">
-                                        <span><i class="fas fa-user-circle mr-1"></i></span>
-                                        <span>@{{ review.author_name }}</span>
+                <div class="row">
+                    <h2>Recensioni</h2>
+                    <div class="col-12 col-sm-6 col-md-4 col-lg-6">
+                        <div v-for="review in reviews.slice(0, reviews_to_show)" class="card mb-3">
+                            <div class="card-header d-flex justify-content-between">
+                                <div class="mr-5">
+                                    <span><i class="fas fa-user-circle mr-1"></i></span>
+                                    <span>@{{ review.author_name }}</span>
+                                </div>
+                                <div>
+                                    <span><i class="fas fa-envelope mr-1"></i></span>
+                                    <span>@{{ review.author_email }}</span>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-between mb-4">
+                                    <div>
+                                        <span>voto: </span>
+                                        <span v-for="n in review.value">
+                                            <i class="fas fa-star"></i>
+                                        </span>
+                                        {{-- @for (i = 0; i < review.vote.value; i++)
+                                        @endfor --}}
                                     </div>
                                     <div>
-                                        <span><i class="fas fa-envelope mr-1"></i></span>
-                                        <span>@{{ review.author_email }}</span>
+                                        <span>ricevuta il @{{ review.send_date }}</span>
                                     </div>
                                 </div>
-                                <div class="card-body">
-                                    <div class="d-flex align-items-center justify-content-between mb-4">
-                                        <div>
-                                            <span class="text-secondary">voto: </span>
-                                            <span v-for="n in review.value">
-                                                <i class="fas fa-star"></i>
-                                            </span>
-                                            {{-- @for (i = 0; i < review.vote.value; i++)
-                                            @endfor --}}
-                                        </div>
-                                        <div>
-                                            <span class="text-secondary">ricevuta il @{{ review.send_date }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="mt-2 mb-2">
-                                        <p class="card-text text-secondary">@{{ review.content }}</p>
-                                    </div>
+                                <div class="mt-2 mb-2">
+                                    <p class="card-text">@{{ review.content }}</p>
                                 </div>
                             </div>
-                            <div v-if="reviews.length > 5">
-                                <button v-on:click="reviews_to_show += reviews_to_show"class="btn btn-primary">Mostra piu rece</button>
-                            </div>
+                        </div>
+                        <div v-if="reviews.length > 5">
+                            <button v-on:click="reviews_to_show += reviews_to_show"class="btn btn-outline-primary">Mostra piu rece</button>
+                        </div>
                     </div>
                 </div>
                 {{-- END reviews --}}
