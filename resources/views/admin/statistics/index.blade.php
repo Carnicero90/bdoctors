@@ -36,8 +36,8 @@
                 'reviews']; // array di oggetti, elenco delle recensioni ricevute per mese e relativa media voti mensile
 
                 // creiamo degli array di oggetti in cui siano presenti anche i mesi in cui il totale dei messaggi o delle recensioni e' == 0
-                const mess_months = fillEmptyMonths(messages, last_year);
-                const rev_months = fillEmptyMonths(reviews, last_year);
+                const mess_months = fillEmptyMonths(messages, last_year, 'date');
+                const rev_months = fillEmptyMonths(reviews, last_year, 'date');
 
                 // popoliamo i nostri grafici
                 const reviewsCanvasChart = new Chart(reviewsCanvas, {
@@ -87,14 +87,15 @@
                     }
                 });
 
-                function fillEmptyMonths(filler, year) {
-                    const fillable = year.map(el => {
-                        return {
-                            date: el
-                        }
-                    });
+                function fillEmptyMonths(filler, year, field) {
+                    const fillable = Array.from(year, function(i){
+                        const j = {};
+                        j[field] = i;
+                        return j;
+                    })
+
                     filler.forEach(element => {
-                        fillable[fillable.findIndex(el => el.date == element.date)] = {
+                        fillable[fillable.findIndex(el => el[field] == element[field])] = {
                             ...element
                         };
                     })
