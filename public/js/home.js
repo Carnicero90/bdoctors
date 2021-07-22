@@ -241,15 +241,15 @@ var app = new Vue({
 
     Api.promisedUsers(Api.sponsoredUsersPath).then(function (response) {
       return _this2.sponsoredUsers = response.data;
+    })["finally"](function (i) {
+      if (!(_this2.tot_to_show >= _this2.sponsoredUsers)) {
+        setInterval(function () {
+          _this2.slideRight();
+        }, 5000);
+      }
     });
   },
-  created: function created() {
-    var _this3 = this;
-
-    setInterval(function () {
-      _this3.slideRight();
-    }, 5000);
-  },
+  created: function created() {},
   computed: {
     searchParams: function searchParams() {
       return {
