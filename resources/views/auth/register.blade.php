@@ -7,7 +7,7 @@
             <div class="col-md-8">
                 @include("partials.validation-errors")
                 <div class="card">
-                    <div class="card-header">{{ __('Register') }}</div>
+                    <div class="card-header">Registrati</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
