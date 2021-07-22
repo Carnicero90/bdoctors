@@ -10593,6 +10593,7 @@ footer .copyright span {
 .arrow-slider {
   font-size: 35px;
   cursor: pointer;
+  padding: 0 15px;
 }
 
 /* S */
