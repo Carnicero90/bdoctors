@@ -1,5 +1,2 @@
-## Note:
-* rinominare prezzo in sponsor per evidenziare la valuta di riferimento
-* inserire una valanga di nullable et similia nelle migration
-* rivedere i nomi di qualche table
-* dropforeign nei down!
+Fregati degli altri, tira avanti a barra dritta, 
+Ho messo il peggio di me in ogni riga di codice scritta. 

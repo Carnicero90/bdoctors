@@ -4,6 +4,7 @@ footer {
 
     img {
         width: 100px;
+        margin-bottom: 15px;
     }
 
     .bg-footer {
@@ -31,6 +32,10 @@ footer {
             font-size: 15px;
             letter-spacing: 2px;
             color: lightgrey;
+            .text-evident {
+                color: white;
+                font-weight: 700;
+            }
         }
 
         .category-links {

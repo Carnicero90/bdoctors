@@ -177,6 +177,18 @@ var ApiPath = /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
 var Api = __webpack_require__(/*! ../api */ "./resources/js/api.js");
 
 var app = new Vue({
@@ -186,9 +198,31 @@ var app = new Vue({
     sponsoredUsers: [],
     searchString: '',
     selectedCategory: 0,
-    timeOutCounter: 0
+    timeOutCounter: 0,
+    tot_to_show: 4,
+    start_index: 0
   },
   methods: {
+    slideLeft: function slideLeft() {
+      var slicer = this.start_index - this.tot_to_show;
+
+      if (slicer < 0) {
+        this.sponsoredUsers = [].concat(_toConsumableArray(this.sponsoredUsers.slice(this.sponsoredUsers.length + slicer, this.sponsoredUsers.length)), _toConsumableArray(this.sponsoredUsers.slice(0, this.sponsoredUsers.length + slicer)));
+      } else {
+        this.start_index -= this.tot_to_show;
+      }
+
+      console.log(this.sponsoredUsers.length);
+    },
+    slideRight: function slideRight() {
+      var slicer = this.start_index + this.tot_to_show;
+
+      if (slicer > this.sponsoredUsers.length - 1 - this.tot_to_show) {
+        this.sponsoredUsers = [].concat(_toConsumableArray(this.sponsoredUsers.slice(this.sponsoredUsers.length - slicer, this.sponsoredUsers.length)), _toConsumableArray(this.sponsoredUsers.slice(0, this.sponsoredUsers.length - slicer)));
+      } else {
+        this.start_index = slicer;
+      }
+    },
     searchUser: function searchUser() {
       var _this = this;
 
@@ -210,6 +244,13 @@ var app = new Vue({
     Api.promisedUsers(Api.sponsoredUsersPath).then(function (response) {
       return _this2.sponsoredUsers = response.data;
     });
+  },
+  created: function created() {
+    var _this3 = this;
+
+    setInterval(function () {
+      _this3.slideRight();
+    }, 5000);
   },
   computed: {
     searchParams: function searchParams() {
@@ -236,7 +277,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Tom/BDoctors/bdoctors/resources/js/guest/home.js */"./resources/js/guest/home.js");
+module.exports = __webpack_require__(/*! C:\laravel-projects\bdoctors-1\resources\js\guest\home.js */"./resources/js/guest/home.js");
 
 
 /***/ })

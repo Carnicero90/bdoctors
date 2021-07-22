@@ -38,7 +38,7 @@
                         </li>
                         @if (Route::has('register'))
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                <a class="nav-link" href="{{ route('register') }}">Registrati</a>
                             </li>
                         @endif
                     @else
@@ -53,13 +53,24 @@
 
                                 <a class="dropdown-item" href="{{ route('admin.dashboard') }}"><i class="fas fa-user-edit mr-2"></i>Dashboard</a>
 
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt mr-2"></i>{{ "Esegui " . __('Logout') }}</a>
+                                {{-- <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><i class="fas fa-sign-out-alt mr-2"></i>{{ "Esegui " . __('Logout') }}</a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form> --}}
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-                            </div>
+                            </a>
                         </li>
+
                     @endguest
                 </ul>
             </div>

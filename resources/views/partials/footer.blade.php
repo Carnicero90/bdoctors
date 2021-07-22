@@ -13,11 +13,12 @@
                 <div class="d-flex">
                     <div class="flex-son">
                         <h4>Chi siamo</h4>
-                        <p>Vivamus suscipit <span>tortor eget felis porttitor</span> volutpat. Nulla quis lorem ut libero malesuada feugiat. Vivamus suscipit tortor eget felis porttitor volutpat.</p>
+                        <p>Quattro tartaruga sempre pronte, sempre allerta come i <span class="text-evident">Ninja</span>. Quattro tartarughe tutte identiche d'aspetto, tutte <span class="text-evident">Ninja</span>. Per la pizza vanno matte sai e ne mangian sempre più che mai.</p>
                     </div>
 
+                    {{-- TO DELETE --}}
                     <!-- Category links -->
-                    <div class="flex-son">
+                    {{-- <div class="flex-son">
                         <h4>Categorie</h4>
                         <ul class="category-links d-flex categories-ul">
 
@@ -105,7 +106,8 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div> --}}
+                    {{-- END TO DELETE --}}
                     
                     <!-- Contact Info -->
                     <div class="flex-son">

@@ -88,10 +88,16 @@
             {{-- section sponsored --}}
             <div class="container">
                 <h2 class="text-center">I nostri artisti del momento</h2>
+                <div v-on:click="slideLeft">
+                    <i class="fas fa-chevron-left"></i>
+                </div>
                 <div class="row mt-4 d-flex align-items-center justify-content-center">
-                    <div v-for="user in sponsoredUsers" class="col-3">
+                    <div v-for="user in sponsoredUsers.slice(start_index, start_index + tot_to_show)" class="col-3">
                         @include("partials.user-card-api")
                     </div>
+                </div>
+                <div v-on:click="slideRight">
+                    <i class="fas fa-chevron-right"></i>
                 </div>
             </div>
             {{-- END section sponsored --}}
