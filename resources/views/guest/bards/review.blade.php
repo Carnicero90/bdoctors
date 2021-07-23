@@ -24,13 +24,8 @@
             {{--TEST_LEVARE--}}
             {{-- {{dd($reviews)}} --}}
 
-            <h1>Lascia una recensione per {{ $user->name . ' ' . $user->lastname }}</h1>
-            <div class="mb-4">
-                <h6>Categorie:</h6>
-                @foreach ($user->categories as $category)
-                    <a class="btn btn-outline-dark"
-                        href="{{ route('category-page', ['slug' => $category->slug]) }}">{{ $category->name }}</a>
-                @endforeach
+            <div class="mb-5">
+                <h1>Lascia una recensione per {{ $user->name . ' ' . $user->lastname }}</h1>
             </div>
 
             {{-- form lascia una recensione --}}
