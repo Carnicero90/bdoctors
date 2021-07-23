@@ -9,6 +9,7 @@
     height: 37px;
     padding-left: 15px;
     background-color: black;
+    color: rgb(220, 220, 220);
     border-radius: 999px 0px 0px 999px;
     border: 1px solid white;
 }
@@ -22,7 +23,7 @@
     .li {
         width: 220px;
         background-color: #111;
-        border-color: $c-1;
+        border-color: #888;
         position: relative;
         padding: 10px;
     }
@@ -71,15 +72,18 @@
     left: 7px;
 }
 
-.card-sponsored {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .arrow-slider {
-    font-size: 35px;
+    font-size: 40px;
+    color: rgb(220, 220, 220);
     cursor: pointer;
-    padding: 0 15px;
+    position: absolute;
+    z-index: 2;
+
+    &.left-arrow {
+        left: 0;
+    }
+    
+    &.right-arrow {
+        right: 0;
+    }
 }
