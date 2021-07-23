@@ -75,7 +75,25 @@
 
         <div class="top-margine">
 
+            {{-- section spiegazione --}}
+            <div class="container pb-5">
+                <h2 class="text-center text-uppercase">Nuovi artisti ogni giorno (da modificare)</h2>
+
+                <div class="row justify-content-center">
+
+                    <p class="text-secondary">BoolBards è la piattaforma ideale per trovare un artista che fa al caso tuo.<br>
+                        Nuovi artisti si aggiungono alla nostra rete ogni giorno.<br>
+                        Avrai la possibilità di visione il profilo di ogni artista e scegliere in base alle sue recensioni.<br>
+                        Quando avrai scelto, potrai contattare finalmente l'artista direttamente sulla sua pagina tramite messaggio.<br>
+                        Cosa aspetti? Inizia la ricerca e scegli il Bardo che fa al caso tuo!
+                    </p>
+
+                </div>
+            </div>
+            {{-- END section spiegazione --}}
+
             {{-- section sponsored --}}
+            <hr>
             <div class="container pb-5">
                 <h2 class="text-center text-uppercase">I nostri artisti del momento</h2>
 
