@@ -43,17 +43,11 @@ class ReviewController extends Controller
         $request->validate($this->getValidationRules());
 
         $form_data = $request->all();
-
         $review = new Review();
         $review->fill($form_data);
         $review->user_id = $id;
         $review->send_date = Carbon::now();
-
-        // Prendo l'input dalla select
-        $service_received = $request->input('service_received');
-
         $review->save();
-
 
         // con back() facciamo il redirect sulla stessa pagina, esempio:
         // return back()->with("success", "Recensione salvata correttamente");
@@ -68,6 +62,7 @@ class ReviewController extends Controller
             "content" => "nullable|required|string|max:5000",
             "vote_id" => "required|exists:votes,id",
             "terms-conditions" => "accepted",
+            "service_received" => "required|int|min:0|max:1",
         ];
     }
 }

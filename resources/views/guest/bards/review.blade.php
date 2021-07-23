@@ -82,10 +82,9 @@
                 {{-- select servizio ricevuto --}}
                 <div class="form-group">
                     <label for="content">Hai usufruito di un servizio?</label>
-                    <select class="form-control" name="service_received" id="service_received">
-
+                    <select class="form-control" name="service_received" id="service_received" required>
+                        <option value="" disabled selected>Seleziona</option>
                         <option value="1">Si</option>
-
                         <option value="0">No</option>
                     </select>
                 </div>
