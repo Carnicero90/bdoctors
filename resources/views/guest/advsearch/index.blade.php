@@ -22,10 +22,18 @@
         <div class="container">
 
             {{-- Searchbar --}}
-            <div class="form-inline mt-3 mb-4 flex justify-content-center">
-                <input class="form-control mr-3 adv-search-bar" type="search" placeholder="Ricerca Avanzata" aria-label="Search" v-model="searchString" v-on:keyup="searchUser()">
-                <button class="btn btn-custom-danger mr-3 text-white" v-on:click="sortUsersByReviewNum()"><i class="fas fa-chevron-down mr-1"></i>Ordina per numero recensioni</button>
-                <button class="btn btn-custom-success mr-3 text-white" v-on:click="sortUsersByReviewAvg()"><i class="fas fa-chevron-down mr-1"></i>Ordina per media voti</button>
+            <div class="row mb-4">
+                <div class="col-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
+                    <input class="form-control adv-search-bar" type="search" placeholder="Ricerca Avanzata" aria-label="Search" v-model="searchString" v-on:keyup="searchUser()">
+                </div>
+            </div>
+            <div class="row text-center mb-4">
+                <div class="col-6 col-sm-6 col-md-5 offset-md-1 col-lg-4 offset-lg-2 col-xl-3 offset-xl-3">
+                    <button class="btn btn-custom-danger text-white" v-on:click="sortUsersByReviewNum()">Ordina per num recensioni</button>
+                </div>
+                <div class="col-6 col-sm-6 col-md-5 col-lg-4 col-xl-3">
+                    <button class="btn btn-custom-success text-white" v-on:click="sortUsersByReviewAvg()">Ordina per media voti</button>
+                </div>
             </div>
             {{-- End Searchbar --}}
 
