@@ -4,6 +4,7 @@
             <div class="text-center text-uppercase">
                 <span class="cat-list-title cat-header">{{str_replace("registrazione e mixaggio", "rec & mix", $category->name)}}</span>
             </div>
+            <div class="bg-overlay"></div>
         </div>
     </a>
 </div>
