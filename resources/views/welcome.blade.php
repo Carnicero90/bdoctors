@@ -77,7 +77,7 @@
 
             {{-- section sponsored --}}
             <div class="container pb-5">
-                <h2 class="text-center">I nostri artisti del momento</h2>
+                <h2 class="text-center text-uppercase">I nostri artisti del momento</h2>
 
                 <div class="row d-flex align-items-center position-relative">
 
@@ -100,7 +100,7 @@
             {{-- section categories --}}
             <hr>
             <div class="container mt-4 pt-5 mb-5">
-                <h2 class="text-center">Categorie</h2>
+                <h2 class="text-center text-uppercase">Categorie</h2>
                 <div class="row mt-4">
                     @foreach ($categories as $category)
                         @include("partials.categories-list")
