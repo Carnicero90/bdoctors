@@ -4,7 +4,6 @@
     background-repeat: no-repeat;
     height: 200px;
     border: 0;
-    filter: blur(1px);
     border-radius: 75px 0px 75px 0px;
     transition: 1s;
     &:hover {
@@ -18,6 +17,7 @@
         font-weight: 300;
     }
 }
+
 .cat-card::before {
     content: '';
     display: block;

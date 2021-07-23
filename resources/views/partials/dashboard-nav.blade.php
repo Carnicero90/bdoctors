@@ -1,4 +1,4 @@
-<div class="dash-list d-flex text-center align-items-center">
+<div class="row dash-list d-flex text-center align-items-center">
     {{-- TOASK: che roba e'? --}}
     @if (session('status'))
         <div class="alert alert-success" role="alert">
@@ -7,39 +7,45 @@
     @endif
 
     {{-- Crea/Modifica Profilo --}}
-    <a class="dash-link" href="{{ route('admin.profile-index') }}">
-        <i class="fas fa-user-cog mb-2 dashboard-icon"></i>
-        <div>{{ Auth::user()->profile ? 'Modifica' : 'Crea' }} profilo</div>
-    </a>
+    <div class="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 mb-3 zoom">
+        <a class="dash-link" href="{{ route('admin.profile-index') }}">
+            <div>{{ Auth::user()->profile ? 'Modifica' : 'Crea' }} profilo</div>
+        </a>
+    </div>
 
     {{-- Aggiungi/Modifica Servizio --}}
-    <a class="dash-link" href="{{ route('admin.services') }}">
-        <i class="fas fa-user-plus mb-2 dashboard-icon"></i>
-        <div>Aggiungi / Modifica servizio</div>
-    </a>
+    <div class="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 mb-3 zoom">
+        <a class="dash-link" href="{{ route('admin.services') }}">
+            <div>Servizi</div>
+        </a>
+    </div>
 
     {{-- Statistiche --}}
-    <a class="dash-link" href="{{ route('admin.statistics', ['id' => Auth::user()->id]) }}">
-        <i class="far fa-comment-dots mb-2 dashboard-icon"></i>
-        <div>Recensioni</div>
-    </a>
+    <div class="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 mb-3 zoom">
+        <a class="dash-link" href="{{ route('admin.reviews') }}">
+            <div>Recensioni</div>
+        </a>
+    </div>
 
     {{-- Statistiche --}}
-    <a class="dash-link" href="{{ route('admin.statistics', ['id' => Auth::user()->id]) }}">
-        <i class="far fa-envelope mb-2 dashboard-icon"></i>
-        <div>Messaggi</div>
-    </a>
+    <div class="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 mb-3 zoom">
+        <a class="dash-link" href="{{ route('admin.messages') }}">
+            <div>Messaggi</div>
+        </a>
+    </div>
 
     {{-- Statistiche --}}
-    <a class="dash-link" href="{{ route('admin.statistics', ['id' => Auth::user()->id]) }}">
-        <i class="fas fa-signal mb-2 dashboard-icon"></i>
-        <div>Statistiche</div>
-    </a>
+    <div class="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 mb-3 zoom">
+        <a class="dash-link" href="{{ route('admin.statistics', ['id' => Auth::user()->id]) }}">
+            <div>Statistiche</div>
+        </a>
+    </div>
 
     {{-- Visualizza Profilo Pubblico --}}
-    <a class="dash-link" href="{{ route('profile', ['id' => Auth::user()->id]) }}">
-        <i class="fas fa-user-tie mb-2 dashboard-icon"></i>
-        <div>Visualizza profilo pubblico</div>
-    </a>
+    <div class="col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2 mb-3 zoom">
+        <a class="dash-link" href="{{ route('profile', ['id' => Auth::user()->id]) }}">
+            <div>Profilo pubblico</div>
+        </a>
+    </div>
 
 </div>

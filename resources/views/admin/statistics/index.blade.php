@@ -120,21 +120,25 @@
             </div>
             {{-- END HEADER --}}
 
-            <div class="mt-3 mb-4">
-                <h1>Statistiche utente</h1>
-                <a href="#mails" class="btn mr-2 text-white" style="background-color: #8c4e4e">Messaggi ricevuti</a>
-                <a href="#reviews" class="btn mr-2 text-white" style="background-color: #4e8c8c">Recensioni ricevute</a>
-                <a href="#votes" class="btn mr-2 text-white" style="background-color: #4e6b8c">Media voti</a>
+            <div class="row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-4 mb-4">
+                    <h1>Statistiche utente</h1>
+                    <div>
+                        <a href="#mails" class="btn mr-2 text-white" style="background-color: #8c4e4e">Messaggi ricevuti</a>
+                        <a href="#reviews" class="btn mr-2 text-white" style="background-color: #4e8c8c">Recensioni ricevute</a>
+                        <a href="#votes" class="btn mr-2 text-white" style="background-color: #4e6b8c">Media voti</a>
+                    </div>
+                </div>
             </div>
 
             <div class="row" id="page-content">
 
-                <div class="col-md-6 mb-5">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 mb-4">
                     {{-- section#mails --}}
                     <section id="mails">
                         <div class="card">
                             <div class="card-header">
-                                <h2>Messaggi ricevuti per mese</h2>
+                                <h3>Messaggi ricevuti per mese</h3>
                             </div>
                             <div class="card-body">
                                 <canvas id="messagesCanvas"></canvas>
@@ -144,12 +148,12 @@
                     {{-- END section#mails --}}
                 </div>
 
-                <div class="col-md-6 mb-5">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 mb-4">
                     {{-- section#reviews --}}
                     <section id="reviews">
                         <div class="card">
                             <div class="card-header">
-                                <h2>Recensioni ricevute per mese</h2>
+                                <h3>Recensioni ricevute per mese</h3>
                             </div>
                             <div class="card-body">
                                 <canvas id="reviewsCanvas"></canvas>
@@ -159,12 +163,12 @@
                     {{-- END section#reviews --}}
                 </div>
 
-                <div class="col-md-6 mb-5">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 mb-4">
                     {{-- section#votes --}}
                     <section id="votes">
                         <div class="card">
                             <div class="card-header">
-                                <h2>Voto medio recensioni per mese</h2>
+                                <h3>Voto medio recensioni per mese</h3>
                             </div>
                             <div class="card-body">
                                 <canvas id="averageVotes"></canvas>

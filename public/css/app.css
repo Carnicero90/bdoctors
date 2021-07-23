@@ -10014,14 +10014,20 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
+  font-family: "Poppins";
 }
 
 a {
   color: inherit;
 }
-a :hover {
-  text-decoration: none;
+
+a:hover {
   color: inherit;
+  text-decoration: none;
+}
+
+hr {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .card {
@@ -10050,22 +10056,12 @@ a :hover {
   width: 100%;
 }
 
-.cat-icon-container img {
-  height: 25px;
-  width: auto;
-}
-
 .text-white {
   color: white;
 }
 
-.c-1 {
-  color: #888;
-}
-
 .top-margine {
   padding-top: 100px;
-  padding-bottom: 50px;
 }
 
 input, select {
@@ -10095,7 +10091,7 @@ input, select {
 }
 
 .btn-custom-danger {
-  background-color: #d61646;
+  background-color: #8c4e4e;
 }
 
 .btn-custom-success {
@@ -10148,7 +10144,6 @@ header .logo img {
 
 .nav-link {
   line-height: 50px;
-  text-shadow: 2px 2px 12px black;
 }
 
 .nav-item {
@@ -10301,7 +10296,18 @@ header .logo img {
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  font-family: "Julius Sans One", sans-serif;
+}
+.cat-jumbotron .title {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  padding: 20px 30px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.cat-jumbotron .title h1 {
+  font-size: 70px;
+  font-weight: 300;
 }
 
 footer {
@@ -10413,6 +10419,8 @@ footer .copyright span {
 
 .profile-badge-category {
   padding: 2px 5px;
+  color: gainsboro;
+  border: 1px solid gainsboro;
 }
 
 .dashboard {
@@ -10420,12 +10428,10 @@ footer .copyright span {
 }
 .dashboard .dash-list {
   padding-top: 10px;
-  border-bottom: 1px solid #d2d2d2;
-  justify-content: space-between;
 }
 .dashboard .dash-link {
   text-decoration: none;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .profile-img-dashboard-container {
@@ -10461,10 +10467,6 @@ footer .copyright span {
   width: -moz-max-content;
   width: max-content;
   margin-left: auto;
-}
-
-.adv-search-bar {
-  width: 300px;
 }
 
 .user-card-a {
@@ -10531,7 +10533,6 @@ footer .copyright span {
   background-repeat: no-repeat;
   height: 200px;
   border: 0;
-  filter: blur(1px);
   border-radius: 75px 0px 75px 0px;
   transition: 1s;
 }
@@ -10573,6 +10574,7 @@ footer .copyright span {
   height: 37px;
   padding-left: 15px;
   background-color: black;
+  color: gainsboro;
   border-radius: 999px 0px 0px 999px;
   border: 1px solid white;
 }
@@ -10632,17 +10634,18 @@ footer .copyright span {
   left: 7px;
 }
 
-.card-sponsored {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .arrow-slider {
-  font-size: 35px;
+  font-size: 40px;
+  color: gainsboro;
   cursor: pointer;
-  padding: 0 15px;
+  position: absolute;
+  z-index: 2;
+}
+.arrow-slider.left-arrow {
+  left: 0;
+}
+.arrow-slider.right-arrow {
+  right: 0;
 }
 
 /* S */

@@ -74,9 +74,33 @@
         </div>
 
         <div class="top-margine">
+
+            {{-- section sponsored --}}
+            <div class="container pb-5">
+                <h2 class="text-center text-uppercase">I nostri artisti del momento</h2>
+
+                <div class="row d-flex align-items-center position-relative">
+
+                    <div class="arrow-slider left-arrow zoom" v-on:click="slideLeft">
+                        <i class="fas fa-chevron-circle-left"></i>
+                    </div>
+    
+                    <div v-for="user in sponsoredUsers.slice(start_index, start_index + tot_to_show)" class="mt-4 col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3">
+                        @include("partials.user-card-api")
+                    </div>
+                    
+                    <div class="arrow-slider right-arrow zoom" v-on:click="slideRight">
+                        <i class="fas fa-chevron-circle-right"></i>
+                    </div>
+
+                </div>
+            </div>
+            {{-- END section sponsored --}}
+
             {{-- section categories --}}
-            <div class="container mt-5 mb-5">
-                <h2 class="text-center">Categorie</h2>
+            <hr>
+            <div class="container mt-4 pt-5 mb-5">
+                <h2 class="text-center text-uppercase">Categorie</h2>
                 <div class="row mt-4">
                     @foreach ($categories as $category)
                         @include("partials.categories-list")
@@ -85,27 +109,6 @@
             </div>
             {{-- END section categories --}}
 
-            {{-- section sponsored --}}
-            <div class="container">
-                <h2 class="text-center">I nostri artisti del momento</h2>
-
-                <div class="d-flex align-items-center">
-                    <div class="arrow-slider" v-on:click="slideLeft">
-                        <i class="fas fa-chevron-left"></i>
-                    </div>
-    
-                    <div class="row mt-4 card-sponsored">
-                        <div v-for="user in sponsoredUsers.slice(start_index, start_index + tot_to_show)" class="col-12 col-sm-6 col-md-4 col-lg-3 col-xl-3">
-                            @include("partials.user-card-api")
-                        </div>
-                    </div>
-                    
-                    <div class="arrow-slider" v-on:click="slideRight">
-                        <i class="fas fa-chevron-right"></i>
-                    </div>
-                </div>
-            </div>
-            {{-- END section sponsored --}}
         </div>
 
     </div>
