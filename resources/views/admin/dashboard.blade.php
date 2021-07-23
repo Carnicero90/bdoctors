@@ -60,60 +60,60 @@
             <div class="row mt-4">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
                     <a href="{{ route('admin.profile-index') }}" class="no-decorations">
-                        <div class="card shadow zoom mb-3">
+                        <div class="card shadow zoom mb-4">
                             <div class="card-body">
                                 <h3>{{ Auth::user()->profile ? 'Modifica' : 'Crea' }} profilo</h3>
-                                <img src="{{asset("img/dashboard/modifica-profilo.png")}}" alt="" class="img_100">
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
-                    <a href="{{ route('profile', ['id' => Auth::user()->id]) }}" class="no-decorations">
-                        <div class="card shadow zoom mb-3">
-                            <div class="card-body">
-                                <h3>Profilo pubblico</h3>
-                                <img src="{{asset("img/dashboard/profilo-pubblico.png")}}" alt="" class="img_100">
+                                <img src="{{asset("img/dashboard/modifica-profilo.jpg")}}" alt="" class="img_100">
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
                     <a href="{{ route('admin.services') }}" class="no-decorations">
-                        <div class="card shadow zoom mb-3">
+                        <div class="card shadow zoom mb-4">
                             <div class="card-body">
                                 <h3>Servizi</h3>
-                                <img src="{{asset("img/dashboard/servizi.png")}}" alt="" class="img_100">
+                                <img src="{{asset("img/dashboard/servizi.jpg")}}" alt="" class="img_100">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                    <a href="{{ route('profile', ['id' => Auth::user()->id]) }}" class="no-decorations">
+                        <div class="card shadow zoom mb-4">
+                            <div class="card-body">
+                                <h3>Profilo pubblico</h3>
+                                <img src="{{asset("img/dashboard/profilo-pubblico.jpg")}}" alt="" class="img_100">
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
                     <a href="{{ route('admin.reviews') }}" class="no-decorations">
-                        <div class="card shadow zoom mb-3">
+                        <div class="card shadow zoom mb-4">
                             <div class="card-body">
                                 <h3>Recensioni</h3>
-                                <img src="{{asset("img/dashboard/recensioni.png")}}" alt="" class="img_100">
+                                <img src="{{asset("img/dashboard/recensioni.jpg")}}" alt="" class="img_100">
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
                     <a href="{{ route('admin.messages') }}" class="no-decorations">
-                        <div class="card shadow zoom mb-3">
+                        <div class="card shadow zoom mb-4">
                             <div class="card-body">
                                 <h3>Messaggi</h3>
-                                <img src="{{asset("img/dashboard/messaggi.png")}}" alt="" class="img_100">
+                                <img src="{{asset("img/dashboard/messaggi.jpg")}}" alt="" class="img_100">
                             </div>
                         </div>
                     </a>
                 </div>
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
                     <a href="{{ route('admin.statistics', ['id' => Auth::user()->id]) }}" class="no-decorations">
-                        <div class="card shadow zoom mb-3">
+                        <div class="card shadow zoom mb-4">
                             <div class="card-body">
                                 <h3>Statistiche</h3>
-                                <img src="{{asset("img/dashboard/statistiche.png")}}" alt="" class="img_100">
+                                <img src="{{asset("img/dashboard/statistiche.jpg")}}" alt="" class="img_100">
                             </div>
                         </div>
                     </a>
