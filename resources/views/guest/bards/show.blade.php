@@ -17,29 +17,40 @@
     <div class="top-margine">
         {{-- div#root --}}
         <div id="root">
-            <input type="hidden" id="userid" value="{{ $user->id }}">
-            <div class="container">
 
+            <input type="hidden" id="userid" value="{{ $user->id }}">
+
+            <div class="container">
                 @include("partials.success-messages")
                 @include("partials.error-messages")
 
-                {{-- TEST --}}
-                <div class="mb-4 d-flex align-items-center">
+                {{-- img profilo --}}
+                <div class="row mb-4 d-flex align-items-center">
                     @if ($user->profile)
-                        <div class="profile-img-dashboard-container">
-                            <img src="{{ asset('storage/' . $user->profile->pic) }}"
-                                alt="{{ $user->name . ' ' . $user->lastname }}" class="profile-img-dashboard">
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-2">
+                            <div class="profile-img-dashboard-container">
+                                <img src="{{ asset('storage/' . $user->profile->pic) }}"
+                                    alt="{{ $user->name . ' ' . $user->lastname }}" class="profile-img-dashboard">
+                            </div>
                         </div>
                     @else
-                        <div class="profile-img-dashboard-container">
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-2">
+                        <div class="profile-img-dashboard-container col-12 col-sm-12">
                             <img src="{{ asset('img/user-img.png') }}" alt="" class="profile-img-dashboard">
                         </div>
+                    </div>
                     @endif
-                    <div class="d-inline-block ml-4">
-                        <h1>{{ $user->name }} {{ $user->lastname }}</h1>
+                    {{-- nome profilo --}}
+                    <div class="col-12 col-sm-12 col-md-9 col-lg-10">
+                        <div>
+                            <h1>{{ $user->name }} {{ $user->lastname }}</h1>
+                        </div>
                     </div>
                 </div>
+            </div>
 
+            <div class="container">
+                {{-- INFO personali --}}
                 <div class="mb-4">
                     @foreach ($user->categories as $category)
                         <a class="btn btn-outline-dark profile-badge-category"
@@ -66,26 +77,31 @@
                         <p>{{ $user->profile->self_description }}</p>
                     @endif
                 </div>
-                {{-- END TEST --}}
+                {{-- END INFO personali --}}
+            </div>
 
-                @if (!(Auth::user() && $user->id == Auth::user()->id))
-                    {{-- TODO: magari invece di nasconderlo si fa effetto 'disabled'? --}}
-                    <div class="mt-4">
-                        {{-- link form recensioni --}}
-                        <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
-                            recensione</a>
-                        {{-- link form messaggi --}}
-                        <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
-                            messaggio</a>
-                    </div>
-                @endif
-                <hr>
+            @if (!(Auth::user() && $user->id == Auth::user()->id))
+                {{-- TODO: magari invece di nasconderlo si fa effetto 'disabled'? --}}
+                <div class="mt-4">
+                    {{-- link form recensioni --}}
+                    <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
+                        recensione</a>
+                    {{-- link form messaggi --}}
+                    <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
+                        messaggio</a>
+                </div>
+            @endif
 
-                {{-- PERFORMANCES --}}
+            <hr>
+
+            <div class="container">
+                {{-- SERVICES --}}
                 <div class="row mt-4">
-                    <h2>Servizi</h2>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <h2>Servizi</h2>
+                    </div>
                     @foreach ($user->services as $service)
-                        <div class="col-6">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                             <div class="card mb-3">
                                 <div class="card-header d-flex align-items-center justify-content-between">
                                     <h4>{{ $service->title }}</h4>
@@ -98,20 +114,24 @@
                         </div>
                     @endforeach
                 </div>
-                {{-- END PERFORMANCES --}}
+                {{-- END SERVICES --}}
+            </div>
 
+            <hr>
+
+            <div class="container">
                 {{-- reviews --}}
                 <div class="row">
-                    <h2>Recensioni</h2>
-                    <div class="col-12 col-sm-6 col-md-4 col-lg-6">
-                        <div v-for="review in reviews.slice(0, reviews_to_show)" class="card mb-3">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <h2>Recensioni</h2>
+                    </div>
+                    <div v-for="review in reviews.slice(0, reviews_to_show)" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                        <div class="card mb-3">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="mr-5">
-                                    <span><i class="fas fa-user-circle mr-1"></i></span>
                                     <span>@{{ review.author_name }}</span>
                                 </div>
                                 <div>
-                                    <span><i class="fas fa-envelope mr-1"></i></span>
                                     <span>@{{ review.author_email }}</span>
                                 </div>
                             </div>
@@ -122,11 +142,9 @@
                                         <span v-for="n in review.value">
                                             <i class="fas fa-star"></i>
                                         </span>
-                                        {{-- @for (i = 0; i < review.vote.value; i++)
-                                        @endfor --}}
                                     </div>
                                     <div>
-                                        <span>ricevuta il @{{ review.send_date }}</span>
+                                        <span>@{{ review.send_date }}</span>
                                     </div>
                                 </div>
                                 <div class="mt-2 mb-2">
@@ -134,15 +152,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div v-if="reviews.length > 5">
-                            <button v-on:click="reviews_to_show += reviews_to_show"class="btn btn-outline-primary">Mostra piu rece</button>
-                        </div>
                     </div>
                 </div>
+                <div v-if="reviews.length > 5" class="mt-4 mb-5">
+                    <button v-on:click="reviews_to_show += reviews_to_show"class="btn btn-outline-primary">Mostra piu recensioni</button>
+                </div>
                 {{-- END reviews --}}
-
-
             </div>
+
         </div>
         {{-- END div#root --}}
 

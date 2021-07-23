@@ -10419,6 +10419,8 @@ footer .copyright span {
 
 .profile-badge-category {
   padding: 2px 5px;
+  color: gainsboro;
+  border: 1px solid gainsboro;
 }
 
 .dashboard {
@@ -10465,10 +10467,6 @@ footer .copyright span {
   width: -moz-max-content;
   width: max-content;
   margin-left: auto;
-}
-
-.adv-search-bar {
-  width: 300px;
 }
 
 .user-card-a {
