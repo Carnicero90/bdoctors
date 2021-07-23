@@ -10226,6 +10226,12 @@ header .logo img {
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
 }
+.mio-jumbotron .searchbox {
+  color: #141414;
+}
+.mio-jumbotron .searchbox .list-group .list-group-item:hover {
+  color: grey;
+}
 @-webkit-keyframes logo {
   0% {
     opacity: 0;
@@ -10487,7 +10493,6 @@ footer .copyright span {
 }
 
 .user-card {
-  min-height: 248px;
   min-height: 250px;
 }
 
