@@ -90,7 +90,7 @@
                 </div>
 
                 {{-- tasto per inviare recensione --}}
-                <button type="submit" class="btn btn-outline-primary mt-4">
+                <button type="submit" class="btn btn-outline-primary mb-4 mt-4">
                     Invia
                 </button>
 
