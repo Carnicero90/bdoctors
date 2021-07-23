@@ -80,28 +80,15 @@
                 </div>
 
                 {{-- select servizio ricevuto --}}
-                <div class="form-group">
-                    <label for="content">Hai usufruito di un servizio?</label>
-                    <select class="form-control" name="service_received" id="service_received" required>
+                <div class="form-group mt-4 mb-4">
+                    <label for="content" class="d-inline-block mr-3">Hai usufruito di un servizio?</label>
+                    <select class="form-control d-inline-block width-120px" name="service_received" id="service_received" required>
                         <option value="" disabled selected>Seleziona</option>
                         <option value="1">Si</option>
                         <option value="0">No</option>
                     </select>
                 </div>
-
-                {{-- voto recensione --}}
-                {{-- <div class="form-group mt-4 mb-4">
-                    <label for="vote_id" class="mr-4">Come definiresti il servizio dell'artista?</label>
-                    <select class="custom-select col-md-3" name="vote_id" id="vote_id">
-                        <option selected>Seleziona una valutazione</option>
-                        @foreach ($votes as $vote)
-                            <option value="{{ $vote->value }}">
-                                {{ $vote->value . ' - ' . ucfirst($vote->label) }}
-                            </option>
-                        @endforeach
-                    </select>
-                </div> --}}
-
+                
                 {{-- partials di termini e condizioni --}}
                 @include('partials.terms-conditions')
 

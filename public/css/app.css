@@ -10060,6 +10060,10 @@ hr {
   width: 30%;
 }
 
+.width-120px {
+  width: 120px;
+}
+
 .text-white {
   color: white;
 }

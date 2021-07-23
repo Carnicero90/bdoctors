@@ -80,17 +80,18 @@
                 {{-- END INFO personali --}}
             </div>
 
-            @if (!(Auth::user() && $user->id == Auth::user()->id))
-                {{-- TODO: magari invece di nasconderlo si fa effetto 'disabled'? --}}
-                <div class="mt-4">
-                    {{-- link form recensioni --}}
-                    <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
-                        recensione</a>
-                    {{-- link form messaggi --}}
-                    <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
-                        messaggio</a>
-                </div>
-            @endif
+            <div class="container">
+                @if (!(Auth::user() && $user->id == Auth::user()->id))
+                    <div class="mt-4">
+                        {{-- link form recensioni --}}
+                        <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
+                            recensione</a>
+                        {{-- link form messaggi --}}
+                        <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
+                            messaggio</a>
+                    </div>
+                @endif
+            </div>
 
             <hr>
 
