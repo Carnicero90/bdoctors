@@ -10014,7 +10014,7 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 }
 
 a {
@@ -10570,6 +10570,26 @@ footer .copyright span {
 .cat-card:hover:before {
   opacity: 0.4;
   border-radius: 7px;
+}
+
+.braintree-sheet {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 200 !important;
+  color: gainsboro !important;
+  background-color: #282828;
+}
+
+input.number {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 200 !important;
+  color: gainsboro !important;
+}
+
+.braintree-sheet__text,
+.braintree-form__label {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 200 !important;
+  color: gainsboro !important;
 }
 
 .ricerca {
