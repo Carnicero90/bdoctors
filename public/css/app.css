@@ -10307,6 +10307,7 @@ header .logo img {
 
 .select-category {
   -webkit-appearance: none;
+  background-color: #141414;
 }
 
 .cat-jumbotron {
