@@ -32,12 +32,6 @@
                         status_input.value = response.success ? 1 : 0;
                         console.log(status_input.value)
                         f.submit()
-                        alert(response.success);
-                        if (response.success) {
-
-                        } else {
-                            alert('Pagamento fallito');
-                        }
                     }, 'json');
                 });
             });
@@ -48,6 +42,10 @@
 @section('content')
 <div class="top-margine">
     <div class="container">
+        <div class="text-center">
+            @include("partials.success-messages")
+            @include("partials.error-messages")
+        </div>
         <div class="row">
             <div class="col-4">
                 <div class="card">
