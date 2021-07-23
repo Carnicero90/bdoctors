@@ -93,9 +93,15 @@ input, select {
 }
 
 .cat-box {
-    background-color: rgb(226, 226, 226);
+    font-weight: 200;
+    font-size: 13px;
+    color: rgb(220, 220, 220);
+    border-color: rgb(220, 220, 220);
+
     &.selected {
-        background-color:rgb(20, 20, 20);
+        color: rgb(20, 20, 20);
+        background-color: rgb(220, 220, 220);
+        border-color:rgb(80, 80, 80);
     }
 }
 

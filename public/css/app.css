@@ -10088,10 +10088,15 @@ input, select {
 }
 
 .cat-box {
-  background-color: #e2e2e2;
+  font-weight: 200;
+  font-size: 13px;
+  color: gainsboro;
+  border-color: gainsboro;
 }
 .cat-box.selected {
-  background-color: #141414;
+  color: #141414;
+  background-color: gainsboro;
+  border-color: #505050;
 }
 
 .btn-custom-danger {

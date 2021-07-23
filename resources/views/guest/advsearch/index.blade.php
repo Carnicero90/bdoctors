@@ -39,9 +39,9 @@
 
             {{-- lista categorie --}}
             {{-- btn-dark --}}
-            <div class="col-12 d-flex justify-content-center flex-wrap mb-5">
+            <div class="col-12 d-flex justify-content-center flex-wrap mt-4 mb-5">
                 <div v-for="category, index in categories" v-on:click="addOrRemoveCat(category.id)">
-                    <span class="btn btn-outline-dark cat-box" :class="selectedCat(category.id) ? 'selected text-white' : '' ">@{{category.name.replace("registrazione e mixaggio", "rec & mix")}}</span>
+                    <span class="btn btn-outline-dark cat-box ml-1 mr-1 mb-2" :class="selectedCat(category.id) ? 'selected' : '' ">@{{category.name.replace("registrazione e mixaggio", "rec & mix")}}</span>
                 </div>
             </div>
             {{-- END lista categorie --}}
