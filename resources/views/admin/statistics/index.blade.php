@@ -86,7 +86,7 @@
                         }]
                     }
                 });
-
+// TODO: non so di preciso come commentarla, il problema è che dal backend arrivano dati fondamentalmente eterogenei e vengono 'normalizzati' qua, quindi a chi legge ma non ha scritto può risultare poco chiara
                 function fillEmptyMonths(filler, year, field) {
                     const fillable = Array.from(year, function(i){
                         const j = {};

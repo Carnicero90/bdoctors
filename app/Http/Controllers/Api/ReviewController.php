@@ -7,6 +7,12 @@ use App\Review;
 
 class ReviewController extends Controller
 {
+    /**
+     * Ritorna l'elenco di tutte le recensioni dell'utente selezionato
+     * @param id int
+     *
+     * @return \Illuminate\Contracts\Support\JsonResponse
+     */
     public function show($id)
     {
         $data = [

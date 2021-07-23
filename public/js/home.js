@@ -232,7 +232,7 @@ var app = new Vue({
           Api.promisedUsers(Api.allUsersPath, _this.searchParams).then(function (result) {
             _this.users = result.data.users.slice(0, 5);
           });
-        }, 500);
+        }, 400);
       }
     }
   },
