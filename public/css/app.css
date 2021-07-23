@@ -10599,17 +10599,18 @@ footer .copyright span {
   background-color: #282828;
 }
 
-input.number {
-  font-family: "Poppins", sans-serif !important;
-  font-weight: 200 !important;
-  color: gainsboro !important;
-}
-
 .braintree-sheet__text,
 .braintree-form__label {
   font-family: "Poppins", sans-serif !important;
   font-weight: 200 !important;
   color: gainsboro !important;
+}
+
+.braintree-form__field input {
+  color: gainsboro;
+}
+.braintree-form__field input:focus {
+  color: gainsboro;
 }
 
 .ricerca {
