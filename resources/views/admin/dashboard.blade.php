@@ -57,7 +57,7 @@
             
             {{-- END HEADER --}}
 
-            <div class="row mt-4">
+            <div class="row mt-4 mb-3">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
                     <a href="{{ route('admin.profile-index') }}" class="no-decorations">
                         <div class="card shadow zoom mb-4">
