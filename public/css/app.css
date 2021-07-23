@@ -10710,6 +10710,14 @@ footer .copyright span {
   right: 0;
 }
 
+.description-text {
+  color: #787878;
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 300;
+  letter-spacing: 1.3px;
+}
+
 /* S */
 @media all and (min-width: 576px) and (max-width: 991px) {
   .xs-container {
