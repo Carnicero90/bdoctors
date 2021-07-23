@@ -117,7 +117,7 @@
                             {{-- END input#password_confirmation --}}
 
                             {{-- partials di termini e condizioni --}}
-                            <div class="mt-4 mb-4">
+                            <div class="form-group form-check row mt-4 mb-4 text-center">
                                 @include('partials.terms-conditions')
                             </div>
                             

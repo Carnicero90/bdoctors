@@ -90,7 +90,9 @@
                 </div>
                 
                 {{-- partials di termini e condizioni --}}
-                @include('partials.terms-conditions')
+                <div class="form-group form-check">
+                    @include('partials.terms-conditions')
+                </div>
 
                 {{-- tasto per inviare recensione --}}
                 <button type="submit" class="btn btn-outline-primary mt-4">
