@@ -29,6 +29,7 @@ class CreateReviewsTable extends Migration
             $table->string('author_email');
             $table->text('content');
             $table->datetime('send_date');
+            $table->boolean('service_received');
             $table->timestamps();
             // TODO: gestici gli ondelete
         });
