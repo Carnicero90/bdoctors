@@ -81,11 +81,11 @@
 
                 <div class="row justify-content-center">
 
-                    <p class="description-text text-center mt-3">BoolBards è la piattaforma ideale per trovare il musicista che fa al caso tuo.<br>
+                    <p class="description-text text-center mt-3"> <span class="text-evident">BoolBards</span> è la piattaforma ideale per trovare il musicista che fa al caso tuo.<br>
                         Nuovi artisti si aggiungono alla nostra rete ogni giorno ed avrai la possibilità di visione il loro profilo.<br>
                         Potrai scegliere un servizio tra quelli disponibili in base alle recensioni e<br>
                         quando avrai scelto, potrai contattare l'artista direttamente dalla sua pagina tramite messaggio.<br>
-                        Cosa aspetti? Inizia la ricerca e scegli il Bardo che fa al caso tuo!
+                        Cosa aspetti? Inizia la ricerca e scegli il <span class="text-evident">Bardo</span> che fa al caso tuo!
                     </p>
 
                 </div>

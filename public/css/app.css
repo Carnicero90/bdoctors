@@ -10718,6 +10718,10 @@ footer .copyright span {
   font-weight: 300;
   letter-spacing: 1.3px;
 }
+.description-text .text-evident {
+  color: gainsboro;
+  font-weight: 500;
+}
 
 /* S */
 @media all and (min-width: 576px) and (max-width: 991px) {
