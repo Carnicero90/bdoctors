@@ -15,6 +15,11 @@ class PaymentController extends Controller
 {
     public function index($id)
     {
+        $user = Auth::user();
+        if (SponsorplanUser::userHasActiveSponsorPlan($user->id)) {
+            return redirect()->route('admin.dashboard')->with('errors', 'Non puoi acquistare, hai già un piano di sponsorizzazione attivo');
+        }
+
         $plan = Sponsorplan::findOrFail($id);
 
         return view('admin.payment', compact('plan'));
@@ -31,7 +36,7 @@ class PaymentController extends Controller
         {
             return response()->json(false);
         }
-        //    TOTEST
+        // TOTEST
         $plan = Sponsorplan::findOrFail($id);
 
         $payload = $request['payload'];
@@ -44,8 +49,6 @@ class PaymentController extends Controller
                 'submitForSettlement' => True
             ]
         ]);
-
-
 
         return response()->json($status);
     }

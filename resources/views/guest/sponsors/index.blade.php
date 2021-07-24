@@ -5,16 +5,6 @@
 <div class="top-margine">
     <div class="container">
 
-        {{-- HEADER --}}
-        <div class="row justify-content-center">
-            <div class="col-md-12 text-center">
-                <div class="dashboard">
-                    {{-- @include('partials.dashboard-nav') --}}
-                </div>
-            </div>
-        </div>
-        {{-- END HEADER --}}
-
         <div class="mt-3 mb-4">
             <h1>Piani di sponsorizzazione</h1>
         </div>

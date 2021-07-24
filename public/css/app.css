@@ -10603,9 +10603,8 @@ footer .copyright span {
 
 .braintree-sheet {
   font-family: "Poppins", sans-serif !important;
-  font-weight: 200 !important;
-  color: gainsboro !important;
-  background-color: #505050;
+  font-weight: 200;
+  background-color: #3c3c3c;
 }
 
 .braintree-sheet__text,
@@ -10615,15 +10614,11 @@ footer .copyright span {
   color: gainsboro !important;
 }
 
-#payment-form form input.number,
-#payment-form form input.expirationDate,
-#payment-form form input.cvv {
-  color: gainsboro !important;
+.braintree-sheet__header {
+  background-color: #282828;
 }
-#payment-form form input.number:focus,
-#payment-form form input.expirationDate:focus,
-#payment-form form input.cvv:focus {
-  color: gainsboro !important;
+.braintree-sheet__header .braintree-sheet__text {
+  font-weight: 400 !important;
 }
 
 .ricerca {

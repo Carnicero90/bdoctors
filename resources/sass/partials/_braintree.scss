@@ -1,8 +1,7 @@
 .braintree-sheet {
     font-family: $primary_font !important;
-    font-weight: 200 !important;
-    color: rgb(220, 220, 220) !important;
-    background-color: rgb(80, 80, 80);
+    font-weight: 200;
+    background-color: rgb(60, 60, 60);
 }
 
 .braintree-sheet__text,
@@ -12,26 +11,10 @@
     color: rgb(220, 220, 220) !important;
 }
 
-#payment-form {
-
-    form {
-
-        input.number,
-        input.expirationDate,
-        input.cvv {
-
-            color: rgb(220, 220, 220) !important;
-            &:focus {
-                color: rgb(220, 220, 220) !important;
-            }
-        }
+.braintree-sheet__header {
+    background-color: rgb(40, 40, 40);
+    
+    .braintree-sheet__text {
+        font-weight: 400 !important;
     }
 }
-
-
-
-// input.number {
-//     font-family: $primary_font !important;
-//     font-weight: 200 !important;
-//     color: rgb(220, 220, 220) !important;
-// }

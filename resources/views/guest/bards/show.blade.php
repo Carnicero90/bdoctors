@@ -20,9 +20,12 @@
 
             <input type="hidden" id="userid" value="{{ $user->id }}">
 
-            <div class="container">
+            <div class="container text-center">
                 @include("partials.success-messages")
                 @include("partials.error-messages")
+            </div>
+
+            <div class="container">
 
                 {{-- img profilo --}}
                 <div class="row mb-4 d-flex align-items-center">

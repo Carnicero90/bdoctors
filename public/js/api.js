@@ -177,7 +177,7 @@ var ApiPath = /*#__PURE__*/function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Tom/BDoctors/bdoctors/resources/js/api.js */"./resources/js/api.js");
+module.exports = __webpack_require__(/*! /Users/mattia/Movies/Boolean/Repository/bdoctors/resources/js/api.js */"./resources/js/api.js");
 
 
 /***/ })

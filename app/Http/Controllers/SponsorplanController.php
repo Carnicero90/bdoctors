@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Sponsorplan;
 use Illuminate\Http\Request;
+use App\SponsorplanUser;
 
 class SponsorplanController extends Controller
 {
