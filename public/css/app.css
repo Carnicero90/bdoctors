@@ -10168,7 +10168,7 @@ header .logo img {
 }
 
 .mio-jumbotron {
-  background-image: url("/img/jumbotron.jpg");
+  background-image: url("/img/welcome/jumbotron.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10337,7 +10337,7 @@ footer img {
   margin-bottom: 15px;
 }
 footer .bg-footer {
-  background-image: url("/img/footer-jumbo.jpg");
+  background-image: url("/img/footer/footer-jumbotron.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -10458,6 +10458,7 @@ footer .copyright span {
   height: 120px;
   border-radius: 50%;
   overflow: hidden;
+  margin: auto;
 }
 
 .profile-img-dashboard {
@@ -10718,6 +10719,13 @@ footer .copyright span {
   font-weight: 500;
 }
 
+.badge-top {
+  padding: 5px 7px;
+  font-weight: 500;
+  color: #141414;
+  background-color: #38c172;
+}
+
 /* S */
 @media all and (min-width: 576px) and (max-width: 991px) {
   .xs-container {
@@ -10727,11 +10735,19 @@ footer .copyright span {
   .navbar-nav {
     flex-direction: row;
   }
+
+  .search-a-bard {
+    flex-grow: 0.8;
+  }
 }
 /* XS */
 @media all and (max-width: 575px) {
   .xs-container {
     flex-direction: column;
+  }
+
+  .search-a-bard {
+    flex-grow: 1;
   }
 
   .navbar-nav {

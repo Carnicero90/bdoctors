@@ -5,17 +5,15 @@
             <ul class="navbar-nav left-menu align-items-center">
                 <li class="nav-item">
                     <a class="navbar-brand logo" href="/">
-                        <img src="{{ asset('img/boolbards-logo-white-1.png') }}" alt="Logo">
+                        <img src="{{ asset('img/logos/boolbards-logo-white.png') }}" alt="Logo">
                     </a>
                 </li>
                 <li class="nav-item">
-                    {{-- TODO : Rendere responsive --}}
                     <a class="nav-link" href="/">
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    {{-- TODO : Rendere responsive --}}
                     <a class="nav-link" href="{{ route('categories') }}">
                         Categorie
                     </a>

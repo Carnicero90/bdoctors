@@ -15,7 +15,7 @@
 @section('content')
 
 <div class="top-margine">
-    {{-- TODO --}}
+
     {{-- vue container --}}
     <div id="root">
 
@@ -58,7 +58,7 @@
 
     </div>
     {{-- END vue container --}}
-    {{-- END TODO --}}
+
 </div>
 
 @endsection

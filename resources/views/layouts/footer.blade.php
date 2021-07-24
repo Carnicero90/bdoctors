@@ -1,4 +1,3 @@
-{{-- TODO --}}
 <!-- FOOTER -->
 <footer>
     <div class="bg-footer">
@@ -6,7 +5,7 @@
             <div class="d-flex justify-content-around pt-5 xs-container">
                 <!-- Logo -->
                 <div class="flex-son">
-                    <img src="{{asset('img/boolbards-logo-white-1.png')}}" alt="BoolBards Logo">
+                    <img src="{{asset('img/logos/boolbards-logo-white.png')}}" alt="BoolBards Logo">
                 </div>
 
                 <!-- About me -->
@@ -15,99 +14,6 @@
                         <h4>Chi siamo</h4>
                         <p>Cinque tartarughe sempre pronte, sempre allerta come i <span class="text-evident">Ninja</span>. Cinque tartarughe tutte identiche d'aspetto, tutte <span class="text-evident">Ninja</span>. Per la pizza vanno matte sai e ne mangian sempre più che mai.</p>
                     </div>
-
-                    {{-- TO DELETE --}}
-                    <!-- Category links -->
-                    {{-- <div class="flex-son">
-                        <h4>Categorie</h4>
-                        <ul class="category-links d-flex categories-ul">
-
-                            <li class="categories-li">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="{{route("category-page", ["slug" => "violinisti"])}}">
-                                   Violinisti
-                                </a>
-                            </li>
-
-                            <li class="categories-li">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="{{route("category-page", ["slug" => "dj"])}}">
-                                   Dj
-                                </a>
-                            </li>
-
-                            <li class="categories-li">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="{{route("category-page", ["slug" => "cantanti"])}}">
-                                   Cantanti
-                                </a>
-                            </li>
-
-                            <li class="categories-li">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="{{route("category-page", ["slug" => "batteristi"])}}">
-                                   Batteristi
-                                </a>
-                            </li>
-
-                            <li class="categories-li">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="{{route("category-page", ["slug" => "bassisti"])}}">
-                                   Bassisti
-                                </a>
-                            </li>
-
-                            <li class="categories-li">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="{{route("category-page", ["slug" => "chitarristi"])}}">
-                                   Chitarristi
-                                </a>
-                            </li>
-
-                            <li class="categories-li">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="{{route("category-page", ["slug" => "sassofonisti"])}}">
-                                   Sassofonisti
-                                </a>
-                            </li>
-
-                            <li class="categories-li">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="{{route("category-page", ["slug" => "registrazione-e-mixaggio"])}}">
-                                   Rec & Mix
-                                </a>
-                            </li>
-
-                            <li class="categories-li">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="{{route("category-page", ["slug" => "percussionisti"])}}">
-                                   Percussionisti
-                                </a>
-                            </li>
-
-                            <li class="categories-li">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="{{route("category-page", ["slug" => "tastieristi"])}}">
-                                   Tastieristi
-                                </a>
-                            </li>
-
-                            <li class="categories-li">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="{{route("category-page", ["slug" => "trombettisti"])}}">
-                                   Trombettisti
-                                </a>
-                            </li>
-
-                            <li class="categories-li">
-                                <i class="fas fa-chevron-right"></i>
-                                <a href="{{route("category-page", ["slug" => "flautisti"])}}">
-                                   Flautisti
-                                </a>
-                            </li>
-                        </ul>
-                    </div> --}}
-                    {{-- END TO DELETE --}}
                     
                     <!-- Contact Info -->
                     <div class="flex-son">
@@ -136,13 +42,3 @@
     </div>
 </footer>
 <!-- END FOOTER -->
-
-<!-- Fixed -->
-{{-- <div class="fixed-bot">
-    <div class="chev-box">
-        <a href="#up">
-            <i class="fas fa-chevron-up"></i>
-        </a>
-    </div>
-</div> --}}
-<!-- End Fixed -->

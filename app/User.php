@@ -37,12 +37,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // TODO: commentala
+    // TODO: commentare
     public function profile()
     {
         return $this->hasOne('App\Profile');
     }
-    // TODO: commentala
+    // TODO: commentare
     public function categories()
     {
         return $this->belongsToMany('App\Category');

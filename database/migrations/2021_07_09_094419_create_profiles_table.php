@@ -15,7 +15,6 @@ class CreateProfilesTable extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->timestamps();
-            // TODO: aggiungi eventualmente cv, come pdf caricabile
             $table->text('self_description')->nullable();
             $table->string('pic', 100)->nullable();
             $table->string('phone_number', 50)->nullable();

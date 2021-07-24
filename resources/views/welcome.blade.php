@@ -26,7 +26,7 @@
 
                 <div class="jumbo-container position-relative">
                     <h1 class="display-2 heading-logo">Trova il tuo Bardo</h1>
-                    <img class="jumbo-logo" src="{{asset('img/boolbards-white-1.png')}}" alt="">
+                    <img class="jumbo-logo" src="{{asset('img/welcome/boolbards-white.png')}}" alt="">
                 </div>
 
                 <!-- input ricerca da usare con VueJs -->
@@ -47,7 +47,6 @@
 
                         <div v-if="searching" class="searchbox">
                             <ul class="list-group">
-                                {{-- TODO: test --}}
                                 <li class="list-group-item" v-for="user in users">
                                     <a :href="'bards/' + user.id" class="d-flex align-items-center c-1 no-decorations">
                                         <div class="mr-2 profile-img-search-container position-relative">
@@ -55,9 +54,9 @@
                                             <img class="mr-2 profile-img-search" v-else src="{{asset("/img/user-img.png")}}" alt="">
                                         </div>
                                         <span>@{{ user . name + ' ' + user . lastname }}</span>
-                                        <span v-if="user.sponsored" class="sponsored-badge-search">
-                                            <i class="fas fa-star"></i>
-                                        </span>
+                                        <div v-if="user.sponsored" class="recommended-badge">
+                                            <small class="badge badge-top">Top Bard</small>
+                                        </div>
                                     </a>
                                 </li>
                                 <li class="list-group-item" class="show-more-res">
