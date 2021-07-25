@@ -1,14 +1,19 @@
 .braintree-sheet {
     font-family: $primary_font !important;
     font-weight: 200;
-    background-color: rgb(60, 60, 60);
+    background-color: rgb(120, 120, 120);
 }
 
-.braintree-sheet__text,
+.braintree-sheet__text {
+    font-family: $primary_font !important;
+    font-weight: 200 !important;
+    color: rgb(120, 120, 120) !important;
+}
+
 .braintree-form__label {
     font-family: $primary_font !important;
     font-weight: 200 !important;
-    color: rgb(220, 220, 220) !important;
+    color: rgb(20, 20, 20) !important;
 }
 
 .braintree-sheet__header {
