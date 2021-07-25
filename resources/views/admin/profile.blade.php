@@ -70,7 +70,7 @@
                 </form>
 
                 {{-- form profile --}}
-                <form id="profile-form" action="{{ route('admin.profile-store') }}" method="post">
+                <form id="profile-form" action="{{ route('admin.profile-store') }}" method="post" class="mb-5">
                     @csrf
                     @method("POST")
 

@@ -8,7 +8,7 @@
         @include("partials.success-messages")
         {{-- <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4"> --}}
 
-        <div class="row">
+        <div class="row mb-5">
             @if ($messages->isNotEmpty())
                 @foreach ($messages as $message)
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">

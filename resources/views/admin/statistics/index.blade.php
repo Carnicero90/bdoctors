@@ -131,7 +131,7 @@
                 </div>
             </div>
 
-            <div class="row" id="page-content">
+            <div class="row mb-5" id="page-content">
 
                 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-4 mb-4">
                     {{-- section#mails --}}

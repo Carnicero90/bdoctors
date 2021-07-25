@@ -125,7 +125,7 @@
 
             <div class="container">
                 {{-- reviews --}}
-                <div class="row">
+                <div class="row mb-5">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <h2>Recensioni</h2>
                     </div>

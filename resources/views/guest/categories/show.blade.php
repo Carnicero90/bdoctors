@@ -11,7 +11,7 @@
 <div class="top-margine">
     <div class="container">
 
-        <div class="row mt-4 d-flex align-items-center justify-content-center">
+        <div class="row mb-4 mt-4 d-flex align-items-center justify-content-center">
             @foreach ($category_users as $user)
                 <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     @include("partials.user-card-php")
