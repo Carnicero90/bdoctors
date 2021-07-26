@@ -103,13 +103,13 @@ return [
         'user' => [
             'name' => 'Alessandro',
             'lastname' => 'Scolozzi',
-            'address' => 'Sardegna',
+            'address' => 'Via Indipendenza, 31 - Porto Sant\'Elpidio (FM)',
             'email' => 'ale@mail.com',
         ],
         'profile' => [
             'self_description' => 'Mi sono appassionato al C da bambino grazie alla mia mancanza di passione per la matematica, crescendo mi sono avvicinato al mondo della programmazione ad oggetti. Attualmente ricopro il ruolo di insegnante per Boolean Careers e collaboro con la NASA per progetti in Drupal.',
             'phone_number' => '345345345',
-            'work_address' => 'room classe 31',
+            'work_address' => 'Via Indipendenza, 31 - Porto Sant\'Elpidio (FM)',
             'pic' =>  'img/profilo08.jpg'
         ],
     ],
@@ -299,13 +299,13 @@ return [
         'user' => [
             'name' => 'Milena',
             'lastname' => 'Canuti',
-            'address' => 'Via Eugenio Montale, 67',
+            'address' => 'Via Scuderlando, 51 - Pineto (TE)',
             'email' => 'milenacanuti@email.it',
         ],
         'profile' => [
             'self_description' => 'Un giorno un saggio mi disse: "non cercare lavoro, usa la tua musica per mascherare la tua voglia di non fare nulla". Così ho fatto e così voglio trasmettere la gioia di vivere a tutti. Non ho mai lavorato, ma adesso voglio mettermi in gioco e guadagnare facendo ciò che amo.',
             'phone_number' => '3474140622',
-            'work_address' => 'Genova, Liguria, Italia, Mondo',
+            'work_address' => 'Via Scuderlando, 51 - Pineto (TE)',
             'pic' =>  'img/profilo22.jpg'
         ],
     ],
@@ -313,13 +313,13 @@ return [
         'user' => [
             'name' => 'Duccio',
             'lastname' => 'Barbieri',
-            'address' => 'Via Cesare Battisti, 22',
+            'address' => 'Via Guantai Nuovi, 51 - Liveri (NA)',
             'email' => 'ducciobarbieri@email.it',
         ],
         'profile' => [
             'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '349123456',
-            'work_address' => 'Mi trovi in circonvalla col T-Max a 190',
+            'work_address' => 'Via Guantai Nuovi, 51 - Liveri (NA)',
             'pic' =>  'img/profilo23.jpg'
         ],
     ],
@@ -327,13 +327,13 @@ return [
         'user' => [
             'name' => 'Manuela',
             'lastname' => 'Piccolonni',
-            'address' => 'Viale Giuseppe Verdi, 77',
+            'address' => 'Via Giacinto Gigante, 67 - San Biagio In Padule (MO)',
             'email' => 'manupiccolomini@email.it',
         ],
         'profile' => [
             'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
             'phone_number' => '3291234567',
-            'work_address' => 'Vivo solo da 10 anni e non ne faccio un dramma',
+            'work_address' => 'Via Giacinto Gigante, 67 - San Biagio In Padule (MO)',
             'pic' =>  'img/profilo24.jpg'
         ],
     ],
@@ -341,13 +341,13 @@ return [
         'user' => [
             'name' => 'Barbara',
             'lastname' => 'Scaranti',
-            'address' => 'Viale Padova, 18',
+            'address' => 'Via Longhena, 136 - Palestrina (RM)',
             'email' => 'scarantibarb@email.it',
         ],
         'profile' => [
             'self_description' => 'Dopo anni di esperienza, ho deciso di condividere la mia passione e farne una professione. Ho avuto la fortuna di apprendere dai migliori nel settore e fare tesoro di tutto ciò che ho imparato. Sono incline a mettermi a disposizione degli altri perché credo che la musica sia prima di tutto condivisione, poi tecnica e dedizione.',
             'phone_number' => '3456490133',
-            'work_address' => 'Milano',
+            'work_address' => 'Via Longhena, 136 - Palestrina (RM)',
             'pic' =>  'img/profilo25.jpg'
         ],
     ],
@@ -355,13 +355,13 @@ return [
         'user' => [
             'name' => 'Plinio',
             'lastname' => 'Ascani',
-            'address' => 'Viale della Pala, 59',
+            'address' => 'Via Nuova Agnano, 107 - La Moschella (FG)',
             'email' => 'plinissimo@email.it',
         ],
         'profile' => [
             'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '3456490133',
-            'work_address' => 'Vesuvio',
+            'work_address' => 'Via Nuova Agnano, 107 - La Moschella (FG)',
             'pic' =>  'img/profilo26.jpg'
         ],
     ],
@@ -369,13 +369,13 @@ return [
         'user' => [
             'name' => 'Cianuro',
             'lastname' => 'Bastioni',
-            'address' => 'Viale dei Cantori, 1',
+            'address' => 'Via Moiariello, 148 - Scaletta Uzzone (CN)',
             'email' => 'ciaocianuro@email.it',
         ],
         'profile' => [
             'self_description' => 'Da sempre malato di musica, sono qui per offrire servizi ma allo stesso tempo avere tante soddisfazioni in cambio. Tante collaborazioni importanti con artisti da tutta Europa, la mia carriera è sempre stata un misto di impegno e gioia. Non vedo l\'ora di mettermi al lavoro con te!',
             'phone_number' => '345345345',
-            'work_address' => 'Via degli Emancipati, Verona',
+            'work_address' => 'Via Moiariello, 148 - Scaletta Uzzone (CN)',
             'pic' =>  'img/profilo27.jpg'
         ],
     ],
@@ -383,13 +383,13 @@ return [
         'user' => [
             'name' => 'Kaylash',
             'lastname' => 'Sere',
-            'address' => 'Via Saffi, 22',
+            'address' => 'Via Bonafous Alfonso, 65 - Trieste (TS)',
             'email' => 'kaysere@email.it',
         ],
         'profile' => [
             'self_description' => 'Dai garage sotto al supermercato ai palcoscenici più in vista della zona. Con tanto sudore e tanti sacrifici si riesce sempre a ritagliarsi uno spazio in questo ambito, se si merita. Ovviamente non lo si può fare da soli, per questo voglio provare a rimettermi in gioco proprio per aiutarti nel tuo percorso.',
             'phone_number' => '345345345',
-            'work_address' => 'room classe 31',
+            'work_address' => 'Via Bonafous Alfonso, 65 - Trieste (TS)',
             'pic' =>  'img/profilo28.jpg'
         ],
     ],
@@ -397,13 +397,13 @@ return [
         'user' => [
             'name' => 'Ivaldo',
             'lastname' => 'Saccaramanni',
-            'address' => 'Via San Martino, 102',
+            'address' => 'Via Belviglieri, 7 - Roma (RM)',
             'email' => 'ivaldoaldo@email.it',
         ],
         'profile' => [
             'self_description' => 'Dopo anni in miniera, questa è la mia occasione per rimettermi in discussione. Dal piccone allo strumento la linea è molto sottile. In tanti anni di buio finalmente vedo la luce. E voglio condividere questa sensazione con voi e farmi pagare per questo. Quindi in cambio dei vostri soldi, vi offrirò i migliori servizi musicali sulla piazza. E se serve da demolire, demoliamo!',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Belviglieri, 7 - Roma (RM)',
             'pic' =>  'img/profilo29.jpg'
         ],
     ],
@@ -411,13 +411,13 @@ return [
         'user' => [
             'name' => 'Vlad',
             'lastname' => 'Il vampiro',
-            'address' => 'Via Fragola, 66',
+            'address' => 'Via Rocca de Baldi, 123 - Motta Filocastro (VV)',
             'email' => 'vlady@email.it',
         ],
         'profile' => [
             'self_description' => 'Un giorno un saggio mi disse: "non cercare lavoro, usa la tua musica per mascherare la tua voglia di non fare nulla". Così ho fatto e così voglio trasmettere la gioia di vivere a tutti. Non ho mai lavorato, ma adesso voglio mettermi in gioco e guadagnare facendo ciò che amo.',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Rocca de Baldi, 123 - Motta Filocastro (VV)',
             'pic' =>  'img/profilo30.jpg'
         ],
     ],
