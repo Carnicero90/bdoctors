@@ -109,7 +109,7 @@
                             <div class="card mb-3">
                                 <div class="card-header d-flex align-items-center justify-content-between">
                                     <h4>{{ $service->title }}</h4>
-                                    <h5>€ {{ $service->hourly_rate }} all'ora</h5>
+                                    <h5>€ {{ $service->hourly_rate }}/h</h5>
                                 </div>
                                 <div class="card-body">
                                     <p>{{ $service->description }}</p>

@@ -50,7 +50,7 @@
                                     <h3>{{ $service->title }}</h3>
                                 </div>
                                 <div>
-                                    <h5>€ {{ $service->hourly_rate }} all'ora</h5>
+                                    <h5>€ {{ $service->hourly_rate }}/h</h5>
                                 </div>
                             </div>
                             <div class="card-body">
