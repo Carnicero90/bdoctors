@@ -7,6 +7,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {{-- Vuejs --}}
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    {{-- Dayjs --}}
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
 @endsection
 @section('footer-scripts')
     <script src="{{ asset('js/show.js') }}"></script>
@@ -148,7 +152,7 @@
                                         </span>
                                     </div>
                                     <div>
-                                        <span>@{{ review.send_date }}</span>
+                                        <span>@{{dayjs(review.send_date).format('D/MM/YYYY')}}</span>
                                     </div>
                                 </div>
                                 <div class="mt-2 mb-2">
