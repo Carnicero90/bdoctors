@@ -9,12 +9,20 @@
     .navbar-nav {
         flex-direction: row;
     }
+
+    .search-a-bard {
+        flex-grow: 0.8;
+    }
 }
 
 /* XS */
 @media all and ( max-width: 575px ) {
     .xs-container {
         flex-direction: column;
+    }
+
+    .search-a-bard {
+        flex-grow: 1;
     }
 
     .navbar-nav {

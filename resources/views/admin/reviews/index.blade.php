@@ -5,7 +5,7 @@
     <div class="container">
         <h1>Recensioni</h1>
 
-        <div class="row">
+        <div class="row mb-5">
             @if ($reviews->isNotEmpty())
                 @foreach ($reviews as $review)
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">

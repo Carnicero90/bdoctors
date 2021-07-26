@@ -10014,7 +10014,7 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 }
 
 a {
@@ -10056,6 +10056,14 @@ hr {
   width: 100%;
 }
 
+.img_30 {
+  width: 30%;
+}
+
+.width-120px {
+  width: 120px;
+}
+
 .text-white {
   color: white;
 }
@@ -10084,10 +10092,15 @@ input, select {
 }
 
 .cat-box {
-  background-color: #e2e2e2;
+  font-weight: 200;
+  font-size: 13px;
+  color: gainsboro;
+  border-color: gainsboro;
 }
 .cat-box.selected {
-  background-color: #141414;
+  color: #141414;
+  background-color: gainsboro;
+  border-color: #505050;
 }
 
 .btn-custom-danger {
@@ -10155,7 +10168,7 @@ header .logo img {
 }
 
 .mio-jumbotron {
-  background-image: url("/img/jumbotron.jpg");
+  background-image: url("/img/welcome/jumbotron.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -10201,7 +10214,7 @@ header .logo img {
   min-width: 100%;
   font-family: "Poppins", sans-serif;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 200;
   text-shadow: 2px 2px 5px black;
 }
 .mio-jumbotron .ricerca {
@@ -10216,6 +10229,12 @@ header .logo img {
           animation-timing-function: linear;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
+}
+.mio-jumbotron .searchbox {
+  color: #141414;
+}
+.mio-jumbotron .searchbox .list-group .list-group-item:hover {
+  color: grey;
 }
 @-webkit-keyframes logo {
   0% {
@@ -10288,6 +10307,7 @@ header .logo img {
 
 .select-category {
   -webkit-appearance: none;
+  background-color: #141414 !important;
 }
 
 .cat-jumbotron {
@@ -10303,7 +10323,6 @@ header .logo img {
   color: white;
   text-shadow: 2px 2px 5px black;
   padding: 20px 30px;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 .cat-jumbotron .title h1 {
   font-size: 70px;
@@ -10318,7 +10337,7 @@ footer img {
   margin-bottom: 15px;
 }
 footer .bg-footer {
-  background-image: url("/img/footer-jumbo.jpg");
+  background-image: url("/img/footer/footer-jumbotron.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -10439,6 +10458,7 @@ footer .copyright span {
   height: 120px;
   border-radius: 50%;
   overflow: hidden;
+  margin: auto;
 }
 
 .profile-img-dashboard {
@@ -10478,7 +10498,6 @@ footer .copyright span {
 }
 
 .user-card {
-  min-height: 248px;
   min-height: 250px;
 }
 
@@ -10525,7 +10544,7 @@ footer .copyright span {
   color: inherit;
 }
 .vote .star.filled {
-  color: #e3342f;
+  color: #e2d25d;
 }
 
 .cat-card {
@@ -10535,15 +10554,36 @@ footer .copyright span {
   border: 0;
   border-radius: 75px 0px 75px 0px;
   transition: 1s;
+  position: relative;
 }
 .cat-card:hover {
-  filter: none;
+  border-radius: 7px;
+}
+.cat-card:hover .cat-header {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 10px;
   border-radius: 7px;
 }
 .cat-card .cat-header {
   color: white;
   font-size: 20px;
-  font-weight: 300;
+  font-weight: 400;
+  transition: 1s;
+}
+.cat-card .bg-overlay {
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 75px 0px 75px 0px;
+  transition: 1s;
+}
+.cat-card .bg-overlay:hover {
+  opacity: 0;
+  border-radius: 7px;
 }
 
 .cat-card::before {
@@ -10554,13 +10594,37 @@ footer .copyright span {
   width: 100%;
   border-radius: 75px 0px 75px 0px;
   transition: all 1s ease-out;
-  background: linear-gradient(360deg, rgba(40, 45, 48, 0.874) 0%, rgba(40, 77, 87, 0.902) 99%);
   opacity: 0;
 }
 
 .cat-card:hover:before {
   opacity: 0.4;
   border-radius: 7px;
+}
+
+.braintree-sheet {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 200;
+  background-color: #787878;
+}
+
+.braintree-sheet__text {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 200 !important;
+  color: #787878 !important;
+}
+
+.braintree-form__label {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 200 !important;
+  color: #141414 !important;
+}
+
+.braintree-sheet__header {
+  background-color: #282828;
+}
+.braintree-sheet__header .braintree-sheet__text {
+  font-weight: 400 !important;
 }
 
 .ricerca {
@@ -10648,6 +10712,25 @@ footer .copyright span {
   right: 0;
 }
 
+.description-text {
+  color: #787878;
+  font-size: 17px;
+  line-height: 30px;
+  font-weight: 300;
+  letter-spacing: 1.3px;
+}
+.description-text .text-evident {
+  color: gainsboro;
+  font-weight: 500;
+}
+
+.badge-top {
+  padding: 5px 7px;
+  font-weight: 500;
+  color: #141414;
+  background-color: #38c172;
+}
+
 /* S */
 @media all and (min-width: 576px) and (max-width: 991px) {
   .xs-container {
@@ -10657,11 +10740,19 @@ footer .copyright span {
   .navbar-nav {
     flex-direction: row;
   }
+
+  .search-a-bard {
+    flex-grow: 0.8;
+  }
 }
 /* XS */
 @media all and (max-width: 575px) {
   .xs-container {
     flex-direction: column;
+  }
+
+  .search-a-bard {
+    flex-grow: 1;
   }
 
   .navbar-nav {

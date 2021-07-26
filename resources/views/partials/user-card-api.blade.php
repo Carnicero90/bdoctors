@@ -23,7 +23,7 @@
             </div>
         </div>
         <div v-if="user.sponsored" class="recommended-badge">
-            <small class="badge badge-secondary">Consigliato</small>
+            <small class="badge badge-top">Top Bard</small>
         </div>
     </div>
 </a>

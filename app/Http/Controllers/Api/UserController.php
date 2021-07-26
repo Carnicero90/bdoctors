@@ -52,7 +52,7 @@ class UserController extends Controller
      * @return \Illuminate\Contracts\Support\JsonResponse
      */
 
-    public function users(Request $request) // TODO magari rinomina
+    public function users(Request $request)
     {
         $user = $request['name'];
         $category = $request['cat'];

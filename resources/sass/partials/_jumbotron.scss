@@ -1,8 +1,7 @@
 // JUMBOTRON
-// TODO
 
 .mio-jumbotron {
-  background-image: url('/img/jumbotron.jpg'); 
+  background-image: url('/img/welcome/jumbotron.jpg'); 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -41,7 +40,7 @@
     min-width: 100%;
     font-family: $primary_font;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 200;
     text-shadow: 2px 2px 5px black;
   }
 
@@ -52,6 +51,19 @@
     animation-delay: 0s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
+  }
+
+  .searchbox {
+    color: rgb(20, 20, 20);
+
+    .list-group {
+
+      .list-group-item {
+        &:hover {
+          color: grey;
+        }
+      }
+    }
   }
 
   @keyframes logo {
@@ -93,7 +105,8 @@
 }
 
 .select-category {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
+  background-color: rgb(20, 20, 20) !important;
 }
 
 // CATEGORIES JUMBOTRON
@@ -110,7 +123,6 @@
     color: white;
     text-shadow: 2px 2px 5px black;
     padding: 20px 30px;
-    background-color: rgba(0, 0, 0, 0.5);
 
     h1 {
       font-size: 70px;

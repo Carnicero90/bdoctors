@@ -26,7 +26,7 @@
 
                 <div class="jumbo-container position-relative">
                     <h1 class="display-2 heading-logo">Trova il tuo Bardo</h1>
-                    <img class="jumbo-logo" src="{{asset('img/boolbards-white-1.png')}}" alt="">
+                    <img class="jumbo-logo" src="{{asset('img/welcome/boolbards-white.png')}}" alt="">
                 </div>
 
                 <!-- input ricerca da usare con VueJs -->
@@ -47,7 +47,6 @@
 
                         <div v-if="searching" class="searchbox">
                             <ul class="list-group">
-                                {{-- TODO: test --}}
                                 <li class="list-group-item" v-for="user in users">
                                     <a :href="'bards/' + user.id" class="d-flex align-items-center c-1 no-decorations">
                                         <div class="mr-2 profile-img-search-container position-relative">
@@ -55,9 +54,9 @@
                                             <img class="mr-2 profile-img-search" v-else src="{{asset("/img/user-img.png")}}" alt="">
                                         </div>
                                         <span>@{{ user . name + ' ' + user . lastname }}</span>
-                                        <span v-if="user.sponsored" class="sponsored-badge-search">
-                                            <i class="fas fa-star"></i>
-                                        </span>
+                                        <div v-if="user.sponsored" class="recommended-badge">
+                                            <small class="badge badge-top">Top Bard</small>
+                                        </div>
                                     </a>
                                 </li>
                                 <li class="list-group-item" class="show-more-res">
@@ -75,7 +74,25 @@
 
         <div class="top-margine">
 
+            {{-- section spiegazione --}}
+            <div class="container pb-5">
+                <h2 class="text-center text-uppercase">Nuovi artisti ogni giorno</h2>
+
+                <div class="row justify-content-center">
+
+                    <p class="description-text text-center mt-3"> <span class="text-evident">BoolBards</span> è la piattaforma ideale per trovare il musicista che fa al caso tuo.<br>
+                        Nuovi artisti si aggiungono alla nostra rete ogni giorno ed avrai la possibilità di visione il loro profilo.<br>
+                        Potrai scegliere un servizio tra quelli disponibili in base alle recensioni e<br>
+                        quando avrai scelto, potrai contattare l'artista direttamente dalla sua pagina tramite messaggio.<br>
+                        Cosa aspetti? Inizia la ricerca e scegli il <span class="text-evident">Bardo</span> che fa al caso tuo!
+                    </p>
+
+                </div>
+            </div>
+            {{-- END section spiegazione --}}
+
             {{-- section sponsored --}}
+            <hr>
             <div class="container pb-5">
                 <h2 class="text-center text-uppercase">I nostri artisti del momento</h2>
 

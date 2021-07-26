@@ -24,13 +24,8 @@
             {{--TEST_LEVARE--}}
             {{-- {{dd($reviews)}} --}}
 
-            <h1>Lascia una recensione per {{ $user->name . ' ' . $user->lastname }}</h1>
-            <div class="mb-4">
-                <h6>Categorie:</h6>
-                @foreach ($user->categories as $category)
-                    <a class="btn btn-outline-dark"
-                        href="{{ route('category-page', ['slug' => $category->slug]) }}">{{ $category->name }}</a>
-                @endforeach
+            <div class="mb-5">
+                <h1>Lascia una recensione per {{ $user->name . ' ' . $user->lastname }}</h1>
             </div>
 
             {{-- form lascia una recensione --}}
@@ -80,34 +75,22 @@
                 </div>
 
                 {{-- select servizio ricevuto --}}
-                <div class="form-group">
-                    <label for="content">Hai usufruito di un servizio?</label>
-                    <select class="form-control" name="service_received" id="service_received">
-
+                <div class="form-group mt-4 mb-4">
+                    <label for="content" class="d-inline-block mr-3">Hai usufruito di un servizio?</label>
+                    <select class="form-control d-inline-block width-120px" name="service_received" id="service_received" required>
+                        <option value="" disabled selected>Seleziona</option>
                         <option value="1">Si</option>
-
                         <option value="0">No</option>
                     </select>
                 </div>
-
-                {{-- voto recensione --}}
-                {{-- <div class="form-group mt-4 mb-4">
-                    <label for="vote_id" class="mr-4">Come definiresti il servizio dell'artista?</label>
-                    <select class="custom-select col-md-3" name="vote_id" id="vote_id">
-                        <option selected>Seleziona una valutazione</option>
-                        @foreach ($votes as $vote)
-                            <option value="{{ $vote->value }}">
-                                {{ $vote->value . ' - ' . ucfirst($vote->label) }}
-                            </option>
-                        @endforeach
-                    </select>
-                </div> --}}
-
+                
                 {{-- partials di termini e condizioni --}}
-                @include('partials.terms-conditions')
+                <div class="form-group form-check">
+                    @include('partials.terms-conditions')
+                </div>
 
                 {{-- tasto per inviare recensione --}}
-                <button type="submit" class="btn btn-outline-primary mt-4">
+                <button type="submit" class="btn btn-outline-primary mb-4 mt-4">
                     Invia
                 </button>
 

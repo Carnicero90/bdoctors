@@ -70,7 +70,7 @@
                 </form>
 
                 {{-- form profile --}}
-                <form id="profile-form" action="{{ route('admin.profile-store') }}" method="post">
+                <form id="profile-form" action="{{ route('admin.profile-store') }}" method="post" class="mb-5">
                     @csrf
                     @method("POST")
 
@@ -93,7 +93,6 @@
                     </div>
                     {{-- END input#phone_number --}}
 
-                    {{-- TODO --}}
                     {{-- check-box#categories --}}
                     <div class="form-group">
                         <label for="categories" class="d-block">Scegli le tue categorie</label>
@@ -108,8 +107,6 @@
                         @endforeach
                     </div>
                     {{-- END check-box#categories --}}
-                    {{-- END TODO --}}
-
 
                     {{-- input#self_description --}}
                     <div class="form-group mt-4 mb-4">

@@ -1,6 +1,5 @@
 <?php 
 return [
-    // TODO: aggiungere descrizioni
     [
         'name' => 'premium_24',
         'duration_in_hours' => 24,

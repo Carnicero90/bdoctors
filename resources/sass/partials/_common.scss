@@ -11,7 +11,7 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
     font-weight: 300;
-    font-family: 'Poppins';
+    font-family: $primary_font;
 }
 
 a {
@@ -55,6 +55,14 @@ hr {
     width: 100%;
 }
 
+.img_30 {
+    width: 30%;
+}
+
+.width-120px {
+    width: 120px;
+}
+
 .text-white {
     color: white;
 }
@@ -89,9 +97,15 @@ input, select {
 }
 
 .cat-box {
-    background-color: rgb(226, 226, 226);
+    font-weight: 200;
+    font-size: 13px;
+    color: rgb(220, 220, 220);
+    border-color: rgb(220, 220, 220);
+
     &.selected {
-        background-color:rgb(20, 20, 20);
+        color: rgb(20, 20, 20);
+        background-color: rgb(220, 220, 220);
+        border-color:rgb(80, 80, 80);
     }
 }
 

@@ -32,12 +32,6 @@
                         status_input.value = response.success ? 1 : 0;
                         console.log(status_input.value)
                         f.submit()
-                        alert(response.success);
-                        if (response.success) {
-
-                        } else {
-                            alert('Pagamento fallito');
-                        }
                     }, 'json');
                 });
             });
@@ -48,39 +42,9 @@
 @section('content')
 <div class="top-margine">
     <div class="container">
-        <div class="row">
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <h5>Carta per transazione fallita<i class="fas fa-times ml-2"></i></h5>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div>4830635544216121</div>
-                        <div class="d-flex">
-                            <div class="mr-5">04/23</div>
-                            <div>963</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4">
-                <div class="card">
-                    <div class="card-header">
-                        <div>
-                            <h5>Carta per transazione riuscita<i class="fas fa-check ml-2"></i></h5>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <div>5555555555554444</div>
-                        <div class="d-flex">
-                            <div class="mr-5">12/21</div>
-                            <div>123</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="text-center">
+            @include("partials.success-messages")
+            @include("partials.error-messages")
         </div>
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
@@ -90,8 +54,23 @@
                     <input type="hidden" name="success" id="status">
                     <input type="hidden" name="sponsorplan_id">
                     <div id="dropin-container"></div>
+                    <button id="submit-button" class="btn btn-outline-success mt-2">Effettua Pagamento</button>
                 </form>
-                <button id="submit-button" class="btn btn-outline-success">PAGA</button>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-4">
+                <h5>Carta per transazione fallita<i class="fas fa-times ml-2"></i></h5>
+                <div>4830 6355 4421 6121</div>
+                <div>04/23</div>
+                <div>963</div>
+            </div>
+            <div class="col-4">
+                <h5>Carta per transazione riuscita<i class="fas fa-check ml-2"></i></h5>
+                <div>5555 5555 5555 4444</div>
+                <div>12/21</div>
+                <div>123</div>
             </div>
         </div>
     </div>

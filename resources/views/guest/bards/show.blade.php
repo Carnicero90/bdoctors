@@ -20,9 +20,12 @@
 
             <input type="hidden" id="userid" value="{{ $user->id }}">
 
-            <div class="container">
+            <div class="container text-center">
                 @include("partials.success-messages")
                 @include("partials.error-messages")
+            </div>
+
+            <div class="container">
 
                 {{-- img profilo --}}
                 <div class="row mb-4 d-flex align-items-center">
@@ -80,17 +83,18 @@
                 {{-- END INFO personali --}}
             </div>
 
-            @if (!(Auth::user() && $user->id == Auth::user()->id))
-                {{-- TODO: magari invece di nasconderlo si fa effetto 'disabled'? --}}
-                <div class="mt-4">
-                    {{-- link form recensioni --}}
-                    <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
-                        recensione</a>
-                    {{-- link form messaggi --}}
-                    <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
-                        messaggio</a>
-                </div>
-            @endif
+            <div class="container">
+                @if (!(Auth::user() && $user->id == Auth::user()->id))
+                    <div class="mt-4">
+                        {{-- link form recensioni --}}
+                        <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
+                            recensione</a>
+                        {{-- link form messaggi --}}
+                        <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
+                            messaggio</a>
+                    </div>
+                @endif
+            </div>
 
             <hr>
 
@@ -121,7 +125,7 @@
 
             <div class="container">
                 {{-- reviews --}}
-                <div class="row">
+                <div class="row mb-5">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <h2>Recensioni</h2>
                     </div>

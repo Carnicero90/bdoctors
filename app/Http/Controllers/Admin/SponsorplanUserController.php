@@ -33,11 +33,12 @@ class SponsorplanUserController extends Controller
         $new_subscription->end_date = $plan->endDate();
         $new_subscription->sponsorplan_id = $id;
         // TOTEST
-        $new_subscription->invoice = 'bababa';
+        $new_subscription->invoice = 'Fattura n° ' . rand(1000, 1999);
         $new_subscription->success = intval($request['success']);
         $new_subscription->save();
         if (!$new_subscription->success) {
-            return dd($new_subscription);
+
+            return back()->with("errors", "Pagamento fallito!");
         }
 
         return redirect()->route("admin.dashboard")->with("success", "Abbonamento sottoscritto");

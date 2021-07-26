@@ -1,10 +1,5 @@
 <?php
 return [
-    // TODO: 
-    //
-    // aggiungere descrizioni
-    //
-    // modificare user_id e vote_id ?
     [
         'user_id' => 1,
         'vote_id' => 2,

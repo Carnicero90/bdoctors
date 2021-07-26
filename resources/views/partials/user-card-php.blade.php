@@ -38,8 +38,8 @@
                 </div>
             @endif
             @if ($user->sponsored)
-                <div class="recommended-badge">
-                    <small class="badge badge-secondary">Consigliato</small>
+                <div v-if="user.sponsored" class="recommended-badge">
+                    <small class="badge badge-top">Top Bard</small>
                 </div>
             @endif
         </div>

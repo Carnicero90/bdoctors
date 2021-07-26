@@ -12,7 +12,7 @@ class SponsorplanUser extends Model
         return $this->belongsTo('App\User');
     }
 
-    // TODO: commenta
+    // TODO: da commentare
     public static function userHasActiveSponsorPlan($user_id)
     {
         $now = Carbon::now();

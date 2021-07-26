@@ -18,8 +18,8 @@
             {{-- Saluto all'utente loggato --}}
             <div class="dashboard">
 
-                <div class="row d-flex align-items-center">
-                    <div class="col-12 col-sm-6 col-md-3 col-lg-2 col-xl-2 mb-4">
+                <div class="row align-items-center">
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2 d-flex mb-4">
                         @if ($user->profile)
                             <div class="profile-img-dashboard-container">
                                 <img src="{{ asset('storage/' . $user->profile->pic) }}" alt="{{ $user->name . ' ' . $user->lastname }}" class="profile-img-dashboard">
@@ -32,10 +32,10 @@
                             </div>
                         @endif
                     </div>
-                    <div class="col-12 col-sm-6 col-md-3 col-lg-6 col-xl-6 mb-4">
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-6 col-xl-6 text-center text-sm-center text-md-left text-xl-left mb-4">
                         <h2>{{$user->name . " " . $user->lastname}}</h2>
                     </div>
-                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 mb-4">
+                    <div class="col-12 col-sm-12 col-md-5 col-lg-4 col-xl-4 text-lg-right text-center text-sm-center text-md-righ text-xl-righ tmb-4">
                         @if ($user->sponsored)
                             <a class="btn btn-outline-success" href="{{ route('sponsor-index') }}">
                                 <h4>Sei un utente Premium</h4>
@@ -54,16 +54,15 @@
 
             {{-- Tasti navigazione --}}
             @include('partials.dashboard-nav')
-            
             {{-- END HEADER --}}
 
-            <div class="row mt-4">
+            <div class="row mt-4 mb-3">
                 <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4">
                     <a href="{{ route('admin.profile-index') }}" class="no-decorations">
                         <div class="card shadow zoom mb-4">
                             <div class="card-body">
                                 <h3>{{ Auth::user()->profile ? 'Modifica' : 'Crea' }} profilo</h3>
-                                <img src="{{asset("img/dashboard/modifica-profilo.jpg")}}" alt="" class="img_100">
+                                <img src="{{asset("img/dashboard/cards/modifica-profilo.jpg")}}" alt="" class="img_100">
                             </div>
                         </div>
                     </a>
@@ -73,7 +72,7 @@
                         <div class="card shadow zoom mb-4">
                             <div class="card-body">
                                 <h3>Servizi</h3>
-                                <img src="{{asset("img/dashboard/servizi.jpg")}}" alt="" class="img_100">
+                                <img src="{{asset("img/dashboard/cards/servizi.jpg")}}" alt="" class="img_100">
                             </div>
                         </div>
                     </a>
@@ -83,7 +82,7 @@
                         <div class="card shadow zoom mb-4">
                             <div class="card-body">
                                 <h3>Profilo pubblico</h3>
-                                <img src="{{asset("img/dashboard/profilo-pubblico.jpg")}}" alt="" class="img_100">
+                                <img src="{{asset("img/dashboard/cards/profilo-pubblico.jpg")}}" alt="" class="img_100">
                             </div>
                         </div>
                     </a>
@@ -93,7 +92,7 @@
                         <div class="card shadow zoom mb-4">
                             <div class="card-body">
                                 <h3>Recensioni</h3>
-                                <img src="{{asset("img/dashboard/recensioni.jpg")}}" alt="" class="img_100">
+                                <img src="{{asset("img/dashboard/cards/recensioni.jpg")}}" alt="" class="img_100">
                             </div>
                         </div>
                     </a>
@@ -103,7 +102,7 @@
                         <div class="card shadow zoom mb-4">
                             <div class="card-body">
                                 <h3>Messaggi</h3>
-                                <img src="{{asset("img/dashboard/messaggi.jpg")}}" alt="" class="img_100">
+                                <img src="{{asset("img/dashboard/cards/messaggi.jpg")}}" alt="" class="img_100">
                             </div>
                         </div>
                     </a>
@@ -113,7 +112,7 @@
                         <div class="card shadow zoom mb-4">
                             <div class="card-body">
                                 <h3>Statistiche</h3>
-                                <img src="{{asset("img/dashboard/statistiche.jpg")}}" alt="" class="img_100">
+                                <img src="{{asset("img/dashboard/cards/statistiche.jpg")}}" alt="" class="img_100">
                             </div>
                         </div>
                     </a>

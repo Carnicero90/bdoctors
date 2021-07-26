@@ -87,3 +87,23 @@
         right: 0;
     }
 }
+
+.description-text {
+    color: rgb(120, 120, 120);
+    font-size: 17px;
+    line-height: 30px;
+    font-weight: 300;
+    letter-spacing: 1.3px;
+
+    .text-evident {
+        color: rgb(220, 220, 220);
+        font-weight: 500;
+    }
+}
+
+.badge-top {
+    padding: 5px 7px;
+    font-weight: 500;
+    color: rgb(20, 20, 20);
+    background-color: $green;
+}
