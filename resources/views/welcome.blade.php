@@ -96,7 +96,7 @@
             <div class="container pb-5">
                 <h2 class="text-center text-uppercase">I nostri artisti del momento</h2>
 
-                <div class="row d-flex align-items-center position-relative">
+                <div class="row d-flex align-items-center position-relative justify-content-center">
 
                     <div class="arrow-slider left-arrow zoom" v-on:click="slideLeft">
                         <i class="fas fa-chevron-circle-left"></i>
