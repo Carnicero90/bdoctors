@@ -7,6 +7,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {{-- Vuejs --}}
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    {{-- Dayjs --}}
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
 @endsection
 @section('footer-scripts')
     <script src="{{ asset('js/show.js') }}"></script>
@@ -38,8 +42,8 @@
                         </div>
                     @else
                     <div class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2">
-                        <div class="profile-img-dashboard-container col-12 col-sm-12">
-                            <img src="{{ asset('img/user-img.png') }}" alt="" class="profile-img-dashboard">
+                        <div class="profile-img-dashboard-container">
+                            <img src="{{ asset('img/user/user-img.png') }}" alt="" class="profile-img-dashboard">
                         </div>
                     </div>
                     @endif
@@ -109,7 +113,7 @@
                             <div class="card mb-3">
                                 <div class="card-header d-flex align-items-center justify-content-between">
                                     <h4>{{ $service->title }}</h4>
-                                    <h5>€ {{ $service->hourly_rate }} all'ora</h5>
+                                    <h5>€ {{ $service->hourly_rate }}/h</h5>
                                 </div>
                                 <div class="card-body">
                                     <p>{{ $service->description }}</p>
@@ -148,7 +152,7 @@
                                         </span>
                                     </div>
                                     <div>
-                                        <span>@{{ review.send_date }}</span>
+                                        <span>@{{dayjs(review.send_date).format('D/MM/YYYY')}}</span>
                                     </div>
                                 </div>
                                 <div class="mt-2 mb-2">
