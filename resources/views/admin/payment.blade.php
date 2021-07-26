@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        <div class="row mt-4">
+        {{-- <div class="row mt-4">
             <div class="col-4">
                 <h5>Carta per transazione fallita<i class="fas fa-times ml-2"></i></h5>
                 <div>4830 6355 4421 6121</div>
@@ -72,7 +72,7 @@
                 <div>12/21</div>
                 <div>123</div>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 @endsection
