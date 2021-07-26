@@ -14,7 +14,7 @@ class UsersSeeder extends Seeder
      */
     public function run()
     {
-        foreach (config('users_pt_1') as $user) {
+        foreach (config('users') as $user) {
             $new_user = new User();
             $new_user->fill($user['user']);
             $new_user->password = Hash::make('cavecanem');
@@ -23,13 +23,6 @@ class UsersSeeder extends Seeder
             $profile->fill($user['profile']);
             $profile->user_id = $new_user->id;
             $profile->save();
-        }
-
-        foreach (config('users') as $user) {
-            $new_user = new User();
-            $new_user->fill($user);
-            $new_user->password = Hash::make('cavecanem');
-            $new_user->save();
         }
     }
 }
