@@ -28,43 +28,41 @@
                 </div>
                 {{-- END HEADER --}}
                 
-                <div class="mt-3 mb-3">
+                <div class="mb-3">
                     <h1>Modifica profilo</h1>
                 </div>
 
-                @include("partials.success-messages")
-                @include("partials.validation-errors")
+                <div class="container text-center">
+                    @include("partials.success-messages")
+                    @include("partials.validation-errors")
+                </div>
+
                 <form action="{{ route('admin.pic-store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method("POST")
 
                     {{-- input#image-file --}}
-                    <div v-if="!loadedPic" class="profile-img-dashboard-container">
-                        @if (Auth::user()->profile)
-                            @if (Auth::user()->profile->pic)
-                                <img src="{{ asset('storage/' . Auth::user()->profile->pic) }}"
-                                    class="profile-img-dashboard">
+                    <div class="col-3 col-sm-3 col-md-3 col-lg-2 col-xl-2 mt-4 mb-4">
+                        <div v-if="!loadedPic" class="profile-img-dashboard-container">
+                            @if (Auth::user()->profile)
+                                @if (Auth::user()->profile->pic)
+                                    <img src="{{ asset('storage/' . Auth::user()->profile->pic) }}" class="profile-img-dashboard">
+                                @endif
+                            @else
+                                <img src="{{ asset('img/user-img.png') }}" alt="" class="profile-img-dashboard">
                             @endif
-                        @else
-                            <img src="{{ asset('img/user-img.png') }}" alt="" class="profile-img-dashboard">
-                        @endif
+                        </div>
+                        <div v-else class="profile-img-dashboard-container">
+                            <img v-bind:src="preload" alt="" class="profile-img-dashboard">
+                        </div>
                     </div>
-                    {{-- TOTEST --}}
 
-                    {{-- ENDTOTEST --}}
-
-                    <div v-else class="profile-img-dashboard-container">
-                        <img v-bind:src="preload" alt="" class="profile-img-dashboard">
-                    </div>
                     <div v-if="loadedPic">
-                        <button class="btn btn-outline-success">
-                            Salva nuova foto
-                        </button>
+                        <button class="btn btn-outline-success">Salva nuova foto</button>
                     </div>
                     <div class="form-group">
-                        <label for="image-file">Carica un'immagine profilo</label>
-                        <input type="file" v-on:change="preloadPic($event)" class="form-control-file" id="image-file"
-                            name="image-file">
+                        <label for="image-file" class="mb-3">Carica un'immagine profilo</label>
+                        <input type="file" v-on:change="preloadPic($event)" class="form-control-file" id="image-file" name="image-file">
                     </div>
                     {{-- END input#image-file --}}
                 </form>
@@ -76,7 +74,7 @@
 
 
                     {{-- input#work_address --}}
-                    <div class="form-group mt-4 mb-4">
+                    <div class="form-group mt-5 mb-5">
                         <label for="work_address">Indirizzo / Luogo di Lavoro</label>
                         <input type="text" class="form-control" id="work_address" name="work_address"
                             placeholder="Inserisci il tuo indirizzo"
@@ -85,7 +83,7 @@
                     {{-- END input#work_address --}}
 
                     {{-- input#phone_number --}}
-                    <div class="form-group mt-4 mb-4">
+                    <div class="form-group mt-5 mb-5">
                         <label for="phone_number">Numero di telefono</label>
                         <input type="tel" class="form-control" id="phone_number" name="phone_number"
                             placeholder="Inserisci il tuo numero di telefono"
@@ -111,7 +109,7 @@
                     {{-- input#self_description --}}
                     <div class="form-group mt-4 mb-4">
                         <label for="self_description">Descriviti</label>
-                        <textarea class="form-control" name="self_description" id="self_description" v-bind:rows="lines"
+                        <textarea class="form-control" name="self_description" id="self_description" v-bind:rows="lines" rows="4"
                             v-on:keyup.enter="lines ++"
                             placeholder="Scrivi una descrizione per il tuo profilo">{{ Auth::user()->profile ? Auth::user()->profile->self_description : old('self_description') }}</textarea>
                     </div>

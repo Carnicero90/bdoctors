@@ -57,7 +57,7 @@ class ProfileController extends Controller
 
         $request->validate(
             [
-                'self_description' => 'string | max:500 | nullable',
+                'self_description' => 'string | max:1500 | nullable',
                 'work_address' => 'string | max:100 | nullable',
                 'phone_number' => 'digits_between:5,15 | nullable',
                 'category' => 'exists:category_id',

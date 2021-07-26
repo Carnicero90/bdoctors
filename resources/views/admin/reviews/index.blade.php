@@ -2,7 +2,19 @@
 @section('content')
 
 <div class="top-margine">
+
     <div class="container">
+        
+        {{-- HEADER --}}
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <div class="dashboard">
+                    @include('partials.dashboard-nav')
+                </div>
+            </div>
+        </div>
+        {{-- END HEADER --}}
+
         <h1>Recensioni</h1>
 
         <div class="row mb-5">

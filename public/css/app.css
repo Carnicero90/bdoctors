@@ -10442,9 +10442,6 @@ footer .copyright span {
   border: 1px solid gainsboro;
 }
 
-.dashboard {
-  padding: 20px 0;
-}
 .dashboard .dash-list {
   padding-top: 10px;
 }
@@ -10603,28 +10600,15 @@ footer .copyright span {
 }
 
 .braintree-sheet {
-  font-family: "Poppins", sans-serif !important;
-  font-weight: 200;
-  background-color: #787878;
-}
-
-.braintree-sheet__text {
-  font-family: "Poppins", sans-serif !important;
-  font-weight: 200 !important;
-  color: #787878 !important;
-}
-
-.braintree-form__label {
-  font-family: "Poppins", sans-serif !important;
-  font-weight: 200 !important;
-  color: #141414 !important;
+  font-family: "Poppins", sans-serif;
 }
 
 .braintree-sheet__header {
   background-color: #282828;
 }
 .braintree-sheet__header .braintree-sheet__text {
-  font-weight: 400 !important;
+  color: gainsboro;
+  font-weight: 400;
 }
 
 .ricerca {
