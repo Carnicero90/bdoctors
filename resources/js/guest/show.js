@@ -9,7 +9,6 @@ var app = new Vue({
     },
     mounted() {
        this.user_id = document.getElementById('userid').value;
-       console.log(this.user_id)
        axios.get('../api/reviews/' + this.user_id)
        .then(response => {
            this.reviews = response.data.reviews;
