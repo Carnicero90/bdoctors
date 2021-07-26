@@ -30,21 +30,21 @@
                 {{-- img profilo --}}
                 <div class="row mb-4 d-flex align-items-center">
                     @if ($user->profile)
-                        <div class="col-12 col-sm-12 col-md-3 col-lg-2">
+                        <div class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2">
                             <div class="profile-img-dashboard-container">
                                 <img src="{{ asset('storage/' . $user->profile->pic) }}"
                                     alt="{{ $user->name . ' ' . $user->lastname }}" class="profile-img-dashboard">
                             </div>
                         </div>
                     @else
-                    <div class="col-12 col-sm-12 col-md-3 col-lg-2">
+                    <div class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2">
                         <div class="profile-img-dashboard-container col-12 col-sm-12">
                             <img src="{{ asset('img/user-img.png') }}" alt="" class="profile-img-dashboard">
                         </div>
                     </div>
                     @endif
                     {{-- nome profilo --}}
-                    <div class="col-12 col-sm-12 col-md-9 col-lg-10">
+                    <div class="col-12 col-sm-12 col-md-9 col-lg-10 col-xl-10 text-center text-sm-center text-md-left text-xl-left mb-3 mt-4">
                         <div>
                             <h1>{{ $user->name }} {{ $user->lastname }}</h1>
                         </div>

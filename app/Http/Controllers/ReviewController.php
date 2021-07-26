@@ -62,7 +62,7 @@ class ReviewController extends Controller
             "content" => "nullable|required|string|max:5000",
             "vote_id" => "required|exists:votes,id",
             "terms-conditions" => "accepted",
-            "service_received" => "required|int|min:0|max:1",
+            "service_received" => "boolean|min:0|max:1",
         ];
     }
 }

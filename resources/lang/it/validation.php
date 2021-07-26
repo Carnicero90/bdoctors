@@ -29,7 +29,7 @@ return [
         'string'  => "':attribute' deve essere compreso tra :min and :max caratteri.",
         'array'   => "':attribute' deve essere compreso tra :min and :max elementi.",
     ],
-    'boolean'              => "':attribute' deve essere vero o falso.",
+    'boolean'              => "':attribute' deve essere SI o NO.",
     'confirmed'            => "':attribute' non corrisponde.",
     'date'                 => "':attribute' non è una data valida.",
     'date_equals'          => "':attribute' deve essere uguale a :date.",

@@ -52,8 +52,14 @@
 
             </div>
 
-            {{-- Tasti navigazione --}}
-            @include('partials.dashboard-nav')
+            {{-- HEADER --}}
+            <div class="row justify-content-center">
+                <div class="col-md-12 text-center">
+                    <div class="dashboard">
+                        @include('partials.dashboard-nav')
+                    </div>
+                </div>
+            </div>
             {{-- END HEADER --}}
 
             <div class="row mt-4 mb-3">

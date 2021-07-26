@@ -4,13 +4,13 @@ return [
         'user' => [
             'name' => 'Dargen',
             'lastname' => 'D\'Amico',
-            'address' => 'Milano',
+            'address' => 'Via Torino, 121 - Ponte Organasco (PC)',
             'email' => 'dargenjd@email.it',
         ],
         'profile' => [
             'self_description' => 'Disoccupato, amo questo appellativo: io sono disoccupato attivo, anche se, forse, "attivo" non è l\'aggettivo adatto.',
             'phone_number' => '3474140621',
-            'work_address' => 'Milano, Sacre Scuole',
+            'work_address' => 'Via Torino, 121 - Ponte Organasco (PC)',
             'pic' =>  'img/profilo01.jpg'
         ],
     ],
@@ -18,13 +18,13 @@ return [
         'user' => [
             'name' => 'Filippo',
             'lastname' => 'Montani',
-            'address' => 'Comunità di San Patrignano',
+            'address' => 'Via Matteo Schilizzi, 93 - Genova (GE)',
             'email' => 'calavera90@mail.com',
         ],
         'profile' => [
             'self_description' => 'Io sono un licantropo, misogino e misantropo, mi sputi dal terrazzo quando vedi che mi arrampico.',
             'phone_number' => '3474140622',
-            'work_address' => 'Genova, Liguria, Italia, Mondo',
+            'work_address' => 'Via Matteo Schilizzi, 93 - Genova (GE)',
             'pic' =>  'img/profilo02.jpg'
         ],
     ],
@@ -425,13 +425,13 @@ return [
         'user' => [
             'name' => 'Jerry',
             'lastname' => 'Ciampi',
-            'address' => 'Via Manzoni, 77',
+            'address' => 'Piazza Giuseppe Garibaldi, 113 - Fidenza (PR)',
             'email' => 'jciampi@email.it',
         ],
         'profile' => [
             'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Piazza Giuseppe Garibaldi, 113 - Fidenza (PR)',
             'pic' =>  'img/profilo31.jpg'
         ],
     ],
@@ -439,13 +439,13 @@ return [
         'user' => [
             'name' => 'Stefano',
             'lastname' => 'Benvenuti',
-            'address' => 'Via Ximenes, 17',
+            'address' => 'Via San Domenico Soriano, 56 - Castroreale (ME)',
             'email' => 'benvenutistefano@email.it',
         ],
         'profile' => [
             'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via San Domenico Soriano, 56 - Castroreale (ME)',
             'pic' =>  'img/profilo32.jpg'
         ],
     ],
@@ -453,13 +453,13 @@ return [
         'user' => [
             'name' => 'Giorgia',
             'lastname' => 'Canestri',
-            'address' => 'Piazza Lulli, 3',
+            'address' => 'Via Venezia, 25 - Maiera (CS)',
             'email' => 'giorgiacane@email.it',
         ],
         'profile' => [
             'self_description' => 'Dopo anni di esperienza, ho deciso di condividere la mia passione e farne una professione. Ho avuto la fortuna di apprendere dai migliori nel settore e fare tesoro di tutto ciò che ho imparato. Sono incline a mettermi a disposizione degli altri perché credo che la musica sia prima di tutto condivisione, poi tecnica e dedizione.',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Venezia, 25 - Maiera (CS)',
             'pic' =>  'img/profilo33.jpg'
         ],
     ],
@@ -467,13 +467,13 @@ return [
         'user' => [
             'name' => 'Paolo',
             'lastname' => 'Gennari',
-            'address' => 'Via Latina, 3',
+            'address' => 'Via Acrone, 63 - San Giorgio Monferrato (AL)',
             'email' => 'gennypaolo@email.it',
         ],
         'profile' => [
             'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Acrone, 63 - San Giorgio Monferrato (AL)',
             'pic' =>  'img/profilo34.jpg'
         ],
     ],
@@ -481,13 +481,13 @@ return [
         'user' => [
             'name' => 'Stefano',
             'lastname' => 'Bollani',
-            'address' => 'Piazza San Francesco, 88',
+            'address' => 'Via Lagrange, 35 - Tarquinia (VT)',
             'email' => 'stefanoboll@email.it',
         ],
         'profile' => [
             'self_description' => 'Da sempre malato di musica, sono qui per offrire servizi ma allo stesso tempo avere tante soddisfazioni in cambio. Tante collaborazioni importanti con artisti da tutta Europa, la mia carriera è sempre stata un misto di impegno e gioia. Non vedo l\'ora di mettermi al lavoro con te!',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Lagrange, 35 - Tarquinia (VT)',
             'pic' =>  'img/profilo35.jpg'
         ],
     ],
@@ -495,13 +495,13 @@ return [
         'user' => [
             'name' => 'Augusto',
             'lastname' => 'Biascica',
-            'address' => 'Via Francesco Totti, 10 - Roma',
+            'address' => 'Via Licola Patria, 39 - Manocalzati (AV)',
             'email' => 'mortanguerrieri@boris.it',
         ],
         'profile' => [
             'self_description' => 'Mi chiamo Augusto Biascica e mi occupo di gestire le luci, sotto gli ordini di Duccio: tuttavia questo mi limito sovente a smarmellare la luce, aprendo al massimo l\'otturatore dei fari. Nonostante il fatto che io parli mangiandomi le parole, il mo vocabolario è molto sboccato ed esplicito. Talvolta utilizzo forme verbali assolutamente inesistenti, come "estroiettare" (contrario di "introiettare"). Ho avuto problemi di vertigini, che mi impediscono di salire sulla scala e che temo possano farmi perdere il lavoro. Per questo motivo, sono stato in cura da una psicologa sperando che possa risolvere il mio problema. Il mio ultimo figlio si chiama Francesco Totti Biascica.',
             'phone_number' => '345234890',
-            'work_address' => 'Via Francesco Totti, 10 - Roma',
+            'work_address' => 'Via Licola Patria, 39 - Manocalzati (AV)',
             'pic' =>  'img/profilo36.jpg'
         ],
     ],
@@ -509,13 +509,13 @@ return [
         'user' => [
             'name' => 'Tullio',
             'lastname' => 'De Piscopo',
-            'address' => 'Viale Salerno, 81',
+            'address' => 'Via Melisurgo, 70 - Mologno (LU)',
             'email' => 'tulliodepiscopo@email.it',
         ],
         'profile' => [
             'self_description' => 'Dai garage sotto al supermercato ai palcoscenici più in vista della zona. Con tanto sudore e tanti sacrifici si riesce sempre a ritagliarsi uno spazio in questo ambito, se si merita. Ovviamente non lo si può fare da soli, per questo voglio provare a rimettermi in gioco proprio per aiutarti nel tuo percorso.',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Melisurgo, 70 - Mologno (LU)',
             'pic' =>  'img/profilo37.jpg'
         ],
     ],
@@ -523,13 +523,13 @@ return [
         'user' => [
             'name' => 'Salmo',
             'lastname' => 'Lebon',
-            'address' => 'Via delle Rose, 11',
+            'address' => 'Via Silvio Spaventa, 102 - San Sisto (PG)',
             'email' => 'salmo@email.it',
         ],
         'profile' => [
             'self_description' => 'Dopo anni in miniera, questa è la mia occasione per rimettermi in discussione. Dal piccone allo strumento la linea è molto sottile. In tanti anni di buio finalmente vedo la luce. E voglio condividere questa sensazione con voi e farmi pagare per questo. Quindi in cambio dei vostri soldi, vi offrirò i migliori servizi musicali sulla piazza. E se serve da demolire, demoliamo!',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Silvio Spaventa, 102 - San Sisto (PG)',
             'pic' =>  'img/profilo38.jpg'
         ],
     ],
@@ -537,13 +537,13 @@ return [
         'user' => [
             'name' => 'Emi',
             'lastname' => 'Gentile',
-            'address' => 'Viale Europa, 35 - Mantova',
+            'address' => 'Via Bonafous Alfonso, 9 - Belvedere Di Aquileia (UD)',
             'email' => 'emigentile@email.it',
         ],
         'profile' => [
             'self_description' => 'Un giorno un saggio mi disse: "non cercare lavoro, usa la tua musica per mascherare la tua voglia di non fare nulla". Così ho fatto e così voglio trasmettere la gioia di vivere a tutti. Non ho mai lavorato, ma adesso voglio mettermi in gioco e guadagnare facendo ciò che amo.',
             'phone_number' => '345345345',
-            'work_address' => 'Viale Europa, 35 - Mantova',
+            'work_address' => 'Via Bonafous Alfonso, 9 - Belvedere Di Aquileia (UD)',
             'pic' =>  'img/profilo39.jpg'
         ],
     ],
@@ -551,13 +551,13 @@ return [
         'user' => [
             'name' => 'Francesco',
             'lastname' => 'Guccini',
-            'address' => 'Via Emilia, 68',
+            'address' => 'Via Raffaele Conforti, 126 - Collepietro (AQ)',
             'email' => 'fraguccini@email.it',
         ],
         'profile' => [
             'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Raffaele Conforti, 126 - Collepietro (AQ)',
             'pic' =>  'img/profilo40.jpg'
         ],
     ],
@@ -565,13 +565,13 @@ return [
         'user' => [
             'name' => 'Ice',
             'lastname' => 'One',
-            'address' => 'Via Roma, 14',
+            'address' => 'Via Campi Flegrei, 41 - Bari (BA)',
             'email' => 'iceone@email.it',
         ],
         'profile' => [
             'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Campi Flegrei, 41 - Bari (BA)',
             'pic' =>  'img/profilo41.jpg'
         ],
     ],
@@ -579,13 +579,13 @@ return [
         'user' => [
             'name' => 'Rudy',
             'lastname' => 'Zerbi',
-            'address' => 'Via Latina, 44',
+            'address' => 'Via Alessandro Manzoni, 13 - Montalto Pavese (PV)',
             'email' => 'rudyzb@email.it',
         ],
         'profile' => [
             'self_description' => 'Dopo anni di esperienza, ho deciso di condividere la mia passione e farne una professione. Ho avuto la fortuna di apprendere dai migliori nel settore e fare tesoro di tutto ciò che ho imparato. Sono incline a mettermi a disposizione degli altri perché credo che la musica sia prima di tutto condivisione, poi tecnica e dedizione.',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Alessandro Manzoni, 13 - Montalto Pavese (PV)',
             'pic' =>  'img/profilo42.jpg'
         ],
     ],
@@ -593,13 +593,13 @@ return [
         'user' => [
             'name' => 'Mara',
             'lastname' => 'Maionchi',
-            'address' => 'Via dei Mille, 99',
+            'address' => 'Via Nuova del Campo, 26 - Piraino (ME)',
             'email' => 'mmaionchi@email.it',
         ],
         'profile' => [
             'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Nuova del Campo, 26 - Piraino (ME)',
             'pic' =>  'img/profilo43.jpg'
         ],
     ],
@@ -607,13 +607,13 @@ return [
         'user' => [
             'name' => 'Angelo',
             'lastname' => 'Branduardi',
-            'address' => 'Via Castro, 53',
+            'address' => 'Via Tasso, 9 - Pantalla (PG)',
             'email' => 'angelobranduardi@email.it',
         ],
         'profile' => [
             'self_description' => 'Da sempre malato di musica, sono qui per offrire servizi ma allo stesso tempo avere tante soddisfazioni in cambio. Tante collaborazioni importanti con artisti da tutta Europa, la mia carriera è sempre stata un misto di impegno e gioia. Non vedo l\'ora di mettermi al lavoro con te!',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Tasso, 9 - Pantalla (PG)',
             'pic' =>  'img/profilo44.jpg'
         ],
     ],
@@ -621,13 +621,13 @@ return [
         'user' => [
             'name' => 'Clementino',
             'lastname' => 'Iena',
-            'address' => 'Viale Ungaretti, 29',
+            'address' => 'Via Nuova Agnano, 104 - Vico D\'Elsa (FI)',
             'email' => 'clementeiena@email.it',
         ],
         'profile' => [
             'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Nuova Agnano, 104 - Vico D\'Elsa (FI)',
             'pic' =>  'img/profilo45.jpg'
         ],
     ],
