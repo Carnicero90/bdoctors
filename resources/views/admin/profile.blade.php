@@ -49,7 +49,7 @@
                                     <img src="{{ asset('storage/' . Auth::user()->profile->pic) }}" class="profile-img-dashboard">
                                 @endif
                             @else
-                                <img src="{{ asset('img/user-img.png') }}" alt="" class="profile-img-dashboard">
+                                <img src="{{ asset('img/user/user-img.png') }}" alt="" class="profile-img-dashboard">
                             @endif
                         </div>
                         <div v-else class="profile-img-dashboard-container">
@@ -57,7 +57,7 @@
                         </div>
                     </div>
 
-                    <div v-if="loadedPic">
+                    <div v-if="loadedPic" class="mt-3 mb-3">
                         <button class="btn btn-outline-success">Salva nuova foto</button>
                     </div>
                     <div class="form-group">

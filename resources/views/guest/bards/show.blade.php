@@ -42,8 +42,8 @@
                         </div>
                     @else
                     <div class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2">
-                        <div class="profile-img-dashboard-container col-12 col-sm-12">
-                            <img src="{{ asset('img/user-img.png') }}" alt="" class="profile-img-dashboard">
+                        <div class="profile-img-dashboard-container">
+                            <img src="{{ asset('img/user/user-img.png') }}" alt="" class="profile-img-dashboard">
                         </div>
                     </div>
                     @endif

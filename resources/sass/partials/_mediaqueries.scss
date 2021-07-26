@@ -13,6 +13,11 @@
     .search-a-bard {
         flex-grow: 0.8;
     }
+
+    .fa-chevron-circle-left,
+    .fa-chevron-circle-right {
+        display: none;
+    }
 }
 
 /* XS */
@@ -27,5 +32,10 @@
 
     .navbar-nav {
         flex-direction: row;
+    }
+
+    .fa-chevron-circle-left,
+    .fa-chevron-circle-right {
+        display: none;
     }
 }

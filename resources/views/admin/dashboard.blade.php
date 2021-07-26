@@ -27,7 +27,7 @@
                         @else
                             <div class="profile-img-dashboard-container">
                                 <a href="{{ route('profile', ['id' => $user->id]) }}">
-                                    <img src="{{ asset('img/user-img.png') }}" alt="" class="profile-img-dashboard">
+                                    <img src="{{ asset('img/user/user-img.png') }}" alt="" class="profile-img-dashboard">
                                 </a>
                             </div>
                         @endif

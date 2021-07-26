@@ -10728,6 +10728,11 @@ footer .copyright span {
   .search-a-bard {
     flex-grow: 0.8;
   }
+
+  .fa-chevron-circle-left,
+.fa-chevron-circle-right {
+    display: none;
+  }
 }
 /* XS */
 @media all and (max-width: 575px) {
@@ -10741,5 +10746,10 @@ footer .copyright span {
 
   .navbar-nav {
     flex-direction: row;
+  }
+
+  .fa-chevron-circle-left,
+.fa-chevron-circle-right {
+    display: none;
   }
 }
