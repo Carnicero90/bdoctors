@@ -36,7 +36,7 @@ return [
             'email' => 'fame@email.it',
         ],
         'profile' => [
-            'self_description' => 'E se la gente vuol sapere chi sono.Ascolti quel suono dentro il mio flow. Io sono solamente jake la furia. E rappo con il guercio e donjoe. Da ragazzino sognavo una cosa sola: l\'oro, pensavo a grammi e lavoro ed ero in età da scuola. Mettevo i sogni e le buste su un tanita. E poi braccia robuste su bic, ammoniaca e pipa. Sotto con la pepita',
+            'self_description' => 'E se la gente vuol sapere chi sono. Ascolti quel suono dentro il mio flow. Io sono solamente jake la furia. E rappo con il guercio e donjoe. Da ragazzino sognavo una cosa sola: l\'oro, pensavo a grammi e lavoro ed ero in età da scuola. Mettevo i sogni e le buste su un tanita. E poi braccia robuste su bic, ammoniaca e pipa. Sotto con la pepita',
             'phone_number' => '349123456',
             'work_address' => 'Mi trovi in circonvalla col T-Max a 190',
             'pic' =>  'img/profilo03.jpg'
@@ -107,8 +107,7 @@ return [
             'email' => 'ale@mail.com',
         ],
         'profile' => [
-            'self_description' => 'Mi sono appassionato al C da bambino grazie alla mia mancanza di passione per la matematica,
-            crescendo mi sono avvicinato al mondo della programmazione ad oggetti. Attualmente ricopro il ruolo di insegnante per Boolean Careers e collaboro con la NASA per progetti in Drupal.',
+            'self_description' => 'Mi sono appassionato al C da bambino grazie alla mia mancanza di passione per la matematica, crescendo mi sono avvicinato al mondo della programmazione ad oggetti. Attualmente ricopro il ruolo di insegnante per Boolean Careers e collaboro con la NASA per progetti in Drupal.',
             'phone_number' => '345345345',
             'work_address' => 'room classe 31',
             'pic' =>  'img/profilo08.jpg'
@@ -122,7 +121,7 @@ return [
             'email' => 'ricbenason@mail.com',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Sono un musicista attivo nell\'underground romano dei primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco. ',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo09.jpg'
@@ -136,7 +135,7 @@ return [
             'email' => 'vascodivince@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Dopo anni di esperienza, ho deciso di condividere la mia passione e farne una professione. Ho avuto la fortuna di apprendere dai migliori nel settore e fare tesoro di tutto ciò che ho imparato. Sono incline a mettermi a disposizione degli altri perché credo che la musica sia prima di tutto condivisione, poi tecnica e dedizione.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo10.jpg'
@@ -150,7 +149,7 @@ return [
             'email' => 'mcrimi@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo11.jpg'
@@ -164,7 +163,7 @@ return [
             'email' => 'sensit@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Da sempre malato di musica, sono qui per offrire servizi ma allo stesso tempo avere tante soddisfazioni in cambio. Tante collaborazioni importanti con artisti da tutta Europa, la mia carriera è sempre stata un misto di impegno e gioia. Non vedo l\'ora di mettermi al lavoro con te!',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo12.jpg'
@@ -178,7 +177,7 @@ return [
             'email' => 'delellomarta@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Dai garage sotto al supermercato ai palcoscenici più in vista della zona. Con tanto sudore e tanti sacrifici si riesce sempre a ritagliarsi uno spazio in questo ambito, se si merita. Ovviamente non lo si può fare da soli, per questo voglio provare a rimettermi in gioco proprio per aiutarti nel tuo percorso.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo13.jpg'
@@ -192,7 +191,7 @@ return [
             'email' => 'gravanipaolo@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Dopo anni in miniera, questa è la mia occasione per rimettermi in discussione. Dal piccone allo strumento la linea è molto sottile. In tanti anni di buio finalmente vedo la luce. E voglio condividere questa sensazione con voi e farmi pagare per questo. Quindi in cambio dei vostri soldi, vi offrirò i migliori servizi musicali sulla piazza. E se serve da demolire, demoliamo!',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo14.jpg'
@@ -206,7 +205,7 @@ return [
             'email' => 'carlottamar@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Un giorno un saggio mi disse: "non cercare lavoro, usa la tua musica per mascherare la tua voglia di non fare nulla". Così ho fatto e così voglio trasmettere la gioia di vivere a tutti. Non ho mai lavorato, ma adesso voglio mettermi in gioco e guadagnare facendo ciò che amo.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo15.jpg'
@@ -234,7 +233,7 @@ return [
             'email' => 'scolinimichele@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Dopo anni di esperienza, ho deciso di condividere la mia passione e farne una professione. Ho avuto la fortuna di apprendere dai migliori nel settore e fare tesoro di tutto ciò che ho imparato. Sono incline a mettermi a disposizione degli altri perché credo che la musica sia prima di tutto condivisione, poi tecnica e dedizione.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo17.jpg'
@@ -248,7 +247,7 @@ return [
             'email' => 'andrepassa@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo18.jpg'
@@ -262,7 +261,7 @@ return [
             'email' => 'carolicinzia@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Da sempre malato di musica, sono qui per offrire servizi ma allo stesso tempo avere tante soddisfazioni in cambio. Tante collaborazioni importanti con artisti da tutta Europa, la mia carriera è sempre stata un misto di impegno e gioia. Non vedo l\'ora di mettermi al lavoro con te!',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo19.jpg'
@@ -276,7 +275,7 @@ return [
             'email' => 'zacchesandro@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Dai garage sotto al supermercato ai palcoscenici più in vista della zona. Con tanto sudore e tanti sacrifici si riesce sempre a ritagliarsi uno spazio in questo ambito, se si merita. Ovviamente non lo si può fare da soli, per questo voglio provare a rimettermi in gioco proprio per aiutarti nel tuo percorso.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo20.jpg'
@@ -290,7 +289,7 @@ return [
             'email' => 'murricesare@email.it',
         ],
         'profile' => [
-            'self_description' => 'Disoccupato, amo questo appellativo: io sono disoccupato attivo, anche se, forse, "attivo" non è l\'aggettivo adatto.',
+            'self_description' => 'Dopo anni in miniera, questa è la mia occasione per rimettermi in discussione. Dal piccone allo strumento la linea è molto sottile. In tanti anni di buio finalmente vedo la luce. E voglio condividere questa sensazione con voi e farmi pagare per questo. Quindi in cambio dei vostri soldi, vi offrirò i migliori servizi musicali sulla piazza. E se serve da demolire, demoliamo!',
             'phone_number' => '3474140621',
             'work_address' => 'Milano, Sacre Scuole',
             'pic' =>  'img/profilo21.jpg'
@@ -304,7 +303,7 @@ return [
             'email' => 'milenacanuti@email.it',
         ],
         'profile' => [
-            'self_description' => 'Io sono un licantropo, misogino e misantropo, mi sputi dal terrazzo quando vedi che mi arrampico.',
+            'self_description' => 'Un giorno un saggio mi disse: "non cercare lavoro, usa la tua musica per mascherare la tua voglia di non fare nulla". Così ho fatto e così voglio trasmettere la gioia di vivere a tutti. Non ho mai lavorato, ma adesso voglio mettermi in gioco e guadagnare facendo ciò che amo.',
             'phone_number' => '3474140622',
             'work_address' => 'Genova, Liguria, Italia, Mondo',
             'pic' =>  'img/profilo22.jpg'
@@ -318,7 +317,7 @@ return [
             'email' => 'ducciobarbieri@email.it',
         ],
         'profile' => [
-            'self_description' => 'E se la gente vuol sapere chi sono.Ascolti quel suono dentro il mio flow. Io sono solamente jake la furia. E rappo con il guercio e donjoe. Da ragazzino sognavo una cosa sola: l\'oro, pensavo a grammi e lavoro ed ero in età da scuola. Mettevo i sogni e le buste su un tanita. E poi braccia robuste su bic, ammoniaca e pipa. Sotto con la pepita',
+            'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '349123456',
             'work_address' => 'Mi trovi in circonvalla col T-Max a 190',
             'pic' =>  'img/profilo23.jpg'
@@ -332,8 +331,7 @@ return [
             'email' => 'manupiccolomini@email.it',
         ],
         'profile' => [
-            'self_description' => 'La gente mi vorrebbe morto solo perché sono ricco e famoso
-            I soldi sono la pozione che mi trasformano in un mostro',
+            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
             'phone_number' => '3291234567',
             'work_address' => 'Vivo solo da 10 anni e non ne faccio un dramma',
             'pic' =>  'img/profilo24.jpg'
@@ -347,7 +345,7 @@ return [
             'email' => 'scarantibarb@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono figlio di Pitagora e di Casadei, di Machiavelli e di Totò, cresciuto con una morale cattolica e con i Depeche Mode',
+            'self_description' => 'Dopo anni di esperienza, ho deciso di condividere la mia passione e farne una professione. Ho avuto la fortuna di apprendere dai migliori nel settore e fare tesoro di tutto ciò che ho imparato. Sono incline a mettermi a disposizione degli altri perché credo che la musica sia prima di tutto condivisione, poi tecnica e dedizione.',
             'phone_number' => '3456490133',
             'work_address' => 'Milano',
             'pic' =>  'img/profilo25.jpg'
@@ -361,7 +359,7 @@ return [
             'email' => 'plinissimo@email.it',
         ],
         'profile' => [
-            'self_description' => 'Il Conservatorio. Il pop. Il ritmo afro-americano. La musica antica della pastellessa e della zeza e il canto sacro. Enzo Avitabile ha vissuto nella ricerca di un suono inedito, non solamente originale ma vitale ed essenziale. Demolendo ogni sovrastruttura mercantile, ogni moda. Queste le vere note biografiche del cantante, compositore e polistrumentista nato a Marianella, quartiere popolare di Napoli nel 1955 . Da bambino, Avitabile ha studiato il sassofono; da adolescente si è esibito nei club napoletani affollati dai clienti americani. Quindi si è diplomato nella disciplina del flauto al Conservatorio  di Napoli San Pietro a Majella e ha iniziato a collaborare con artisti pop e rock di tutto il mondo, da James Brown a Tina Turner, ma muovendosi sempre sotto un cielo assolutamente personale, mai comune.',
+            'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '3456490133',
             'work_address' => 'Vesuvio',
             'pic' =>  'img/profilo26.jpg'
@@ -375,7 +373,7 @@ return [
             'email' => 'ciaocianuro@email.it',
         ],
         'profile' => [
-            'self_description' => '',
+            'self_description' => 'Da sempre malato di musica, sono qui per offrire servizi ma allo stesso tempo avere tante soddisfazioni in cambio. Tante collaborazioni importanti con artisti da tutta Europa, la mia carriera è sempre stata un misto di impegno e gioia. Non vedo l\'ora di mettermi al lavoro con te!',
             'phone_number' => '345345345',
             'work_address' => 'Via degli Emancipati, Verona',
             'pic' =>  'img/profilo27.jpg'
@@ -389,8 +387,7 @@ return [
             'email' => 'kaysere@email.it',
         ],
         'profile' => [
-            'self_description' => 'Mi sono appassionato al C da bambino grazie alla mia mancanza di passione per la matematica,
-            crescendo mi sono avvicinato al mondo della programmazione ad oggetti. Attualmente ricopro il ruolo di insegnante per Boolean Careers e collaboro con la NASA per progetti in Drupal.',
+            'self_description' => 'Dai garage sotto al supermercato ai palcoscenici più in vista della zona. Con tanto sudore e tanti sacrifici si riesce sempre a ritagliarsi uno spazio in questo ambito, se si merita. Ovviamente non lo si può fare da soli, per questo voglio provare a rimettermi in gioco proprio per aiutarti nel tuo percorso.',
             'phone_number' => '345345345',
             'work_address' => 'room classe 31',
             'pic' =>  'img/profilo28.jpg'
@@ -404,7 +401,7 @@ return [
             'email' => 'ivaldoaldo@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Dopo anni in miniera, questa è la mia occasione per rimettermi in discussione. Dal piccone allo strumento la linea è molto sottile. In tanti anni di buio finalmente vedo la luce. E voglio condividere questa sensazione con voi e farmi pagare per questo. Quindi in cambio dei vostri soldi, vi offrirò i migliori servizi musicali sulla piazza. E se serve da demolire, demoliamo!',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo29.jpg'
@@ -418,7 +415,7 @@ return [
             'email' => 'vlady@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Un giorno un saggio mi disse: "non cercare lavoro, usa la tua musica per mascherare la tua voglia di non fare nulla". Così ho fatto e così voglio trasmettere la gioia di vivere a tutti. Non ho mai lavorato, ma adesso voglio mettermi in gioco e guadagnare facendo ciò che amo.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo30.jpg'
@@ -432,7 +429,7 @@ return [
             'email' => 'jciampi@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo31.jpg'
@@ -460,7 +457,7 @@ return [
             'email' => 'giorgiacane@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Dopo anni di esperienza, ho deciso di condividere la mia passione e farne una professione. Ho avuto la fortuna di apprendere dai migliori nel settore e fare tesoro di tutto ciò che ho imparato. Sono incline a mettermi a disposizione degli altri perché credo che la musica sia prima di tutto condivisione, poi tecnica e dedizione.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo33.jpg'
@@ -474,7 +471,7 @@ return [
             'email' => 'gennypaolo@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo34.jpg'
@@ -488,7 +485,7 @@ return [
             'email' => 'stefanoboll@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Da sempre malato di musica, sono qui per offrire servizi ma allo stesso tempo avere tante soddisfazioni in cambio. Tante collaborazioni importanti con artisti da tutta Europa, la mia carriera è sempre stata un misto di impegno e gioia. Non vedo l\'ora di mettermi al lavoro con te!',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo35.jpg'
@@ -496,15 +493,15 @@ return [
     ],
     [
         'user' => [
-            'name' => 'Fabri',
-            'lastname' => 'Fibra',
-            'address' => 'Viale Vicenza, 66',
-            'email' => 'fibrafabri@email.it',
+            'name' => 'Augusto',
+            'lastname' => 'Biascica',
+            'address' => 'Via Francesco Totti, 10 - Roma',
+            'email' => 'mortanguerrieri@boris.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
-            'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'self_description' => 'Mi chiamo Augusto Biascica e mi occupo di gestire le luci, sotto gli ordini di Duccio: tuttavia questo mi limito sovente a smarmellare la luce, aprendo al massimo l\'otturatore dei fari. Nonostante il fatto che io parli mangiandomi le parole, il mo vocabolario è molto sboccato ed esplicito. Talvolta utilizzo forme verbali assolutamente inesistenti, come "estroiettare" (contrario di "introiettare"). Ho avuto problemi di vertigini, che mi impediscono di salire sulla scala e che temo possano farmi perdere il lavoro. Per questo motivo, sono stato in cura da una psicologa sperando che possa risolvere il mio problema. Il mio ultimo figlio si chiama Francesco Totti Biascica.',
+            'phone_number' => '345234890',
+            'work_address' => 'Via Francesco Totti, 10 - Roma',
             'pic' =>  'img/profilo36.jpg'
         ],
     ],
@@ -516,7 +513,7 @@ return [
             'email' => 'tulliodepiscopo@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Dai garage sotto al supermercato ai palcoscenici più in vista della zona. Con tanto sudore e tanti sacrifici si riesce sempre a ritagliarsi uno spazio in questo ambito, se si merita. Ovviamente non lo si può fare da soli, per questo voglio provare a rimettermi in gioco proprio per aiutarti nel tuo percorso.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo37.jpg'
@@ -530,7 +527,7 @@ return [
             'email' => 'salmo@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Dopo anni in miniera, questa è la mia occasione per rimettermi in discussione. Dal piccone allo strumento la linea è molto sottile. In tanti anni di buio finalmente vedo la luce. E voglio condividere questa sensazione con voi e farmi pagare per questo. Quindi in cambio dei vostri soldi, vi offrirò i migliori servizi musicali sulla piazza. E se serve da demolire, demoliamo!',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo38.jpg'
@@ -544,7 +541,7 @@ return [
             'email' => 'emigentile@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Un giorno un saggio mi disse: "non cercare lavoro, usa la tua musica per mascherare la tua voglia di non fare nulla". Così ho fatto e così voglio trasmettere la gioia di vivere a tutti. Non ho mai lavorato, ma adesso voglio mettermi in gioco e guadagnare facendo ciò che amo.',
             'phone_number' => '345345345',
             'work_address' => 'Viale Europa, 35 - Mantova',
             'pic' =>  'img/profilo39.jpg'
@@ -558,7 +555,7 @@ return [
             'email' => 'fraguccini@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo40.jpg'
@@ -586,7 +583,7 @@ return [
             'email' => 'rudyzb@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Dopo anni di esperienza, ho deciso di condividere la mia passione e farne una professione. Ho avuto la fortuna di apprendere dai migliori nel settore e fare tesoro di tutto ciò che ho imparato. Sono incline a mettermi a disposizione degli altri perché credo che la musica sia prima di tutto condivisione, poi tecnica e dedizione.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo42.jpg'
@@ -600,7 +597,7 @@ return [
             'email' => 'mmaionchi@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo43.jpg'
@@ -614,7 +611,7 @@ return [
             'email' => 'angelobranduardi@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Da sempre malato di musica, sono qui per offrire servizi ma allo stesso tempo avere tante soddisfazioni in cambio. Tante collaborazioni importanti con artisti da tutta Europa, la mia carriera è sempre stata un misto di impegno e gioia. Non vedo l\'ora di mettermi al lavoro con te!',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo44.jpg'
@@ -628,7 +625,7 @@ return [
             'email' => 'clementeiena@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '345345345',
             'work_address' => 'Via dei Colli, Roma',
             'pic' =>  'img/profilo45.jpg'
@@ -638,13 +635,13 @@ return [
         'user' => [
             'name' => 'Franz',
             'lastname' => 'Di Cioccio',
-            'address' => 'Viale Pescara, 37',
+            'address' => 'Piazza Giuseppe Garibaldi, 15 - Moletolo (PR)',
             'email' => 'fdicioccio@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Dai garage sotto al supermercato ai palcoscenici più in vista della zona. Con tanto sudore e tanti sacrifici si riesce sempre a ritagliarsi uno spazio in questo ambito, se si merita. Ovviamente non lo si può fare da soli, per questo voglio provare a rimettermi in gioco proprio per aiutarti nel tuo percorso.',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Piazza Giuseppe Garibaldi, 15 - Moletolo (PR)',
             'pic' =>  'img/profilo46.jpg'
         ],
     ],
@@ -652,13 +649,13 @@ return [
         'user' => [
             'name' => 'Danno',
             'lastname' => 'LaMotta',
-            'address' => 'Via Roma, 23',
+            'address' => 'Via Croce Rossa, 124 - Morgongiori (OR)',
             'email' => 'jakelamotta@email.it',
         ],
         'profile' => [
             'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Croce Rossa, 124 - Morgongiori (OR)',
             'pic' =>  'img/profilo47.jpg'
         ],
     ],
@@ -666,13 +663,13 @@ return [
         'user' => [
             'name' => 'Vinnie',
             'lastname' => 'Colaiuta',
-            'address' => 'Via Washington, 45',
+            'address' => 'Via Sacchi, 102 - Sauris (UD)',
             'email' => 'vinniecola@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Dopo anni in miniera, questa è la mia occasione per rimettermi in discussione. Dal piccone allo strumento la linea è molto sottile. In tanti anni di buio finalmente vedo la luce. E voglio condividere questa sensazione con voi e farmi pagare per questo. Quindi in cambio dei vostri soldi, vi offrirò i migliori servizi musicali sulla piazza. E se serve da demolire, demoliamo!',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Sacchi, 102 - Sauris (UD)',
             'pic' =>  'img/profilo48.jpg'
         ],
     ],
@@ -680,13 +677,13 @@ return [
         'user' => [
             'name' => 'Les',
             'lastname' => 'Claypool',
-            'address' => 'Viale Sardegna, 68',
+            'address' => 'Via Medina, 112 - Giardino (GO)',
             'email' => 'primuskingdom@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Un giorno un saggio mi disse: "non cercare lavoro, usa la tua musica per mascherare la tua voglia di non fare nulla". Così ho fatto e così voglio trasmettere la gioia di vivere a tutti. Non ho mai lavorato, ma adesso voglio mettermi in gioco e guadagnare facendo ciò che amo.',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Medina, 112 - Giardino (GO)',
             'pic' =>  'img/profilo49.jpg'
         ],
     ],
@@ -694,13 +691,13 @@ return [
         'user' => [
             'name' => 'Primo',
             'lastname' => 'Brown',
-            'address' => 'Via Canova, 100',
+            'address' => 'Via Rosmini, 16 - Casalvelino (SA)',
             'email' => 'primobrown@email.it',
         ],
         'profile' => [
-            'self_description' => 'Sono un musicista attivo nell\'underground romano dai primi anni settanta, nella mia carriera ho anche condotto diverse trasmissioni televisive e radiofoniche a sfondo musicale e sono saltuariamente ospite in varietà sulle reti nazionali. Sono una figura storica delle emittenti private romane, ho costruito la mia fama (dapprima limitata al solo ambiente popolare romano e poi allargatasi al web e alla televisione) soprattutto grazie ai miei spettacoli, nei quali sono vittima di insulti e lanci di oggetti sul palco.',
+            'self_description' => 'Sono riuscito a fare dei miei sogni una meravigliosa realtà. Non vedo l\'ora di condividere le mie conoscenze ed aiutarti a progredire nel tuo percorso di crescita personale. Disponibile a collaborazioni di qualsiasi tipo, ed aperto a sperimentazioni anche con sonorità contemporanee.',
             'phone_number' => '345345345',
-            'work_address' => 'Via dei Colli, Roma',
+            'work_address' => 'Via Rosmini, 16 - Casalvelino (SA)',
             'pic' =>  'img/profilo50.jpg'
         ],
     ],
