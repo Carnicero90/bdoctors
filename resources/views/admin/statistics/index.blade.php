@@ -121,9 +121,9 @@
             {{-- END HEADER --}}
 
             <div class="row">
-                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mt-4 mb-4">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-4">
                     <h1>Statistiche utente</h1>
-                    <div>
+                    <div class="mt-4">
                         <a href="#mails" class="btn mr-2 text-white" style="background-color: #8c4e4e">Messaggi ricevuti</a>
                         <a href="#reviews" class="btn mr-2 text-white" style="background-color: #4e8c8c">Recensioni ricevute</a>
                         <a href="#votes" class="btn mr-2 text-white" style="background-color: #4e6b8c">Media voti</a>

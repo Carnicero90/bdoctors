@@ -37,7 +37,13 @@
                                     <div class="mt-2 mb-2">{{date("d/m/Y", strtotime($review->send_date))}}</div>
                                 </div>
                                 <div class="mt-2 mb-3">
-                                    <p class="card-text">{{$review->content}}</p>
+                                    <p class="card-text">
+                                        @if (strlen($review->content) > 133)
+                                            {{substr($review->content, 0, 130) . "..."}}
+                                        @else
+                                            {{$review->content}}
+                                        @endif
+                                    </p>
                                 </div>
                                 <div><a href="{{route("admin.reviews-dettails", ["id" => $review->id])}}" class="btn btn-outline-primary"><i class="far fa-file-alt mr-2"></i>Leggi</a></div>
                             </div>

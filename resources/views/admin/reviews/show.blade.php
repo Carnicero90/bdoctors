@@ -23,7 +23,6 @@
                             <div class="mt-2 mb-2">{{date("d/m/y", strtotime($review->send_date))}}</div>
                         </div>
                         <div class="mt-2 mb-2">
-                            <span>Testo recensione:</span>
                             <p class="card-text">{{$review->content}}</p>
                         </div>
                     </div>

@@ -14,10 +14,15 @@
         </div>
         {{-- END HEADER --}}
 
-        <h1>Messaggi</h1>
+        {{-- success messages --}}
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                @include("partials.success-messages")
+            </div>
+        </div>
+        {{-- END success messages --}}
 
-        @include("partials.success-messages")
-        {{-- <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4"> --}}
+        <h1>Messaggi</h1>
 
         <div class="row mb-5">
             @if ($messages->isNotEmpty())
@@ -38,7 +43,13 @@
                             {{-- message body --}}
                             <div class="card-body">
                                 <div class="mt-2 mb-4">
-                                    <p class="card-text">{{ $message->text }}</p>
+                                    <p class="card-text">
+                                        @if (strlen($message->text) > 133)
+                                            {{substr($message->text, 0, 130) . "..."}}
+                                        @else
+                                            {{$message->text}}
+                                        @endif
+                                    </p>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div>
