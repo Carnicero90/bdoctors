@@ -4,7 +4,6 @@ export const sponsoredUsersPath = 'api/sponsored'; // path utenti sponsorizzati
 export const categories = `api/categories/index`;
 
 export function promisedUsers(apiPath, params="") {
-    console.log(getStringFromObject(params))
     return axios.get(apiPath + getStringFromObject(params));
 }
 

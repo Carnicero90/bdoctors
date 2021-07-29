@@ -115,7 +115,6 @@ var sponsoredUsersPath = 'api/sponsored'; // path utenti sponsorizzati
 var categories = "api/categories/index";
 function promisedUsers(apiPath) {
   var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-  console.log(getStringFromObject(params));
   return axios.get(apiPath + getStringFromObject(params));
 }
 function parseQueryString(queryString) {
@@ -252,7 +251,6 @@ var app = new Vue({
       }
 
       this.searchString = params['name'];
-      console.log(this.selectedCategories);
       Api.promisedUsers(Api.allUsersPath, params).then(function (result) {
         _this2.users = result.data.users;
       });

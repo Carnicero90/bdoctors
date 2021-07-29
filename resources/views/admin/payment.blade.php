@@ -21,16 +21,13 @@
             button.addEventListener('click', function() {
                 event.preventDefault();
                 instance.requestPaymentMethod(function(err, payload) {
-                    console.log(payload);
                     if (err) {
                         alert(err);
                     }
                     $.get('{{ route('admin.payment.make', ['id' => $plan->id]) }}', {
                         payload
                     }, function(response) {
-                        console.log(response)
                         status_input.value = response.success ? 1 : 0;
-                        console.log(status_input.value)
                         f.submit()
                     }, 'json');
                 });

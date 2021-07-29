@@ -115,7 +115,6 @@ var sponsoredUsersPath = 'api/sponsored'; // path utenti sponsorizzati
 var categories = "api/categories/index";
 function promisedUsers(apiPath) {
   var params = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "";
-  console.log(getStringFromObject(params));
   return axios.get(apiPath + getStringFromObject(params));
 }
 function parseQueryString(queryString) {
