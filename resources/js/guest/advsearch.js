@@ -9,16 +9,19 @@ var app = new Vue({
         searchString: '',
         categories: [],
         selectedCategories: [],
+        timeOutCounter: 0,
     },
     methods: {
         searchUser() {
-            // TODO: cambia lunghezza stringa minima, ora comoda cosi per test
-            console.log(this.parsedCategories)
+            clearTimeout(this.timeOutCounter);
             if (this.searchString.length > 0) {
-                Api.promisedUsers(Api.allUsersPath, { name: this.searchString, ...Api.parseQueryString(this.parsedCategories)})
-                    .then(result => {
-                        this.users = result.data.users;
-                    })
+                this.timeOutCounter = setTimeout(() => {
+
+                    Api.promisedUsers(Api.allUsersPath, { name: this.searchString, ...Api.parseQueryString(this.parsedCategories) })
+                        .then(result => {
+                            this.users = result.data.users;
+                        })
+                }, 500)
             }
             else {
                 this.users = [];
@@ -33,6 +36,7 @@ var app = new Vue({
             else {
                 this.selectedCategories.push(id);
             }
+            
             this.searchUser();
         },
 
@@ -53,7 +57,7 @@ var app = new Vue({
             const params = Api.parseQueryString(location.search);
             if (params['cat']) {
                 this.selectedCategories.push(parseInt(params['cat']));
-            }    
+            }
             this.searchString = params['name'];
             console.log(this.selectedCategories)
             Api.promisedUsers(Api.allUsersPath, params)

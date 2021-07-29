@@ -194,21 +194,23 @@ var app = new Vue({
     visibleUsers: [],
     searchString: '',
     categories: [],
-    selectedCategories: []
+    selectedCategories: [],
+    timeOutCounter: 0
   },
   methods: {
     searchUser: function searchUser() {
       var _this = this;
 
-      // TODO: cambia lunghezza stringa minima, ora comoda cosi per test
-      console.log(this.parsedCategories);
+      clearTimeout(this.timeOutCounter);
 
       if (this.searchString.length > 0) {
-        Api.promisedUsers(Api.allUsersPath, _objectSpread({
-          name: this.searchString
-        }, Api.parseQueryString(this.parsedCategories))).then(function (result) {
-          _this.users = result.data.users;
-        });
+        this.timeOutCounter = setTimeout(function () {
+          Api.promisedUsers(Api.allUsersPath, _objectSpread({
+            name: _this.searchString
+          }, Api.parseQueryString(_this.parsedCategories))).then(function (result) {
+            _this.users = result.data.users;
+          });
+        }, 500);
       } else {
         this.users = [];
         this.searching = false;
@@ -278,7 +280,7 @@ var app = new Vue({
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/mattia/Movies/Boolean/Repository/bdoctors/resources/js/guest/advsearch.js */"./resources/js/guest/advsearch.js");
+module.exports = __webpack_require__(/*! /Users/filippomontani/becci/bdoctors/resources/js/guest/advsearch.js */"./resources/js/guest/advsearch.js");
 
 
 /***/ })
