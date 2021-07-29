@@ -7,7 +7,14 @@
 }
 
 .delete-btn {
-    transform: translateY(-38px);
-    width: max-content;
-    margin-left: auto;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 1.25rem 1.25rem 0;
+}
+
+.form-control:disabled, .form-control[readonly] {
+    color: rgb(100, 100, 100);
+    background-color: rgb(40, 40, 40);
+
 }

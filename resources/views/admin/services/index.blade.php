@@ -1,11 +1,12 @@
 @extends('layouts.app')
 @section('header-scripts')
+
     {{-- Axios --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     {{-- Vuejs --}}
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
 @endsection
 
 @section('footer-scripts')
@@ -65,34 +66,39 @@
                                     {{-- input#name --}}
                                     <div class="form-group">
                                         <label for="title">Nome servizio</label>
-                                        <input type="text" class="form-control" id="title" name="title" value="{{ $service->title }}" placeholder="Inserisci il nome del servizio">
+                                        <input type="text" class="form-control" id="title" name="title" value="{{ $service->title }}" placeholder="Inserisci il nome del servizio" :disabled="!formModify">
                                     </div>
                                     {{-- END input#name --}}
 
                                     {{-- input#description --}}
                                     <div class="form-group">
                                         <label for="description">Descrizione:</label>
-                                        <textarea class="form-control" name="description" id="description" rows="2" placeholder="Descrivi il servizio offerto">{{ $service->description }}</textarea>
+                                        <textarea class="form-control" name="description" id="description" rows="2" placeholder="Descrivi il servizio offerto" :disabled="!formModify">{{ $service->description }}</textarea>
                                     </div>
                                     {{-- END input#description --}}
 
                                     {{-- input#hourly_rate --}}
                                     <div class="form-group">
                                         <label for="hourly_rate" class="d-inline-block mr-1">Tariffa oraria</label>
-                                        <input type="number" step="0.50" class="form-control d-inline-block hourly-rate" id="hourly_rate" name="hourly_rate" placeholder="00.00" value="{{ $service->hourly_rate }}">
+                                        <input type="number" step="0.50" class="form-control d-inline-block hourly-rate" id="hourly_rate" name="hourly_rate" placeholder="00.00" value="{{ $service->hourly_rate }}" :disabled="!formModify">
                                         <label class="d-inline-block ml-1">€</label>
                                     </div>
                                     {{-- END input#hourly_rate --}}
 
                                     {{-- Button Modifica Servizio --}}
-                                    <div class="mt-4">
+                                    <div class="mt-4" v-if="!formModify">
+                                        <div v-on:click="changeFormModify()" class="btn btn-outline-primary"><i class="fas fa-edit mr-2"></i>Modifica</div>
+                                    </div>
+
+                                    {{-- Button Salva Modifiche Servizio --}}
+                                    <div class="mt-4" v-if="formModify">
                                         <button type="submit" class="btn btn-outline-success"><i class="fas fa-check mr-2"></i>Salva modifiche</button>
                                     </div>
 
                                 </form>
 
                                 {{-- Delete --}}
-                                <div class="text-right delete-btn">
+                                <div class="delete-btn">
                                     <form action="{{ route('admin.service-destroy', ['id' => $service->id]) }}" method="post">
                                         @csrf
                                         @method('DELETE')

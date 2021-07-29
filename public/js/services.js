@@ -97,15 +97,21 @@ var app = new Vue({
   el: '#root',
   data: {
     show: false,
+    formModify: false,
     old_services: []
   },
   methods: {
     showForm: function showForm() {
       this.show = true;
-      console.log(this.show);
+    },
+    changeFormModify: function changeFormModify() {
+      this.formModify = true;
+      console.log(this.formModify);
     }
   },
-  mounted: function mounted() {}
+  mounted: function mounted() {
+    console.log(this.formModify);
+  }
 });
 
 /***/ }),
