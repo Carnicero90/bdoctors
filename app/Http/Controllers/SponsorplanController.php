@@ -14,9 +14,9 @@ class SponsorplanController extends Controller
         return view('guest.sponsors.index', compact('all_plans'));
     }
 
-    public function show($slug)
+    public function show($id)
     {
-        $sponsorPlan = Sponsorplan::where('slug', '=', $slug)->first();
+        $sponsorPlan = Sponsorplan::findOrFail($id);
         if (!$sponsorPlan) {
             abort('404');
         }

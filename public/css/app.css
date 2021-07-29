@@ -10607,6 +10607,37 @@ h5.profile-title {
   border-radius: 7px;
 }
 
+.sponsor-title h2 {
+  font-size: 45px;
+  font-weight: 500;
+}
+
+.sponsor-price {
+  color: #b4b4b4;
+}
+.sponsor-price h3 {
+  font-size: 30px;
+  font-weight: 400;
+}
+.sponsor-price small {
+  font-size: 15px;
+  vertical-align: super;
+  margin-left: 3px;
+}
+
+.sponsor-description {
+  color: #b4b4b4;
+}
+.sponsor-description span {
+  font-size: 15px;
+  font-weight: 400;
+}
+.sponsor-description .sponsor-duration {
+  color: white;
+  font-size: 25px;
+  font-weight: 500;
+}
+
 .braintree-sheet {
   font-family: "Poppins", sans-serif;
 }

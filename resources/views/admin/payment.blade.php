@@ -44,7 +44,11 @@
             @include("partials.error-messages")
         </div>
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-12 mt-3">
+                <h1>Acquista il piano {{$plan->name}}</h1>
+                <h2>a soli € {{$plan->pricing}} per {{$plan->duration_in_hours}} ore di sponsorizzazione</h2>
+            </div>
+            <div>
                 <form action="{{ route('sponsor-store', ['id' => $plan->id ]) }}" id="payment-form" method="get">
                     @csrf
                     @method('GET')
@@ -55,6 +59,81 @@
                 </form>
             </div>
         </div>
+
+
+        <!-- Bootstrap inspired Braintree Hosted Fields example -->
+        <div class="bootstrap-basic mt-5">
+            <form class="needs-validation" novalidate="">
+        
+                <div class="row">
+                    <div class="col-sm-6 mb-3">
+                    <label for="cc-name">Nome titolare carta</label>
+                    <div class="form-control" id="cc-name"></div>
+                    <small class="text-muted">Inserisci nome e cognome visibili sulla carta</small>
+                    <div class="invalid-feedback">
+                        Name on card is required
+                    </div>
+                    </div>
+                    <div class="col-sm-6 mb-3">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="you@example.com">
+                    <div class="invalid-feedback">
+                        Inserisci un indirizzo email valido
+                    </div>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-sm-6 mb-3">
+                    <label for="cc-number">Numero di carta</label>
+                    <div class="form-control" id="cc-number"></div>
+                    <div class="invalid-feedback">
+                        Il numero di carta è richiesto
+                    </div>
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                    <label for="cc-expiration">Scadenza</label>
+                    <div class="form-control" id="cc-expiration"></div>
+                    <div class="invalid-feedback">
+                        La data di scadenza è richiesta
+                    </div>
+                    </div>
+                    <div class="col-sm-3 mb-3">
+                    <label for="cc-expiration">CVV</label>
+                    <div class="form-control" id="cc-cvv"></div>
+                    <div class="invalid-feedback">
+                        Il codice di sicurezza è richiesto
+                    </div>
+                    </div>
+                </div>
+            
+                <hr class="mb-4">
+                <div class="text-center">
+                    <button id="submit-button" class="btn btn-outline-success mt-2">Effettua Pagamento</button>
+                </div>
+                <div class="text-center mt-3">
+                    <button class="btn btn-primary btn-lg" type="submit">Pay with <span id="card-brand">Card</span></button>
+                </div>
+            </form>
+
+        </div>
+
+        <div aria-live="polite" aria-atomic="true" style="position: relative; min-height: 200px;">
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+                <div class="toast-header">
+                    <strong class="mr-auto">Success!</strong>
+                    <small>Just now</small>
+                    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="toast-body">
+                    Next, submit the payment method nonce to your server.
+                </div>
+            </div>
+        </div>
+  
+  
 
         {{-- <div class="row mt-4">
             <div class="col-4">

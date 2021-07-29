@@ -1,24 +1,21 @@
 <?php 
 return [
     [
-        'name' => 'premium_24',
-        'duration_in_hours' => 24,
-        'description' => 'Migliora per 1 giorno il tuo posizionamento nei nostri risultati di ricerca.',
+        'name' => 'Essential',
         'pricing' => 2.99,
-        'slug' => 'premium24'
+        'duration_in_hours' => 24,
+        'savings' => 0,
     ],
     [
-        'name' => 'pro_72',
-        'duration_in_hours' => 72,
-        'description' => 'Migliora per 3 giorni il tuo posizionamento nei nostri risultati di ricerca.',
+        'name' => 'Premium',
         'pricing' => 5.99,
-        'slug' => 'pro72'
+        'duration_in_hours' => 72,
+        'savings' => 33,
     ],
     [
-        'name' => 'business_144',
-        'duration_in_hours' => 144,
-        'description' => 'Migliora per 6 giorni il tuo posizionamento nei nostri risultati di ricerca.',
+        'name' => 'Pro',
         'pricing' => 9.99,
-        'slug' => 'business144'
+        'duration_in_hours' => 144,
+        'savings' => 44,
     ],
 ];

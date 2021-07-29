@@ -16,10 +16,9 @@ class CreateSponsorplansTable extends Migration
         Schema::create('sponsorplans', function (Blueprint $table) {
             $table->id();
             $table->char('name', 50)->unique();
-            $table->char('slug', 50)->unique();
             $table->decimal('pricing', 8, 2);
             $table->integer('duration_in_hours');
-            $table->text('description');
+            $table->integer('savings');
             $table->timestamps();
         });
     }

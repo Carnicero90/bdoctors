@@ -19,7 +19,7 @@
                 @if (Auth::user())
                     <div><a href="{{ route('admin.pay', ['id' => $sponsorPlan->id]) }}" class="btn btn-outline-success">Acquista a soli € {{ $sponsorPlan->pricing }}</a></div>
                 @else
-                    <div><a href="{{ route('register') }}" class="btn btn-outline-success">Iscriviti per accedere ai nostri piani premium</a></div>
+                    <div><a href="{{ route('register') }}" class="btn btn-outline-success">Iscriviti per scoprire i piani</a></div>
                 @endif
             </div>
         </div>
