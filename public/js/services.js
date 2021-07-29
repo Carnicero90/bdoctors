@@ -106,12 +106,9 @@ var app = new Vue({
     },
     changeFormModify: function changeFormModify() {
       this.formModify = true;
-      console.log(this.formModify);
     }
   },
-  mounted: function mounted() {
-    console.log(this.formModify);
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),

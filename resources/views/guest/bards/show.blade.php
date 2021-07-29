@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('header-scripts')
+
     {{-- Axios --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
-        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     {{-- Vuejs --}}
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
@@ -28,7 +28,6 @@
                 @include("partials.success-messages")
                 @include("partials.error-messages")
             </div>
-
             <div class="container">
 
                 {{-- img profilo --}}
@@ -36,8 +35,7 @@
                     @if ($user->profile)
                         <div class="col-12 col-sm-12 col-md-3 col-lg-2 col-xl-2">
                             <div class="profile-img-dashboard-container">
-                                <img src="{{ asset('storage/' . $user->profile->pic) }}"
-                                    alt="{{ $user->name . ' ' . $user->lastname }}" class="profile-img-dashboard">
+                                <img src="{{ asset('storage/' . $user->profile->pic) }}" alt="{{ $user->name . ' ' . $user->lastname }}" class="profile-img-dashboard">
                             </div>
                         </div>
                     @else
@@ -56,32 +54,35 @@
                 </div>
             </div>
 
-            <div class="container">
+            <div class="container mt-5">
                 {{-- INFO personali --}}
                 <div class="mb-4">
                     @foreach ($user->categories as $category)
-                        <a class="btn btn-outline-dark profile-badge-category"
-                            href="{{ route('category-page', ['slug' => $category->slug]) }}">{{ $category->name }}</a>
+                        <a class="btn btn-outline-dark profile-badge-category" href="{{ route('category-page', ['slug' => $category->slug]) }}">{{ $category->name }}</a>
                     @endforeach
                 </div>
 
                 <div class="mb-4">
-                    <h6>Email:</h6>
-                    <span>{{ $user->email }}</span>
+                    <h5 class="profile-title"><i class="fas fa-envelope mr-2"></i>Email:</h5>
+                    <span class="text-secondary">{{$user->email}}</span>
                 </div>
 
 
                 <div class="mb-4">
-                    <h6>Indirizzo:</h6>
+                    <h5 class="profile-title"><i class="fas fa-map-marked-alt mr-2"></i>Indirizzo:</h5>
                     @if ($user->profile)
-                        <span>{{ $user->profile->work_address }}</span>
+                        <span class="text-secondary">{{$user->profile->work_address}}</span>
+                    @else
+                        <span class="text-secondary">Nessun indirizzo di lavoro impostato</span>
                     @endif
                 </div>
 
                 <div class="mb-4">
-                    <h6>Vi parlo di me:</h6>
+                    <h5 class="profile-title"><i class="fas fa-file-alt mr-2"></i>Vi parlo di me:</h5>
                     @if ($user->profile)
-                        <p>{{ $user->profile->self_description }}</p>
+                        <p class="text-secondary">{{$user->profile->self_description}}</p>
+                    @else
+                        <span class="text-secondary">Nessuna descrizione presente</span>
                     @endif
                 </div>
                 {{-- END INFO personali --}}
@@ -91,11 +92,9 @@
                 @if (!(Auth::user() && $user->id == Auth::user()->id))
                     <div class="mt-4">
                         {{-- link form recensioni --}}
-                        <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
-                            recensione</a>
+                        <a href="{{ route('send-review', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi recensione</a>
                         {{-- link form messaggi --}}
-                        <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi
-                            messaggio</a>
+                        <a href="{{ route('send-message', ['id' => $user->id]) }}" class="btn btn-outline-primary mr-3">Scrivi messaggio</a>
                     </div>
                 @endif
             </div>
@@ -108,19 +107,25 @@
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <h2>Servizi</h2>
                     </div>
-                    @foreach ($user->services as $service)
-                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                            <div class="card mb-3">
-                                <div class="card-header d-flex align-items-center justify-content-between">
-                                    <h4>{{ $service->title }}</h4>
-                                    <h5>€ {{ $service->hourly_rate }}/h</h5>
-                                </div>
-                                <div class="card-body">
-                                    <p>{{ $service->description }}</p>
+                    @if ($user->services->isNotEmpty())
+                        @foreach ($user->services as $service)
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                                <div class="card mb-3">
+                                    <div class="card-header d-flex align-items-center justify-content-between">
+                                        <h4>{{ $service->title }}</h4>
+                                        <h5>€ {{ $service->hourly_rate }}/h</h5>
+                                    </div>
+                                    <div class="card-body">
+                                        <p>{{ $service->description }}</p>
+                                    </div>
                                 </div>
                             </div>
+                        @endforeach
+                    @else
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-3">
+                            <span class="text-secondary">Nessun servizio disponibile al momento</span>
                         </div>
-                    @endforeach
+                    @endif
                 </div>
                 {{-- END SERVICES --}}
             </div>
@@ -133,7 +138,7 @@
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <h2>Recensioni</h2>
                     </div>
-                    <div v-for="review in reviews.slice(0, reviews_to_show)" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div v-else v-for="review in reviews.slice(0, reviews_to_show)" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                         <div class="card mb-3">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="mr-5">
@@ -160,6 +165,9 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div v-if="reviews.length == 0" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-3">
+                        <span class="text-secondary">Nessuna recensione presente</span>
                     </div>
                 </div>
                 <div v-if="reviews.length > 5" class="mt-4 mb-5">

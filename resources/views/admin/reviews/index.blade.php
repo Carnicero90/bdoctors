@@ -52,7 +52,7 @@
                 @endforeach
             @else
                 <div class="col-12 mt-3">
-                    <span>Nessuna recensione presente</span>
+                    <span class="text-secondary">Nessuna recensione presente</span>
                 </div>
             @endif
         </div>

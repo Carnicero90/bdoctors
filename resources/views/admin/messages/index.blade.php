@@ -74,7 +74,7 @@
                 @endforeach
             @else
                 <div class="col-12 mt-3">
-                    <span>Nessun messaggio da mostrare</span>
+                    <span class="text-secondary">Nessun messaggio presente</span>
                 </div>
             @endif
         </div>

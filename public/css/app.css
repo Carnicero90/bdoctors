@@ -10442,6 +10442,10 @@ footer .copyright span {
   border: 1px solid gainsboro;
 }
 
+h5.profile-title {
+  margin-bottom: 5px;
+}
+
 .dashboard .dash-list {
   padding-top: 10px;
 }

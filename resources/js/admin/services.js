@@ -12,11 +12,9 @@ var app = new Vue({
 
         changeFormModify() {
             this.formModify = true;
-            console.log(this.formModify);
         },
     },
 
     mounted() {
-        console.log(this.formModify);
     }
 })
