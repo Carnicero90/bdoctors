@@ -10481,6 +10481,18 @@ h5.profile-title {
   background-color: #282828;
 }
 
+.badge-new-message {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 0.5em 0.6em;
+  background-color: green;
+  transform: translateY(-3px);
+}
+
+.title .badge-new-message {
+  font-size: 16px;
+}
+
 .user-card-a {
   color: #444;
 }

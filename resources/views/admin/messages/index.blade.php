@@ -22,7 +22,23 @@
         </div>
         {{-- END success messages --}}
 
-        <h1>Messaggi</h1>
+        <div class="row align-items-center title">
+            <div class="col-2">
+                <h1><a href="">Messaggi</a></h1>
+            </div>
+            @if ($numb_mess_to_read)
+                <div class="col-10">
+                    <div class="badge badge-success badge-new-message">
+                        Hai {{$numb_mess_to_read}}
+                        @if ($numb_mess_to_read == 1)
+                            messaggio non letto
+                        @else
+                            messaggi non letti
+                        @endif
+                    </div>
+                </div>
+            @endif
+        </div>
 
         <div class="row mb-5">
             @if ($messages->isNotEmpty())
@@ -30,12 +46,15 @@
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <div class="card mt-4">
                             {{-- message header --}}
-                            <div class="card-header d-flex align-items-center justify-content-between">
-                                <div class="mt-2 mb-2">
-                                    <h4>{{ $message->author_name }}</h4>
+                            <div class="card-header d-flex align-items-center">
+                                <div class="mt-2 mb-2 flex-grow-1">
+                                    <h4>{{$message->author_name}}</h4>
                                 </div>
+                                @if ($message->to_read)
+                                    <div class="d-inline-block badge badge-success badge-new-message mr-3">Messaggio non letto</div>
+                                @endif
                                 <div class="mt-2 mb-2">
-                                    <h6>{{ $message->author_email }}</h6>
+                                    <h6>{{$message->author_email}}</h6>
                                 </div>
                             </div>
                             {{-- END message header --}}
@@ -52,14 +71,7 @@
                                     </p>
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between">
-                                    <div>
-                                        <a href="{{ route('admin.message-page', ['id' => $message->id]) }}" class="btn btn-outline-primary mr-2"><i class="far fa-file-alt mr-2"></i>Leggi</a>
-                                        <form class="form-group d-inline-block" action="{{ route('admin.message-hide', ['id' => $message->id]) }}" method="post">
-                                            @csrf
-                                            @method("POST")
-                                            <button class="btn btn-outline-danger mr-2" type="submit" onclick="return confirm('Vuoi Eliminare il messaggio?')"><i class="fas fa-times mr-2"></i>Elimina</button>
-                                        </form>
-                                    </div>
+                                    <div><a href="{{ route('admin.message-page', ['id' => $message->id]) }}" class="btn btn-outline-primary mr-2"><i class="far fa-file-alt mr-2"></i>Leggi</a></div>
                                     <div class="mt-2 mb-2">{{date("d/m/Y", strtotime($message->message_date))}}</div>
                                 </div>
                             </div>

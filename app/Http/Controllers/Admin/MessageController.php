@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use App\Message;
 
 class MessageController extends Controller
@@ -13,18 +14,25 @@ class MessageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
+
         $user = Auth::user();
+            
         $messages = Message::where('user_id', '=', $user->id)
             ->orderByDesc('message_date')
             ->where('to_show', '=', 1)
             ->get();
 
+        $numb_mess_to_read = DB::table('messages')
+            ->where('user_id', '=', $user->id)
+            ->sum('to_read');
+
         $data = [
             "user" => $user,
-            'messages' => $messages
+            'messages' => $messages,
+            'numb_mess_to_read' => $numb_mess_to_read,
         ];
+
         return view('admin.messages.index', $data);
     }
 
@@ -34,15 +42,20 @@ class MessageController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
+    public function show($id) {
+
         $message = Message::findOrFail($id);
 
         $user = Auth::user();
 
-        if($message->user_id != $user->id)
-        {
+        if ($message->user_id != $user->id) {
             abort(403, 'Accesso non autorizzato');
+        }
+
+        // se il messaggio è da leggere
+        if ($message->to_read) {
+            $message->to_read = false;
+            $message->update();
         }
 
         $data = [
@@ -59,8 +72,7 @@ class MessageController extends Controller
      * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function hide($id)
-    {
+    public function hide($id) {
         $message = Message::findOrFail($id);
 
         if ($message->user_id == Auth::user()->id) {

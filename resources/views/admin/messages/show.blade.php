@@ -3,7 +3,12 @@
 
 <div class="top-margine">
     <div class="container">
-        <h1>Messaggio</h1>
+
+        <div class="row">
+            <div class="col-12">
+                <h1>Messaggio</h1>
+            </div>
+        </div>
 
         <div class="row mt-3">
             <div class="col-12">
@@ -29,6 +34,12 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-12">
+                <a class="btn btn-outline-secondary" href="{{ route('admin.messages') }}"><i class="far fa-arrow-alt-circle-left mr-2"></i>Torna alla lista dei messaggi</a>
             </div>
         </div>
         

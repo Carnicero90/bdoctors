@@ -119,6 +119,9 @@ Route::prefix('admin')
         // --> store
         Route::post('/messages/{id}', 'MessageController@hide')
             ->name("message-hide");
+        // --> store
+        // Route::post('/messages/{id}', 'MessageController@read')
+        //     ->name("message-read");
 
         /* -- REVIEWS --*/
         // --> index
