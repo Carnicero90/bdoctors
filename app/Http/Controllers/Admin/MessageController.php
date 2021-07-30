@@ -25,7 +25,8 @@ class MessageController extends Controller
 
         $numb_mess_to_read = DB::table('messages')
             ->where('user_id', '=', $user->id)
-            ->sum('to_read');
+            ->where('to_read', '>', 0)
+            ->count('*');
 
         $data = [
             "user" => $user,
