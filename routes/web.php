@@ -153,9 +153,6 @@ Route::prefix('admin')
    TEST
 =================== */
 
-use Carbon\CarbonPeriod;
-use Carbon\Carbon;
-// route per provare dd e dump a caso
 Route::get('/prova', function () {
-    dd(intval('true'));
+   return view('mails.welcome');
 });
