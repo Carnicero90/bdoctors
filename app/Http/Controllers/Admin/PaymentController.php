@@ -13,8 +13,7 @@ use Carbon\Carbon;
 
 class PaymentController extends Controller
 {
-    public function index($id)
-    {
+    public function index($id) {
         $user = Auth::user();
         if (SponsorplanUser::userHasActiveSponsorPlan($user->id)) {
             return redirect()->route('admin.dashboard')->with('errors', 'Non puoi acquistare, hai già un piano di sponsorizzazione attivo');
@@ -25,17 +24,16 @@ class PaymentController extends Controller
         return view('admin.payment', compact('plan'));
     }
 
-    public function make(Request $request, $id)
-    {
+    public function make(Request $request, $id) {
         if (!Auth::user()) {
             return redirect(route('login'));
         }
         $user = Auth::user();
 
-        if (SponsorplanUser::userHasActiveSponsorPlan($user->id)) 
-        {
+        if (SponsorplanUser::userHasActiveSponsorPlan($user->id)) {
             return response()->json(false);
         }
+        
         // TOTEST
         $plan = Sponsorplan::findOrFail($id);
 

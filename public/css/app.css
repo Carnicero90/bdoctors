@@ -10068,6 +10068,10 @@ hr {
   color: white;
 }
 
+.card-text {
+  color: #8c8c8c;
+}
+
 .top-margine {
   padding-top: 100px;
 }

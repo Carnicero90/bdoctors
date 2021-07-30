@@ -69,9 +69,6 @@ Route::prefix('premium')
         // --> index
         Route::get('index', 'SponsorplanController@index')
             ->name('sponsor-index');
-        // --> show
-        Route::get('{slug}', 'SponsorplanController@show')
-            ->name('sponsor-show');
         // -->store
         Route::get('buy/{id}', 'Admin\SponsorplanUserController@store')
             ->middleware('auth')

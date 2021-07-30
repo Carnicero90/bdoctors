@@ -37,7 +37,7 @@
                                     <div class="mt-2 mb-2">{{date("d/m/Y", strtotime($review->send_date))}}</div>
                                 </div>
                                 <div class="mt-2 mb-3">
-                                    <p class="card-text">
+                                    <p class="text-secondary">
                                         @if (strlen($review->content) > 133)
                                             {{substr($review->content, 0, 130) . "..."}}
                                         @else

@@ -61,7 +61,7 @@
                         <button class="btn btn-outline-success">Salva nuova foto</button>
                     </div>
                     <div class="form-group">
-                        <label for="image-file" class="mb-3">Carica un'immagine profilo</label>
+                        <label for="image-file" class="card-text mb-3">Carica un'immagine profilo</label>
                         <input type="file" v-on:change="preloadPic($event)" class="form-control-file" id="image-file" name="image-file">
                     </div>
                     {{-- END input#image-file --}}
@@ -72,22 +72,17 @@
                     @csrf
                     @method("POST")
 
-
                     {{-- input#work_address --}}
                     <div class="form-group mt-5 mb-5">
                         <label for="work_address">Indirizzo / Luogo di Lavoro</label>
-                        <input type="text" class="form-control" id="work_address" name="work_address"
-                            placeholder="Inserisci il tuo indirizzo"
-                            value="{{ Auth::user()->profile ? Auth::user()->profile->work_address : old('work_address') }}">
+                        <input type="text" class="form-control card-text" id="work_address" name="work_address" placeholder="Inserisci il tuo indirizzo" value="{{ Auth::user()->profile ? Auth::user()->profile->work_address : old('work_address') }}">
                     </div>
                     {{-- END input#work_address --}}
 
                     {{-- input#phone_number --}}
                     <div class="form-group mt-5 mb-5">
                         <label for="phone_number">Numero di telefono</label>
-                        <input type="tel" class="form-control" id="phone_number" name="phone_number"
-                            placeholder="Inserisci il tuo numero di telefono"
-                            value="{{ Auth::user()->profile ? Auth::user()->profile->phone_number : old('phone_number') }}">
+                        <input type="tel" class="form-control card-text" id="phone_number" name="phone_number" placeholder="Inserisci il tuo numero di telefono" value="{{ Auth::user()->profile ? Auth::user()->profile->phone_number : old('phone_number') }}">
                     </div>
                     {{-- END input#phone_number --}}
 
@@ -96,11 +91,9 @@
                         <label for="categories" class="d-block">Scegli le tue categorie</label>
                         @foreach ($categories as $category)
                             <div class="form-check d-inline-block mr-5 mb-2">
-                                <input value="{{ $category->id }}" class="form-check-input"
-                                    id="categories-{{ $category->id }}" name="categories[]" type="checkbox"
+                                <input value="{{ $category->id }}" class="form-check-input" id="categories-{{ $category->id }}" name="categories[]" type="checkbox"
                                     {{ Auth::user()->categories->contains($category) ? 'checked' : '' }}>
-                                <label class="form-check-label"
-                                    for="categories-{{ $category->id }}">{{ $category->name }}</label>
+                                <label class="form-check-label" for="categories-{{ $category->id }}">{{ $category->name }}</label>
                             </div>
                         @endforeach
                     </div>
@@ -109,17 +102,13 @@
                     {{-- input#self_description --}}
                     <div class="form-group mt-4 mb-4">
                         <label for="self_description">Descriviti</label>
-                        <textarea class="form-control" name="self_description" id="self_description" v-bind:rows="lines" rows="4"
-                            v-on:keyup.enter="lines ++"
-                            placeholder="Scrivi una descrizione per il tuo profilo">{{ Auth::user()->profile ? Auth::user()->profile->self_description : old('self_description') }}</textarea>
+                        <textarea class="form-control card-text" name="self_description" id="self_description" v-bind:rows="lines" rows="4" v-on:keyup.enter="lines ++" placeholder="Scrivi una descrizione per il tuo profilo">{{ Auth::user()->profile ? Auth::user()->profile->self_description : old('self_description') }}</textarea>
                     </div>
                     {{-- END input#self_description --}}
                     @if (Auth::user()->profile)
-                        <button type="submit" class="btn btn-outline-success"><i class="fas fa-check mr-2"></i>Salva
-                            modifiche</button>
+                        <button type="submit" class="btn btn-outline-success"><i class="fas fa-check mr-2"></i>Salva modifiche</button>
                     @else
-                        <button type="submit" class="btn btn-outline-success"><i class="fas fa-user-check mr-2"></i>Crea
-                            profilo</button>
+                        <button type="submit" class="btn btn-outline-success"><i class="fas fa-user-check mr-2"></i>Crea profilo</button>
                     @endif
                     {{-- END bottone per invio form --}}
 
