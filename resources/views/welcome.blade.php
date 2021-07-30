@@ -25,7 +25,7 @@
             <div class="container">
 
                 <div class="jumbo-container position-relative">
-                    <h1 class="display-2 heading-logo">Trova il tuo Bardo</h1>
+                    <h1 class="display-2 heading-logo text-white">Trova il tuo Bardo</h1>
                     <img class="jumbo-logo" src="{{asset('img/welcome/boolbards-white.png')}}" alt="">
                 </div>
 
@@ -51,7 +51,7 @@
                                     <a :href="'bards/' + user.id" class="d-flex align-items-center c-1 no-decorations">
                                         <div class="mr-2 profile-img-search-container position-relative">
                                             <img class="mr-2 profile-img-search" v-if="user.pic" :src="'/storage/' + user.pic" alt="">
-                                            <img class="mr-2 profile-img-search" v-else src="{{asset("/img/user-img.png")}}" alt="">
+                                            <img class="mr-2 profile-img-search" v-else src="{{asset("/img/user/user-img.png")}}" alt="">
                                         </div>
                                         <span>@{{ user . name + ' ' + user . lastname }}</span>
                                         <div v-if="user.sponsored" class="recommended-badge">
@@ -80,11 +80,11 @@
 
                 <div class="row justify-content-center">
 
-                    <p class="description-text text-center mt-3"> <span class="text-evident">BoolBards</span> è la piattaforma ideale per trovare il musicista che fa al caso tuo.<br>
+                    <p class="description-text text-center mt-3"> <span class="text-evident text-white">BoolBards</span> è la piattaforma ideale per trovare il musicista che fa al caso tuo.<br>
                         Nuovi artisti si aggiungono alla nostra rete ogni giorno ed avrai la possibilità di visionare il loro profilo.<br>
                         Potrai scegliere un servizio tra quelli disponibili in base alle recensioni e<br>
                         quando avrai scelto, potrai contattare l'artista direttamente dalla sua pagina tramite messaggio.<br>
-                        Cosa aspetti? Inizia la ricerca e scegli il <span class="text-evident">Bardo</span> che fa al caso tuo!
+                        Cosa aspetti? Inizia la ricerca e scegli il <span class="text-evident text-white">Bardo</span> che fa al caso tuo!
                     </p>
 
                 </div>
@@ -93,7 +93,7 @@
 
             {{-- section sponsored --}}
             <hr>
-            <div class="container pb-5">
+            <div class="container mt-5 mb-5">
                 <h2 class="text-center text-uppercase">I nostri artisti del momento</h2>
 
                 <div class="row d-flex align-items-center position-relative justify-content-center">
@@ -116,7 +116,7 @@
 
             {{-- section categories --}}
             <hr>
-            <div class="container mt-4 pt-5 mb-5">
+            <div class="container mt-5 mb-5">
                 <h2 class="text-center text-uppercase">Categorie</h2>
                 <div class="row mt-4">
                     @foreach ($categories as $category)

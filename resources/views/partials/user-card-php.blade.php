@@ -5,7 +5,7 @@
                 @if ($user->pic)
                     <img src="{{asset('storage/' . $user->pic)}}" alt="" class="profile-img-card">
                 @else
-                    <img src="{{asset("/img/user-img.png")}}" alt="" class="profile-img-card">
+                    <img src="{{asset("/img/user/user-img.png")}}" alt="" class="profile-img-card">
                 @endif
             </div>
             <div class="font-weight-bold">

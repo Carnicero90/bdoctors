@@ -41,7 +41,7 @@
             <div class="row">
                 @if ($services->isEmpty())
                     <div class="col-12 mb-4">
-                        <span class="card-text">Non ci sono servizi disponibili</span>
+                        <span class="text-gray">Non ci sono servizi disponibili</span>
                     </div>
                 @else
                     <div class="col-12 mb-4">

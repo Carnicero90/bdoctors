@@ -3,7 +3,7 @@
 
 {{-- Jumbotron --}}
 <div style="background-image: url({{ asset('/img/categories/jumbotron/' . config('categories.' . $category->slug . '.img')) }})" class="cat-jumbotron d-flex align-items-center justify-content-center">
-    <div class="title">
+    <div class="title text-white">
         <h1>{{ $category->name }}</h1>
     </div>
 </div>

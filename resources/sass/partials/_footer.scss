@@ -33,7 +33,6 @@ footer {
             letter-spacing: 2px;
             color: lightgrey;
             .text-evident {
-                color: white;
                 font-weight: 700;
             }
         }
@@ -61,7 +60,7 @@ footer {
             color: #868586;
             cursor: pointer;
             &:hover {
-                color: white;
+                color: $white;
             }
         }
 
@@ -92,9 +91,6 @@ footer {
             vertical-align: middle;
             transform: translateY(-1.5px);
             margin-right: 5px;
-        }
-        span {
-            color: white;
         }
     }
 }

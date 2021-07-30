@@ -43,7 +43,7 @@
                             {{-- message body --}}
                             <div class="card-body">
                                 <div class="mt-2 mb-4">
-                                    <p class="card-text">
+                                    <p class="text-gray">
                                         @if (strlen($message->text) > 133)
                                             {{substr($message->text, 0, 130) . "..."}}
                                         @else
@@ -70,7 +70,7 @@
                 @endforeach
             @else
                 <div class="col-12 mt-3">
-                    <span class="text-secondary">Nessun messaggio presente</span>
+                    <span class="text-gray">Nessun messaggio presente</span>
                 </div>
             @endif
         </div>

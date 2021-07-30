@@ -14,7 +14,7 @@
                     </div>
                     <div class="card-body">
                         <div class="mt-2 mb-4">
-                            <p class="card-text">{{$message->text}}</p>
+                            <p class="text-gray">{{$message->text}}</p>
                         </div>
                         <div class="d-flex align-items-center justify-content-between">
                             <div>

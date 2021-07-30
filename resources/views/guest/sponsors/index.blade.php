@@ -44,7 +44,7 @@
                                         @endif
                                     </div>
                                     <div class="mb-4">
-                                        <span><i class="fas fa-check mr-2"></i>Durata<span class="sponsor-duration ml-2 mr-2">{{$plan->duration_in_hours}}</span>ore</span>
+                                        <span><i class="fas fa-check mr-2"></i>Durata<span class="sponsor-duration text-white ml-2 mr-2">{{$plan->duration_in_hours}}</span>ore</span>
                                     </div>
                                 </div>
 

@@ -12,7 +12,7 @@
                 <div class="d-flex">
                     <div class="flex-son">
                         <h4>Chi siamo</h4>
-                        <p>Cinque tartarughe sempre pronte, sempre allerta come i <span class="text-evident">Ninja</span>. Cinque tartarughe tutte identiche d'aspetto, tutte <span class="text-evident">Ninja</span>. Per la pizza vanno matte sai e ne mangian sempre più che mai.</p>
+                        <p>Cinque tartarughe sempre pronte, sempre allerta come i <span class="text-evident text-white">Ninja</span>. Cinque tartarughe tutte identiche d'aspetto, tutte <span class="text-evident text-white">Ninja</span>. Per la pizza vanno matte sai e ne mangian sempre più che mai.</p>
                     </div>
                     
                     <!-- Contact Info -->
@@ -36,7 +36,7 @@
             </div>
             <!-- Copyright -->
             <div class="copyright">
-                <i class="far fa-copyright"></i>Copyright 2021 | Developed by <span>i Becci di BoolBards</span> | All Rights Reserved | Powered by <span>Laravel</span>
+                <i class="far fa-copyright"></i>Copyright 2021 | Developed by <span class="text-white">i Becci di BoolBards</span> | All Rights Reserved | Powered by <span class="text-white">Laravel</span>
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@
         <div class="card-body d-flex flex-column align-items-center">
             <div class="profile-img-card-container mb-3">
                 <img v-if="user.pic" :src="'/storage/' + user.pic" alt="" class="profile-img-card">
-                <img v-else src="{{asset("/img/user-img.png")}}" alt="" class="profile-img-card">
+                <img v-else src="{{asset("/img/user/user-img.png")}}" alt="" class="profile-img-card">
             </div>
             <div class="font-weight-bold">
                 <span>@{{user.name + ' ' + user.lastname}}</span>

@@ -37,7 +37,7 @@
                                     <div class="mt-2 mb-2">{{date("d/m/Y", strtotime($review->send_date))}}</div>
                                 </div>
                                 <div class="mt-2 mb-3">
-                                    <p class="text-secondary">
+                                    <p class="text-gray">
                                         @if (strlen($review->content) > 133)
                                             {{substr($review->content, 0, 130) . "..."}}
                                         @else
@@ -52,7 +52,7 @@
                 @endforeach
             @else
                 <div class="col-12 mt-3">
-                    <span class="text-secondary">Nessuna recensione presente</span>
+                    <span class="text-gray">Nessuna recensione presente</span>
                 </div>
             @endif
         </div>

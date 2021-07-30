@@ -64,11 +64,15 @@ hr {
 }
 
 .text-white {
-    color: white;
+    color: $white;
 }
 
-.card-text {
+.text-gray {
     color: $gray;
+}
+
+.text-darkgray {
+    color: $darkgray;
 }
 
 // TEST
@@ -125,7 +129,5 @@ input, select {
 .cat-list-title {
     font-family: $primary_font;
     font-weight: 200;
-    color: white;
-    // TOTEST
     line-height: 200px;
 }

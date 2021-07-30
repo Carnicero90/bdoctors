@@ -58,31 +58,31 @@
                 {{-- INFO personali --}}
                 <div class="mb-4">
                     @foreach ($user->categories as $category)
-                        <a class="btn btn-outline-dark profile-badge-category" href="{{ route('category-page', ['slug' => $category->slug]) }}">{{ $category->name }}</a>
+                        <a class="btn btn-outline-dark profile-badge-category text-white" href="{{ route('category-page', ['slug' => $category->slug]) }}">{{ $category->name }}</a>
                     @endforeach
                 </div>
 
                 <div class="mb-4">
                     <h5 class="profile-title"><i class="fas fa-envelope mr-2"></i>Email:</h5>
-                    <span class="text-secondary">{{$user->email}}</span>
+                    <span class="text-gray">{{$user->email}}</span>
                 </div>
 
 
                 <div class="mb-4">
                     <h5 class="profile-title"><i class="fas fa-map-marked-alt mr-2"></i>Indirizzo:</h5>
                     @if ($user->profile)
-                        <span class="text-secondary">{{$user->profile->work_address}}</span>
+                        <span class="text-gray">{{$user->profile->work_address}}</span>
                     @else
-                        <span class="text-secondary">Nessun indirizzo di lavoro impostato</span>
+                        <span class="text-gray">Nessun indirizzo di lavoro impostato</span>
                     @endif
                 </div>
 
                 <div class="mb-4">
                     <h5 class="profile-title"><i class="fas fa-file-alt mr-2"></i>Vi parlo di me:</h5>
                     @if ($user->profile)
-                        <p class="text-secondary">{{$user->profile->self_description}}</p>
+                        <p class="text-gray">{{$user->profile->self_description}}</p>
                     @else
-                        <span class="text-secondary">Nessuna descrizione presente</span>
+                        <span class="text-gray">Nessuna descrizione presente</span>
                     @endif
                 </div>
                 {{-- END INFO personali --}}
@@ -115,7 +115,7 @@
                                         <h4>{{$service->title}}</h4>
                                         <h5>€ {{$service->hourly_rate}}/h</h5>
                                     </div>
-                                    <div class="card-body">
+                                    <div class="card-body text-gray">
                                         <p>{{$service->description}}</p>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@
                         @endforeach
                     @else
                         <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 mb-3">
-                            <span class="text-secondary">Nessun servizio disponibile al momento</span>
+                            <span class="text-gray">Nessun servizio disponibile al momento</span>
                         </div>
                     @endif
                 </div>
@@ -139,7 +139,7 @@
                         <h2>Recensioni</h2>
                     </div>
                     <div v-if="reviews.length == 0" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-3">
-                        <span class="text-secondary">Nessuna recensione presente</span>
+                        <span class="text-gray">Nessuna recensione presente</span>
                     </div>
                     <div v-else v-for="review in reviews.slice(0, reviews_to_show)" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                         <div class="card mb-3">
@@ -164,7 +164,7 @@
                                     </div>
                                 </div>
                                 <div class="mt-2 mb-2">
-                                    <p class="text-secondary">@{{review.content}}</p>
+                                    <p class="text-gray">@{{review.content}}</p>
                                 </div>
                             </div>
                         </div>
