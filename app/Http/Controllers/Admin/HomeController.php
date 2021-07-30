@@ -16,10 +16,9 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         $user = Auth::user();
-        $user->sponsored =  $user->sponsorplanUsers->where('end_date', '>', Carbon::now())->where('success', '=', 1)->first();
+        $user->sponsored = $user->sponsorplanUsers->where('end_date', '>', Carbon::now())->where('success', '=', 1)->first();
         $messages = Message::where('user_id', '=', $user->id)
             ->where('to_show', '=', 1)
             ->orderByDesc('message_date')

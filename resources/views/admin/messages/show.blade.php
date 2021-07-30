@@ -18,6 +18,7 @@
                         </div>
                         <div class="d-flex align-items-center justify-content-between">
                             <div>
+                                <button class="btn btn-outline-primary mr-2" onclick="return alert('Dobbiamo impostare la risposta via mail')"><i class="fas fa-share-square mr-2"></i>Rispondi</button>
                                 <form class="form-group d-inline-block" action="{{ route('admin.message-hide', ['id' => $message->id]) }}" method="post">
                                     @csrf
                                     @method("POST")

@@ -112,11 +112,11 @@
                             <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                                 <div class="card mb-3">
                                     <div class="card-header d-flex align-items-center justify-content-between">
-                                        <h4>{{ $service->title }}</h4>
-                                        <h5>€ {{ $service->hourly_rate }}/h</h5>
+                                        <h4>{{$service->title}}</h4>
+                                        <h5>€ {{$service->hourly_rate}}/h</h5>
                                     </div>
                                     <div class="card-body">
-                                        <p>{{ $service->description }}</p>
+                                        <p>{{$service->description}}</p>
                                     </div>
                                 </div>
                             </div>
@@ -138,14 +138,17 @@
                     <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
                         <h2>Recensioni</h2>
                     </div>
+                    <div v-if="reviews.length == 0" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-3">
+                        <span class="text-secondary">Nessuna recensione presente</span>
+                    </div>
                     <div v-else v-for="review in reviews.slice(0, reviews_to_show)" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                         <div class="card mb-3">
                             <div class="card-header d-flex justify-content-between">
                                 <div class="mr-5">
-                                    <span>@{{ review.author_name }}</span>
+                                    <span>@{{review.author_name}}</span>
                                 </div>
                                 <div>
-                                    <span>@{{ review.author_email }}</span>
+                                    <span>@{{review.author_email}}</span>
                                 </div>
                             </div>
                             <div class="card-body">
@@ -161,13 +164,10 @@
                                     </div>
                                 </div>
                                 <div class="mt-2 mb-2">
-                                    <p class="card-text">@{{ review.content }}</p>
+                                    <p class="text-secondary">@{{review.content}}</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div v-if="reviews.length == 0" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-3">
-                        <span class="text-secondary">Nessuna recensione presente</span>
                     </div>
                 </div>
                 <div v-if="reviews.length > 5" class="mt-4 mb-5">

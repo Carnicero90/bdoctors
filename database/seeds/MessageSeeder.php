@@ -19,7 +19,7 @@ class MessageSeeder extends Seeder
             $new_message = new Message();
             $new_message->author_name = $faker->firstName() . ' ' . $faker->lastName();
             $new_message->author_email = $faker->email();
-            $new_message->text = $faker->paragraph(rand(1,4));
+            $new_message->text = $faker->paragraph(rand(3,6));
             $new_message->message_date = Carbon::now()->subDays(rand(0,365));
             $new_message->user_id = rand(1, User::count());
             $new_message->to_show = 1;

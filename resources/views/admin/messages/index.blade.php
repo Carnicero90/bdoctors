@@ -53,22 +53,18 @@
                                 </div>
                                 <div class="d-flex align-items-center justify-content-between">
                                     <div>
-                                        <a href="{{ route('admin.message-page', ['id' => $message->id]) }}"
-                                            class="btn btn-outline-primary mr-2"><i class="far fa-file-alt mr-2"></i>Leggi</a>
-                                        <form class="form-group d-inline-block"
-                                            action="{{ route('admin.message-hide', ['id' => $message->id]) }}"
-                                            method="post">
+                                        <a href="{{ route('admin.message-page', ['id' => $message->id]) }}" class="btn btn-outline-primary mr-2"><i class="far fa-file-alt mr-2"></i>Leggi</a>
+                                        <form class="form-group d-inline-block" action="{{ route('admin.message-hide', ['id' => $message->id]) }}" method="post">
                                             @csrf
                                             @method("POST")
-                                            <button class="btn btn-outline-danger mr-2" type="submit"
-                                                onclick="return confirm('Vuoi Eliminare il messaggio?')"><i
-                                                    class="fas fa-times mr-2"></i>Elimina</button>
+                                            <button class="btn btn-outline-danger mr-2" type="submit" onclick="return confirm('Vuoi Eliminare il messaggio?')"><i class="fas fa-times mr-2"></i>Elimina</button>
                                         </form>
                                     </div>
                                     <div class="mt-2 mb-2">{{date("d/m/Y", strtotime($message->message_date))}}</div>
                                 </div>
                             </div>
                             {{-- END message body --}}
+                            
                         </div>
                     </div>
                 @endforeach

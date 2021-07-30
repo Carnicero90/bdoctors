@@ -7,14 +7,12 @@ use Illuminate\Support\Carbon;
 
 class SponsorplanUser extends Model
 {
-    public function users()
-    {
+    public function users() {
         return $this->belongsTo('App\User');
     }
 
     // TODO: da commentare
-    public static function userHasActiveSponsorPlan($user_id)
-    {
+    public static function userHasActiveSponsorPlan($user_id) {
         $now = Carbon::now();
         $user_active_plans = SponsorplanUser::where(
             [
